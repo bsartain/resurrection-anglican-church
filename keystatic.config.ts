@@ -2,7 +2,11 @@ import { config, collection, fields, singleton } from "@keystatic/core";
 
 export default config({
   storage: {
-    kind: "local",
+    kind: "github",
+    repo: {
+      owner: "bsartain",
+      name: "resurrection-anglican-church",
+    },
   },
   collections: {
     posts: collection({
