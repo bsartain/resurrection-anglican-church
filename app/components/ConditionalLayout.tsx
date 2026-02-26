@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 import MainNav from "./MainNav";
 import Footer from "./Footer";
 
-export default function ConditionalLayout({ children }: { children: React.ReactNode }) {
+export default function ConditionalLayout({ children, footer }: { children: React.ReactNode; footer: React.ReactNode }) {
   const pathname = usePathname();
   const isKeystatic = pathname?.startsWith("/keystatic");
 
@@ -12,7 +12,7 @@ export default function ConditionalLayout({ children }: { children: React.ReactN
     <>
       {!isKeystatic && <MainNav />}
       <main>{children}</main>
-      {!isKeystatic && <Footer />}
+      {!isKeystatic && footer}
     </>
   );
 }

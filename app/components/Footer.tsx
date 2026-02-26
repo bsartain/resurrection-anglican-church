@@ -1,52 +1,74 @@
-export default function Footer() {
+import { DocumentElement } from "@keystatic/core";
+import { getPageData } from "../api/keystatic/lib/keystatic";
+import { DocumentRenderer } from "@keystatic/core/renderer";
+
+type ContentItem = DocumentElement & {
+  title: string;
+  type: string;
+  href?: string;
+  children: {
+    text: string;
+    href?: string;
+    code?: string[];
+  }[];
+};
+
+interface Item {
+  title: string;
+  type?: string;
+}
+
+export default async function Footer() {
+  const pageData = await getPageData("contact");
+  const serviceInfo = await pageData?.subsections.find((item: Item) => item.title.toLowerCase().includes("service"));
+  const serviceContent = await serviceInfo?.content();
+  const address = await pageData?.subsections.find((item: Item) => item.title.toLowerCase().includes("address"));
+  const addressContent = await address?.content();
+  const childcare = await pageData?.subsections.find((item: Item) => item.title.toLowerCase().includes("childcare"));
+  const childcareContent = await childcare?.content();
+  const phone = await pageData?.subsections.find((item: Item) => item.title.toLowerCase().includes("phone"));
+  const phoneContent = (await phone?.content()) as ContentItem[];
+  const phoneLink = phoneContent?.flatMap((item) => item.children)?.find((child) => child.href)?.href;
+  const googleMap = await pageData?.subsections.find((item: Item) => item.title.toLowerCase().includes("google"));
+  const googleMapContent = (await googleMap?.content()) as ContentItem[];
+  const googleMapCode = googleMapContent?.find((item: Item) => item.type === "code")?.children[0].text;
+
   return (
     <footer className="footer">
       <div className="footer-container">
         {/* Left Column */}
         <div className="footer-info">
           <div className="footer-gathering">
-            <span className="footer-label">Sunday Gathering</span>
-            <span className="footer-time">4:00pm</span>
+            <span className="footer-label">{serviceInfo?.title}</span>
+            <span className="footer-time">{serviceContent && <DocumentRenderer document={serviceContent} />}</span>
           </div>
 
           <div className="footer-divider" />
 
           <div className="footer-info-block">
-            <span className="footer-label">Address</span>
-            <p>
-              1822 Eden Terrace
-              <br />
-              Rock Hill, SC 29730
-            </p>
+            <span className="footer-label">{address?.title}</span>
+            {addressContent && <DocumentRenderer document={addressContent} />}
           </div>
 
           <div className="footer-info-block">
-            <span className="footer-label">Childcare</span>
-            <p>
-              We offer nursery and children&apos;s church where there are age-appropriate lessons and activities for preschool&mdash;5th grade. This
-              takes place during the scripture reading and sermon.
-            </p>
+            <span className="footer-label">{childcare?.title}</span>
+            {childcareContent && <DocumentRenderer document={childcareContent} />}
           </div>
 
           <div className="footer-info-block">
-            <span className="footer-label">Phone</span>
+            <span className="footer-label">{phone?.title}</span>
             <p>
-              <a href="tel:8035555555">(803) 555-5555</a>
+              <a href={phoneLink}>{phoneContent && <DocumentRenderer document={phoneContent} />}</a>
             </p>
           </div>
         </div>
 
         {/* Right Column - Google Map */}
         <div className="footer-map">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3259.123456789!2d-81.03!3d34.93!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s1822+Eden+Terrace%2C+Rock+Hill%2C+SC+29730!5e0!3m2!1sen!2sus!4v1234567890"
-            width="100%"
-            height="100%"
-            style={{ border: 0 }}
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            title="Church Location"
+          <div
+            dangerouslySetInnerHTML={{
+              __html: googleMapCode ?? "",
+            }}
           />
         </div>
       </div>
