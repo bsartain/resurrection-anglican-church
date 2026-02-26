@@ -139,7 +139,7 @@ export default function HomeSections({ section1, section2, section3, section4, s
       <RevealSection id="story-4" className="home-section dark-background-home-section" image="/images/pages/icon-resurrection.jpg" opacity={0.02}>
         <Container>
           <div className="story-container">
-            <div className="story-image rounded" style={{ backgroundImage: `url("${section4.image}")` }} />
+            <div className="story-image rounded mb-5" style={{ backgroundImage: `url("${section4.image}")` }} />
             <div>
               <h2>{section4.title}</h2>
               <DocumentRenderer document={section4.content} />

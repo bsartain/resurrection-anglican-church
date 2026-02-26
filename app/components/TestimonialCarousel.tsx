@@ -10,6 +10,11 @@ interface Testimonial {
 const TestimonialCarousel: React.FC<{ testimonials: readonly Testimonial[] }> = ({ testimonials }) => {
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
     slides: { perView: 2 },
+    breakpoints: {
+      "(max-width: 768px)": {
+        slides: { perView: 1 },
+      },
+    },
   });
 
   return (
