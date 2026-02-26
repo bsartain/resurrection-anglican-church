@@ -6,7 +6,7 @@ import Footer from "./Footer";
 
 export default function ConditionalLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
-  const isKeystatic = pathname.startsWith("/keystatic");
+  const isKeystatic = pathname?.startsWith("/keystatic");
 
   return (
     <>
