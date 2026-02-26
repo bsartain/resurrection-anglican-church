@@ -1,0 +1,56 @@
+section1:
+  title: A Different Pace. A Deeper Faith.
+  images:
+    - /images/home/section1/images/0.jpg
+    - /images/home/section1/images/1.jpg
+    - /images/home/section1/images/2.jpg
+section2:
+  title: So glad you're here!
+  image: /images/home/section2/image.jpg
+section3:
+  title: We Invite You Into God's Story
+  image: /images/home/section3/image.jpeg
+section4:
+  title: What Happens When We Gather
+  image: /images/home/section4/image.jpg
+section5:
+  title: Resurrection Kids!
+  buttonPageLink: /kids
+  buttonText: Learn More
+  images:
+    - /images/home/section5/images/0.jpeg
+    - /images/home/section5/images/1.jpeg
+    - /images/home/section5/images/2.jpeg
+section6:
+  title: Voices of Resurrection
+  testimonials:
+    - name: Suzie B.
+      testimonial: >-
+        At Resurrection, we found a home. This has become our family, and every
+        Sunday feels like coming back to something steady, beautiful, and full
+        of grace.
+    - name: '"Michael T.'
+      testimonial: >-
+        The liturgy has shaped my faith in ways I didn’t expect. It’s deep,
+        reverent, and rooted in something far bigger than myself.
+    - name: Karen L.
+      testimonial: >-
+        From our first visit, we felt welcomed. Resurrection is more than a
+        service — it’s a community that truly walks together.
+    - name: David R.
+      testimonial: >-
+        The rhythm of Scripture, prayer, and the Lord’s Table has renewed my
+        faith and anchored our family.
+    - name: Emily C.
+      testimonial: >-
+        There’s a beauty and peace in the worship here that slows my heart and
+        reminds me of what really matters.
+    - name: James W.
+      testimonial: >-
+        Resurrection has grounded us in historic Christianity while helping us
+        live out our faith in everyday life.
+section7:
+  title: The Anglican Way
+  buttonPageLink: /anglican
+  buttonText: Learn More
+  image: /images/home/section7/image.jpeg

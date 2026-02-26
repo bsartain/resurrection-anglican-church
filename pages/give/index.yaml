@@ -1,0 +1,18 @@
+title: Give
+image: /images/pages/give/image.jpg
+subsections:
+  - title: Use of Contributions
+    image: /images/pages/give/subsections/0/image.jpg
+    imageDirection: left
+  - title: Why Give?
+    image: /images/pages/give/subsections/1/image.jpg
+    imageDirection: right
+  - title: Giving in Response to Grace
+    image: /images/pages/give/subsections/2/image.jpg
+    imageDirection: left
+  - title: Ways To Give
+    imageDirection: right
+  - title: What Does My Giving Support
+    imageDirection: left
+multipleImages:
+  discriminant: false

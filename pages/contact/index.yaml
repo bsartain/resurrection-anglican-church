@@ -1,0 +1,15 @@
+title: Contact
+image: /images/pages/contact/image.jpg
+subsections:
+  - title: Service Times
+    imageDirection: left
+  - title: Address
+    imageDirection: left
+  - title: Childcare
+    imageDirection: left
+  - title: Phone
+    imageDirection: left
+  - title: Google Map
+    imageDirection: left
+multipleImages:
+  discriminant: false

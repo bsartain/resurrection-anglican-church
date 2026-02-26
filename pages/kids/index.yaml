@@ -1,0 +1,14 @@
+title: Children's Ministry
+image: /images/pages/kids/image.jpeg
+subsections:
+  - title: God's Big Story
+    image: /images/pages/kids/subsections/0/image.png
+    imageDirection: left
+  - title: Youth Ministry
+    image: /images/pages/kids/subsections/1/image.jpg
+    imageDirection: right
+  - title: Spiritually Formed Youth
+    image: /images/pages/kids/subsections/2/image.jpg
+    imageDirection: left
+multipleImages:
+  discriminant: false

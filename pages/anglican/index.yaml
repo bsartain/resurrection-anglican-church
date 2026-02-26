@@ -1,0 +1,20 @@
+title: The Anglican Way
+image: /images/pages/anglican/image.webp
+subsections:
+  - title: Formed by Worship. Sent with Light.
+    image: /images/pages/anglican/subsections/0/image.jpeg
+    imageDirection: left
+  - title: What We Value
+    image: /images/pages/anglican/subsections/1/image.jpeg
+    imageDirection: right
+  - title: We Are a Global Family
+    image: /images/pages/anglican/subsections/2/image.jpg
+    imageDirection: left
+  - title: Ancient Roots
+    image: /images/pages/anglican/subsections/3/image.jpg
+    imageDirection: right
+  - title: Anglican Essentials
+    image: /images/pages/anglican/subsections/4/image.webp
+    imageDirection: left
+multipleImages:
+  discriminant: false
