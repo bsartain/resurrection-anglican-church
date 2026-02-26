@@ -854,7 +854,20 @@ h6 {
       .submit-btn {
         border: 1px solid #4a4a4a !important;
         color: #a0856a !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .spinner-border {
+          color: #ffffff !important;
+        }
       }
+      .submit-btn:hover {
+        background: transparent;
+        color: #ffffff !important;
+      }
+    }
+    .alert {
+      font-size: 16px;
     }
   }
 }
