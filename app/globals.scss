@@ -720,15 +720,28 @@ h6 {
 }
 
 .kids-ministry-first-image-wide {
-  background: linear-gradient(to top, #2b2b2b 25%, transparent), url("/images/pages/christmas-childrens-play.jpg") !important;
+  // background: linear-gradient(to top, #2b2b2b 25%, transparent), url("/images/pages/christmas-childrens-play.jpg") !important;
   background-size: cover !important;
   background-repeat: no-repeat !important;
+  background-position: bottom;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   flex-direction: column;
   height: 800px;
   color: #ffffff;
+  @media (max-width: 768px) {
+    padding-top: 1200px;
+    background-position: 85% 20%;
+  }
+  .kids-ministry-first-content {
+    background: linear-gradient(to top, #2b2b2b 40%, transparent);
+    width: 100%;
+    @media (max-width: 768px) {
+      font-size: 20px;
+      background: linear-gradient(to top, #2b2b2b 77%, transparent);
+    }
+  }
 }
 
 .kids-ministry-first-image {

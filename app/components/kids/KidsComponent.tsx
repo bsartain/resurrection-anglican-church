@@ -40,11 +40,12 @@ const KidsComponent: React.FC<{ pageData: KidsPage | null; pageContent: Document
           </Container>
         </RevealSection>
       </div>
-
-      <div style={{ backgroundImage: 'url("/images/pages/christmas-childrens-play.jpg")' }} className="kids-ministry-first-image-wide rounded">
-        <Container className="pb-5 pt-5 reveal">
-          <DocumentRenderer document={pageContent ?? []} />
-        </Container>
+      <div style={{ backgroundImage: 'url("/images/pages/christmas-childrens-play.JPG")' }} className="kids-ministry-first-image-wide rounded">
+        <div className="kids-ministry-first-content">
+          <Container className="pb-5 pt-5 reveal">
+            <DocumentRenderer document={pageContent ?? []} />
+          </Container>
+        </div>
       </div>
 
       {pageData?.subsections && pageData?.subsections.length > 0
