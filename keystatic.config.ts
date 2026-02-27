@@ -8,7 +8,7 @@ export default config({
           kind: "cloud",
         },
   cloud: {
-    project: "resurrection-anglican-church/admin",
+    project: "res-anglican-church/website",
   },
   collections: {
     posts: collection({
