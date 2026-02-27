@@ -4,6 +4,7 @@ import { Container } from "react-bootstrap";
 import { DocumentRenderer } from "@keystatic/core/renderer";
 import { DocumentElement } from "@keystatic/core";
 import RevealSection from "../components/RevealSection";
+import DonateButtonModal from "../components/DonateButtonModal";
 
 interface GiveModel {
   title: string;
@@ -70,7 +71,7 @@ export default async function Give() {
   return (
     <div className="give-container dark-container">
       <HeroImage image={pageData?.image ? pageData.image : ""}>{pageData?.title}</HeroImage>
-
+      <DonateButtonModal donateButtonText="Join The Mission" />
       <div>
         <RevealSection id="kidsContent" image="/images/pages/jesus-cross.jpg" opacity={0.02}>
           <Container className="mt-5 mb-5 reveal">

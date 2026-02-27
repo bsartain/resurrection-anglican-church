@@ -1,4 +1,7 @@
+"use client";
+import { usePathname } from "next/navigation";
 import React from "react";
+import DonateButtonModal from "./DonateButtonModal";
 
 interface HeroImageProps {
   image: string;
@@ -6,6 +9,8 @@ interface HeroImageProps {
 }
 
 const HeroImage = ({ image, children }: HeroImageProps) => {
+  const pathname = usePathname();
+  console.log(pathname);
   return (
     <div className="hero-image-container" style={{ backgroundImage: `url(${image})` }}>
       <div className="overlay"></div>
@@ -15,6 +20,7 @@ const HeroImage = ({ image, children }: HeroImageProps) => {
           <hr className="w-25 mt-5 mb-1" />
         </div>
         <h1>{children}</h1>
+        {pathname === "/give" ? <DonateButtonModal donateButtonText="DONATE" /> : null}
       </div>
     </div>
   );
