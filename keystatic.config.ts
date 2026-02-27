@@ -5,9 +5,11 @@ export default config({
     process.env.NODE_ENV === "development"
       ? { kind: "local" }
       : {
-          kind: "github",
-          repo: "bsartain/resurrection-anglican-church",
+          kind: "cloud",
         },
+  cloud: {
+    project: "resurrection-anglican-church/admin",
+  },
   collections: {
     posts: collection({
       label: "Posts",
