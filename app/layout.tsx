@@ -5,6 +5,7 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import ConditionalLayout from "@/app/components/ConditionalLayout";
 import RefTagger from "@/app/components/RefTagger";
 import Footer from "./components/Footer";
+import SpecialAnnouncements from "./components/SpecialAnnouncements";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -21,6 +22,7 @@ export default function RootLayout({
       <body>
         <ConditionalLayout footer={<Footer />}>{children}</ConditionalLayout>
         <RefTagger />
+        <SpecialAnnouncements />
       </body>
     </html>
   );

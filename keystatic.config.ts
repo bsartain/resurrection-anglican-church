@@ -299,5 +299,23 @@ export default config({
         ),
       },
     }),
+    specialAnnouncements: singleton({
+      label: "Special Announcements",
+      path: "content/special-announcements",
+      schema: {
+        announcement: fields.text({
+          label: "Title",
+        }),
+        content: fields.document({
+          label: "Content",
+          formatting: true,
+          links: true,
+        }),
+        showAnnouncement: fields.checkbox({
+          label: "Show Announcement",
+          defaultValue: false,
+        }),
+      },
+    }),
   },
 });

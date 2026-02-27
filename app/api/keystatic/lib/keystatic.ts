@@ -19,3 +19,7 @@ export async function getHomePageData() {
 export async function getPageData(slug: string) {
   return await reader.collections.pages.read(slug);
 }
+
+export async function getSpecialAnnoucements() {
+  return await reader.singletons.specialAnnouncements.read();
+}
