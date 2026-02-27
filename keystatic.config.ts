@@ -1,9 +1,13 @@
 import { config, collection, fields, singleton } from "@keystatic/core";
 
 export default config({
-  storage: {
-    kind: "local",
-  },
+  storage:
+    process.env.NODE_ENV === "development"
+      ? { kind: "local" }
+      : {
+          kind: "github",
+          repo: "bsartain/resurrection-anglican-church",
+        },
   collections: {
     posts: collection({
       label: "Posts",
