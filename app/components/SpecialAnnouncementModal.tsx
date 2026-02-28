@@ -15,18 +15,29 @@ const SpecialAnnouncementModal = ({
 }) => {
   const [showModal, setShowModal] = useState(false);
   useEffect(() => {
-    if (showAnnouncement !== undefined) {
-      setShowModal(showAnnouncement);
+    const hasSeen = sessionStorage.getItem("announcementSeen");
+    if (showAnnouncement && !hasSeen) {
+      setShowModal(true);
     }
   }, []);
+
+  const handleClose = () => {
+    sessionStorage.setItem("announcementSeen", "true");
+    setShowModal(false);
+  };
   return (
     <Modal show={showModal} onHide={() => setShowModal(false)} size="lg" className="special-announcement-container">
-      <Modal.Header closeButton>
-        <Modal.Title>{announcement}</Modal.Title>
-      </Modal.Header>
       <Modal.Body>
-        modal render
-        {content ? <DocumentRenderer document={content} /> : null}
+        <div className="d-flex justify-content-end">
+          <i className="bi bi-x-circle" onClick={() => handleClose()} aria-label="Close announcement"></i>
+        </div>
+
+        <div className="d-flex justify-content-center">
+          <i className="bi bi-info-circle-fill"></i>
+        </div>
+        <h2 className="text-center">{announcement}</h2>
+
+        <div className="p-5">{content ? <DocumentRenderer document={content} /> : null}</div>
       </Modal.Body>
     </Modal>
   );

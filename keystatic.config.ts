@@ -311,6 +311,11 @@ export default config({
           formatting: true,
           links: true,
         }),
+        image: fields.image({
+          label: "Image",
+          directory: "public/images/specialAnnouncement",
+          publicPath: "/images/home",
+        }),
         showAnnouncement: fields.checkbox({
           label: "Show Announcement",
           defaultValue: false,
