@@ -175,6 +175,19 @@ export default config({
               publicPath: "/images/home",
               validation: { isRequired: true },
             }),
+            images: fields.array(
+              fields.image({
+                label: "Image",
+                directory: "public/images/home",
+                publicPath: "/images/home",
+                validation: { isRequired: true },
+              }),
+              {
+                label: "Images",
+                validation: { length: { max: 3 } },
+                itemLabel: () => `Image`,
+              }
+            ),
           },
           { label: "Section 3" }
         ),
@@ -201,6 +214,19 @@ export default config({
               publicPath: "/images/home",
               validation: { isRequired: true },
             }),
+            images: fields.array(
+              fields.image({
+                label: "Image",
+                directory: "public/images/home",
+                publicPath: "/images/home",
+                validation: { isRequired: true },
+              }),
+              {
+                label: "Images",
+                validation: { length: { max: 3 } },
+                itemLabel: () => `Image`,
+              }
+            ),
           },
           { label: "Section 4" }
         ),

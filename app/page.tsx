@@ -73,6 +73,7 @@ export default async function Home() {
           buttonPageLink: section3.buttonPageLink,
           buttonText: section3.buttonText,
           image: section3.image,
+          images: section3.images,
           content: await section3.description(),
         }}
         section4={{
@@ -80,6 +81,7 @@ export default async function Home() {
           buttonPageLink: section4.buttonPageLink,
           buttonText: section4.buttonText,
           image: section4.image,
+          images: section4.images,
           content: await section4.description(),
         }}
         section5={{

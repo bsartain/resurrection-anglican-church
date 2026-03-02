@@ -24,6 +24,7 @@ interface Section2WithContent {
   buttonText: string;
   image: string;
   content: DocumentElement[];
+  images?: readonly string[];
 }
 
 interface Section6 {
@@ -49,6 +50,7 @@ interface Props {
 }
 
 export default function HomeSections({ section1, section2, section3, section4, section5, section6, section7 }: Props) {
+  console.log("🚀 ~ HomeSections ~ section3:", section3);
   const sectionOneImageCaption = (index: number) => {
     if (index === 0) return "Experience the Trinity";
     if (index === 1) return "Embody Community";
@@ -126,10 +128,19 @@ export default function HomeSections({ section1, section2, section3, section4, s
             </div>
             <div className="grid-section-images">
               <div className="top-section-image-container">
-                <div className="top-section-image rounded me-3" style={{ backgroundImage: `url("/images/pages/altar-girl.jpg")` }}></div>
-                <div className="top-section-image rounded" style={{ backgroundImage: `url("/images/pages/bill-danial-communion.jpg")` }}></div>
+                <div
+                  className="top-section-image rounded me-3"
+                  style={{ backgroundImage: `url(${section3?.images?.[0] ?? "/images/pages/altar-girl.jpg"})` }}
+                ></div>
+                <div
+                  className="top-section-image rounded"
+                  style={{ backgroundImage: `url(${section3?.images?.[1] ?? "/images/pages/altar-girl.jpg"})` }}
+                ></div>
               </div>
-              <div className="bottom-section-image rounded mt-3" style={{ backgroundImage: `url("${section3.image}")` }}></div>
+              <div
+                className="bottom-section-image rounded mt-3"
+                style={{ backgroundImage: `url(${section3?.images?.[2] ?? "/images/pages/altar-girl.jpg"})` }}
+              ></div>
             </div>
           </div>
         </Container>
@@ -139,7 +150,23 @@ export default function HomeSections({ section1, section2, section3, section4, s
       <RevealSection id="story-4" className="home-section dark-background-home-section" image="/images/pages/icon-resurrection.jpg" opacity={0.02}>
         <Container>
           <div className="story-container">
-            <div className="story-image rounded mb-5" style={{ backgroundImage: `url("${section4.image}")` }} />
+            {/* <div className="story-image rounded mb-5" style={{ backgroundImage: `url("${section4.image}")` }} /> */}
+            <div className="grid-section-images">
+              <div className="top-section-image-container">
+                <div
+                  className="top-section-image rounded me-3"
+                  style={{ backgroundImage: `url(${section4?.images?.[0] ?? "/images/pages/altar-girl.jpg"})` }}
+                ></div>
+                <div
+                  className="top-section-image rounded"
+                  style={{ backgroundImage: `url(${section4?.images?.[1] ?? "/images/pages/altar-girl.jpg"})` }}
+                ></div>
+              </div>
+              <div
+                className="bottom-section-image rounded mt-3"
+                style={{ backgroundImage: `url(${section4?.images?.[2] ?? "/images/pages/altar-girl.jpg"})` }}
+              ></div>
+            </div>
             <div>
               <h2>{section4.title}</h2>
               <DocumentRenderer document={section4.content} />

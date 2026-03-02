@@ -10,9 +10,17 @@ section2:
 section3:
   title: We Invite You Into God's Story
   image: /images/home/section3/image.jpeg
+  images:
+    - /images/home/section3/images/0.jpg
+    - /images/home/section3/images/1.jpg
+    - /images/home/section3/images/2.jpg
 section4:
   title: What Happens When We Gather
   image: /images/home/section4/image.jpg
+  images:
+    - /images/home/section4/images/0.jpg
+    - /images/home/section4/images/1.jpg
+    - /images/home/section4/images/2.jpg
 section5:
   title: Resurrection Kids!
   buttonPageLink: /kids
