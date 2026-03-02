@@ -25,6 +25,7 @@ export default config({
     }),
     pages: collection({
       label: "Pages",
+      path: "content/pages/*/",
       slugField: "title",
       schema: {
         title: fields.slug({ name: { label: "Title" } }),
