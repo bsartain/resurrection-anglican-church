@@ -50,7 +50,6 @@ interface Props {
 }
 
 export default function HomeSections({ section1, section2, section3, section4, section5, section6, section7 }: Props) {
-  console.log("🚀 ~ HomeSections ~ section3:", section3);
   const sectionOneImageCaption = (index: number) => {
     if (index === 0) return "Experience the Trinity";
     if (index === 1) return "Embody Community";
