@@ -10,7 +10,6 @@ interface HeroImageProps {
 
 const HeroImage = ({ image, children }: HeroImageProps) => {
   const pathname = usePathname();
-  console.log(pathname);
   return (
     <div className="hero-image-container" style={{ backgroundImage: `url(${image})` }}>
       <div className="overlay"></div>

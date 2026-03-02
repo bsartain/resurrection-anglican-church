@@ -19,7 +19,6 @@ function ContactForm() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("FORM: ", form);
     setSpinner(true);
     try {
       const response = await fetch("/api/send-mail", {

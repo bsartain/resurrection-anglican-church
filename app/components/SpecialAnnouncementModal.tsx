@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Modal } from "react-bootstrap";
 import { DocumentRenderer } from "@keystatic/core/renderer";
 import { DocumentElement } from "@keystatic/core";
@@ -13,13 +13,10 @@ const SpecialAnnouncementModal = ({
   content: DocumentElement[] | undefined;
   showAnnouncement: boolean | undefined;
 }) => {
-  const [showModal, setShowModal] = useState(false);
-  useEffect(() => {
+  const [showModal, setShowModal] = useState(() => {
     const hasSeen = sessionStorage.getItem("announcementSeen");
-    if (showAnnouncement && !hasSeen) {
-      setShowModal(true);
-    }
-  }, []);
+    return showAnnouncement && !hasSeen;
+  });
 
   const handleClose = () => {
     sessionStorage.setItem("announcementSeen", "true");
