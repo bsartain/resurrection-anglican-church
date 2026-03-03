@@ -2,40 +2,10 @@ import HeroImage from "../components/HeroImage";
 import { getPageData } from "../api/keystatic/lib/keystatic";
 import { Container } from "react-bootstrap";
 import { DocumentRenderer } from "@keystatic/core/renderer";
-import { DocumentElement } from "@keystatic/core";
 import RevealSection from "../components/RevealSection";
 import BookCarousel from "../components/BooksCarousel";
-
-interface ResourcesModel {
-  title: string;
-  image: string | null;
-  content: () => Promise<DocumentElement[]>;
-  subsections: readonly {
-    readonly title: string;
-    readonly content: () => Promise<DocumentElement[]>;
-    readonly image: string | null;
-    readonly imageDirection: "right" | "left";
-  }[];
-  multipleImages: {
-    discriminant?: boolean | null;
-    value: readonly Value[] | null;
-  };
-}
-
-interface Value {
-  image: string | null;
-  caption: string;
-  subCaption: string;
-  category: string;
-  link: string;
-}
-
-interface Content {
-  image: string | null;
-  imageDirection: string;
-  title: string;
-  content: () => Promise<DocumentElement[]>;
-}
+import { buildMetadata } from "../lib/buildMetadata";
+import { PageModel, Content, Value } from "../models/pageModel";
 
 const LeftImage: React.FC<{ sectionContent: Content }> = async ({ sectionContent }) => {
   const content = await sectionContent.content();
@@ -83,7 +53,7 @@ const RightImage: React.FC<{ sectionContent: Content }> = async ({ sectionConten
 };
 
 export default async function Resources() {
-  const pageData = (await getPageData("resources")) as ResourcesModel | null;
+  const pageData = (await getPageData("resources")) as PageModel | null;
   const pageContent = await pageData?.content();
 
   const bookTitles = pageData?.multipleImages?.value ? pageData.multipleImages.value.filter((item: Value) => item.category === "book") : [];
@@ -130,4 +100,15 @@ export default async function Resources() {
       </div>
     </div>
   );
+}
+
+export async function generateMetadata() {
+  const pageData = (await getPageData("resources")) as PageModel | null;
+
+  return buildMetadata({
+    title: pageData?.title,
+    excerpt: pageData?.excerpt,
+    image: pageData?.image,
+    path: "/resources",
+  });
 }

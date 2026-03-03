@@ -2,6 +2,7 @@ import HeroVideo from "./components/HeroVideo";
 import { getHomePageData } from "./api/keystatic/lib/keystatic";
 import HomeSections from "./components/HomeSections";
 import { DocumentElement } from "@keystatic/core";
+import { buildMetadata } from "./lib/buildMetadata";
 
 export interface HomePageData {
   section1: Section1;
@@ -107,4 +108,16 @@ export default async function Home() {
       />
     </div>
   );
+}
+
+export async function generateMetadata() {
+  const homePageData = await getHomePageData();
+
+  return buildMetadata({
+    title: "Resurrection Anglican Church. Ancient Liturgy | Modern Hearts | Rock Hill, SC",
+    excerpt:
+      "At Resurrection Anglican Church, ancient liturgy meets modern hearts, drawing us into a living encounter with God the Father, Son, and Holy Spirit.",
+    image: "/images/resurrection-meta.png",
+    path: "/",
+  });
 }

@@ -29,6 +29,9 @@ export default config({
       slugField: "title",
       schema: {
         title: fields.slug({ name: { label: "Title" } }),
+        excerpt: fields.text({
+          label: "Excerpt",
+        }),
         image: fields.image({
           label: "Featured Image",
           directory: "public/images/pages",

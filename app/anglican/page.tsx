@@ -2,28 +2,9 @@ import HeroImage from "../components/HeroImage";
 import { getPageData } from "../api/keystatic/lib/keystatic";
 import { Container } from "react-bootstrap";
 import { DocumentRenderer } from "@keystatic/core/renderer";
-import { DocumentElement } from "@keystatic/core";
 import RevealSection from "../components/RevealSection";
-
-interface AnglicanModel {
-  title: string;
-  image: string | null;
-  content: () => Promise<DocumentElement[]>;
-  subsections: readonly {
-    readonly title: string;
-    readonly content: () => Promise<DocumentElement[]>;
-    readonly image: string | null;
-    readonly imageDirection: "right" | "left";
-  }[];
-  multipleImages: object;
-}
-
-interface Content {
-  image: string | null;
-  imageDirection: string;
-  title: string;
-  content: () => Promise<DocumentElement[]>;
-}
+import { buildMetadata } from "@/app/lib/buildMetadata";
+import { PageModel, Content } from "../models/pageModel";
 
 const LeftImage: React.FC<{ sectionContent: Content }> = async ({ sectionContent }) => {
   const content = await sectionContent.content();
@@ -66,7 +47,7 @@ const RightImage: React.FC<{ sectionContent: Content }> = async ({ sectionConten
 };
 
 export default async function Anglican() {
-  const pageData = (await getPageData("anglican")) as AnglicanModel | null;
+  const pageData = (await getPageData("anglican")) as PageModel | null;
   const pageContent = await pageData?.content();
 
   return (
@@ -100,4 +81,15 @@ export default async function Anglican() {
       </div>
     </div>
   );
+}
+
+export async function generateMetadata() {
+  const pageData = (await getPageData("anglican")) as PageModel | null;
+
+  return buildMetadata({
+    title: pageData?.title,
+    excerpt: pageData?.excerpt,
+    image: pageData?.image,
+    path: "/anglican",
+  });
 }

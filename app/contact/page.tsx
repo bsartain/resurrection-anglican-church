@@ -5,36 +5,8 @@ import { DocumentRenderer } from "@keystatic/core/renderer";
 import { Container } from "react-bootstrap";
 import ContactForm from "../components/ContactForm";
 import RevealSection from "../components/RevealSection";
-
-interface ContactModel {
-  title: string;
-  image: string | null;
-  content: () => Promise<DocumentElement[]>;
-  subsections: readonly {
-    readonly title: string;
-    readonly content: () => Promise<DocumentElement[]>;
-    readonly image: string | null;
-    readonly imageDirection: "right" | "left";
-  }[];
-  multipleImages:
-    | {
-        readonly discriminant: true;
-        readonly value: readonly {
-          readonly image: string | null;
-          readonly caption: string;
-          readonly subCaption: string;
-        }[];
-      }
-    | {
-        readonly discriminant: false;
-        readonly value: null;
-      };
-}
-
-interface ContactSubSection {
-  title: string | null;
-  content: () => Promise<DocumentElement[]>;
-}
+import { buildMetadata } from "../lib/buildMetadata";
+import { PageModel, Content } from "../models/pageModel";
 
 type GoogleMapItem = DocumentElement & {
   type: string;
@@ -42,8 +14,8 @@ type GoogleMapItem = DocumentElement & {
 };
 
 export default async function Contact() {
-  const pageData = (await getPageData("contact")) as ContactModel | null;
-  const googleMapSubsection = pageData?.subsections.find((item: ContactSubSection) => item.title?.includes("Google"));
+  const pageData = (await getPageData("contact")) as PageModel | null;
+  const googleMapSubsection = pageData?.subsections.find((item: Content) => item.title?.includes("Google"));
   const googleMapArray = await googleMapSubsection?.content();
 
   return (
@@ -54,7 +26,7 @@ export default async function Contact() {
         <Container className="mt-5 mb-5 contact-component-container">
           <div className="contact-info">
             {pageData?.subsections
-              ? pageData.subsections.map(async (item: ContactSubSection, index: number) => {
+              ? pageData.subsections.map(async (item: Content, index: number) => {
                   const content = await item.content();
                   if (item.title && !item.title.includes("Google")) {
                     return (
@@ -87,4 +59,15 @@ export default async function Contact() {
         : null}
     </div>
   );
+}
+
+export async function generateMetadata() {
+  const pageData = (await getPageData("contact")) as PageModel | null;
+
+  return buildMetadata({
+    title: pageData?.title,
+    excerpt: pageData?.excerpt,
+    image: pageData?.image,
+    path: "/contact",
+  });
 }

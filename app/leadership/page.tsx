@@ -1,35 +1,11 @@
 import HeroImage from "../components/HeroImage";
 import { getPageData } from "../api/keystatic/lib/keystatic";
 import { DocumentRenderer } from "@keystatic/core/renderer";
-import { DocumentElement } from "@keystatic/core";
 import { Container } from "react-bootstrap";
 import CoffeeDateButton from "../components/CoffeeDateButton";
 import RevealSection from "../components/RevealSection";
-
-interface LeadershipModel {
-  title: string;
-  image: string | null;
-  content: () => Promise<DocumentElement[]>;
-  subsections: readonly {
-    readonly title: string;
-    readonly content: () => Promise<DocumentElement[]>;
-    readonly image: string | null;
-    readonly imageDirection: "right" | "left";
-  }[];
-  multipleImages:
-    | {
-        readonly discriminant: true;
-        readonly value: readonly {
-          readonly image: string | null;
-          readonly caption: string;
-          readonly subCaption: string;
-        }[];
-      }
-    | {
-        readonly discriminant: false;
-        readonly value: null;
-      };
-}
+import { buildMetadata } from "../lib/buildMetadata";
+import { PageModel } from "../models/pageModel";
 
 interface Leadership {
   image: string | null;
@@ -52,7 +28,7 @@ const vestryMembers = [
 ];
 
 export default async function LeadershipPage() {
-  const pageData = (await getPageData("leadership")) as LeadershipModel | null;
+  const pageData = (await getPageData("leadership")) as PageModel | null;
   const pageContent = await pageData?.content();
 
   let parishLeaders: Leadership[] = [];
@@ -128,4 +104,15 @@ export default async function LeadershipPage() {
       </RevealSection>
     </div>
   );
+}
+
+export async function generateMetadata() {
+  const pageData = (await getPageData("leadership")) as PageModel | null;
+
+  return buildMetadata({
+    title: pageData?.title,
+    excerpt: pageData?.excerpt,
+    image: pageData?.image,
+    path: "/leadership",
+  });
 }

@@ -2,28 +2,9 @@ import { getPageData } from "../api/keystatic/lib/keystatic";
 import HeroImage from "../components/HeroImage";
 import { Container } from "react-bootstrap";
 import { DocumentRenderer } from "@keystatic/core/renderer";
-import { DocumentElement } from "@keystatic/core";
 import RevealSection from "../components/RevealSection";
-
-interface KidsPage {
-  title: string;
-  image: string | null;
-  content: () => Promise<DocumentElement[]>;
-  subsections: readonly {
-    readonly title: string;
-    readonly content: () => Promise<DocumentElement[]>;
-    readonly image: string | null;
-    readonly imageDirection: "right" | "left";
-  }[];
-  multipleImages: object;
-}
-
-interface Content {
-  image: string | null;
-  imageDirection: string;
-  title: string;
-  content: () => Promise<DocumentElement[]>;
-}
+import { buildMetadata } from "../lib/buildMetadata";
+import { PageModel, Content } from "../models/pageModel";
 
 const LeftImage: React.FC<{ sectionContent: Content }> = async ({ sectionContent }) => {
   const content = await sectionContent.content();
@@ -64,7 +45,7 @@ const RightImage: React.FC<{ sectionContent: Content }> = async ({ sectionConten
 };
 
 export default async function Kids() {
-  const pageData = (await getPageData("kids")) as KidsPage | null;
+  const pageData = (await getPageData("kids")) as PageModel | null;
   const pageContent = await pageData?.content();
 
   return (
@@ -111,4 +92,15 @@ export default async function Kids() {
         : null}
     </div>
   );
+}
+
+export async function generateMetadata() {
+  const pageData = (await getPageData("kids")) as PageModel | null;
+
+  return buildMetadata({
+    title: pageData?.title,
+    excerpt: pageData?.excerpt,
+    image: pageData?.image,
+    path: "/kids",
+  });
 }

@@ -2,6 +2,7 @@ import HeroImage from "../components/HeroImage";
 import { getPageData } from "../api/keystatic/lib/keystatic";
 import { DocumentRenderer } from "@keystatic/core/renderer";
 import RevealSection from "../components/RevealSection";
+import { buildMetadata } from "../lib/buildMetadata";
 
 export default async function Gospel() {
   const pageData = await getPageData("gospel");
@@ -20,4 +21,15 @@ export default async function Gospel() {
       </div>
     </div>
   );
+}
+
+export async function generateMetadata() {
+  const pageData = await getPageData("gospel");
+
+  return buildMetadata({
+    title: pageData?.title,
+    excerpt: pageData?.excerpt,
+    image: pageData?.image,
+    path: "/gospel",
+  });
 }
