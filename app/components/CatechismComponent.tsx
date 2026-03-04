@@ -1,7 +1,6 @@
 import catechismData from "@/app/lib/catechism.json";
 
 const CatechismComponent = () => {
-  console.log("PARTS: ", catechismData.parts);
   return (
     <div className="catechism-container">
       {catechismData.parts.map((item: any, index: number) => {
@@ -12,7 +11,6 @@ const CatechismComponent = () => {
               <hr />
             </div>
             {item.sections.map((item: any, index: number) => {
-              console.log("SECTION: ", index, item);
               return (
                 <div key={index}>
                   <h2 className="section-header">{item.section}</h2>
