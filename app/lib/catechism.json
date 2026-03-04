@@ -1,0 +1,1612 @@
+{
+  "title": "To Be a Christian: An Anglican Catechism",
+  "edition": "Approved Edition",
+  "publisher": "Crossway",
+  "location": "Wheaton, Illinois",
+  "year": 2020,
+  "organization": "The Anglican Church in North America",
+  "isbn": {
+    "hardcover": "978-1-4335-6677-6",
+    "epub": "978-1-4335-6680-6",
+    "pdf": "978-1-4335-6678-3",
+    "mobi": "978-1-4335-6679-0"
+  },
+  "editors": {
+    "theological_editor": "The Reverend Canon Dr. J. I. Packer",
+    "executive_editor": "The Reverend Dr. Joel Scandrett"
+  },
+  "committees": {
+    "catechesis_committee": [
+      "Mr. Kirk Botula",
+      "Mrs. Taryn Bullis",
+      "The Reverend Brian Foos",
+      "The Reverend Dr. Jack Gabig",
+      "The Reverend Canon Arthur Going",
+      "Dr. Philip Harrold",
+      "The Reverend Dr. Stephen Lake",
+      "Mrs. Kristy Leaseburg",
+      "The Reverend Lee Nelson",
+      "The Reverend Tripp Prince",
+      "The Reverend Ben Roberts",
+      "The Reverend Dr. Joel Scandrett",
+      "Mrs. Bronwyn Short",
+      "Dr. Leslie Thyberg"
+    ],
+    "writers_consultants": [
+      "Mr. Timothy Belcher",
+      "The Reverend John Boonzaaijer",
+      "The Reverend Dr. Susan Bubbers",
+      "The Reverend Dr. Charles Erlandson",
+      "The Reverend Randall Foster",
+      "The Reverend Mark Galli",
+      "Dr. Sarah Lebhar Hall",
+      "Dr. Gary Holt",
+      "The Reverend Dr. Toby Karlowicz",
+      "The Very Reverend Dr. Robert Munday",
+      "The Very Reverend Dr. Stephen Noll",
+      "Dr. Daniel Olson",
+      "The Reverend Canon Dr. J. I. Packer",
+      "Dr. Ann Paton",
+      "Mrs. Amelia Schmotzer",
+      "The Very Reverend Dr. Justyn Terry",
+      "Dr. William Witt"
+    ],
+    "bishops_review_committee": [
+      "The Right Reverend Dr. Bill Atwood",
+      "The Most Reverend Dr. Foley Beach",
+      "The Right Reverend John Guernsey",
+      "The Right Reverend Neil Lebhar",
+      "The Right Reverend Dr. Francis Lyons",
+      "The Right Reverend Dr. Eric Menees",
+      "The Right Reverend Dr. Ray Sutton",
+      "The Right Reverend Stephen Wood"
+    ]
+  },
+  "parts": [
+    {
+      "part": 1,
+      "title": "Beginning with Christ",
+      "sections": [
+        {
+          "section": "The Gospel",
+          "type": "narrative",
+          "subsections": ["Turning to Christ", "Next Steps"],
+          "prayers": [
+            {
+              "title": "Prayer of Commitment",
+              "text": "Almighty Father, I confess that I have sinned against you in my thoughts, words, and actions. I am truly sorry and humbly repent. Thank you for forgiving my sins through the death of your Son, Jesus. I turn to you and give you my life. Fill and strengthen me with your Holy Spirit to love you, to follow Jesus as my Lord in the fellowship of his Church, and to become more like him each day. Amen."
+            },
+            {
+              "title": "Prayer for Those Seeking",
+              "text": "O God, please reveal yourself to me. Draw near to me as I seek you. Open my eyes to see your truth. Show me those things in my mind and heart that keep me from faith in you. Help me to know and trust Jesus Christ. And lead me to those people who can help me as I seek to know you."
+            }
+          ]
+        },
+        {
+          "section": "Salvation",
+          "type": "qa",
+          "prayers": [
+            {
+              "title": "A Prayer for God's Love",
+              "text": "Almighty God, you so loved the world that you gave your only Son, that whoever believes in him would not perish but have eternal life: Pour into our hearts that most excellent gift of love by your Holy Spirit, that we may delight in the inheritance that is ours as your sons and daughters, and live to your praise and glory, through Jesus Christ. Amen."
+            }
+          ],
+          "questions": [
+            {
+              "number": 1,
+              "question": "What is the human condition?",
+              "answer": "Though created good and made for fellowship with our Creator, humanity has been cut off from God by self-centered rebellion against him, leading to lawless living, guilt, shame, death, and the fear of judgment. This is the state of sin.",
+              "scripture": ["Genesis 3:1-13", "Psalm 14:1-3", "Matthew 15:10-20", "Romans 1:18-23", "Romans 3:9-23"]
+            },
+            {
+              "number": 2,
+              "question": "What is the Gospel?",
+              "answer": "The Gospel is the good news that God loves the world and offers salvation from sin through his Son, Jesus Christ.",
+              "scripture": ["Psalm 103:1-13", "Isaiah 53:4-5", "John 3:16-17", "1 Corinthians 15:1-5"]
+            },
+            {
+              "number": 3,
+              "question": "How does sin affect you?",
+              "answer": "Sin alienates me from God, my neighbor, God's good creation, and myself. Apart from Christ, I am hopeless, guilty, lost, helpless, and walking in the way of death.",
+              "scripture": ["Genesis 3:14-19", "Psalm 38", "Isaiah 53:6", "Isaiah 59:1-2", "Romans 6:20-23"]
+            },
+            {
+              "number": 4,
+              "question": "What is the way of death?",
+              "answer": "The way of death is a life without God's love and Holy Spirit, a life controlled by things that cannot bring me eternal joy, leading only to darkness, misery, and eternal condemnation.",
+              "scripture": ["Genesis 2:16-17", "Deuteronomy 28:15-19", "Proverbs 14:12", "John 8:34", "Romans 1:24-25"]
+            },
+            {
+              "number": 5,
+              "question": "Can you save yourself from the way of sin and death?",
+              "answer": "No. I have no power to save myself, for sin has corrupted my conscience, confused my mind, and captured my will. Only God can save me.",
+              "scripture": ["Psalm 33:13-19", "Isaiah 43:8-13", "John 3:1-8", "Ephesians 2:1-9"]
+            },
+            {
+              "number": 6,
+              "question": "How does God save you?",
+              "answer": "God forgives my sins and reconciles me to himself through his Son, Jesus Christ, whom he has given to the world as an undeserved gift of love.",
+              "scripture": ["John 3:16", "Psalm 34", "Zechariah 12:10-13:2", "Romans 3:23-26"]
+            },
+            {
+              "number": 7,
+              "question": "Why does God save you?",
+              "answer": "Because he loves me, God saves me from sin and judgment, so that I may love and serve him for his glory.",
+              "scripture": ["Psalm 98", "Isaiah 42:5-9", "John 3:17", "Romans 5:8-10", "2 Corinthians 5:18-21", "Ephesians 1:3-14"]
+            },
+            {
+              "number": 8,
+              "question": "Who is Jesus Christ?",
+              "answer": "Jesus is the eternal Son of God, the Savior of the world. Fully divine, he took on our human nature, died on the Cross for our sins, rose from the dead, ascended into heaven, and now rules as Lord and King over all creation.",
+              "scripture": ["Numbers 21:4-9", "Psalm 110", "John 3:13-15", "Philippians 2:5-11", "Colossians 1:15-20"]
+            },
+            {
+              "number": 9,
+              "question": "Is there any other way of salvation?",
+              "answer": "No. The apostle Peter said of Jesus, 'There is salvation in no one else' (Acts 4:12). Jesus is the only one who can save me and reconcile me to God.",
+              "scripture": ["Psalm 2", "Isaiah 42:1-4", "John 14:5-6", "1 Timothy 2:5-6"]
+            },
+            {
+              "number": 10,
+              "question": "How should you respond to the Gospel of Jesus Christ?",
+              "answer": "As soon as I receive and believe the Gospel, I should repent of my sins, put faith in Jesus Christ as my Savior and Lord, and prepare to be baptized.",
+              "scripture": ["2 Corinthians 6:2", "Psalm 32", "Isaiah 55:6-7", "Acts 2:37-39"]
+            },
+            {
+              "number": 11,
+              "question": "What does it mean for you to repent?",
+              "answer": "To repent means that I have a change of heart, turning from sinfully serving myself to serving God as I follow Jesus Christ. I need God's help to make this change.",
+              "scripture": ["Psalm 51:16-17", "Isaiah 57:15-19", "Acts 3:19-21", "1 John 2:1-2"]
+            },
+            {
+              "number": 12,
+              "question": "What does it mean for you to have faith?",
+              "answer": "To have faith means that I believe the Gospel is the truth: that Jesus died for my sins, rose from the dead, and rules over my life. Therefore, I entrust myself to him as my Savior, and I obey him as my Lord.",
+              "scripture": ["Psalm 40:1-10", "Proverbs 3:5-8", "John 1:9-13", "Romans 10:9-10", "Hebrews 11:1,6"]
+            },
+            {
+              "number": 13,
+              "question": "How can you repent and put your faith in Jesus Christ?",
+              "answer": "With God's help, I can acknowledge and turn from my sins, receive the gift of God's grace in Jesus Christ, and embrace the new life he freely gives me.",
+              "scripture": ["Psalm 86:1-7", "Joel 2:32", "Acts 16:30-34", "Romans 10:11-13", "Hebrews 12:1-2"]
+            },
+            {
+              "number": 14,
+              "question": "What should you do as the sign of your repentance and faith?",
+              "answer": "After receiving instruction in the faith, I should be baptized into the death and resurrection of Jesus Christ, thus joining his Body, the Church. If I have already been baptized, I should confess my sins, seek the guidance of a minister, affirm the promises made at my Baptism, and take my place as a member of the Church.",
+              "scripture": ["Psalm 51:5-7", "Ezekiel 36:25-27", "Matthew 28:19-20", "1 Corinthians 12:13", "1 Peter 3:18-22"]
+            },
+            {
+              "number": 15,
+              "question": "What does God grant in your new life in Christ?",
+              "answer": "God grants me reconciliation with him, forgiveness of my sins, union with him in Christ, adoption into his family, citizenship in his kingdom, new life in the Holy Spirit, and the promise of eternal life.",
+              "scripture": [
+                "2 Corinthians 5:17-19",
+                "Colossians 1:13-14",
+                "Romans 6:3-5",
+                "Galatians 4:4-7",
+                "Ephesians 2:19-21",
+                "Titus 3:4-5",
+                "John 3:16",
+                "1 John 5:12"
+              ]
+            },
+            {
+              "number": 16,
+              "question": "What does God desire to accomplish in your life in Christ?",
+              "answer": "God desires to free me from captivity to sin and transform me into the image of Jesus Christ, by the power of his Holy Spirit.",
+              "scripture": ["Exodus 33:18-23", "Psalm 27:4,7-14", "Matthew 17:1-9", "Romans 6:5-11", "2 Corinthians 3:12-18"]
+            },
+            {
+              "number": 17,
+              "question": "By what means will God transform you into the image of Jesus Christ?",
+              "answer": "I will be transformed within the life of the Church through reading Scripture and receiving the sacraments, through worship and prayer, and through fellowship with God's people and loving witness to the world.",
+              "scripture": ["Deuteronomy 6:1-9", "Psalm 1", "Acts 2:42-47", "Hebrews 10:23-25"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "part": 2,
+      "title": "Believing in Christ",
+      "intro": "The Apostles' Creed and the Life of Faith",
+      "sections": [
+        {
+          "section": "Concerning the Creeds",
+          "type": "qa",
+          "questions": [
+            {
+              "number": 18,
+              "question": "What is a creed?",
+              "answer": "A creed is a statement of faith. The word 'creed' comes from the Latin credo, which means 'I believe.'",
+              "scripture": ["Deuteronomy 11:18-23", "Deuteronomy 26:1-11", "John 20:24-29", "1 John 5:9-12"]
+            },
+            {
+              "number": 19,
+              "question": "What is the purpose of the creeds?",
+              "answer": "The purpose of the creeds is to declare and safeguard for all generations essential truths about God, the Church, and the world, as revealed in Holy Scripture.",
+              "scripture": ["Deuteronomy 7:9-11", "Psalm 145:4-13", "John 20:30-31", "2 Timothy 1:13-14", "Hebrews 2:1-4"]
+            },
+            {
+              "number": 20,
+              "question": "What does belief in the creeds signify?",
+              "answer": "Belief in the creeds signifies acceptance of God's revealed truth and the intention to live by it. To reject any element of the creeds signifies a departure from the Christian faith.",
+              "scripture": ["Matthew 16:13-20", "2 Timothy 3:14-15", "2 Timothy 4:1-5", "James 2:10-26"]
+            },
+            {
+              "number": 21,
+              "question": "Which creeds has this church received?",
+              "answer": "This church believes the Apostles' Creed, the Nicene Creed, and the Athanasian Creed.",
+              "scripture": ["Articles of Religion, 8"]
+            },
+            {
+              "number": 22,
+              "question": "Why do you receive and believe these creeds?",
+              "answer": "I receive and believe these creeds with the Church because they are grounded in Holy Scripture and are faithful expressions of its teaching.",
+              "scripture": ["Proverbs 13:14", "1 Corinthians 15:3-11", "Philippians 2:5-11"]
+            },
+            {
+              "number": 23,
+              "question": "Why should you know these creeds?",
+              "answer": "I should know these creeds because they state the essential beliefs of the Christian faith.",
+              "scripture": ["Deuteronomy 11:18-19", "1 Timothy 6:20-21", "2 Timothy 1:13-14"]
+            },
+            {
+              "number": 24,
+              "question": "What is the Apostles' Creed?",
+              "answer": "I believe in God, the Father almighty, creator of heaven and earth. I believe in Jesus Christ, his only Son, our Lord. He was conceived by the Holy Spirit and born of the Virgin Mary. He suffered under Pontius Pilate, was crucified, died, and was buried. He descended to the dead. On the third day he rose again. He ascended into heaven, and is seated at the right hand of the Father. He will come again to judge the living and the dead. I believe in the Holy Spirit, the holy catholic Church, the communion of saints, the forgiveness of sins, the resurrection of the body, and the life everlasting. Amen.",
+              "scripture": []
+            }
+          ]
+        },
+        {
+          "section": "Concerning Holy Scripture",
+          "type": "qa",
+          "questions": [
+            {
+              "number": 25,
+              "question": "What is Holy Scripture?",
+              "answer": "Holy Scripture is 'God's Word written,' given by the Holy Spirit through prophets and apostles as the revelation of God and his acts in human history, and is therefore the Church's final authority in all matters of faith and practice.",
+              "scripture": ["Psalm 19:7-11", "Jeremiah 36:1-8", "2 Timothy 3:14-17", "Revelation 1:1-11"]
+            },
+            {
+              "number": 26,
+              "question": "What books are contained in Holy Scripture?",
+              "answer": "The thirty-nine books of the Old Testament and the twenty-seven books of the New Testament together form the whole of Holy Scripture.",
+              "scripture": ["Articles of Religion, 6"]
+            },
+            {
+              "number": 27,
+              "question": "What is in the Old Testament?",
+              "answer": "The Old Testament proclaims God's creation of all things; mankind's original disobedience; God's calling of Israel to be his people; his Law, wisdom, and saving deeds; and the teaching of his prophets. The Old Testament bears witness to Christ, revealing God's intention to redeem and reconcile the world through Christ.",
+              "scripture": ["Luke 24:44", "1 Corinthians 10:1-4", "Hebrews 11"]
+            },
+            {
+              "number": 28,
+              "question": "What is in the New Testament?",
+              "answer": "The New Testament proclaims Jesus Christ's birth, life, ministry, death, resurrection, and ascension; the Church's early ministry; the teaching of the apostles; the revelation of Christ's eternal kingdom; and the promise of his return.",
+              "scripture": ["Luke 24:45-49", "Acts 1:1-11", "Philippians 2:5-11"]
+            },
+            {
+              "number": 29,
+              "question": "How are the Old and New Testaments related to each other?",
+              "answer": "The Old Testament is to be read in the light of Christ, and the New Testament is to be read in light of God's revelation to Israel. Thus the two form one Holy Scripture, which reveals the Person of Jesus Christ and his mighty works.",
+              "scripture": ["Matthew 5:17-18", "Luke 24:25-27"]
+            },
+            {
+              "number": 30,
+              "question": "What does it mean that Holy Scripture is inspired?",
+              "answer": "Holy Scripture is 'God-breathed,' for the biblical authors wrote under the guidance of God's Holy Spirit to record God's Word.",
+              "scripture": ["Deuteronomy 8:3", "Matthew 4:4", "2 Timothy 3:16-17", "2 Peter 1:19-21"]
+            },
+            {
+              "number": 31,
+              "question": "What does it mean that Holy Scripture is the Word of God?",
+              "answer": "The Old and New Testaments are inspired by the Holy Spirit and are therefore the Word of God written. God is revealed in his mighty works and in the incarnation of our Lord, which are made known through the inspired writings of the biblical authors.",
+              "scripture": ["Psalm 33:4-9", "Jeremiah 1:9", "1 Thessalonians 2:13", "Hebrews 1:1-2"]
+            },
+            {
+              "number": 32,
+              "question": "Why is Jesus Christ called the Word of God?",
+              "answer": "The fullness of God's revelation is found in Jesus Christ, who not only fulfills the Scriptures, but is himself God's Word, the living expression of God's mind.",
+              "scripture": ["John 1:1", "John 1:14", "Colossians 1:15-19"]
+            },
+            {
+              "number": 33,
+              "question": "How should Holy Scripture be understood?",
+              "answer": "Because Holy Scripture was given by God to the Church, it should always be understood in ways that are faithful to its own plain meaning, to its entire teaching, and to the Church's historic interpretation. It should be translated, read, taught, and obeyed accordingly.",
+              "scripture": ["Nehemiah 8:1-8", "Acts 8:26-35", "Acts 18:24-28", "Articles of Religion, 20"]
+            },
+            {
+              "number": 34,
+              "question": "How does the Holy Spirit use Holy Scripture in your life?",
+              "answer": "Through Holy Scripture, the Holy Spirit will teach, rebuke, correct, and train me in the righteousness that God desires. The prayerful study of Scripture forms me for life in Christ and the service of God and my neighbor.",
+              "scripture": ["Psalm 119:105", "John 14:26", "2 Timothy 3:16-17", "Hebrews 4:12-13"]
+            },
+            {
+              "number": 35,
+              "question": "What are the Apocrypha?",
+              "answer": "The fourteen books of the Apocrypha, historically acknowledged by this church, are pre-Christian Jewish writings that provide background for the New Testament and are included in many editions of the Bible. They may be read as examples of faithful living but 'not to establish any doctrine.'",
+              "scripture": ["Articles of Religion, 6"]
+            }
+          ]
+        },
+        {
+          "section": "The Apostles' Creed, Article I — I Believe in God",
+          "type": "qa",
+          "creed_phrase": "I believe in God, the Father almighty, creator of heaven and earth",
+          "prayers": [
+            {
+              "title": "A Prayer for the Father's Love",
+              "text": "Gracious Father, I come to you through the saving work of your Son Jesus Christ upon the Cross. Thank you for adopting me as your child through the Holy Spirit. Grant me the grace to know the fullness of your fatherly love, that I may delight in the promises of your eternal Kingdom, both now and in the age to come. Amen."
+            }
+          ],
+          "questions": [
+            {
+              "number": 36,
+              "question": "Who is God?",
+              "answer": "God is one divine Being eternally existing in three divine Persons: the Father, the Son, and the Holy Spirit. This is the Holy Trinity.",
+              "scripture": [
+                "Deuteronomy 6:4-7",
+                "Psalm 86:8-10",
+                "Isaiah 44:6-8",
+                "Matthew 3:16-17",
+                "Matthew 28:19",
+                "1 Corinthians 8:6",
+                "2 Corinthians 13:14"
+              ]
+            },
+            {
+              "number": 37,
+              "question": "What does Holy Scripture tell us about the character of God?",
+              "answer": "God is both loving and holy. God mercifully redeems fallen creation, while righteously opposing all sin and evil. The Lord Jesus Christ is the fullest revelation of God's holy love.",
+              "scripture": ["Exodus 34:6-7", "Psalm 145", "John 1:14-18", "John 14:9-10", "Romans 5:6-11", "Hebrews 1:1-3"]
+            },
+            {
+              "number": 38,
+              "question": "Who is God the Father?",
+              "answer": "God the Father is the first Person of the Holy Trinity, from whom the Son is eternally begotten and the Holy Spirit eternally proceeds.",
+              "scripture": ["Psalm 104", "John 1:1,14", "John 15:26", "1 Corinthians 2:10-16", "1 Peter 1:10-12", "Nicene Creed"]
+            },
+            {
+              "number": 39,
+              "question": "Why do you call the first of the three divine Persons 'Father'?",
+              "answer": "Our Lord Jesus Christ is the only divine Son of the Father. He called God 'Father' and taught his disciples to do the same. God gives believers his Holy Spirit and adopts us as his children, enabling us to call him 'Father.'",
+              "scripture": ["Deuteronomy 32:4-9", "Psalm 2", "Matthew 6:6-9", "John 5:17-23", "Galatians 4:1-7"]
+            },
+            {
+              "number": 40,
+              "question": "What do you mean when you call God 'Father'?",
+              "answer": "When I call God 'Father,' I declare that I was created for relationship with him, that I trust in God as my Protector and Provider, and that I put my hope in God as his child and heir in Christ.",
+              "scripture": ["Genesis 1:26-27", "Psalm 68:4-6", "Psalm 103:13-14", "Matthew 6:25-34", "Romans 8:17-21"]
+            },
+            {
+              "number": 41,
+              "question": "Why do you call God the Father 'Almighty'?",
+              "answer": "I call the Father 'Almighty' because he has power over everything and accomplishes everything he wills. Together with his Son and Holy Spirit, the Father is all-knowing and ever present in every place.",
+              "scripture": ["Psalm 139:1-16", "Isaiah 40:12-26", "Daniel 4:34-37", "Luke 1:34-37", "Revelation 4:8-11"]
+            },
+            {
+              "number": 42,
+              "question": "Why do you call God the Father 'Creator'?",
+              "answer": "I call God the Father 'Creator' because he made all things. He creates and sustains all things through his Word, and gives life to all creatures through his Spirit.",
+              "scripture": ["Genesis 1:1-2:3,7", "Psalm 104:24-30", "John 1:1-3", "Acts 17:24-28", "Colossians 1:16-18"]
+            },
+            {
+              "number": 43,
+              "question": "How does recognizing God as Creator inform your understanding of his creation?",
+              "answer": "I acknowledge that God created for his own glory everything that exists. He created human beings, male and female, in his image and appointed us stewards of creation. God's creation is thus a gift to enjoy as we work and care for it.",
+              "scripture": ["Genesis 1:27-28", "Genesis 2:15", "Psalm 8:5-8", "Luke 19:11-27", "1 Corinthians 4:1-2"]
+            },
+            {
+              "number": 44,
+              "question": "What does it mean that God created both heaven and earth?",
+              "answer": "It means that all things, whether visible or invisible, physical or spiritual, were brought into being out of nothing by the Word of the eternal God.",
+              "scripture": ["Genesis 1:1-8", "Psalm 33:6-8", "John 1:3", "Colossians 1:16"]
+            },
+            {
+              "number": 45,
+              "question": "Was the world that God created good?",
+              "answer": "Yes. God created all things and called them 'very good' (Genesis 1:31). However, through sin, evil and death have come into the world and corrupted it.",
+              "scripture": ["Genesis 3:1-8", "Psalm 14:1-3", "Matthew 15:18-20", "Romans 1:18-32", "1 Timothy 4:4-5"]
+            },
+            {
+              "number": 46,
+              "question": "If God created the world good, why do we sin?",
+              "answer": "Adam and Eve rebelled against God, thus bringing upon all humanity pain, toil, alienation from God and each other, and death. I have inherited this fallen and corrupted human nature; consequently, I too sin and fall short of God's glory.",
+              "scripture": ["Genesis 3:16-4:26", "Psalm 51:3-5", "Romans 3:23", "Romans 5:12", "Romans 7:14-25"]
+            },
+            {
+              "number": 47,
+              "question": "What are the consequences of sin?",
+              "answer": "Because of sin, those apart from Christ are spiritually dead, separated from God, under his righteous condemnation, and without hope.",
+              "scripture": ["Genesis 3:16-19", "Psalm 90:3-12", "Isaiah 53:6", "John 3:36", "Romans 6:20-23", "Galatians 5:19-21", "Ephesians 2:1-3"]
+            }
+          ]
+        },
+        {
+          "section": "The Apostles' Creed, Article II — I Believe in Jesus Christ",
+          "type": "qa",
+          "creed_phrase": "I believe in Jesus Christ, his only Son, our Lord",
+          "prayers": [
+            {
+              "title": "A Prayer for the Son's Mission",
+              "text": "O Jesus, God the Son, in your incarnation you manifested your heart of mission in the world: Help me so to know and practice your presence, that I may always live for your glory and the spread of your Kingdom; who with the Father and the Holy Spirit, lives and reigns, one God, now and forever. Amen."
+            }
+          ],
+          "questions": [
+            {
+              "number": 48,
+              "question": "Who is Jesus Christ?",
+              "answer": "Jesus Christ is the eternal Word and Son of God, the second Person of the Holy Trinity. He took on human nature to be the Savior and Redeemer of the world, the only Mediator between God and fallen humanity.",
+              "scripture": ["Psalm 2", "Malachi 3:1", "John 1:1-18", "Philippians 2:5-11", "1 Timothy 2:5-6"]
+            },
+            {
+              "number": 49,
+              "question": "What does 'Jesus' mean?",
+              "answer": "'Jesus' means 'God saves' and is taken from the Hebrew name Yeshua or Joshua. In Jesus, God has come to save us from the power of sin and death.",
+              "scripture": ["Joshua 1:1-9", "Psalm 20", "Matthew 1:18-25", "Romans 8:1-2"]
+            },
+            {
+              "number": 50,
+              "question": "What does 'Christ' mean?",
+              "answer": "Christos is the Greek term for the Hebrew title Messiah, meaning 'Anointed One.' Old Testament kings, priests, and prophets were anointed with oil. Jesus the Christ was anointed by the Holy Spirit to perfectly fulfill these roles, and he rules now as Prophet, Priest, and King over his Church and all creation.",
+              "scripture": ["Exodus 40:12-16", "1 Samuel 16:11-13", "Psalm 89:19-29", "Luke 3:21-22", "Acts 10:38", "Hebrews 4:14-5:10"]
+            },
+            {
+              "number": 51,
+              "question": "Why is Jesus called the Father's 'only Son'?",
+              "answer": "Jesus alone is God the Son, coequal and coeternal with God the Father and God the Holy Spirit. He alone is the image of the invisible Father, the one who makes the Father known. He is now and forever will be incarnate as a human, bearing his God-given human Name.",
+              "scripture": ["Psalm 2:7-12", "John 1:14-18", "Colossians 1:13-15", "Hebrews 1:1-5"]
+            },
+            {
+              "number": 52,
+              "question": "What do you mean when you call Jesus Christ 'Lord'?",
+              "answer": "I acknowledge Jesus' divine authority over the Church and all creation, over all societies and their leaders, and over every aspect of my life, both public and private. I surrender my entire life to him and seek to live in a way that pleases him.",
+              "scripture": ["Daniel 7:13-14", "Matthew 7:21-23", "Luke 9:23-26", "Ephesians 1:15-23", "Colossians 1:16-18"]
+            },
+            {
+              "number": 53,
+              "question": "What does it mean that Jesus was conceived by the Holy Spirit?",
+              "answer": "Jesus was conceived not through a human father but by the Holy Spirit coming upon the Virgin Mary in power.",
+              "scripture": ["Isaiah 7:14", "Matthew 1:18-20", "Luke 1:26-38"]
+            },
+            {
+              "number": 54,
+              "question": "What happened at Jesus' conception in Mary's womb?",
+              "answer": "The eternal Son assumed a fully human nature from his mother, the Virgin Mary, at the moment of conception in her womb.",
+              "scripture": ["John 1:1-3,14", "John 8:56-58", "Philippians 2:6-8", "Colossians 2:9"]
+            },
+            {
+              "number": 55,
+              "question": "Why is it important to say that Jesus was born?",
+              "answer": "It is important to affirm that he is one of us: truly human, born to a human mother, and raised in a human family.",
+              "scripture": ["Luke 2:41-52", "Hebrews 2:17-18"]
+            },
+            {
+              "number": 56,
+              "question": "Was Mary the only biological parent of Jesus?",
+              "answer": "Yes. While still a virgin, Mary submitted to the will of God and bore the Son of God. Therefore, she is held in high honor. However, in obedience to God, Joseph took Mary as his wife and raised Jesus as his son.",
+              "scripture": ["Isaiah 7:14", "Matthew 1:18-25", "Matthew 13:55"]
+            },
+            {
+              "number": 57,
+              "question": "What is the relationship between Jesus' divine and human natures?",
+              "answer": "Jesus Christ is fully and truly both divine and human, but without sin. His two natures are united without division, separation, mixture, or change.",
+              "scripture": ["Luke 1:26-38", "John 1:14", "Philippians 2:6-8", "Hebrews 2:10-16", "1 John 4:2-3", "Definition of Chalcedon"]
+            },
+            {
+              "number": 58,
+              "question": "What does the union of Jesus' two natures teach you about his ministry?",
+              "answer": "All Jesus does as a human being he also does as God. His human words and deeds are saving because they are the words and deeds of God the Son.",
+              "scripture": ["John 5:19-29", "Romans 8:1-4", "Colossians 1:19-23", "Hebrews 4:14-16"]
+            },
+            {
+              "number": 59,
+              "question": "Why did Jesus suffer?",
+              "answer": "Jesus suffered as a sacrifice for our sins so that we could have peace with God, as prophesied in the Old Testament.",
+              "scripture": ["Isaiah 52:13-53:12", "John 1:29", "Romans 6:23", "1 Corinthians 15:3-4"]
+            },
+            {
+              "number": 60,
+              "question": "In what ways did Jesus suffer?",
+              "answer": "On earth, the incarnate Son shared physically, emotionally, and spiritually in the temptations and sufferings common to all people, yet without sin. In his agony and desolation on the Cross, he uniquely suffered in my place for my sins.",
+              "scripture": ["Psalm 22:1-24", "Matthew 4:1-10", "Matthew 27:26-50", "Hebrews 4:14-16"]
+            },
+            {
+              "number": 61,
+              "question": "How do Jesus' sufferings help you?",
+              "answer": "Jesus has experienced our sufferings, understands our sorrows, and is able to sympathize with our weakness. Therefore, I should bear my sufferings with perseverance and hope, for my Savior is with me in them, and through them I will come to know him more fully.",
+              "scripture": ["Isaiah 53:4-7", "Luke 4:1-13", "Hebrews 4:14-5:10"]
+            },
+            {
+              "number": 62,
+              "question": "Why does the Creed say that Jesus suffered under Pontius Pilate?",
+              "answer": "The Creed thus makes clear that Jesus' life and death were real events that occurred at a particular time and place in Judea in the first century AD.",
+              "scripture": ["Psalm 2:1-6", "Luke 3:1-2", "Luke 23", "Acts 4:24-28"]
+            },
+            {
+              "number": 63,
+              "question": "What happened at Jesus' crucifixion?",
+              "answer": "Jesus was executed as a common criminal. He was scourged, mocked, and nailed to a Cross outside the walls of Jerusalem. Though humanly a miscarriage of justice, his execution fulfilled God's plan of salvation.",
+              "scripture": ["Psalm 22:1-21", "Isaiah 53:8", "Matthew 27:22-26"]
+            },
+            {
+              "number": 64,
+              "question": "What did Jesus accomplish on the Cross?",
+              "answer": "Jesus fulfilled the Scriptures by dying on the Cross as a sacrifice for sin in obedience to his Father. He thereby showed the depth of the love of God, satisfying the justice of God on our behalf and breaking the power of sin, Satan, and death.",
+              "scripture": ["Leviticus 23:18-21", "Psalm 34:15-22", "Colossians 2:13-15", "Hebrews 10:11-14"]
+            },
+            {
+              "number": 65,
+              "question": "What does Jesus' death mean for you?",
+              "answer": "Jesus bore my sins and died the death that I deserve, so that I could be saved from sin and eternal condemnation and reconciled to God.",
+              "scripture": ["Psalm 32:1-2", "Isaiah 53:10-12", "Matthew 20:28", "Romans 5:8-10", "2 Corinthians 5:17-21"]
+            },
+            {
+              "number": 66,
+              "question": "Why does the Creed make a point of saying that Jesus died?",
+              "answer": "The Creed makes the point to emphasize that Jesus died a real, bodily death such as all people face because of our sins.",
+              "scripture": ["Psalm 22:14-15", "Isaiah 53:8-9", "Matthew 27:45-50", "John 19:30-35"]
+            },
+            {
+              "number": 67,
+              "question": "Why does the Creed emphasize Jesus' death in this way?",
+              "answer": "The Creed emphasizes Jesus' death to counter suspicions that Jesus did not truly die on the Cross, to celebrate the fact that he died there to secure our salvation, and to prepare our minds to grasp the glory of his bodily resurrection.",
+              "scripture": ["John 19:31-34", "1 John 5:6-8"]
+            },
+            {
+              "number": 68,
+              "question": "What does the Creed mean by saying that Jesus descended to the dead?",
+              "answer": "That Jesus descended to the dead means that he truly died and entered the place of the departed.",
+              "scripture": ["Psalm 16:9-10", "Acts 2:25-32", "Ephesians 4:9-10", "1 Peter 3:18-19"]
+            },
+            {
+              "number": 69,
+              "question": "What does the Creed mean when it affirms that Jesus rose again from the dead?",
+              "answer": "It means that Jesus was not simply resuscitated; God restored him physically from death to life in his resurrected body, never to die again. His tomb was empty; Jesus had risen bodily from the dead. The risen Jesus was seen by his apostles and hundreds of other witnesses.",
+              "scripture": ["Psalm 30:1-5", "Luke 24:1-12", "John 20:1-18", "Acts 1:3", "1 Corinthians 15:3-8"]
+            },
+            {
+              "number": 70,
+              "question": "What kind of earthly life did Jesus have after he rose from the dead?",
+              "answer": "Following his resurrection, Jesus spent forty days visiting and teaching his followers. He appeared to his disciples, spoke to them, invited them to touch him and see his scars, and ate with them.",
+              "scripture": ["Luke 24:13-49", "John 20:19-29", "Acts 1:1-8"]
+            },
+            {
+              "number": 71,
+              "question": "How should you understand Jesus' ascension into heaven?",
+              "answer": "Jesus was taken up out of human sight and returned in his humanity to the glory he had shared with the Father before his incarnation. There he intercedes for, and receives into heavenly life, all who come to him in faith. Though absent in body, Jesus is always with me by his Spirit and hears me when I pray.",
+              "scripture": ["John 17:5", "Acts 1:9-11", "Romans 8:34", "Hebrews 7:23-25"]
+            },
+            {
+              "number": 72,
+              "question": "What resulted from the ascension?",
+              "answer": "Jesus ascended into heaven so that, through him, his Father might send us the gift of the Holy Spirit. Through the Holy Spirit, Christians together are united to Christ, the living Head of his Body, the Church.",
+              "scripture": ["John 14:15-17,25-26", "John 16:7-15", "Acts 2:33-36", "Ephesians 4:7-16"]
+            },
+            {
+              "number": 73,
+              "question": "What does it mean for Jesus to sit at God the Father's right hand?",
+              "answer": "Ruling with his Father in heaven, Jesus is Lord over the Church and all creation, with authority to equip his Church, advance his kingdom, bring sinners into saving fellowship with God the Father, and finally establish justice and peace upon the earth.",
+              "scripture": ["Psalm 2", "Isaiah 9:6-7", "Acts 2:33-36", "Ephesians 1:20-23", "Hebrews 1:3-14"]
+            },
+            {
+              "number": 74,
+              "question": "What does Jesus do for you as he sits at the Father's right hand?",
+              "answer": "Because Jesus intercedes for us as our great high priest, I may now boldly approach the Father and offer my confessions, praises, thanksgivings, and requests to him.",
+              "scripture": ["Exodus 33:7-17", "Psalm 80", "Hebrews 4:14-16", "Hebrews 7:24-8:2"]
+            },
+            {
+              "number": 75,
+              "question": "What does Jesus' heavenly ministry mean for your life today?",
+              "answer": "I can rely on Jesus always to be present with me by the Holy Spirit as he promised, and I should always look to him for help as I seek to serve him.",
+              "scripture": ["Joshua 1:9", "Psalm 3", "Matthew 28:20", "John 14:15-20"]
+            },
+            {
+              "number": 76,
+              "question": "What does the Creed mean when it says, 'He will come again'?",
+              "answer": "Jesus promised that he would return. His coming in victory with great glory and power will be seen by all people and will bring this age to an end. The present world order will pass away, and God will usher in a fully renewed creation to stand forever.",
+              "scripture": ["Daniel 7:13-14", "Luke 21:27-28", "Acts 1:10-11", "1 Thessalonians 4:13-18", "2 Peter 3:3-13", "Revelation 21:1-4"]
+            },
+            {
+              "number": 77,
+              "question": "Can we know when Jesus will return?",
+              "answer": "No. We cannot know when Jesus will return. Jesus patiently waits for many to repent and trust in him for new life; then he will return unexpectedly, which could be at any moment.",
+              "scripture": ["Matthew 24:36-44", "1 Thessalonians 5:1-3"]
+            },
+            {
+              "number": 78,
+              "question": "How should you live in anticipation of Jesus' return?",
+              "answer": "I should anticipate with joy the return of Jesus my Savior and be ready to stand before him. His promise to return encourages me to be filled with the Holy Spirit, to live a holy life, and to share the hope of new life in Christ with others.",
+              "scripture": ["Deuteronomy 30:1-10", "Matthew 25:13-30", "1 Thessalonians 5:4-11", "Titus 2:11-14"]
+            },
+            {
+              "number": 79,
+              "question": "How should you understand Jesus' future judgment?",
+              "answer": "All people, whether living or dead, will be judged by Jesus Christ. Those apart from Christ will receive eternal rejection and punishment in hell, while those who are in Christ will receive eternal blessing and welcome into the fullness of life with God.",
+              "scripture": ["Psalm 50:1-6", "Matthew 25:31-46", "Romans 2:16", "2 Corinthians 5:10"]
+            },
+            {
+              "number": 80,
+              "question": "Should you be afraid of God's judgment?",
+              "answer": "The unrepentant should fear God's judgment, for 'the wrath of God is revealed from heaven against all ungodliness' (Romans 1:18). But if I am in Christ, I need not fear God's judgment, for my Judge is my Savior, Jesus Christ, who loves me, died for my sins, and intercedes for me.",
+              "scripture": ["Psalm 130", "Proverbs 28:13-14", "John 5:24-30", "Romans 8:1,31-34"]
+            },
+            {
+              "number": 81,
+              "question": "What does Scripture mean when it tells you to fear God?",
+              "answer": "It means that I should live mindful of his presence, walking in humility as his creature, resisting sin, obeying his commandments, and reverencing him for his holiness, majesty, and power.",
+              "scripture": ["Exodus 20:18-20", "Psalm 25:12-14", "Proverbs 9:10", "Acts 5:1-11", "1 Peter 1:13-21", "Revelation 14:6-7"]
+            },
+            {
+              "number": 82,
+              "question": "How do you rightly live in the fear of God?",
+              "answer": "With the help of the Holy Spirit, I examine my conscience according to the Word of God. Particularly useful are the Ten Commandments and the Sermon on the Mount, as well as the godly counsel of fellow Christians and the moral teaching of the Church.",
+              "scripture": ["Exodus 20:1-17", "Psalm 139:23-24", "Matthew 5-7", "1 Corinthians 4:1-5"]
+            },
+            {
+              "number": 83,
+              "question": "How does the Church exercise its authority to judge?",
+              "answer": "The authority Christ gave to his Church to judge is most often exercised by declaring God's forgiveness in absolution. However, a priest, acting under the authority of the bishop, may suspend a person from receiving Communion because of scandalous and unrepented sin, in order to draw them to repentance and restoration.",
+              "scripture": ["Psalm 32", "Matthew 16:19", "Matthew 18:15-17", "John 20:21-23", "1 Corinthians 5:1-13"]
+            }
+          ]
+        },
+        {
+          "section": "The Apostles' Creed, Article III — I Believe in the Holy Spirit",
+          "type": "qa",
+          "creed_phrase": "I believe in the Holy Spirit, the holy catholic Church, the communion of saints, the forgiveness of sins, the resurrection of the body, and the life everlasting",
+          "prayers": [
+            {
+              "title": "A Prayer for the Holy Spirit's Ministry",
+              "text": "Come, Holy Spirit, fill the hearts of your faithful people and kindle in me the fire of your love. Direct and rule my heart in all things, empower me for witness and ministry, and daily increase in me your gifts and fruit, to the glory of God the Father; through Jesus Christ our Lord. Amen."
+            }
+          ],
+          "questions": [
+            {
+              "number": 84,
+              "question": "Who is the Holy Spirit?",
+              "answer": "God the Holy Spirit is the third Person in the one Being of the Holy Trinity, coequal and coeternal with God the Father and God the Son, and equally worthy of our honor and worship.",
+              "scripture": ["Genesis 1:2", "Psalm 104:30", "Matthew 3:16-17", "Matthew 28:19", "John 15:26", "2 Corinthians 13:14"]
+            },
+            {
+              "number": 85,
+              "question": "What principal names does the New Testament give to the Holy Spirit?",
+              "answer": "Jesus names the Holy Spirit 'Paraclete' ('the one alongside'), which signifies Comforter, Guide, Counselor, Advocate, and Helper. Other descriptions for the Holy Spirit are 'Spirit of God,' 'Spirit of your Father,' 'Spirit of Christ,' and 'Spirit of truth.'",
+              "scripture": ["Matthew 10:20", "John 14:16-17,26", "Acts 16:7", "Romans 8:9"]
+            },
+            {
+              "number": 86,
+              "question": "What are the particular ministries of the Holy Spirit?",
+              "answer": "The Holy Spirit imparts life to every living thing in creation, reveals God's Word to his people, and calls sinners to a new life of faith. The Holy Spirit unites Christians to Jesus, indwelling them, convicting them of sin, giving them spiritual gifts, and bearing spiritual fruit in their lives.",
+              "scripture": ["1 Samuel 16:13", "Isaiah 11:2", "Joel 2:28-29", "John 15:26", "John 16:7-11", "Acts 4:5-31"]
+            },
+            {
+              "number": 87,
+              "question": "How does the Holy Spirit strengthen you for life in Christ?",
+              "answer": "The Holy Spirit bears witness that I am a child of God, stirs my heart continually to worship and to pray, and inspires me to holiness and good works in Christ.",
+              "scripture": ["Job 27:2-4", "John 14:12", "John 16:12-15", "Romans 8:15-17,26-27"]
+            },
+            {
+              "number": 88,
+              "question": "How do you receive the Holy Spirit?",
+              "answer": "By repenting and being baptized in the Name of Jesus Christ, I am forgiven my sins and I receive the Holy Spirit, who gives me new birth in Christ and frees me from the power of sin.",
+              "scripture": ["Luke 11:11-13", "John 3:1-7", "Acts 2:38", "Acts 8:14-17", "1 Corinthians 6:9-11", "1 Corinthians 12:13"]
+            },
+            {
+              "number": 89,
+              "question": "What is the fruit of the Holy Spirit?",
+              "answer": "The fruit of the Holy Spirit is the very character of Jesus developing in us through the work of the Holy Spirit: 'love, joy, peace, patience, kindness, goodness, faithfulness, gentleness, self-control.'",
+              "scripture": ["Galatians 5:22-25", "Matthew 7:15-20", "Matthew 12:33-35"]
+            },
+            {
+              "number": 90,
+              "question": "What are the gifts of the Holy Spirit?",
+              "answer": "Among the many gifts of the Holy Spirit named in the New Testament are faith, healing, miracles, prophecy, discernment of spirits, other languages ('tongues'), the interpretation of other languages, and words of wisdom and knowledge. Other gifts include administration, service, encouragement, evangelism, teaching, giving, leadership, and mercy.",
+              "scripture": ["Luke 11:13", "Romans 12:3-8", "1 Corinthians 12:7-31", "Ephesians 4:7-11", "1 Peter 4:10-11"]
+            },
+            {
+              "number": 91,
+              "question": "Why does the Holy Spirit give such gifts?",
+              "answer": "The Holy Spirit equips and empowers believers with gifts for service in the worship of Jesus Christ, for the building up of his Church, and for witness and mission to the world.",
+              "scripture": ["Exodus 31:1-11", "Luke 9:1-6", "1 Corinthians 12:12-26", "Ephesians 4:12-16"]
+            },
+            {
+              "number": 92,
+              "question": "What is the Church?",
+              "answer": "The Church is the whole community of faithful Christians in heaven and on earth, called and formed by God into one people. The Church on earth gathers to worship God in Word and Sacrament, to serve God and neighbor, and to proclaim the Gospel to the ends of the earth.",
+              "scripture": ["Exodus 19:4-6", "Matthew 28:19-20", "Ephesians 2:11-22", "1 Peter 2:4-10", "Articles of Religion, 19"]
+            },
+            {
+              "number": 93,
+              "question": "How does Holy Scripture teach you to view the Church?",
+              "answer": "Holy Scripture teaches me to view the Church as God's family, as the Body and bride of Christ, and as the temple where God in Christ dwells by his Spirit.",
+              "scripture": ["Isaiah 54:5-8", "Hosea 2:16-20", "Matthew 12:46-50", "1 Corinthians 3:16-17", "Revelation 19:6-10"]
+            },
+            {
+              "number": 94,
+              "question": "Why is the Church called the Body of Christ?",
+              "answer": "The Church is called the Body of Christ because all who belong to the Church are united to Christ as their Head and source of life, and are united to one another in Christ for mutual love and service to him.",
+              "scripture": ["Romans 12:4-5", "1 Corinthians 12:12-27", "Ephesians 1:22-23", "Ephesians 5:25-30"]
+            },
+            {
+              "number": 95,
+              "question": "What are the 'marks' or characteristics of the Church?",
+              "answer": "The Nicene Creed expands upon the Apostles' Creed to list four characteristics of the Church: it is 'one, holy, catholic, and apostolic.'",
+              "scripture": ["Articles of Religion, 8"]
+            },
+            {
+              "number": 96,
+              "question": "In what sense is the Church 'one'?",
+              "answer": "The Church is one because all its members form the one Body of Christ, having 'one Lord, one faith, one baptism, one God and Father of all' (Ephesians 4:5-6). The Church is called to embody this unity in all relationships between believers.",
+              "scripture": ["Psalm 133", "John 17:11,20-23", "Ephesians 2:11-22", "Ephesians 4:2-6"]
+            },
+            {
+              "number": 97,
+              "question": "Why is the Church called 'holy'?",
+              "answer": "The Church is holy because the Holy Spirit dwells in it and sanctifies its members, setting them apart to God in Christ and calling them to moral and spiritual holiness of life.",
+              "scripture": ["Exodus 19:3-6", "Leviticus 19:1-2", "John 17:17-19", "Acts 26:16-18", "1 Corinthians 3:16-17"]
+            },
+            {
+              "number": 98,
+              "question": "Why is the Church called 'catholic'?",
+              "answer": "The Church is called 'catholic' ('according to the whole') because it keeps the whole faith it has received from the Lord, in continuity with the whole Church, in all times and places.",
+              "scripture": ["Micah 4:1-4", "Acts 2:1-11", "2 Timothy 1:13-14", "Jude 3", "Revelation 5:9-10"]
+            },
+            {
+              "number": 99,
+              "question": "Why is the Church called 'apostolic'?",
+              "answer": "An apostle is one who is sent. The Church is called 'apostolic' because it holds the faith of the first apostles sent by Christ. In continuity with them, the Church is likewise sent by Christ to proclaim the Gospel and to make disciples throughout the whole world.",
+              "scripture": ["Matthew 10:1-4,40-42", "Matthew 28:18-20", "Acts 2:42", "Acts 13:1-4", "Ephesians 2:19-21"]
+            },
+            {
+              "number": 100,
+              "question": "Who are the saints?",
+              "answer": "The saints are all those in heaven and on earth who place their faith in Jesus Christ, who are set apart, holy to God in Christ, and transformed by his grace.",
+              "scripture": ["Leviticus 19:1-2", "Deuteronomy 7:6", "Psalm 16:1-3", "1 Peter 2:4-10", "Revelation 7:9-17"]
+            },
+            {
+              "number": 101,
+              "question": "What does the word 'communion' mean?",
+              "answer": "'Communion' means being 'one with' someone in union and unity. For Christians, it refers to the unity of the three Persons within the one Being of God, to our union with God through our union with Christ, and to our unity with one another in Christ.",
+              "scripture": ["Psalm 85", "Ezekiel 37:24-28", "John 17:20-26", "2 Corinthians 13:11-14", "1 John 1:1-3"]
+            },
+            {
+              "number": 102,
+              "question": "What is the 'communion of the saints'?",
+              "answer": "The communion of the saints is the fellowship of all those, in heaven and on earth, who are united in Christ as one Body, through one Spirit, in Holy Baptism.",
+              "scripture": ["Psalm 149", "Ephesians 2:13-22", "Hebrews 12:1-3"]
+            },
+            {
+              "number": 103,
+              "question": "How do you participate in the communion of the saints?",
+              "answer": "I live as a member of the communion of saints through faith in Jesus Christ and the work of the Holy Spirit by gathering to worship God with my fellow Christians, by praying for and encouraging one another, and by coming to one another's aid in times of trouble, sickness, or grief.",
+              "scripture": ["Psalm 133", "Acts 2:42-47", "Colossians 3:16", "1 Thessalonians 5:11-18", "Hebrews 10:24-25", "James 5:13-20"]
+            },
+            {
+              "number": 104,
+              "question": "How are the Church on earth and the Church in heaven joined in worship?",
+              "answer": "Through union with Christ, as celebrated in the sacrament of Holy Communion, the Church on earth participates with the Church in heaven in the eternal worship of God.",
+              "scripture": ["Exodus 24:9-11", "Psalm 148", "1 Corinthians 10:16-17", "Hebrews 12:18-29", "Revelation 19:1-9"]
+            },
+            {
+              "number": 105,
+              "question": "What are sins?",
+              "answer": "Sins are intentions, acts, or failures to act that arise out of my corrupted human nature and fall short of conformity to God's revealed will.",
+              "scripture": ["Psalm 53", "Isaiah 59:1-15", "Jeremiah 17:9", "Romans 3:23", "James 4:17", "1 John 3:4-10"]
+            },
+            {
+              "number": 106,
+              "question": "How does God respond to human sin?",
+              "answer": "All sin is opposed to the righteousness of God and is therefore subject to God's holy condemnation; yet God in his mercy offers me forgiveness and salvation from sin through his Son, Jesus Christ, the only Savior.",
+              "scripture": ["Psalm 130", "Isaiah 1:2-4", "Micah 7:18-19", "John 3:17-21", "Romans 3:24-26"]
+            },
+            {
+              "number": 107,
+              "question": "How does God forgive your sins?",
+              "answer": "By virtue of Christ's atoning sacrifice, in which I put my trust, God sets aside my sins, accepts me, and adopts me as his child and heir in Jesus Christ. Loving me as his child, he forgives my sins whenever I turn to him in repentance and faith.",
+              "scripture": ["Leviticus 26:40-45", "Psalm 78:35-39", "Matthew 26:27-28", "Luke 15:11-32", "2 Corinthians 5:16-21", "Galatians 4:1-7"]
+            },
+            {
+              "number": 108,
+              "question": "How should you respond to God's forgiveness?",
+              "answer": "Trusting in God's continual forgiveness, I should live in continual thanks, praise, and obedience to him; and as I have been loved and forgiven by God, so I should love and forgive those who sin against me.",
+              "scripture": ["Psalm 51:7-17", "Isaiah 44:21-23", "Matthew 6:12", "Matthew 18:21-35", "Ephesians 4:32"]
+            },
+            {
+              "number": 109,
+              "question": "What is grace?",
+              "answer": "Grace is God's undeserved gift of his love, mercy, and help, which he freely offers to us who, because of our sin, deserve only condemnation.",
+              "scripture": ["Genesis 50:15-21", "Psalm 106", "Joel 2:12-13", "Luke 7:36-50", "Romans 5:15-21", "Ephesians 2:4-9", "Hebrews 4:14-16"]
+            },
+            {
+              "number": 110,
+              "question": "For what purpose does God give you grace?",
+              "answer": "God gives me grace in Christ for the forgiveness of my sins, redemption from sin's power, healing of sin's effects, and growth in holiness, to my final transformation into the likeness of Christ.",
+              "scripture": ["Psalm 25:6-12", "Romans 6:1-11", "2 Corinthians 3:16-18", "Titus 3:4-7"]
+            },
+            {
+              "number": 111,
+              "question": "Can you earn God's grace?",
+              "answer": "No. God gives his grace freely and enables me to receive it. Everything I do for God should be in response to his love and grace made known in Christ.",
+              "scripture": ["Romans 5:8", "1 John 4:19", "Ephesians 2:1-10", "2 Timothy 1:8-10"]
+            },
+            {
+              "number": 112,
+              "question": "Is God's grace only for your religious or spiritual life?",
+              "answer": "No. God wants to redeem every aspect of my life, and his grace in Christ is at work in all of it.",
+              "scripture": ["Psalm 40", "Isaiah 1:13-20", "Matthew 6:25-33", "Titus 2:11-14"]
+            },
+            {
+              "number": 113,
+              "question": "Does God give grace only to Christians?",
+              "answer": "No. God's common grace can be seen in his provision for all people. However, he shows his saving grace by granting salvation to those who place their faith in Christ.",
+              "scripture": ["Matthew 5:45", "Psalm 65:5-13", "Acts 14:15-17", "Romans 5:1-11"]
+            },
+            {
+              "number": 114,
+              "question": "What does Holy Scripture tell you about your body?",
+              "answer": "Holy Scripture tells me that my body, though tainted by sin, was created good, bearing the image of God and endowed with great dignity. Therefore, from the moment of conception to natural death, every human body and every human life should be cared for, protected, and loved.",
+              "scripture": ["Genesis 1:26-28", "Psalm 139:7-18", "Matthew 11:2-5", "1 Corinthians 6:19-20", "James 3:8-10"]
+            },
+            {
+              "number": 115,
+              "question": "Why will you die?",
+              "answer": "Because sin and death now corrupt this world, my body will degenerate and die. But, by the will of God, my soul will be with the Lord, and I will rise bodily from death when Jesus Christ returns to judge the living and the dead.",
+              "scripture": ["Genesis 2:15-17", "Genesis 3:22-24", "John 6:35-40", "Romans 5:12-14", "1 Corinthians 15:13-28"]
+            },
+            {
+              "number": 116,
+              "question": "What is the resurrection of the body?",
+              "answer": "When the risen Lord Jesus returns to judge the earth, he will raise all the dead to bodily life. The wicked will then receive eternal condemnation, and the righteous eternal life in the glory of God.",
+              "scripture": [
+                "Psalm 16",
+                "Ezekiel 37:1-14",
+                "Daniel 12:1-3",
+                "Matthew 25:31-34,41,46",
+                "John 5:25-29",
+                "1 Thessalonians 4:13-17",
+                "Revelation 20:11-15"
+              ]
+            },
+            {
+              "number": 117,
+              "question": "What do you know about the resurrected bodies of believers?",
+              "answer": "They will be fully renewed and glorified in the image of Christ, perfected after the manner of his own resurrected and ascended body.",
+              "scripture": ["Job 19:25-27", "John 11:23-27", "1 Corinthians 15:35-58", "Philippians 3:20-21"]
+            },
+            {
+              "number": 118,
+              "question": "How should you live as you await the resurrection of your body?",
+              "answer": "Because I put my hope in God's resurrection of my body, I should honor and care for it. I should refrain from any violence, disrespect, or sin that would harm, demean, or violate either my body or the bodies of others.",
+              "scripture": ["Psalm 35:9-10", "Matthew 25:35-45", "Romans 6:5-14", "1 Corinthians 6:9-20", "1 John 3:1-3"]
+            },
+            {
+              "number": 119,
+              "question": "What do you know about the unending resurrected life of believers?",
+              "answer": "I know that it will be an eternal life of joyful fellowship with our triune God, together with all his saints and angels, singing his praises and serving him in the renewed creation.",
+              "scripture": ["John 17:20-24", "Revelation 7:9-17", "Revelation 21:1-4", "Revelation 21:22-22:5"]
+            },
+            {
+              "number": 120,
+              "question": "How should you live in light of this promise of unending life?",
+              "answer": "I should live in joyful expectation of the fullness of my transformation, soul and body, into the likeness of Christ. In the midst of suffering or in the face of hostility and persecution, I am sustained by the hope of a new heaven and earth, freed from Satan, evil, suffering, and death.",
+              "scripture": ["John 14:1-7", "Romans 13:11-14", "2 Corinthians 4:16-5:11", "Philippians 3:7-21", "1 Peter 1:3-9"]
+            }
+          ]
+        },
+        {
+          "section": "Concerning Sacraments",
+          "type": "qa",
+          "subsections": ["Baptism", "Holy Communion", "Confirmation", "Ordination"],
+          "questions": [
+            {
+              "number": 121,
+              "question": "What is a sacrament?",
+              "answer": "A sacrament is an outward and visible sign of an inward and spiritual grace. God gives us the sign as a means by which we receive that grace and as a tangible assurance that we do in fact receive it.",
+              "scripture": ["Genesis 17:1-21", "John 6:53-58", "Romans 2:25-29", "1 Corinthians 10:16", "1662 Catechism"]
+            },
+            {
+              "number": 122,
+              "question": "How should you receive the sacraments?",
+              "answer": "I should receive the sacraments by faith in Christ, with repentance and thanksgiving. Faith in Christ is necessary to receive the grace of the sacraments, and obedience to Christ is necessary for the benefits of the sacraments to bear fruit in my life.",
+              "scripture": ["Mark 16:16", "John 6:52-58", "Acts 2:38-47", "1 Corinthians 11:27-32", "Articles of Religion, 28"]
+            },
+            {
+              "number": 123,
+              "question": "What sacraments were ordained by Christ?",
+              "answer": "The two sacraments ordained by Christ that are 'generally necessary to salvation' are Baptism and Holy Communion (also called the Lord's Supper or the Holy Eucharist). These are sometimes called 'sacraments of the Gospel.'",
+              "scripture": ["Matthew 28:19-20", "Luke 22:14-20", "John 6:52-58", "1 Corinthians 11:23-26", "Articles of Religion, 25"]
+            },
+            {
+              "number": 124,
+              "question": "Are there other sacraments?",
+              "answer": "Other rites and institutions commonly called sacraments include confirmation, ordination, marriage, absolution, and the anointing of the sick. These are sometimes called 'sacraments of the Church.'",
+              "scripture": ["2 Timothy 1:6-7", "Hebrews 6:1-2", "Numbers 8:9-14", "Genesis 2:18-24", "John 20:21-23", "James 5:14"]
+            },
+            {
+              "number": 125,
+              "question": "How do these differ from the sacraments of the Gospel?",
+              "answer": "They were not ordained by Christ as necessary to salvation, but arose from the practices of the apostles and the Early Church, or were blessed by God in Scripture. God clearly uses them as means of grace.",
+              "scripture": ["Articles of Religion, 25"]
+            },
+            {
+              "number": 126,
+              "question": "What is the outward and visible sign in Baptism?",
+              "answer": "The outward and visible sign is water, in which candidates are baptized 'in the Name of the Father, and of the Son, and of the Holy Spirit.'",
+              "scripture": ["Genesis 9:8-17", "Matthew 28:19-20", "1 Peter 3:18-22"]
+            },
+            {
+              "number": 127,
+              "question": "What is the inward and spiritual grace given in Baptism?",
+              "answer": "The inward and spiritual grace is death to sin and new birth to righteousness, through union with Christ in his death and resurrection. In Baptism, through faith in Christ and the gift of the Holy Spirit, I am made a member of Christ's Body and adopted as God's child and heir.",
+              "scripture": ["Psalm 51:1-2,7-10", "Ezekiel 36:25-26", "John 3:3-5", "Romans 6:1-11", "Colossians 2:9-14"]
+            },
+            {
+              "number": 128,
+              "question": "What is required of you when you come to be baptized?",
+              "answer": "Two things are required: repentance, in which I turn away from sin; and faith, in which I turn to Jesus Christ as my Savior and Lord and trust the promises that God makes to me in this sacrament.",
+              "scripture": ["Psalm 51:3-6,13-17", "Mark 1:14-15", "Acts 2:37-38"]
+            },
+            {
+              "number": 129,
+              "question": "Why is it appropriate to baptize infants?",
+              "answer": "Because it is a sign of God's promise that they are embraced in the covenant community of Christ's Church. Those who in faith and repentance present infants to be baptized vow to raise them in the knowledge and fear of the Lord, with the expectation that they will one day profess full Christian faith as their own.",
+              "scripture": ["Deuteronomy 6:6-9", "Proverbs 22:6", "Mark 2:3-5", "Acts 2:39", "Acts 16:25-34"]
+            },
+            {
+              "number": 130,
+              "question": "What signs of the Holy Spirit's work should you hope and pray to see as a result of your Baptism?",
+              "answer": "I should hope and pray that the Holy Spirit will help me to be an active member of my Christian community, participate in worship, continually repent and return to God, proclaim the faith, love and serve God and my neighbor, and seek justice and peace.",
+              "scripture": ["Matthew 22:35-40", "Hebrews 10:19-28", "Hebrews 12:14", "1 Peter 3:15", "1 John 1:9", "1 John 2:1"]
+            },
+            {
+              "number": 131,
+              "question": "Why did Christ institute the sacrament of Holy Communion?",
+              "answer": "He instituted it for the continual remembrance of the sacrifice of his atoning death, and to convey the benefits of that sacrifice to us.",
+              "scripture": ["Exodus 24:1-10", "Psalm 23:5-6", "Luke 22:17-20", "John 6:25-51", "1 Corinthians 10:16-17"]
+            },
+            {
+              "number": 132,
+              "question": "What is the outward and visible sign in Holy Communion?",
+              "answer": "The visible sign is bread and wine, which Christ commands us to receive.",
+              "scripture": ["1 Corinthians 11:23-26"]
+            },
+            {
+              "number": 133,
+              "question": "What is the inward gift signified?",
+              "answer": "The inward gift signified is the Body and Blood of Christ, which are truly taken and received in the Lord's Supper by faith.",
+              "scripture": ["Deuteronomy 8:1-20", "Psalm 78:17-29", "John 6:52-56", "1 Corinthians 10:1-4,16-18"]
+            },
+            {
+              "number": 134,
+              "question": "What benefits do you receive through partaking of this sacrament?",
+              "answer": "As my body is nourished by the bread and wine, my soul is strengthened by the Body and Blood of Christ. I receive God's forgiveness, and I am renewed in the love and unity of the Body of Christ, the Church.",
+              "scripture": ["Jeremiah 31:31-34", "John 6:52-56", "John 17:22-24", "Revelation 19:6-9"]
+            },
+            {
+              "number": 135,
+              "question": "What is required of you when you come to receive Holy Communion?",
+              "answer": "I am to examine myself: Do I truly repent of my sins and intend to lead a new life in Christ? Do I have a living faith in God's mercy through Christ and remember his atoning death with a thankful heart? And have I shown love and forgiveness to all people?",
+              "scripture": ["Leviticus 10:1-5", "Psalm 50", "1 Corinthians 11:27-32"]
+            },
+            {
+              "number": 136,
+              "question": "What is expected of you after partaking in Holy Communion?",
+              "answer": "I should continue to grow in holiness, avoiding sin, showing love and forgiveness to all, and serving others in gratitude.",
+              "scripture": ["Leviticus 20:26", "1 Corinthians 10:14-32", "1 Peter 4:1-11"]
+            },
+            {
+              "number": 137,
+              "question": "What is confirmation?",
+              "answer": "Confirmation is the laying on of the bishop's hands with prayer for strengthening by the Holy Spirit, following a period of catechetical formation. In confirmation, I make a mature confession of faith, publicly renewing the vows and promises made at my Baptism.",
+              "scripture": ["Deuteronomy 6:4-25", "Psalm 119:33-40", "Acts 8:14-17", "2 Timothy 1:6-7"]
+            },
+            {
+              "number": 138,
+              "question": "What grace does God give you in confirmation?",
+              "answer": "In confirmation, I am further empowered and gifted by the Holy Spirit for daily growth in wisdom, courage, and humility before God in every aspect of my life and work.",
+              "scripture": ["Isaiah 11:2-5", "Acts 19:6", "Jude 3,17-25"]
+            },
+            {
+              "number": 139,
+              "question": "What is the work of all Christians?",
+              "answer": "All Christians are to bear witness to Christ in their lives; to care for the poor, strangers, widows, and orphans; and, according to their gifts, to serve Christ in the world and in the Church.",
+              "scripture": ["Zechariah 7:9-10", "Psalm 15", "Micah 6:6-8", "Colossians 3:1-17", "James 1:27", "1 Peter 4:8-11"]
+            },
+            {
+              "number": 140,
+              "question": "What is ordination?",
+              "answer": "Ordination is the laying on of the bishop's hands with prayer, which confirms the gifts and calling of the candidates, consecrates them, and grants them authority to serve Christ and his Church in the office to which they have been called.",
+              "scripture": [
+                "Isaiah 6:1-8",
+                "Luke 9:1",
+                "Acts 6:1-7",
+                "Acts 13:1-3",
+                "1 Timothy 3:1-13",
+                "1 Timothy 4:14",
+                "1 Timothy 5:22",
+                "Titus 1:5-9"
+              ]
+            },
+            {
+              "number": 141,
+              "question": "What grace does God give in ordination?",
+              "answer": "In ordination, God conveys the gift of the Holy Spirit for the office and work of the order being conferred.",
+              "scripture": ["Numbers 27:12-23", "Ephesians 4:7-16", "2 Timothy 1:6-7"]
+            },
+            {
+              "number": 142,
+              "question": "What are the three ordained ministries in the Anglican Church?",
+              "answer": "The three orders are bishops, priests, and deacons, which we have received from Scripture and the historic Church.",
+              "scripture": ["Acts 6:1-7", "1 Timothy 3:1", "1 Timothy 5:17-22", "2 Timothy 4:5", "Titus 1:5"]
+            },
+            {
+              "number": 143,
+              "question": "What is the work of bishops?",
+              "answer": "Bishops represent and serve Christ and the Church as chief pastors, catechists, and missionaries in the tradition of the apostles. They are to confirm and ordain, and to guard the faith, unity, and discipline of the Church.",
+              "scripture": ["Isaiah 61:1-11", "John 20:19-23", "John 21:15-19", "Acts 20:17-35", "1 Timothy 3:1-7", "Titus 1:7-9", "1 Peter 5:1-5"]
+            },
+            {
+              "number": 144,
+              "question": "What is the work of priests?",
+              "answer": "Serving Christ with their bishops, priests (or presbyters) nurture God's people through the ministry of Word and Sacrament and pronounce absolution and blessing in God's Name.",
+              "scripture": ["Genesis 14:17-20", "Psalm 132:8-18", "Luke 10:1-9", "John 10:1-16", "Ephesians 4:7-13"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "part": 3,
+      "title": "Belonging to Christ",
+      "sections": [
+        {
+          "section": "The Lord's Prayer and the Christian Life",
+          "type": "narrative",
+          "intro": "Prayer is the natural expression of life in Christ. Through the Lord's Prayer, Jesus teaches his disciples how to pray and shapes the pattern of Christian devotion. This section presents both the theology of prayer and a detailed exposition of each petition of the Lord's Prayer."
+        },
+        {
+          "section": "Concerning Prayer",
+          "type": "qa",
+          "questions": [
+            {
+              "number": 145,
+              "question": "What is the work of deacons?",
+              "answer": "Serving Christ with their bishops and priests, deacons assist in worship and proclamation, and lead the Church in its ministry of service and outreach to those in need.",
+              "scripture": ["Acts 6:1-6", "1 Timothy 3:8-13", "Acts 8:26-40"]
+            },
+            {
+              "number": 146,
+              "question": "What is the historic episcopate?",
+              "answer": "The historic episcopate is the ordered succession of bishops from the apostles to the present day, which maintains the apostolic faith and ministry of the Church across generations.",
+              "scripture": ["Acts 1:20-26", "1 Timothy 4:14", "2 Timothy 1:6", "Titus 1:5"]
+            },
+            {
+              "number": 147,
+              "question": "What is marriage?",
+              "answer": "Marriage is a lifelong covenant between a man and a woman, blessed by God, in which they give themselves to each other in love and faithfulness. It reflects the relationship between Christ and his Church.",
+              "scripture": ["Genesis 2:18-24", "Matthew 19:4-6", "Ephesians 5:25-33"]
+            },
+            {
+              "number": 148,
+              "question": "What is the anointing of the sick?",
+              "answer": "The anointing of the sick is the prayer of the Church over those who are ill, accompanied by the laying on of hands or anointing with oil, in which we ask for God's healing, comfort, and grace.",
+              "scripture": ["Mark 6:13", "James 5:14-15"]
+            },
+            {
+              "number": 149,
+              "question": "What is prayer?",
+              "answer": "Prayer is responding to God the Father through his Son Jesus Christ by the power of the Holy Spirit. In prayer, I offer praise and thanksgiving, confess my sins, intercede for others, and make my requests known to God.",
+              "scripture": ["Psalm 145:18-19", "Matthew 6:5-15", "Philippians 4:6-7", "1 Thessalonians 5:17"]
+            },
+            {
+              "number": 150,
+              "question": "Why should you pray?",
+              "answer": "God commands and invites me to pray, and through prayer I draw near to him, grow in faith and trust, receive his grace and blessing, and intercede for others and for his kingdom.",
+              "scripture": ["Psalm 50:15", "Matthew 7:7-11", "Luke 18:1-8", "John 16:23-24"]
+            },
+            {
+              "number": 151,
+              "question": "To whom do you pray?",
+              "answer": "I pray to God the Father, through Jesus Christ his Son, in the power of the Holy Spirit. I may also ask the saints to intercede for me before God.",
+              "scripture": ["Matthew 6:9", "John 14:13-14", "Romans 8:26-27", "Ephesians 2:18"]
+            },
+            {
+              "number": 152,
+              "question": "What are the different forms of prayer?",
+              "answer": "The different forms of prayer include adoration (praising God for who he is), confession (acknowledging my sins), thanksgiving (giving thanks for God's blessings), supplication (asking for my own needs), and intercession (asking for the needs of others).",
+              "scripture": ["Psalm 95:1-7", "1 John 1:9", "Philippians 4:6", "1 Timothy 2:1-2"]
+            },
+            {
+              "number": 153,
+              "question": "What is the role of the Holy Spirit in prayer?",
+              "answer": "The Holy Spirit helps me to pray, intercedes for me with groanings too deep for words, and assures me that I am a child of God as I call on the Father.",
+              "scripture": ["Romans 8:15-16,26-27", "Galatians 4:6", "Jude 20"]
+            },
+            {
+              "number": 154,
+              "question": "How does Jesus teach you to pray?",
+              "answer": "Jesus teaches me to pray by giving me the Lord's Prayer as a pattern and by his own example of prayer to the Father. He also teaches me to pray persistently, humbly, and in faith.",
+              "scripture": ["Matthew 6:5-15", "Luke 11:1-13", "Luke 18:1-14", "John 17"]
+            }
+          ]
+        },
+        {
+          "section": "The Lord's Prayer",
+          "type": "qa",
+          "lord_prayer_text": "Our Father in heaven, hallowed be your name. Your kingdom come, your will be done, on earth as it is in heaven. Give us this day our daily bread, and forgive us our debts, as we also have forgiven our debtors. And lead us not into temptation, but deliver us from evil. For yours is the kingdom and the power and the glory, forever. Amen.",
+          "questions": [
+            {
+              "number": 155,
+              "question": "What is the Lord's Prayer?",
+              "answer": "The Lord's Prayer is the prayer Jesus gave his disciples when they asked him to teach them to pray. It is the model prayer for all Christian prayer, teaching us what to ask for and how to address God.",
+              "scripture": ["Matthew 6:9-13", "Luke 11:2-4"]
+            },
+            {
+              "number": 156,
+              "question": "What do you mean when you say 'Our Father in heaven'?",
+              "answer": "I mean that God is the Father of all who trust in Christ, that I come to him not alone but as part of his family the Church, and that though he is transcendent and holy, he is also near to me as a loving Father.",
+              "scripture": ["Isaiah 63:15-16", "Matthew 5:45", "Luke 15:11-24", "Romans 8:15-16"]
+            },
+            {
+              "number": 157,
+              "question": "What do you mean when you pray 'hallowed be your name'?",
+              "answer": "I am asking that God's name would be honored and glorified in me and in all the world, and that I would live in such a way that others come to know and praise him.",
+              "scripture": ["Psalm 148", "Isaiah 6:3", "Ezekiel 36:23", "John 12:28"]
+            },
+            {
+              "number": 158,
+              "question": "What do you mean when you pray 'your kingdom come'?",
+              "answer": "I am asking that God's reign of justice, peace, and salvation would increase in me and in all the world, and that Christ would return to establish his kingdom fully and forever.",
+              "scripture": ["Isaiah 9:6-7", "Luke 17:20-21", "Revelation 11:15", "Revelation 22:20"]
+            },
+            {
+              "number": 159,
+              "question": "What do you mean when you pray 'your will be done, on earth as it is in heaven'?",
+              "answer": "I am asking that I and all people would obey God as joyfully and completely as the angels do in heaven, and that God's purposes of salvation and renewal would be accomplished in all the earth.",
+              "scripture": ["Psalm 103:20-22", "Matthew 26:39", "Romans 12:2", "1 John 2:17"]
+            },
+            {
+              "number": 160,
+              "question": "What do you mean when you pray 'give us this day our daily bread'?",
+              "answer": "I am asking God to provide all that I need for my physical life — food, clothing, shelter, and health — trusting him as my Father who knows what I need and cares for me.",
+              "scripture": ["Proverbs 30:8-9", "Matthew 6:25-34", "2 Thessalonians 3:10-12", "1 Timothy 6:6-8"]
+            },
+            {
+              "number": 161,
+              "question": "What do you mean when you pray 'forgive us our debts, as we also have forgiven our debtors'?",
+              "answer": "I am asking God to forgive my sins as I have forgiven those who have sinned against me. This petition teaches me that receiving God's forgiveness and extending forgiveness to others are inseparably linked.",
+              "scripture": ["Matthew 5:23-24", "Matthew 6:14-15", "Matthew 18:21-35", "Colossians 3:13"]
+            },
+            {
+              "number": 162,
+              "question": "What do you mean when you pray 'lead us not into temptation, but deliver us from evil'?",
+              "answer": "I am asking God to protect me from situations where I would be tempted to sin, and to deliver me from the power of sin, death, and the devil, keeping me safe in his grace.",
+              "scripture": ["Matthew 26:41", "1 Corinthians 10:13", "2 Thessalonians 3:3", "1 Peter 5:8-9"]
+            },
+            {
+              "number": 163,
+              "question": "What do you mean by the doxology, 'for yours is the kingdom and the power and the glory, forever'?",
+              "answer": "I am praising God for his sovereign reign over all things, for his limitless power, and for his glorious majesty, affirming that every prayer is offered to the One who rules over all, now and forever.",
+              "scripture": ["1 Chronicles 29:10-13", "Psalm 145:10-13", "Revelation 4:11", "Revelation 5:12-13"]
+            }
+          ]
+        },
+        {
+          "section": "A Rule of Prayer: Scripture, Prayer, and Worship",
+          "type": "qa",
+          "questions": [
+            {
+              "number": 164,
+              "question": "What is a rule of prayer?",
+              "answer": "A rule of prayer is a regular pattern of prayer and devotion that I commit to following. It provides structure and discipline for my spiritual life and helps me grow in my relationship with God.",
+              "scripture": ["Psalm 119:164", "Daniel 6:10", "Acts 3:1", "1 Thessalonians 5:16-18"]
+            },
+            {
+              "number": 165,
+              "question": "What is the Daily Office?",
+              "answer": "The Daily Office is the pattern of morning and evening prayer drawn from the Book of Common Prayer, structured around psalms, Scripture readings, canticles, and prayers. It forms a daily rhythm of drawing near to God in his Word and prayer.",
+              "scripture": ["Psalm 5:3", "Psalm 92:1-4", "Psalm 141:2", "Acts 2:42"]
+            },
+            {
+              "number": 166,
+              "question": "Why is it important to read Scripture regularly?",
+              "answer": "Regular reading of Scripture keeps me rooted in God's Word, which nourishes my faith, corrects my errors, and shapes me into the image of Christ. Through Scripture, the Holy Spirit speaks to me and transforms my heart and mind.",
+              "scripture": ["Joshua 1:8", "Psalm 119:9-16", "2 Timothy 3:16-17", "Hebrews 4:12"]
+            },
+            {
+              "number": 167,
+              "question": "How should you read and study Holy Scripture?",
+              "answer": "I should read Scripture prayerfully, expecting God to speak to me through it; carefully, seeking to understand its meaning in context; and obediently, ready to apply its teaching to my life. Reading Scripture with the community of the Church and its historic interpretation is also important.",
+              "scripture": ["Nehemiah 8:8", "Psalm 119:18", "Acts 17:11", "2 Peter 1:20-21"]
+            },
+            {
+              "number": 168,
+              "question": "What is Christian worship?",
+              "answer": "Christian worship is the Church's response to God's grace and glory, offered to the triune God through Jesus Christ in the power of the Holy Spirit. Worship includes praise, prayer, the reading and preaching of the Word, and the celebration of the sacraments.",
+              "scripture": ["Psalm 100", "John 4:23-24", "Romans 12:1", "Hebrews 10:24-25"]
+            },
+            {
+              "number": 169,
+              "question": "Why must you worship with others in the Church?",
+              "answer": "Because God calls us to be his people together, and the Christian life cannot be fully lived in isolation. Gathering together for worship builds up the Body of Christ, strengthens my faith through fellowship, and bears witness to the world.",
+              "scripture": ["Psalm 122:1", "Matthew 18:20", "Acts 2:42-47", "Hebrews 10:24-25"]
+            },
+            {
+              "number": 170,
+              "question": "What is the Lord's Day?",
+              "answer": "The Lord's Day is Sunday, the first day of the week, on which Christ rose from the dead. Christians gather on this day to celebrate his resurrection, to worship God, to receive the Word and Sacrament, and to be renewed for life and service.",
+              "scripture": ["Psalm 118:24", "John 20:1,19", "Acts 20:7", "Revelation 1:10"]
+            },
+            {
+              "number": 171,
+              "question": "What is the Christian year?",
+              "answer": "The Christian year is the annual calendar of seasons and feasts — Advent, Christmas, Epiphany, Lent, Holy Week, Easter, Ascension, Pentecost, and the Season after Pentecost — that shapes the worship and devotion of the Church around the life of Christ.",
+              "scripture": ["Leviticus 23", "Luke 2:41", "John 7:2,37", "Colossians 2:16-17"]
+            },
+            {
+              "number": 172,
+              "question": "What is fasting?",
+              "answer": "Fasting is voluntarily abstaining from food or other pleasures for a set time in order to focus on prayer, repentance, and seeking God. It is a spiritual discipline that expresses dependence on God and intensifies prayer.",
+              "scripture": ["Isaiah 58:6-7", "Matthew 6:16-18", "Matthew 17:21", "Acts 13:2-3"]
+            },
+            {
+              "number": 173,
+              "question": "What is almsgiving?",
+              "answer": "Almsgiving is the practice of giving money and resources to those in need as an expression of love for my neighbor and gratitude to God. It is a spiritual discipline that loosens my attachment to wealth and advances God's kingdom.",
+              "scripture": ["Proverbs 19:17", "Matthew 6:2-4", "Luke 12:33-34", "2 Corinthians 9:6-8"]
+            },
+            {
+              "number": 174,
+              "question": "What is Christian stewardship?",
+              "answer": "Christian stewardship is the faithful management of all that God has entrusted to me — my time, talents, and treasure — for his glory and the service of others. Since everything I have is a gift from God, I am accountable to him for how I use it.",
+              "scripture": ["Deuteronomy 8:17-18", "Matthew 25:14-30", "Luke 16:10-12", "1 Corinthians 4:1-2"]
+            },
+            {
+              "number": 175,
+              "question": "Why is Christian fellowship important?",
+              "answer": "Christian fellowship is important because God has made us members of one Body, and we need each other to grow in faith, to bear one another's burdens, to encourage one another, and to present a common witness to the world.",
+              "scripture": ["Ecclesiastes 4:9-12", "Romans 12:10-16", "Galatians 6:2", "1 John 1:3-7"]
+            },
+            {
+              "number": 176,
+              "question": "What is the ministry of all believers?",
+              "answer": "All baptized Christians share in the ministry of Christ as prophets, priests, and kings. We are called to proclaim the Gospel, to intercede for the world in prayer, and to serve God in our daily lives and vocations.",
+              "scripture": ["Exodus 19:6", "1 Peter 2:9", "Revelation 1:5-6", "Revelation 5:9-10"]
+            },
+            {
+              "number": 177,
+              "question": "What is Christian mission?",
+              "answer": "Christian mission is participating in God's own mission to the world — the proclamation of the Gospel, the making of disciples, the planting of churches, and the demonstration of God's kingdom through acts of service, justice, and mercy.",
+              "scripture": ["Matthew 28:18-20", "Luke 4:18-19", "Acts 1:8", "2 Corinthians 5:18-20"]
+            },
+            {
+              "number": 178,
+              "question": "How should you share your faith with others?",
+              "answer": "I should share my faith through the witness of my life and words, being ready to give a reason for the hope I have, speaking the truth in love, and inviting others to know Jesus Christ and be baptized.",
+              "scripture": ["Matthew 5:13-16", "Acts 1:8", "1 Peter 3:15-16", "Colossians 4:5-6"]
+            },
+            {
+              "number": 179,
+              "question": "What is the responsibility of Christians toward the poor and suffering?",
+              "answer": "Christians are called to love and care for the poor, the sick, the imprisoned, the stranger, and the suffering as a direct expression of love for Christ himself. Justice and mercy toward the vulnerable are inseparable from the Christian life.",
+              "scripture": ["Proverbs 19:17", "Matthew 25:34-40", "Luke 4:18", "James 2:14-17"]
+            },
+            {
+              "number": 180,
+              "question": "How does the Christian life relate to society and culture?",
+              "answer": "Christians are called to be salt and light in the world — engaging culture with wisdom, seeking the common good, working for justice and peace, and calling all aspects of life under the lordship of Christ.",
+              "scripture": ["Jeremiah 29:7", "Matthew 5:13-16", "Romans 13:1-7", "1 Peter 2:13-17"]
+            },
+            {
+              "number": 181,
+              "question": "What is vocation?",
+              "answer": "Vocation is the calling God gives to each person — not only to ordained or religious ministry, but to every sphere of life: family, work, community, and friendship. All of life is to be lived as service to God and neighbor.",
+              "scripture": ["Genesis 2:15", "Colossians 3:17,23-24", "Ephesians 6:5-9", "1 Corinthians 7:17"]
+            },
+            {
+              "number": 182,
+              "question": "What is the place of the family in the Christian life?",
+              "answer": "The family is the primary school of Christian discipleship, in which faith is passed on through example, teaching, prayer, and worship. Parents bear particular responsibility to raise their children in the fear and love of God.",
+              "scripture": ["Deuteronomy 6:4-9", "Proverbs 22:6", "Ephesians 6:1-4", "2 Timothy 1:5"]
+            },
+            {
+              "number": 183,
+              "question": "How should you pray for the world?",
+              "answer": "I should intercede for all people — for leaders and governments, for the peace of nations, for the poor and suffering, for the spread of the Gospel, and for the coming of God's kingdom — trusting that God hears and answers prayer.",
+              "scripture": ["1 Kings 8:22-53", "Psalm 72", "1 Timothy 2:1-4", "Revelation 5:8"]
+            },
+            {
+              "number": 184,
+              "question": "What is contemplative prayer?",
+              "answer": "Contemplative prayer is resting in the presence of God in silence and stillness, seeking to know him more deeply and to be conformed to his will. It includes meditation on Scripture and on the character and works of God.",
+              "scripture": ["Psalm 46:10", "Psalm 131", "Habakkuk 2:20", "Luke 10:38-42"]
+            },
+            {
+              "number": 185,
+              "question": "How does God answer prayer?",
+              "answer": "God always hears and answers the prayers of his people according to his perfect wisdom and love. Sometimes he answers as we ask; sometimes he gives something better; sometimes he asks us to wait. In all things, his answer is shaped by what is best for us and for his glory.",
+              "scripture": ["Psalm 34:15-18", "Matthew 7:7-11", "Romans 8:28", "2 Corinthians 12:8-9"]
+            },
+            {
+              "number": 186,
+              "question": "What are the Psalms, and how should you use them in prayer?",
+              "answer": "The Psalms are the inspired prayer book of the Bible, covering the full range of human experience before God — praise, lament, thanksgiving, confession, and trust. They teach me to pray and give me words when my own words fail.",
+              "scripture": ["Colossians 3:16", "Ephesians 5:19", "1 Chronicles 16:7-36"]
+            },
+            {
+              "number": 187,
+              "question": "What is intercession?",
+              "answer": "Intercession is praying on behalf of others, bringing their needs before God. Jesus is the great Intercessor who prays for his people before the Father, and I am called to share in this ministry by praying for others.",
+              "scripture": ["Romans 8:34", "Hebrews 7:25", "John 17", "1 Timothy 2:1-2"]
+            },
+            {
+              "number": 188,
+              "question": "What is confession of sin?",
+              "answer": "Confession of sin is honestly acknowledging my sins before God, trusting in his forgiveness through Christ. It may be offered privately to God or in the presence of a minister who pronounces absolution on God's behalf.",
+              "scripture": ["Psalm 32:1-5", "Psalm 51", "1 John 1:8-10", "James 5:16"]
+            },
+            {
+              "number": 189,
+              "question": "What is absolution?",
+              "answer": "Absolution is the authoritative declaration of God's forgiveness, pronounced by a minister in Christ's name over those who confess their sins. It is not the minister's own forgiveness but God's, declared and applied through his servant.",
+              "scripture": ["John 20:21-23", "2 Corinthians 5:18-20", "Matthew 16:19", "Matthew 18:18"]
+            },
+            {
+              "number": 190,
+              "question": "How does worship shape you as a Christian?",
+              "answer": "Regular, faithful worship in Word and Sacrament, prayer and fellowship, forms my heart and mind in the knowledge of God, deepens my love for him and my neighbor, and equips me for a life of witness and service.",
+              "scripture": ["Romans 12:1-2", "Colossians 3:16-17", "Hebrews 10:24-25", "1 Peter 2:5"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "part": 4,
+      "title": "Becoming Like Christ",
+      "sections": [
+        {
+          "section": "The Ten Commandments",
+          "type": "qa",
+          "ten_commandments_text": "You shall have no other gods before me. You shall not make for yourself a carved image. You shall not take the name of the Lord your God in vain. Remember the Sabbath day, to keep it holy. Honor your father and your mother. You shall not murder. You shall not commit adultery. You shall not steal. You shall not bear false witness against your neighbor. You shall not covet.",
+          "intro": "The Ten Commandments are God's summary of the moral law, given to Israel through Moses and confirmed by Jesus. They describe both the shape of love for God and love for neighbor, and they reveal our need for the grace and forgiveness found in Christ.",
+          "questions": [
+            {
+              "number": 191,
+              "question": "What are the Ten Commandments?",
+              "answer": "The Ten Commandments are the summary of God's moral law given to Moses on Mount Sinai. They describe what it means to love God with all my heart, soul, and mind, and to love my neighbor as myself.",
+              "scripture": ["Exodus 20:1-17", "Deuteronomy 5:6-21", "Matthew 22:36-40", "Romans 13:8-10"]
+            },
+            {
+              "number": 192,
+              "question": "What is the purpose of the Ten Commandments?",
+              "answer": "The Ten Commandments serve three purposes: they reveal God's character and will; they show me my sin and my need for grace; and they guide me in the life of obedience and love to which God calls me as his redeemed child.",
+              "scripture": ["Psalm 19:7-11", "Romans 3:19-20", "Romans 7:7", "Galatians 3:24"]
+            },
+            {
+              "number": 193,
+              "question": "How does Jesus fulfill the Ten Commandments?",
+              "answer": "Jesus perfectly obeyed all God's commandments in our place, fulfilling the Law's demands. He also deepens and internalizes the commandments, showing that they govern not only actions but thoughts and motives. He frees us from condemnation under the Law and enables us to obey through his Spirit.",
+              "scripture": ["Matthew 5:17-20", "Romans 8:3-4", "Galatians 4:4-5", "Hebrews 4:15"]
+            },
+            {
+              "number": 194,
+              "question": "What is the first commandment: 'You shall have no other gods before me'?",
+              "answer": "I am to worship, trust, love, and obey the one true God alone — the Father, Son, and Holy Spirit — and to put nothing in his place. This commandment forbids idolatry in all its forms, including the worship of wealth, power, pleasure, or self.",
+              "scripture": ["Deuteronomy 6:4-5", "Matthew 4:10", "1 Corinthians 8:4-6", "1 John 5:21"]
+            },
+            {
+              "number": 195,
+              "question": "What is the second commandment: 'You shall not make for yourself a carved image'?",
+              "answer": "I am to worship God only as he has revealed himself, not through idols or images made by human hands. This commandment calls me to a pure, spiritual worship of the living God as he is known in Christ and through Scripture.",
+              "scripture": ["Exodus 20:4-6", "Isaiah 44:9-20", "John 4:23-24", "Acts 17:29"]
+            },
+            {
+              "number": 196,
+              "question": "What is the third commandment: 'You shall not take the name of the Lord your God in vain'?",
+              "answer": "I am to honor God's name, using it reverently in worship, prayer, and witness. I must not misuse, profane, or dishonor God's name in speech, oaths, or actions, and I must not claim to speak in his name falsely.",
+              "scripture": ["Leviticus 19:12", "Matthew 5:33-37", "James 5:12", "Revelation 15:4"]
+            },
+            {
+              "number": 197,
+              "question": "What is the fourth commandment: 'Remember the Sabbath day, to keep it holy'?",
+              "answer": "I am to set aside regular time for rest, worship, and the renewal of my relationship with God. For Christians, this is fulfilled especially in gathering with the Church on the Lord's Day — Sunday — to worship, receive the Word and Sacrament, and rest in God's grace.",
+              "scripture": ["Genesis 2:2-3", "Isaiah 58:13-14", "Mark 2:27-28", "Hebrews 4:9-11"]
+            },
+            {
+              "number": 198,
+              "question": "What is the fifth commandment: 'Honor your father and your mother'?",
+              "answer": "I am to respect, love, obey, and care for my parents and all those in legitimate authority over me. This commandment undergirds the ordering of family, society, and the Church, and promises blessing to those who live it out.",
+              "scripture": ["Proverbs 23:22", "Ephesians 6:1-3", "Colossians 3:20", "1 Timothy 5:3-4"]
+            },
+            {
+              "number": 199,
+              "question": "What is the sixth commandment: 'You shall not murder'?",
+              "answer": "I am to protect and preserve human life, which is made in God's image. This commandment forbids not only murder but also hatred, contempt, and any action or neglect that harms or endangers human life, from conception to natural death.",
+              "scripture": ["Genesis 9:6", "Matthew 5:21-22", "Romans 13:9-10", "1 John 3:15"]
+            },
+            {
+              "number": 200,
+              "question": "What is the seventh commandment: 'You shall not commit adultery'?",
+              "answer": "I am to honor the gift of sexuality as God created it, expressed faithfully within the covenant of marriage between a man and a woman. This commandment forbids adultery, sexual immorality, lust, and all that violates the integrity of marriage and human sexuality.",
+              "scripture": ["Matthew 5:27-28", "1 Corinthians 6:18-20", "1 Thessalonians 4:3-5", "Hebrews 13:4"]
+            },
+            {
+              "number": 201,
+              "question": "What is the eighth commandment: 'You shall not steal'?",
+              "answer": "I am to respect the property and livelihood of others, dealing honestly and generously in all my dealings. This commandment forbids theft, fraud, exploitation, and any taking of what belongs to another, while calling me to labor honestly and give generously.",
+              "scripture": ["Leviticus 19:35-36", "Ephesians 4:28", "1 Thessalonians 4:11-12", "1 Timothy 6:6-10"]
+            },
+            {
+              "number": 202,
+              "question": "What is the ninth commandment: 'You shall not bear false witness against your neighbor'?",
+              "answer": "I am to speak the truth in love, protecting the reputation and good name of others. This commandment forbids lying, slander, gossip, deceit, and all false or misleading speech, and calls me to speak truthfully and charitably about others.",
+              "scripture": ["Proverbs 12:17-19", "Matthew 5:37", "Ephesians 4:15,25", "James 3:1-12"]
+            },
+            {
+              "number": 203,
+              "question": "What is the tenth commandment: 'You shall not covet'?",
+              "answer": "I am to be content with what God has given me and to rejoice in the blessings of others. This commandment forbids envy, greed, and an inordinate desire for what belongs to others, and calls me to a heart shaped by gratitude and trust in God's provision.",
+              "scripture": ["Psalm 131", "Luke 12:15-21", "Philippians 4:11-12", "Hebrews 13:5"]
+            },
+            {
+              "number": 204,
+              "question": "What is the summary of the law?",
+              "answer": "Jesus summed up the whole law in two commandments: 'You shall love the Lord your God with all your heart and with all your soul and with all your mind' and 'You shall love your neighbor as yourself.' All the commandments flow from these two.",
+              "scripture": ["Deuteronomy 6:5", "Leviticus 19:18", "Matthew 22:37-40", "Romans 13:8-10"]
+            },
+            {
+              "number": 205,
+              "question": "What is the new commandment Jesus gives?",
+              "answer": "Jesus gives his disciples the new commandment to love one another as he has loved us. This love is self-giving, sacrificial, and modeled on Christ's own love shown in his death for us.",
+              "scripture": ["John 13:34-35", "John 15:12-13", "1 John 3:16-18", "1 John 4:7-11"]
+            },
+            {
+              "number": 206,
+              "question": "How do love of God and love of neighbor relate to each other?",
+              "answer": "Love of God and love of neighbor are inseparable. True love of God expresses itself in love for others made in his image, and love of neighbor is only rightly ordered when it flows from love of God. One cannot claim to love God while consistently failing to love neighbor.",
+              "scripture": ["Leviticus 19:18", "Matthew 22:37-40", "1 John 4:20-21", "Galatians 5:14"]
+            },
+            {
+              "number": 207,
+              "question": "How does the law function in the life of a Christian?",
+              "answer": "For the Christian, the law no longer condemns, because Christ has fulfilled its demands on my behalf. Instead, the law guides me as a rule of thankful, faithful living, showing me what pleases God and how to love him and my neighbor.",
+              "scripture": ["Romans 6:14-15", "Romans 8:1-4", "Galatians 5:13-14", "1 John 5:3"]
+            },
+            {
+              "number": 208,
+              "question": "What is the natural law?",
+              "answer": "The natural law is God's moral order written into the fabric of creation and into the human conscience, enabling all people to have some knowledge of right and wrong. The Ten Commandments express and clarify this natural law for God's people.",
+              "scripture": ["Psalm 19:1-4", "Romans 1:19-20", "Romans 2:14-15", "Acts 17:26-27"]
+            },
+            {
+              "number": 209,
+              "question": "Why do Christians still fail to keep God's law?",
+              "answer": "Although Christians are renewed by the Holy Spirit, sin still dwells within us and we continue to fall short of God's perfect standard. This keeps us humble, dependent on God's grace and forgiveness, and looking to Christ as our righteousness.",
+              "scripture": ["Romans 7:14-25", "Galatians 5:16-17", "1 John 1:8-10", "Philippians 3:12-14"]
+            },
+            {
+              "number": 210,
+              "question": "What is the role of conscience in the moral life?",
+              "answer": "Conscience is the inner faculty by which I discern right and wrong and feel conviction when I sin. Though conscience can be mistaken, a conscience informed and trained by Scripture and the teaching of the Church is a reliable guide to moral decision-making.",
+              "scripture": ["Romans 2:14-15", "Romans 9:1", "1 Timothy 1:5", "Hebrews 9:14"]
+            }
+          ]
+        },
+        {
+          "section": "Justification and Sanctification: Living in Forgiveness and Healing",
+          "type": "qa",
+          "questions": [
+            {
+              "number": 211,
+              "question": "What is justification?",
+              "answer": "Justification is God's act of declaring me righteous in his sight, not because of anything I have done, but solely on account of the righteousness of Jesus Christ received through faith. In justification, my sins are forgiven and Christ's righteousness is credited to me.",
+              "scripture": ["Romans 3:21-26", "Romans 4:1-8", "Romans 5:1", "Galatians 2:15-16"]
+            },
+            {
+              "number": 212,
+              "question": "What is sanctification?",
+              "answer": "Sanctification is the ongoing work of the Holy Spirit in me, by which I am set apart to God and progressively transformed into the image of Christ. Unlike justification, sanctification is a process that continues throughout my life.",
+              "scripture": ["John 17:17", "Romans 6:19-22", "2 Corinthians 3:18", "1 Thessalonians 4:3"]
+            },
+            {
+              "number": 213,
+              "question": "How are justification and sanctification related?",
+              "answer": "Justification and sanctification are distinct but inseparable aspects of salvation. Justification is complete and instantaneous — God declares me righteous through faith. Sanctification flows from justification and is the lifelong process of becoming in practice what I am by God's declaration.",
+              "scripture": ["1 Corinthians 1:30", "1 Corinthians 6:11", "Ephesians 2:8-10", "Philippians 1:6"]
+            },
+            {
+              "number": 214,
+              "question": "What is repentance in the ongoing Christian life?",
+              "answer": "Repentance in the ongoing Christian life is the constant turning away from sin and returning to God, exercised throughout my life as I grow in awareness of my failures and in trust in God's forgiveness. It is both a once-for-all turning at conversion and a daily practice.",
+              "scripture": ["Psalm 51", "Luke 15:17-20", "Acts 3:19", "2 Corinthians 7:10"]
+            },
+            {
+              "number": 215,
+              "question": "What is the assurance of salvation?",
+              "answer": "Assurance of salvation is the confidence, given by the Holy Spirit, that I am a child of God and that nothing can separate me from his love in Christ. This assurance is grounded not in my own efforts but in the promises of God and the work of Christ.",
+              "scripture": ["John 10:27-30", "Romans 8:38-39", "1 John 5:11-13", "2 Timothy 1:12"]
+            },
+            {
+              "number": 216,
+              "question": "What is Christian growth?",
+              "answer": "Christian growth is the Spirit-empowered process of becoming more like Christ — growing in love, faith, wisdom, holiness, and the fruit of the Spirit. It happens through the means of grace: Scripture, prayer, sacraments, worship, fellowship, and service.",
+              "scripture": ["Ephesians 4:15-16", "Colossians 1:10", "2 Peter 1:5-8", "2 Peter 3:18"]
+            },
+            {
+              "number": 217,
+              "question": "What is the role of suffering in the Christian life?",
+              "answer": "God uses suffering to form my character, deepen my trust in him, and conform me to Christ who suffered for me. Suffering for Christ's sake can be a participation in his sufferings and a testimony to his power at work in weakness.",
+              "scripture": ["Romans 5:3-5", "Romans 8:17-18", "2 Corinthians 12:9-10", "1 Peter 4:12-13"]
+            },
+            {
+              "number": 218,
+              "question": "What is Christian hope?",
+              "answer": "Christian hope is the confident expectation of all that God has promised — the return of Christ, the resurrection of the body, the renewal of all things, and the fullness of eternal life with God. This hope sustains and shapes my life in the present.",
+              "scripture": ["Romans 8:24-25", "1 Corinthians 15:19-20", "Titus 2:13", "1 Peter 1:3-5"]
+            },
+            {
+              "number": 219,
+              "question": "What is glorification?",
+              "answer": "Glorification is the final stage of salvation, when at Christ's return I will be raised bodily, freed completely from sin, and fully conformed to the image of Christ in body and soul to live with God forever in the renewed creation.",
+              "scripture": ["Romans 8:29-30", "1 Corinthians 15:42-44", "Philippians 3:20-21", "1 John 3:2"]
+            },
+            {
+              "number": 220,
+              "question": "What is the foundation of the Christian life?",
+              "answer": "The foundation of the Christian life is Jesus Christ himself — his person, his work, his resurrection, and his continuing presence by the Holy Spirit. Every aspect of Christian life and growth rests on union with him through faith.",
+              "scripture": ["1 Corinthians 3:11", "Colossians 2:6-7", "Ephesians 2:19-22", "1 Peter 2:4-6"]
+            },
+            {
+              "number": 221,
+              "question": "What is the goal of the Christian life?",
+              "answer": "The goal of the Christian life is to glorify God and to enjoy him forever — to know him, love him, and be conformed to the image of his Son, in this life and fully in the life to come.",
+              "scripture": ["John 17:3", "Romans 8:29", "1 Corinthians 10:31", "Revelation 21:3-4"]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "appendices": [
+    {
+      "number": 1,
+      "title": "Prayers for Use with the Catechism",
+      "page": 115
+    },
+    {
+      "number": 2,
+      "title": "A Rite for Admission of Catechumens",
+      "page": 123
+    },
+    {
+      "number": 3,
+      "title": "The Nicene Creed",
+      "page": 127
+    },
+    {
+      "number": 4,
+      "title": "The Creed of Saint Athanasius",
+      "page": 129
+    },
+    {
+      "number": 5,
+      "title": "A Note on the Articles of Religion",
+      "page": 133
+    },
+    {
+      "number": 6,
+      "title": "Vision Paper for Catechesis",
+      "page": 135
+    },
+    {
+      "number": 7,
+      "title": "Guiding Principles for Catechesis",
+      "page": 137
+    }
+  ]
+}

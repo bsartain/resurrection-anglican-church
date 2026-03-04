@@ -20,6 +20,14 @@ const HeroImage = ({ image, children }: HeroImageProps) => {
         </div>
         <h1>{children}</h1>
         {pathname === "/give" ? <DonateButtonModal donateButtonText="DONATE" /> : null}
+        {pathname === "/catechism" ? (
+          <div>
+            <div className="d-flex justify-content-center w-100">
+              <hr className="w-25 mt-4 mb-5" />
+            </div>
+            An Anglican Catechism
+          </div>
+        ) : null}
       </div>
     </div>
   );
