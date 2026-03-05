@@ -17,16 +17,6 @@ const CatechismComponent = () => {
                   <div className="d-flex justify-content-center">
                     <hr className="section-header-divider" />
                   </div>
-                  {item.prayers
-                    ? item.prayers.map((item: any, index: number) => {
-                        return (
-                          <div key={index} className="sub-section-container">
-                            <h3 className="sub-section-header">{item.title}</h3>
-                            <div className="sub-section-content">{item.text}</div>
-                          </div>
-                        );
-                      })
-                    : null}
                   {item.questions
                     ? item.questions.map((item: any, index: number) => {
                         return (
@@ -37,7 +27,7 @@ const CatechismComponent = () => {
                                 <span>{item.question}</span>
                               </h3>
                               <div>{item.answer}</div>
-                              <div className="mt-4">{item.scripture.join(", ")}</div>
+                              <div className="mt-4">{item.scriptures.join(", ")}</div>
                             </div>
                           </>
                         );
