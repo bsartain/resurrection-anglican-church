@@ -12,7 +12,6 @@ export default async function Catechism() {
   return (
     <div>
       <HeroImage image={pageData?.image ? pageData.image : ""}>{pageData?.title}</HeroImage>
-
       <div>
         <RevealSection id="kidsContent" image="/images/pages/jesus-cross.jpg" opacity={0.015}>
           <div className="pt-5 pb-5 reveal">

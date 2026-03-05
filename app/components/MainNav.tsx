@@ -1,8 +1,10 @@
 "use client";
 import { Container } from "react-bootstrap";
 import { Navbar, Offcanvas } from "react-bootstrap";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, use } from "react";
 import Link from "next/link";
+import ScrollToTopButton from "./ScrollToTopButton";
+import { usePathname } from "next/navigation";
 
 const menuItems = [
   { label: "Home", href: "/" },
@@ -19,6 +21,7 @@ const MainNav = () => {
   const [show, setShow] = useState(false);
   const [visible, setVisible] = useState(true);
   const lastScrollY = useRef(0);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -70,6 +73,7 @@ const MainNav = () => {
           </button>
         </Container>
       </Navbar>
+      {pathname === "/catechism" ? <ScrollToTopButton /> : null}
 
       <Offcanvas show={show} onHide={() => setShow(false)} placement="end" className="drawer-container">
         <Offcanvas.Header closeButton>

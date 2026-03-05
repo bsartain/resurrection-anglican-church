@@ -978,6 +978,16 @@ h6 {
 }
 
 .catechism-container {
+  .catechism-toc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .table-of-contents {
+      width: 100%;
+      max-width: 400px;
+    }
+  }
   .header {
     display: flex;
     align-items: center;
