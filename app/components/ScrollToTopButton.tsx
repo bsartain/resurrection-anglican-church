@@ -21,7 +21,7 @@ export default function ScrollToTopButton() {
       className="bi bi-arrow-up-circle-fill catechism-scroll-top"
       style={{
         position: "fixed",
-        top: "50%",
+        top: "95%",
         right: "1.5rem",
         transform: "translateY(-50%)",
         zIndex: 999,
