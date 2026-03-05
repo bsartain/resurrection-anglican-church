@@ -5,6 +5,8 @@ type CatechismQuestion = {
   question: string;
   answer: string;
   scriptures: string[];
+  articlesText?: string;
+  articlesNumber?: number;
 };
 
 type CatechismSection = {
@@ -70,8 +72,23 @@ const CatechismComponent = () => {
                               <span className="catechism-number">{item.number}.</span>
                               <span>{item.question}</span>
                             </h3>
-                            <div>{item.answer}</div>
+                            <div>
+                              {item.answer.split("\n").map((line, i) => (
+                                <p key={i} className="mb-1">
+                                  {line}
+                                </p>
+                              ))}
+                            </div>
+
                             <div className="mt-4">{item.scriptures.join(", ")}</div>
+                            {item?.articlesText ? (
+                              <div className="mt-3">
+                                <strong>Articles of Religion {item?.articlesNumber}:&nbsp;</strong>
+                                {item.articlesText.split("\n").map((line, i) => (
+                                  <p key={i} className="mb-1">{line}</p>
+                                ))}
+                              </div>
+                            ) : null}
                           </div>
                         );
                       })

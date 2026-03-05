@@ -153,7 +153,9 @@
               "number": 21,
               "question": "Which creeds has this church received?",
               "answer": "This church believes the Apostles' Creed, the Nicene Creed, and the Athanasian Creed.",
-              "scriptures": ["Articles of Religion, 8"]
+              "scriptures": [],
+              "articlesNumber": 8,
+              "articlesText": "The Nicene Creed, and that which is commonly called the Apostles' Creed, ought thoroughly to be received and believed: for they may be proved by most certain warrants of Holy Scripture."
             },
             {
               "number": 22,
@@ -182,13 +184,17 @@
               "number": 25,
               "question": "What is Holy Scripture?",
               "answer": "Holy Scripture is \"God's Word written\" (Articles of Religion, 20), given by the Holy Spirit through prophets and apostles as the revelation of God and his acts in human history, and is therefore the Church's final authority in all matters of faith and practice.",
-              "scriptures": ["Psalm 19:7–11", "Jeremiah 36:1–8", "2 Timothy 3:14–17", "Revelation 1:1–11"]
+              "scriptures": ["Psalm 19:7–11", "Jeremiah 36:1–8", "2 Timothy 3:14–17", "Revelation 1:1–11"],
+              "articlesNumber": 20,
+              "articlesText": "The Church hath power to decree Rites or Ceremonies, and authority in Controversies of Faith: and yet it is not lawful for the Church to ordain any thing that is contrary to God's Word written, neither may it so expound one place of Scripture, that it be repugnant to another. Wherefore, although the Church be a witness and a keeper of Holy Writ, yet, as it ought not to decree any thing against the same, so besides the same ought it not to enforce any thing to be believed for necessity of Salvation."
             },
             {
               "number": 26,
               "question": "What books are contained in Holy Scripture?",
               "answer": "The thirty-nine books of the Old Testament and the twenty-seven books of the New Testament together form the whole of Holy Scripture.",
-              "scriptures": ["Articles of Religion, 6"]
+              "scriptures": [],
+              "articlesNumber": 6,
+              "articlesText": "Holy Scripture containeth all things necessary to salvation: so that whatsoever is not read therein, nor may be proved thereby, is not to be required of any man, that it should be believed as an article of the Faith, or be thought requisite or necessary to salvation. In the name of the Holy Scripture we do understand those canonical Books of the Old and New Testament, of whose authority was never any doubt in the Church.\n\nGenesis\nExodus\nLeviticus\nNumbers\nDeuteronomy\nJoshua\nJudges\nRuth\nThe First Book of Samuel\nThe Second Book of Samuel\nThe First Book of Kings\nThe Second Book of Kings\nThe First Book of Chronicles\nThe Second Book of Chronicles\nThe First Book of Esdras\nThe Second Book of Esdras\nThe Book of Esther\nThe Book of Job\nThe Psalms\nThe Proverbs\nEcclesiastes or Preacher\nCantica or Songs of Solomon\nFour Prophets the greater\nTwelve Prophets the less\n\nAnd the other Books (as Hierome saith) the Church doth read for example of life and instruction of manners; but yet doth it not apply them to establish any doctrine; such are these following:\n\nThe Third Book of Esdras\nThe Fourth Book of Esdras\nThe Book of Tobias\nThe Book of Judith\nThe rest of the Book of Esther\nThe Book of Wisdom\nJesus the Son of Sirach\nBaruch the Prophet\nThe Song of the Three Children\nThe Story of Susanna\nOf Bel and the Dragon\nThe Prayer of Manasses\nThe First Book of Maccabees\nThe Second Book of Maccabees\n\nAll the Books of the New Testament, as they are commonly received, we do receive, and account them Canonical."
             },
             {
               "number": 27,
@@ -242,7 +248,9 @@
               "number": 35,
               "question": "What are the Apocrypha?",
               "answer": "The fourteen books of the Apocrypha, historically acknowledged by this church, are pre-Christian Jewish writings that provide background for the New Testament and are included in many editions of the Bible. They may be read as examples of faithful living but \"not to establish any doctrine.\"",
-              "scriptures": ["Articles of Religion, 6"]
+              "scriptures": [],
+              "articlesNumber": 6,
+              "articlesText": "Holy Scripture containeth all things necessary to salvation: so that whatsoever is not read therein, nor may be proved thereby, is not to be required of any man, that it should be believed as an article of the Faith, or be thought requisite or necessary to salvation. In the name of the Holy Scripture we do understand those canonical Books of the Old and New Testament, of whose authority was never any doubt in the Church.\n\nGenesis, Exodus, Leviticus, Numbers, Deuteronomy, Joshua, Judges, Ruth, The First Book of Samuel, The Second Book of Samuel, The First Book of Kings, The Second Book of Kings, The First Book of Chronicles, The Second Book of Chronicles, The First Book of Esdras, The Second Book of Esdras, The Book of Esther, The Book of Job, The Psalms, The Proverbs, Ecclesiastes or Preacher, Cantica or Songs of Solomon, Four Prophets the greater, Twelve Prophets the less.\n\nAnd the other Books (as Hierome saith) the Church doth read for example of life and instruction of manners; but yet doth it not apply them to establish any doctrine; such are these following:\n\nThe Third Book of Esdras, The Fourth Book of Esdras, The Book of Tobias, The Book of Judith, The rest of the Book of Esther, The Book of Wisdom, Jesus the Son of Sirach, Baruch the Prophet, The Song of the Three Children, The Story of Susanna, Of Bel and the Dragon, The Prayer of Manasses, The First Book of Maccabees, The Second Book of Maccabees.\n\nAll the Books of the New Testament, as they are commonly received, we do receive, and account them Canonical."
             }
           ]
         },
@@ -633,7 +641,9 @@
               "number": 92,
               "question": "What is the Church?",
               "answer": "The Church is the whole community of faithful Christians in heaven and on earth, called and formed by God into one people. The Church on earth gathers to worship God in Word and Sacrament, to serve God and neighbor, and to proclaim the Gospel to the ends of the earth.",
-              "scriptures": ["Exodus 19:4–6", "Psalm 22:22–23", "Matthew 28:19–20", "Ephesians 2:11–22", "1 Peter 2:4–10", "Articles of Religion, 19"]
+              "scriptures": ["Exodus 19:4–6", "Psalm 22:22–23", "Matthew 28:19–20", "Ephesians 2:11–22", "1 Peter 2:4–10"],
+              "articlesNumber": 19,
+              "articlesText": "The visible Church of Christ is a congregation of faithful men, in which the pure Word of God is preached, and the Sacraments be duly ministered according to Christ's ordinance, in all those things that of necessity are requisite to the same. As the Church of Jerusalem, Alexandria, and Antioch, have erred, so also the Church of Rome hath erred, not only in their living and manner of Ceremonies, but also in matters of Faith."
             },
             {
               "number": 93,
@@ -659,7 +669,9 @@
               "number": 95,
               "question": "What are the \"marks\" or characteristics of the Church?",
               "answer": "The Nicene Creed expands upon the Apostles' Creed to list four characteristics of the Church: it is \"one, holy, catholic, and apostolic.\"",
-              "scriptures": ["Articles of Religion, 8"]
+              "scriptures": [],
+              "articlesNumber": 8,
+              "articlesText": "The Nicene Creed, and that which is commonly called the Apostles' Creed, ought thoroughly to be received and believed: for they may be proved by most certain warrants of Holy Scripture."
             },
             {
               "number": 96,
@@ -859,20 +871,17 @@
               "number": 122,
               "question": "How should you receive the sacraments?",
               "answer": "I should receive the sacraments by faith in Christ, with repentance and thanksgiving. Faith in Christ is necessary to receive the grace of the sacraments, and obedience to Christ is necessary for the benefits of the sacraments to bear fruit in my life.",
-              "scriptures": ["Mark 16:16", "John 6:52–58", "Acts 2:38–47", "1 Corinthians 11:27–32", "1662 Catechism", "Articles of Religion, 28"]
+              "scriptures": ["Mark 16:16", "John 6:52–58", "Acts 2:38–47", "1 Corinthians 11:27–32", "1662 Catechism"],
+              "articlesNumber": 28,
+              "articlesText": "The Supper of the Lord is not only a sign of the love that Christians ought to have among themselves one to another, but rather it is a Sacrament of our Redemption by Christ's death: insomuch that to such as rightly, worthily, and with faith, receive the same, the Bread which we break is a partaking of the Body of Christ; and likewise the Cup of Blessing is a partaking of the Blood of Christ. Transubstantiation (or the change of the substance of Bread and Wine) in the Supper of the Lord, cannot be proved by Holy Writ; but is repugnant to the plain words of Scripture, overthroweth the nature of a Sacrament, and hath given occasion to many superstitions. The Body of Christ is given, taken, and eaten, in the Supper, only after an heavenly and spiritual manner. And the mean whereby the Body of Christ is received and eaten in the Supper, is Faith. The Sacrament of the Lord's Supper was not by Christ's ordinance reserved, carried about, lifted up, or worshipped."
             },
             {
               "number": 123,
               "question": "What sacraments were ordained by Christ?",
               "answer": "The two sacraments ordained by Christ that are \"generally necessary to salvation\" (1662 Catechism) are Baptism and Holy Communion (also called the Lord's Supper or the Holy Eucharist). These are sometimes called \"sacraments of the Gospel.\"",
-              "scriptures": [
-                "Articles of Religion, 25",
-                "Matthew 28:19–20",
-                "Luke 22:14–20",
-                "John 6:52–58",
-                "1 Corinthians 11:23–26",
-                "2 Corinthians 1:21–22"
-              ]
+              "scriptures": ["Matthew 28:19–20", "Luke 22:14–20", "John 6:52–58", "1 Corinthians 11:23–26", "2 Corinthians 1:21–22"],
+              "articlesNumber": 25,
+              "articlesText": "Sacraments ordained of Christ be not only badges or tokens of Christian men's profession, but rather they be certain sure witnesses, and effectual signs of grace, and God's good will towards us, by the which he doth work invisibly in us, and doth not only quicken, but also strengthen and confirm our Faith in him. There are two Sacraments ordained of Christ our Lord in the Gospel, that is to say, Baptism, and the Supper of the Lord. Those five commonly called Sacraments, that is to say, Confirmation, Penance, Orders, Matrimony, and Extreme Unction, are not to be counted for Sacraments of the Gospel, being such as have grown partly of the corrupt following of the Apostles, partly are states of life allowed in the Scriptures, but yet have not like nature of Sacraments with Baptism, and the Lord's Supper, for that they have not any visible sign or ceremony ordained of God. The Sacraments were not ordained of Christ to be gazed upon, or to be carried about, but that we should duly use them. And in such only as worthily receive the same, they have a wholesome effect or operation: but they that receive them unworthily, purchase to themselves damnation, as Saint Paul saith."
             },
             {
               "number": 124,
@@ -896,7 +905,9 @@
               "number": 125,
               "question": "How do these differ from the sacraments of the Gospel?",
               "answer": "They were not ordained by Christ as necessary to salvation, but arose from the practices of the apostles and the Early Church, or were blessed by God in Scripture. God clearly uses them as means of grace.",
-              "scriptures": ["Articles of Religion, 25"]
+              "scriptures": [],
+              "articlesNumber": 25,
+              "articlesText": "Sacraments ordained of Christ be not only badges or tokens of Christian men's profession, but rather they be certain sure witnesses, and effectual signs of grace, and God's good will towards us, by the which he doth work invisibly in us, and doth not only quicken, but also strengthen and confirm our Faith in him. There are two Sacraments ordained of Christ our Lord in the Gospel, that is to say, Baptism, and the Supper of the Lord. Those five commonly called Sacraments, that is to say, Confirmation, Penance, Orders, Matrimony, and Extreme Unction, are not to be counted for Sacraments of the Gospel, being such as have grown partly of the corrupt following of the Apostles, partly are states of life allowed in the Scriptures, but yet have not like nature of Sacraments with Baptism, and the Lord's Supper, for that they have not any visible sign or ceremony ordained of God. The Sacraments were not ordained of Christ to be gazed upon, or to be carried about, but that we should duly use them. And in such only as worthily receive the same, they have a wholesome effect or operation: but they that receive them unworthily, purchase to themselves damnation, as Saint Paul saith."
             },
             {
               "number": 126,
@@ -1891,7 +1902,7 @@
             {
               "number": 256,
               "question": "Recite the Ten Commandments.",
-              "answer": "1. I am the Lord your God. You shall have no other gods but me. 2. You shall not make for yourself any idol. 3. You shall not take the Name of the Lord your God in vain. 4. Remember the Sabbath day and keep it holy. 5. Honor your father and your mother. 6. You shall not murder. 7. You shall not commit adultery. 8. You shall not steal. 9. You shall not bear false witness against your neighbor. 10. You shall not covet.",
+              "answer": "1. I am the Lord your God. You shall have no other gods but me.\n2. You shall not make for yourself any idol.\n3. You shall not take the Name of the Lord your God in vain.\n4. Remember the Sabbath day and keep it holy.\n5. Honor your father and your mother.\n6. You shall not murder.\n7. You shall not commit adultery.\n8. You shall not steal.\n9. You shall not bear false witness against your neighbor.\n10. You shall not covet.",
               "scriptures": ["Exodus 20:1–17", "Deuteronomy 5:6–21"]
             },
             {
@@ -2101,15 +2112,9 @@
               "number": 288,
               "question": "How might you use God's Name carelessly?",
               "answer": "Cursing, magic, broken vows, false piety, manipulation of others, and hypocrisy all cheapen God's Name. These treat God's Name as empty of the reality for which it stands.",
-              "scriptures": [
-                "Leviticus 5:4–6",
-                "Leviticus 19:26b, 31",
-                "Psalm 10:2–7",
-                "Malachi 1:6–14",
-                "Matthew 5:33–37",
-                "James 3:5–12",
-                "Articles of Religion, 39"
-              ]
+              "scriptures": ["Leviticus 5:4–6", "Leviticus 19:26b, 31", "Psalm 10:2–7", "Malachi 1:6–14", "Matthew 5:33–37", "James 3:5–12"],
+              "articlesNumber": 39,
+              "articlesText": "As we confess that vain and rash Swearing is forbidden Christian men by our Lord Jesus Christ, and James his Apostle, so we judge, that Christian Religion doth not prohibit, but that a man may swear when the Magistrate requireth, in a cause of faith and charity, so it be done according to the Prophet's teaching in justice, judgment, and truth."
             },
             {
               "number": 289,
