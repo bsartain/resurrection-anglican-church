@@ -1,7 +1,6 @@
 "use client";
 import catechismData from "@/app/lib/catechism.json";
 import thirtyNineArticles from "@/app/lib/thityNineArticles.json";
-console.log("🚀 ~ thirtyNineArticles:", thirtyNineArticles.articles);
 import { Tabs, Tab } from "react-bootstrap";
 
 type CatechismQuestion = {
@@ -33,10 +32,7 @@ const slugify = (str: string) =>
 const CatechismComponent = () => {
   return (
     <>
-      <Tabs defaultActiveKey="bcp" id="uncontrolled-tab-example" className="mb-3">
-        <Tab eventKey="bcp" title=" Book of Common Prayer">
-          Book of Common Prayer
-        </Tab>
+      <Tabs defaultActiveKey="catechism" id="uncontrolled-tab-example" className="mb-3 mt-5">
         <Tab eventKey="catechism" title=" To Be A Christian - Anglican Catechism">
           <div className="catechism-container">
             <nav className="catechism-toc">
@@ -113,10 +109,17 @@ const CatechismComponent = () => {
             })}
           </div>
         </Tab>
+        <Tab eventKey="bcp" title="Book of Common Prayer">
+          <iframe
+            src="https://bcp2019.anglicanchurch.net/wp-content/uploads/2019/08/BCP2019.pdf"
+            style={{ width: "100%", height: "85vh", border: "none" }}
+            title="Book of Common Prayer 2019"
+          />
+        </Tab>
         <Tab eventKey="thityNine" title="Thirty Nine Articles of Religion">
           {thirtyNineArticles.articles.map((item: any, index: number) => {
             return (
-              <div className="mt-5 mb-5">
+              <div key={index} className="mt-5 mb-5">
                 <h3>
                   {item.number} {item.title}
                 </h3>

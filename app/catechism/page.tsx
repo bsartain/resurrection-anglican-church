@@ -10,7 +10,7 @@ export default async function Catechism() {
   const pageContent = await pageData?.content();
 
   return (
-    <div>
+    <div className="formularies-container">
       <HeroImage image={pageData?.image ? pageData.image : ""}>{pageData?.title}</HeroImage>
       <div>
         <RevealSection id="kidsContent" image="/images/pages/jesus-cross.jpg" opacity={0.015}>

@@ -57,9 +57,9 @@ export default async function Footer() {
 
           <div className="footer-info-block">
             <span className="footer-label">{phone?.title}</span>
-            <p>
+            <div>
               <a href={phoneLink}>{phoneContent && <DocumentRenderer document={phoneContent} />}</a>
-            </p>
+            </div>
           </div>
         </div>
 

@@ -1,8 +1,10 @@
 "use client";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function ScrollToTopButton() {
   const [buttonVisible, setButtonVisible] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,7 +34,10 @@ export default function ScrollToTopButton() {
         pointerEvents: buttonVisible ? "auto" : "none",
         transition: "opacity 0.3s ease",
       }}
-      onClick={() => window.scrollTo({ top: 1618, behavior: "smooth" })}
+      onClick={() => {
+        window.scrollTo({ top: 1618, behavior: "smooth" });
+        router.replace(window.location.pathname, { scroll: false });
+      }}
       title="Back to the top"
     />
   );
