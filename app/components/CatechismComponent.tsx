@@ -111,7 +111,7 @@ const CatechismComponent = () => {
         </Tab>
         <Tab eventKey="bcp" title="Book of Common Prayer">
           <iframe
-            src="https://bcp2019.anglicanchurch.net/wp-content/uploads/2019/08/BCP2019.pdf"
+            src="https://docs.google.com/viewer?url=https://bcp2019.anglicanchurch.net/wp-content/uploads/2019/08/BCP2019.pdf&embedded=true"
             style={{ width: "100%", height: "85vh", border: "none" }}
             title="Book of Common Prayer 2019"
           />
