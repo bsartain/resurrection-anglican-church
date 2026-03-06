@@ -2,7 +2,7 @@
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 
-interface BookModel {
+export interface BookModel {
   image: string | null;
   caption: string;
   subCaption: string;
@@ -10,7 +10,7 @@ interface BookModel {
   link: string;
 }
 
-const BookCarousel: React.FC<{ bookTitles: BookModel[] | null }> = ({ bookTitles }) => {
+const BookCarousel: React.FC<{ bookTitles: BookModel[] | null; onBookClick?: (item: BookModel) => void }> = ({ bookTitles, onBookClick }) => {
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
     loop: true,
     slides: { perView: 3.4, spacing: 15 },
@@ -27,8 +27,12 @@ const BookCarousel: React.FC<{ bookTitles: BookModel[] | null }> = ({ bookTitles
         {bookTitles
           ? bookTitles.map((item, index) => (
               <div key={index} className="book keen-slider__slide">
-                <div style={{ backgroundImage: `url(${item.image})` }} className="book-image" onClick={() => window.open(item.link, "_blank")} />
-                <div className="book-caption" onClick={() => window.open(item.link, "_blank")}>
+                <div
+                  style={{ backgroundImage: `url(${item.image})` }}
+                  className="book-image"
+                  onClick={() => (onBookClick ? onBookClick(item) : window.open(item.link, "_blank"))}
+                />
+                <div className="book-caption" onClick={() => (onBookClick ? onBookClick(item) : window.open(item.link, "_blank"))}>
                   <em>{item.caption}</em>
                   <br />- {item.subCaption}
                 </div>

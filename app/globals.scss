@@ -1061,3 +1061,33 @@ h6 {
     }
   }
 }
+
+.formularies-resource-container {
+  .nav-tabs {
+    display: flex;
+    flex-wrap: nowrap;
+
+    .nav-item {
+      flex: 1;
+      text-align: center;
+
+      .nav-link {
+        width: 100%;
+        white-space: normal;
+        word-break: break-word;
+        font-size: 1.2rem;
+        padding: 0.5rem 0.4rem;
+        color: #a0856a !important;
+      }
+
+      .nav-link.active {
+        color: #d4d0c8 !important;
+        background: transparent;
+      }
+    }
+  }
+  .list-group-item {
+    background-color: transparent;
+    border: none;
+  }
+}

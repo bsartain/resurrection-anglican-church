@@ -73,7 +73,7 @@ const MainNav = () => {
           </button>
         </Container>
       </Navbar>
-      {pathname === "/catechism" ? <ScrollToTopButton /> : null}
+      {pathname === "/catechism" || pathname === "/resources" ? <ScrollToTopButton /> : null}
 
       <Offcanvas show={show} onHide={() => setShow(false)} placement="end" className="drawer-container">
         <Offcanvas.Header closeButton>

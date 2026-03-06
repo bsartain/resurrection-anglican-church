@@ -5,52 +5,8 @@ import { DocumentRenderer } from "@keystatic/core/renderer";
 import RevealSection from "../components/RevealSection";
 import BookCarousel from "../components/BooksCarousel";
 import { buildMetadata } from "../lib/buildMetadata";
-import { PageModel, Content, Value } from "../models/pageModel";
-
-const LeftImage: React.FC<{ sectionContent: Content }> = async ({ sectionContent }) => {
-  const content = await sectionContent.content();
-  return (
-    <RevealSection
-      id="anglicanLeftImage"
-      className="home-section anglican-left-section"
-      image="/images/pages/eucharist-illustration.jpg"
-      opacity={0.01}
-    >
-      <Container className="reveal">
-        <div className="story-container">
-          {sectionContent.image ? (
-            <div className="story-image rounded mb-3" style={{ backgroundImage: `url("${sectionContent.image}")`, backgroundSize: "contain" }} />
-          ) : null}
-          <div>
-            <h2>{sectionContent.title}</h2>
-            <DocumentRenderer document={content} />
-          </div>
-        </div>
-      </Container>
-    </RevealSection>
-  );
-};
-
-const RightImage: React.FC<{ sectionContent: Content }> = async ({ sectionContent }) => {
-  const content = await sectionContent.content();
-  return (
-    <RevealSection id="anglicanRightImage" image="/images/pages/jesus-cross.jpg" opacity={0.02}>
-      <section id="story" className="home-section">
-        <Container className="reveal">
-          <div className="story-container">
-            <div>
-              <h2>{sectionContent.title}</h2>
-              <DocumentRenderer document={content} />
-            </div>
-            {sectionContent.image ? (
-              <div className="story-image rounded" style={{ backgroundImage: `url("${sectionContent.image}")`, backgroundSize: "contain" }} />
-            ) : null}
-          </div>
-        </Container>
-      </section>
-    </RevealSection>
-  );
-};
+import { PageModel, Value } from "../models/pageModel";
+import ResourcesInteractive from "../components/ResourcesInteractive";
 
 export default async function Resources() {
   const pageData = (await getPageData("resources")) as PageModel | null;
@@ -73,30 +29,7 @@ export default async function Resources() {
           </Container>
         </RevealSection>
 
-        <RevealSection id="resourceContentBooks" image="/images/pages/jesus-cross.jpg" opacity={0.02}>
-          <h2 className="text-center">Anglican Spiritual Formation</h2>
-          <Container className="mt-5 mb-5 reveal book-container">
-            <BookCarousel bookTitles={anglicanTitles} />
-          </Container>
-        </RevealSection>
-
-        {pageData?.subsections && pageData.subsections.length > 0
-          ? pageData.subsections.map((item: Content, index: number) => {
-              if (item.imageDirection === "right") {
-                return (
-                  <div key={index}>
-                    <RightImage sectionContent={item} />
-                  </div>
-                );
-              } else {
-                return (
-                  <div key={index}>
-                    <LeftImage sectionContent={item} />
-                  </div>
-                );
-              }
-            })
-          : null}
+        <ResourcesInteractive anglicanTitles={anglicanTitles} />
       </div>
     </div>
   );

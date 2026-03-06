@@ -29,10 +29,12 @@ const slugify = (str: string) =>
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/(^-|-$)/g, "");
 
-const CatechismComponent = () => {
+const CatechismComponent = ({ activeKey, onSelect }: { activeKey?: string; onSelect?: (k: string | null) => void } = {}) => {
+  const tabProps = activeKey ? { activeKey, onSelect } : { defaultActiveKey: "catechism" };
+
   return (
     <>
-      <Tabs defaultActiveKey="catechism" id="uncontrolled-tab-example" className="mb-3 mt-5">
+      <Tabs {...tabProps} id="uncontrolled-tab-example" className="mb-3 mt-5">
         <Tab eventKey="catechism" title=" To Be A Christian - Anglican Catechism">
           <div className="catechism-container">
             <nav className="catechism-toc">
@@ -111,12 +113,12 @@ const CatechismComponent = () => {
         </Tab>
         <Tab eventKey="bcp" title="Book of Common Prayer">
           <iframe
-            src="https://docs.google.com/viewer?url=https://bcp2019.anglicanchurch.net/wp-content/uploads/2019/08/BCP2019.pdf&embedded=true"
+            src="https://docs.google.com/viewer?url=https://bcp2019.anglicanchurch.net/wp-content/uploads/2019/08/BCP2019.pdf&embedded=true#page=3"
             style={{ width: "100%", height: "85vh", border: "none" }}
             title="Book of Common Prayer 2019"
           />
         </Tab>
-        <Tab eventKey="thityNine" title="Thirty Nine Articles of Religion">
+        <Tab eventKey="thirtyNine" title="Thirty Nine Articles of Religion">
           {thirtyNineArticles.articles.map((item: any, index: number) => {
             return (
               <div key={index} className="mt-5 mb-5">
