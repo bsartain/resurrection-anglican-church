@@ -1,7 +1,7 @@
 "use client";
 import { Container } from "react-bootstrap";
 import { Navbar, Offcanvas } from "react-bootstrap";
-import { useState, useEffect, useRef, use } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import ScrollToTopButton from "./ScrollToTopButton";
 import { usePathname } from "next/navigation";
@@ -63,7 +63,7 @@ const MainNav = () => {
           <Navbar.Brand href="/">
             <div className="d-flex align-items-center gap-2">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/images/cross.webp" alt="Resurrection Anglican Church" className="logo" />
+              <img src="/images/logo-black.png" alt="Resurrection Anglican Church" className="logo" />
               <h4 className="logo-title">Resurrection Anglican Church</h4>
             </div>
           </Navbar.Brand>
@@ -79,7 +79,7 @@ const MainNav = () => {
         <Offcanvas.Header closeButton>
           <div className="drawer-brand">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/images/cross.webp" alt="Resurrection Anglican Church" className="drawer-brand-logo" />
+            <img src="/images/logo-black.png" alt="Resurrection Anglican Church" className="drawer-brand-logo" />
             <hr className="drawer-brand-rule" />
             <div className="drawer-brand-name">
               Resurrection Anglican

@@ -32,11 +32,9 @@ export default function ResourcesInteractive({ anglicanTitles }: { anglicanTitle
         </Container>
       </RevealSection>
 
-      <RevealSection id="anglicanSpiritualFormation" image="/images/pages/jesus-cross.jpg" opacity={0.02}>
-        <Container className="mt-5 mb-5 formularies-resource-container">
-          <CatechismComponent activeKey={activeTab} onSelect={(k) => setActiveTab(k ?? "catechism")} />
-        </Container>
-      </RevealSection>
+      <Container className="mt-5 mb-5 formularies-resource-container">
+        <CatechismComponent activeKey={activeTab} onSelect={(k) => setActiveTab(k ?? "catechism")} />
+      </Container>
     </>
   );
 }
