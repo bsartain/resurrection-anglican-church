@@ -6,7 +6,7 @@ export function buildMetadata({
   image,
   path,
 }: {
-  title?: string;
+  title?: string | null | undefined;
   excerpt?: string | null | undefined;
   image?: string | null;
   path: string;
@@ -25,7 +25,7 @@ export function buildMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title,
+      title: `${title} | Resurrection Anglican Church | Rock Hill, SC`,
       description: `${excerpt}`,
       images: image ? [image] : [],
     },

@@ -64,7 +64,9 @@ const MainNav = () => {
             <div className="d-flex align-items-center gap-2">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/images/logo-black.png" alt="Resurrection Anglican Church" className="logo" />
-              <h4 className="logo-title">Resurrection Anglican Church</h4>
+              <div>
+                <h4 className="logo-title">Resurrection Anglican Church</h4>
+              </div>
             </div>
           </Navbar.Brand>
           <button className="hamburger" onClick={() => setShow(true)} aria-label="Toggle menu">

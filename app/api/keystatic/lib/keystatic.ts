@@ -12,6 +12,10 @@ export async function getPost(slug: string) {
   return await reader.collections.posts.read(slug);
 }
 
+export async function getAuthor(slug: string) {
+  return await reader.collections.authors.read(slug);
+}
+
 export async function getHomePageData() {
   return await reader.singletons.homePage.read();
 }

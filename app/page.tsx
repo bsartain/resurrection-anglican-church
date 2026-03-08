@@ -111,8 +111,6 @@ export default async function Home() {
 }
 
 export async function generateMetadata() {
-  const homePageData = await getHomePageData();
-
   return buildMetadata({
     title: "Resurrection Anglican Church. Ancient Liturgy | Modern Hearts | Rock Hill, SC",
     excerpt:

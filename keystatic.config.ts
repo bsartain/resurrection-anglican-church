@@ -11,16 +11,36 @@ export default config({
     project: "res-anglican-church/website",
   },
   collections: {
-    posts: collection({
-      label: "Posts",
-      slugField: "title",
+    authors: collection({
+      label: "Authors",
+      slugField: "name",
+      path: "content/authors/*",
       schema: {
-        title: fields.slug({ name: { label: "Title" } }),
-        content: fields.document({
-          label: "Content",
-          formatting: true,
-          links: true,
+        name: fields.slug({ name: { label: "Name" } }),
+        bio: fields.text({ label: "Bio", multiline: true }),
+        avatar: fields.image({
+          label: "Avatar",
+          directory: "public/images/authors",
+          publicPath: "/images/authors",
         }),
+      },
+    }),
+    posts: collection({
+      label: "Blog Posts",
+      slugField: "title",
+      path: "content/posts/*",
+      format: { contentField: "content" },
+      schema: {
+        image: fields.image({
+          label: "Featured Image",
+          directory: "public/images/pages",
+          publicPath: "/images/pages",
+        }),
+        title: fields.slug({ name: { label: "Title" } }),
+        author: fields.relationship({ label: "Author", collection: "authors" }),
+        excerpt: fields.text({ label: "Excerpt" }),
+        date: fields.date({ label: "Publish Date" }),
+        content: fields.document({ label: "Content", formatting: true, links: true, images: true }),
       },
     }),
     pages: collection({

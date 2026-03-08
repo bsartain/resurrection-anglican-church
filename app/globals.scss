@@ -116,6 +116,7 @@ h6 {
   }
   .logo-title {
     margin-top: 7px;
+    font-size: 2rem;
     @media only screen and (max-width: 768px) {
       font-size: 1.1rem;
     }
@@ -812,6 +813,139 @@ h6 {
 .dark-container {
   color: #d4d0c8;
   background-color: #2b2b2b;
+}
+
+// Blog listing
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+
+  @media (max-width: 992px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 576px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.blog-card {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: #2b2b2b;
+  transition: transform 0.2s ease;
+  border: 1px solid #e8e8e8;
+  border-radius: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+
+  &:hover {
+    transform: translateY(-4px);
+    color: #a0856a;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  }
+
+  .blog-card-image {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    background-size: cover;
+    background-position: center;
+    flex-shrink: 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    .overlay {
+      position: absolute;
+      background-color: #2b2b2b;
+      opacity: 0.5;
+      height: 100%;
+      width: 100%;
+      border-radius: 20px;
+    }
+    .entry-title {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      padding: 20px;
+    }
+  }
+
+  .blog-card-body {
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+  }
+
+  .blog-card-title {
+    font-size: 1.1rem;
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  .blog-card-date {
+    font-size: 0.8rem;
+    color: #a0998e;
+    margin: 0;
+  }
+
+  .blog-card-author {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-top: auto;
+    padding-top: 0.75rem;
+    border-top: 1px solid #e3e2e2;
+    font-size: 0.6rem;
+    letter-spacing: 0.05em;
+  }
+
+  .blog-card-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+}
+
+.blog-post {
+  h2 {
+    margin-top: 80px;
+  }
+
+  .blog-breadcrumb {
+    margin-bottom: 1.5rem;
+
+    .breadcrumb {
+      font-size: 0.85rem;
+      background: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .breadcrumb-item a {
+      color: #a0856a;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .breadcrumb-item.active {
+      color: #a0998e;
+    }
+
+    .breadcrumb-item + .breadcrumb-item::before {
+      color: #a0998e;
+    }
+  }
 }
 
 .contact-container {

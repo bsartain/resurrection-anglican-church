@@ -119,7 +119,7 @@ const CatechismComponent = ({ activeKey, onSelect }: { activeKey?: string; onSel
           />
         </Tab>
         <Tab eventKey="thirtyNine" title="Thirty Nine Articles of Religion">
-          {thirtyNineArticles.articles.map((item: any, index: number) => {
+          {thirtyNineArticles.articles.map((item: { number: string | number; title: string; text: string }, index: number) => {
             return (
               <div key={index} className="mt-5 mb-5">
                 <h3>
