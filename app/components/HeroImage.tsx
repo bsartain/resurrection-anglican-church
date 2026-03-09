@@ -30,10 +30,10 @@ const HeroImage = ({ image, children }: HeroImageProps) => {
       clearTimeout(scrollTimeout);
       scrollTimeout = setTimeout(() => {
         if (hero) {
-          hero.style.transition = "background-position 0.6s ease-out";
+          hero.style.transition = "background-position 0.8s ease-out";
           hero.style.backgroundPosition = `center ${scrollY * 0.3 - 20}px`;
         }
-      }, 150); // fires 150ms after scroll stops
+      }, 50); // fires 50ms after scroll stops
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
