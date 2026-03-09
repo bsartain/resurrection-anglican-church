@@ -32,7 +32,7 @@ export default function ResourcesInteractive({ anglicanTitles }: { anglicanTitle
         </Container>
       </RevealSection>
 
-      <Container className="mt-5 mb-5 formularies-resource-container">
+      <Container className="mt-5 mb-5 formularies-resource-container" id="anglicanSpiritualFormation">
         <CatechismComponent activeKey={activeTab} onSelect={(k) => setActiveTab(k ?? "catechism")} />
       </Container>
     </>
