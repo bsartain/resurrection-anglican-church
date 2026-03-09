@@ -641,9 +641,14 @@ h6 {
   align-items: center;
   height: 100vh;
   width: 100%;
-  background-position: top;
+  background-position: center 0px;
   background-repeat: no-repeat;
   background-size: cover;
+  position: relative;
+
+  @media (max-width: 768px) {
+    background-attachment: scroll;
+  }
   position: relative;
   .overlay {
     background: #000000;
