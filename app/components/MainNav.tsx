@@ -8,13 +8,13 @@ import { usePathname } from "next/navigation";
 
 const menuItems = [
   { label: "Home", href: "/" },
+  { label: "Service Times / Contact", href: "/contact" },
   { label: "Plan Your Visit!", href: "/plan-your-visit" },
   { label: "Children's Ministry", href: "/kids" },
   { label: "Leadership", href: "/leadership" },
   { label: "Beliefs", href: "/catechism" },
   { label: "Resources", href: "/resources" },
   { label: "The Anglican Way", href: "/anglican" },
-  { label: "Service Times / Contact", href: "/contact" },
   { label: "Give", href: "/give" },
   { label: "What is the Gospel And How Is It For Me?", href: "/gospel" },
 ];

@@ -7,6 +7,7 @@ import ContactForm from "../components/ContactForm";
 import RevealSection from "../components/RevealSection";
 import { buildMetadata } from "../lib/buildMetadata";
 import { PageModel, Content } from "../models/pageModel";
+import Link from "next/link";
 
 type GoogleMapItem = DocumentElement & {
   type: string;
@@ -38,6 +39,9 @@ export default async function Contact() {
                   }
                 })
               : null}
+            <Link className="btn btn-lg btn-primary w-100" href="/plan-your-visit">
+              Plan Your Visit
+            </Link>
           </div>
           <ContactForm />
         </Container>
