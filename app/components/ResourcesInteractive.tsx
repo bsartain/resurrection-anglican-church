@@ -9,18 +9,7 @@ export default function ResourcesInteractive({ anglicanTitles }: { anglicanTitle
   const [activeTab, setActiveTab] = useState("catechism");
 
   const handleBookClick = (item: BookModel) => {
-    if (item.link.includes("BCP2019.pdf")) {
-      setActiveTab("bcp");
-      document.getElementById("anglicanSpiritualFormation")?.scrollIntoView({ behavior: "smooth" });
-    } else if (item.link.includes("To-Be-a-Christian.pdf")) {
-      setActiveTab("catechism");
-      document.getElementById("anglicanSpiritualFormation")?.scrollIntoView({ behavior: "smooth" });
-    } else if (item.link.includes("Thirty-Nine-Articles-of-Religion.pdf")) {
-      setActiveTab("thirtyNine");
-      document.getElementById("anglicanSpiritualFormation")?.scrollIntoView({ behavior: "smooth" });
-    } else {
-      window.open(item.link, "_blank");
-    }
+    window.open(item.link, "_blank");
   };
 
   return (
@@ -31,10 +20,6 @@ export default function ResourcesInteractive({ anglicanTitles }: { anglicanTitle
           <BookCarousel bookTitles={anglicanTitles} onBookClick={handleBookClick} />
         </Container>
       </RevealSection>
-
-      <Container className="mt-5 mb-5 formularies-resource-container" id="anglicanSpiritualFormation">
-        <CatechismComponent activeKey={activeTab} onSelect={(k) => setActiveTab(k ?? "catechism")} />
-      </Container>
     </>
   );
 }

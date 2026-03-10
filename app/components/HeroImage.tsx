@@ -35,13 +35,13 @@ const HeroImage = ({ image, children }: HeroImageProps) => {
           <hr className="w-25 mt-5 mb-1" />
         </div>
         <h1>{children}</h1>
-        {pathname === "/give" ? <DonateButtonModal donateButtonText="DONATE" /> : null}
+        {pathname === "/give" ? <DonateButtonModal donateButtonText="Donate" /> : null}
         {pathname === "/catechism" ? (
           <div>
             <div className="d-flex justify-content-center w-100">
               <hr className="w-25 mt-4 mb-5" />
             </div>
-            An Anglican Catechism
+            Anglican Formularies
           </div>
         ) : null}
       </div>
