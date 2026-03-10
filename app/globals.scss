@@ -337,6 +337,50 @@ h6 {
         line-height: 1.5rem;
       }
     }
+    .worship-two-col {
+      display: flex;
+      align-items: stretch;
+      gap: 3rem;
+      min-height: 450px;
+      .worship-left {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .worship-label {
+          font-size: 0.75rem;
+          text-transform: uppercase;
+          letter-spacing: 0.1em;
+          opacity: 0.6;
+          margin-bottom: 0.25rem;
+        }
+        .worship-time {
+          font-size: 1.8rem;
+          font-weight: 600;
+          margin-bottom: 1.5rem;
+        }
+        .worship-childcare-block {
+          margin-bottom: 1.5rem;
+        }
+        .worship-service-block {
+          margin-bottom: 1rem;
+        }
+      }
+      .worship-right {
+        flex: 1;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 8px;
+        min-height: 350px;
+      }
+      @media only screen and (max-width: 1200px) {
+        flex-direction: column;
+        .worship-right {
+          min-height: 250px;
+        }
+      }
+    }
   }
 }
 

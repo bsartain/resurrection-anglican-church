@@ -60,15 +60,49 @@ export default function HomeSections({ section1, section2, section3, section4, s
   return (
     <>
       <div>
-        <RevealSection id="story-2" className="home-section dark-background-home-section" image="/images/pages/icon-resurrection.jpg" opacity={0.02}>
-          <Container>
-            <div className="text-center">
-              <h2 className="mb-4">Come Worship With US</h2>
-              <Link className="btn btn-lg btn-primary" href="/plan-your-visit">
+        <RevealSection
+          id="come-worship"
+          className="home-section dark-background-home-section"
+          image="/images/pages/icon-resurrection.jpg"
+          opacity={0.02}
+        >
+          <div className="worship-two-col">
+            <div className="worship-left">
+              <h2 className="mb-4">Come Worship With Us</h2>
+              <div className="worship-service-block">
+                <p className="worship-label">Service Times</p>
+                <p className="worship-time">Sundays at 4:00 PM</p>
+              </div>
+              <div className="worship-service-block">
+                <p className="worship-label">Address</p>
+                <p className="worship-time">18225 Eden Terrace, Rock Hill, SC 29730</p>
+              </div>
+              <div className="worship-childcare-block">
+                <p className="worship-label">Children&apos;s Ministry</p>
+                <p>
+                  We offer nursery and children&apos;s church where there are age-appropriate lessons and activities for preschool–5th grade. This
+                  takes place during the scripture reading and sermon.
+                </p>
+              </div>
+              <Link
+                className="btn btn-lg btn-primary mt-2 rounded"
+                href="/plan-your-visit"
+                style={{ background: "#ffffff", color: "#2b2b2b", fontSize: "25px" }}
+              >
                 Plan Your Visit
               </Link>
             </div>
-          </Container>
+            <div className="worship-right">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3269.973542741285!2d-81.0047756!3d34.9572718!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88568c74b4684edd%3A0xd0c91ab7c5b8691d!2sResurrection%20Anglican%20Church!5e0!3m2!1sen!2sus!4v1773174932691!5m2!1sen!2sus"
+                width="100%"
+                height="450"
+                allowFullScreen={true}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
         </RevealSection>
         {/* Welcome / Section 1 */}
         <RevealSection id="welcome" className="home-section" image="/images/pages/art.webp">
