@@ -43,7 +43,7 @@ function PlanVisitContactForm() {
           show: true,
           variant: "success",
           heading: "Message Sent!",
-          message: `Thank you for getting in touch with us. Your message is important and a member of our team will be in contact with you shortly.`,
+          message: `Thanks! We received your visit request and look forward to meeting you and your family. Someone will be at the door to welcome you when you arrive.`,
         });
         console.log("Success: ", response);
       }
@@ -84,112 +84,114 @@ function PlanVisitContactForm() {
   };
 
   return (
-    <div className="plan-visit-form-container">
-      <div className="contact-form">
-        <form onSubmit={(e: React.FormEvent<HTMLFormElement>) => handleSubmit(e)}>
-          <div className="name-fields">
-            <div className="name-fields-individual">
-              <label htmlFor="firstName" className="form-label">
-                First Name (required)
+    <>
+      <div className="plan-visit-form-container">
+        <div className="contact-form">
+          <form onSubmit={(e: React.FormEvent<HTMLFormElement>) => handleSubmit(e)}>
+            <div className="name-fields">
+              <div className="name-fields-individual">
+                <label htmlFor="firstName" className="form-label">
+                  First Name (required)
+                </label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="firstName"
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) => setForm({ ...form, firstName: e.target.value })}
+                  value={form.firstName}
+                  required
+                />
+              </div>
+              <div className="name-fields-individual">
+                <label htmlFor="lastName" className="form-label">
+                  Last Name (required)
+                </label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="lastName"
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) => setForm({ ...form, lastName: e.target.value })}
+                  value={form.lastName}
+                  required
+                />
+              </div>
+            </div>
+            <div className="mb-3 mt-5 mb-5">
+              <label htmlFor="email" className="form-label">
+                Email Address (required)
+              </label>
+              <input
+                type="email"
+                className="form-control"
+                id="email"
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setForm({ ...form, email: e.target.value })}
+                value={form.email}
+                required
+              />
+            </div>
+            <div className="mb-3 mt-5 mb-5">
+              <label htmlFor="phone" className="form-label">
+                Phone/Text Number
               </label>
               <input
                 type="text"
                 className="form-control"
-                id="firstName"
-                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setForm({ ...form, firstName: e.target.value })}
-                value={form.firstName}
-                required
+                id="phone"
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setForm({ ...form, phone: e.target.value })}
+                value={formatPhoneNumber(form.phone)}
               />
             </div>
-            <div className="name-fields-individual">
-              <label htmlFor="lastName" className="form-label">
-                Last Name (required)
+            <div className="mb-3 mt-5 mb-5">
+              <label htmlFor="bringingKids" className="form-label mb-1">
+                Bringing Kids?
               </label>
-              <input
-                type="text"
+              <small className="d-block text-muted mb-1 small-text">Great! Let us know their names and ages.</small>
+              <textarea
+                rows={4}
                 className="form-control"
-                id="lastName"
-                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setForm({ ...form, lastName: e.target.value })}
-                value={form.lastName}
-                required
+                id="bringingKids"
+                onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => setForm({ ...form, bringingKids: e.target.value })}
+                value={form.bringingKids}
               />
             </div>
-          </div>
-          <div className="mb-3 mt-5 mb-5">
-            <label htmlFor="email" className="form-label">
-              Email Address (required)
-            </label>
-            <input
-              type="email"
-              className="form-control"
-              id="email"
-              onChange={(e: React.ChangeEvent<HTMLInputElement>) => setForm({ ...form, email: e.target.value })}
-              value={form.email}
-              required
-            />
-          </div>
-          <div className="mb-3 mt-5 mb-5">
-            <label htmlFor="phone" className="form-label">
-              Phone/Text Number
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              id="phone"
-              onChange={(e: React.ChangeEvent<HTMLInputElement>) => setForm({ ...form, phone: e.target.value })}
-              value={formatPhoneNumber(form.phone)}
-            />
-          </div>
-          <div className="mb-3 mt-5 mb-5">
-            <label htmlFor="bringingKids" className="form-label mb-1">
-              Bringing Kids?
-            </label>
-            <small className="d-block text-muted mb-1 small-text">Great! Let us know their names and ages.</small>
-            <textarea
-              rows={4}
-              className="form-control"
-              id="bringingKids"
-              onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => setForm({ ...form, bringingKids: e.target.value })}
-              value={form.bringingKids}
-            />
-          </div>
-          <div className="mb-3 mt-5 mb-5">
-            <label htmlFor="questions" className="form-label">
-              Questions/Comments?
-            </label>
-            <textarea
-              rows={4}
-              className="form-control"
-              id="questions"
-              onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => setForm({ ...form, questions: e.target.value })}
-              value={form.questions}
-            />
-          </div>
-          <button type="submit" className="btn btn-primary mt-3 rounded w-100 p-3 submit-btn">
-            Submit {spinner ? <Spinner animation="border" role="status" className="ms-2" /> : null}
-          </button>
-        </form>
-        {alert.show ? (
-          <Alert
-            className="mt-3"
-            variant={alert.variant}
-            onClose={() =>
-              setAlert({
-                ...alert,
-                show: false,
-                heading: "",
-                variant: "",
-                message: "",
-              })
-            }
-            dismissible
-          >
-            <Alert.Heading>{alert.heading}</Alert.Heading>
-            <p>{alert.message}</p>
-          </Alert>
-        ) : null}
+            <div className="mb-3 mt-5 mb-5">
+              <label htmlFor="questions" className="form-label">
+                Questions/Comments?
+              </label>
+              <textarea
+                rows={4}
+                className="form-control"
+                id="questions"
+                onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => setForm({ ...form, questions: e.target.value })}
+                value={form.questions}
+              />
+            </div>
+            <button type="submit" className="btn btn-primary mt-3 rounded w-100 p-3 submit-btn">
+              Submit {spinner ? <Spinner animation="border" role="status" className="ms-2" /> : null}
+            </button>
+          </form>
+        </div>
       </div>
-    </div>
+      {alert.show ? (
+        <Alert
+          className="mt-3"
+          variant={alert.variant}
+          onClose={() =>
+            setAlert({
+              ...alert,
+              show: false,
+              heading: "",
+              variant: "",
+              message: "",
+            })
+          }
+          dismissible
+        >
+          <Alert.Heading>{alert.heading}</Alert.Heading>
+          <p>{alert.message}</p>
+        </Alert>
+      ) : null}
+    </>
   );
 }
 
