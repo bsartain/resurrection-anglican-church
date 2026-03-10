@@ -15,32 +15,16 @@ const HeroImage = ({ image, children }: HeroImageProps) => {
 
   useEffect(() => {
     const hero = heroRef.current;
-    let scrollTimeout: NodeJS.Timeout;
 
     const handleScroll = () => {
       const scrollY = window.scrollY;
-
-      // While scrolling - move with scroll at reduced speed
       if (hero) {
-        hero.style.transition = "none";
-        hero.style.backgroundPosition = `center ${scrollY * 0.3}px`;
+        hero.style.backgroundPosition = `center ${scrollY * 0.5}px`;
       }
-
-      // When scrolling stops - animate up a little
-      clearTimeout(scrollTimeout);
-      scrollTimeout = setTimeout(() => {
-        if (hero) {
-          hero.style.transition = "background-position 0.8s ease-out";
-          hero.style.backgroundPosition = `center ${scrollY * 0.3 - 20}px`;
-        }
-      }, 50); // fires 50ms after scroll stops
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      clearTimeout(scrollTimeout);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
   return (
     <div className="hero-image-container" style={{ backgroundImage: `url(${image})` }} ref={heroRef}>

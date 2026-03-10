@@ -14,6 +14,7 @@ const menuItems = [
   { label: "Spiritual Resources", href: "/resources" },
   { label: "The Anglican Way", href: "/anglican" },
   { label: "Give", href: "/give" },
+  { label: "Plan Your Visit", href: "/plan-your-visit" },
   { label: "Contact/Service Times", href: "/contact" },
 ];
 

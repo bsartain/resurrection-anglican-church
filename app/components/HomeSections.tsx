@@ -60,6 +60,16 @@ export default function HomeSections({ section1, section2, section3, section4, s
   return (
     <>
       <div>
+        <RevealSection id="story-2" className="home-section dark-background-home-section" image="/images/pages/icon-resurrection.jpg" opacity={0.02}>
+          <Container>
+            <div className="text-center">
+              <h2 className="mb-4">Come Worship With US</h2>
+              <Link className="btn btn-lg btn-primary" href="/plan-your-visit">
+                Plan Your Visit
+              </Link>
+            </div>
+          </Container>
+        </RevealSection>
         {/* Welcome / Section 1 */}
         <RevealSection id="welcome" className="home-section" image="/images/pages/art.webp">
           <Container>

@@ -1,0 +1,53 @@
+[
+  {
+    "id": 0,
+    "question": "What should I wear?",
+    "answer": "Come as you are. You'll find people in everything from jeans to Sunday best. What matters is that you're here."
+  },
+  {
+    "id": 1,
+    "question": "What about my children?",
+    "answer": "We offer nursery care and age-appropriate children's church for preschool through 5th grade during the Scripture readings and sermon. Children rejoin the congregation for Holy Communion. All of our children's volunteers are background-checked."
+  },
+  {
+    "id": 2,
+    "question": "What happens during the service?",
+    "answer": "Our service follows the Anglican liturgy — an ancient, structured form of worship that includes sung praise, Scripture readings, a sermon, prayers, and Holy Communion. It is both reverent and warm."
+  },
+  {
+    "id": 3,
+    "question": "Do I have to take Communion?",
+    "answer": "Communion is open to all who trust in Jesus Christ as Lord and Savior. If you prefer to observe, you are welcome to come forward and receive a blessing instead — simply cross your arms over your chest."
+  },
+
+  {
+    "id": 4,
+    "question": "Do I need to give?",
+    "answer": "Not at all. Giving is an act of worship for members of our community — guests are never expected to contribute. If you ever want to give, you can do so at resurrectionrockhill.org/give."
+  },
+  {
+    "id": 5,
+    "question": "Will I know what to do during the service?",
+    "answer": "Yes. Our service is printed in a bulletin that guides you through each part of the liturgy. You can simply follow along or observe — there is no pressure to participate."
+  },
+  {
+    "id": 6,
+    "question": "How long is the service?",
+    "answer": "Our Sunday service typically lasts about 75 minutes and includes music, Scripture readings, a sermon, prayers, and Holy Communion."
+  },
+  {
+    "id": 7,
+    "question": "What if I'm not Anglican?",
+    "answer": "Many people in our church come from different Christian backgrounds or are exploring faith for the first time. You are welcome here whether you are Anglican, from another denomination, or simply curious."
+  },
+  {
+    "id": 8,
+    "question": "Will I have to say prayers out loud?",
+    "answer": "Some prayers are said together as a congregation, but there is never pressure to participate. You are welcome to join in or simply listen and reflect."
+  },
+  {
+    "id": 9,
+    "question": "Can I meet someone after the service?",
+    "answer": "Absolutely. Our clergy and members love meeting visitors after the service. Feel free to introduce yourself or stop by the welcome area and we will gladly answer any questions."
+  }
+]
