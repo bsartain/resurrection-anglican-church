@@ -550,10 +550,34 @@ h6 {
   }
 }
 
+.caret-click-container {
+  .bi-caret-down-fill {
+    color: #848282;
+    font-size: 16px;
+    cursor: pointer;
+  }
+}
+
+.bounce-element {
+  position: relative;
+  animation: bounce 1s ease-in-out 3;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+    animation-timing-function: ease-in;
+  }
+  50% {
+    transform: translateY(-15px);
+    animation-timing-function: ease-out;
+  }
+}
+
 /* Brand section */
 .drawer-brand {
   display: flex;
-  // flex-direction: column;
   align-items: center;
   gap: 0.9rem;
   padding: 2.2rem 1.5rem 1.8rem;

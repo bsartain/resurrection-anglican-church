@@ -22,6 +22,7 @@ const menuItems = [
 
 const MainNav = () => {
   const [show, setShow] = useState(false);
+  console.log("🚀 ~ MainNav ~ show:", show);
   const [visible, setVisible] = useState(true);
   const lastScrollY = useRef(0);
   const pathname = usePathname();
@@ -107,7 +108,9 @@ const MainNav = () => {
             </div>
           ))}
         </Offcanvas.Body>
-
+        <div className={`text-center caret-click-container ${show ? "bounce-element" : ""}`}>
+          <i className="bi bi-caret-down-fill" />
+        </div>
         <div className="drawer-footer">
           <p className="drawer-footer-text">Rock Hill, South Carolina</p>
         </div>
