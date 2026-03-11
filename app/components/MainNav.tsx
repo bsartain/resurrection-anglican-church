@@ -96,7 +96,13 @@ const MainNav = () => {
         <Offcanvas.Body>
           {menuItems.map((item, i) => (
             <div key={item.href}>
-              <Link href={item.href} className="drawer-nav-link" onClick={() => setShow(false)}>
+              {item.href === "/plan-your-visit"}
+              <Link
+                href={item.href}
+                className="drawer-nav-link"
+                onClick={() => setShow(false)}
+                style={item.href === "/plan-your-visit" ? { background: "#a0856a", color: "#ffffff" } : {}}
+              >
                 {item.label}
                 <span className="drawer-nav-arrow">›</span>
               </Link>
