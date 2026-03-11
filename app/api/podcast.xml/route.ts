@@ -17,12 +17,7 @@ function extractDriveId(url: string): string | null {
 }
 
 function escapeXml(str: string): string {
-  return str
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&apos;");
+  return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&apos;");
 }
 
 export async function GET() {
@@ -36,7 +31,7 @@ export async function GET() {
 
   const items = sorted
     .map((sermon) => {
-      const title = escapeXml(String(sermon.entry.title.name));
+      const title = escapeXml(String(sermon.entry.title));
       const description = escapeXml(sermon.entry.excerpt ?? sermon.entry.biblePassages ?? "");
       const pubDate = sermon.entry.date ? new Date(sermon.entry.date).toUTCString() : new Date().toUTCString();
       const link = `${SITE_URL}/sermons/${sermon.slug}`;
@@ -45,9 +40,7 @@ export async function GET() {
       const driveId = sermon.entry.audio ? extractDriveId(sermon.entry.audio) : null;
       const audioUrl = driveId ? `https://drive.google.com/uc?export=download&id=${driveId}` : "";
 
-      const enclosure = audioUrl
-        ? `<enclosure url="${audioUrl}" length="0" type="audio/mpeg" />`
-        : "";
+      const enclosure = audioUrl ? `<enclosure url="${audioUrl}" length="0" type="audio/mpeg" />` : "";
 
       const duration = sermon.entry.duration ? `<itunes:duration>${sermon.entry.duration}</itunes:duration>` : "";
       const imageUrl = sermon.entry.image ? `${SITE_URL}${sermon.entry.image}` : PODCAST_IMAGE;
