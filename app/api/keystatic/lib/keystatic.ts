@@ -27,3 +27,11 @@ export async function getPageData(slug: string) {
 export async function getSpecialAnnoucements() {
   return await reader.singletons.specialAnnouncements.read();
 }
+
+export async function getAllSermons() {
+  return await reader.collections.sermons.all();
+}
+
+export async function getSermon(slug: string) {
+  return await reader.collections.sermons.read(slug, { resolveLinkedFiles: true });
+}

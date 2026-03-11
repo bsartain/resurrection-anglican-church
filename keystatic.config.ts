@@ -43,6 +43,7 @@ export default config({
         content: fields.document({ label: "Content", formatting: true, links: true, images: true }),
       },
     }),
+
     pages: collection({
       label: "Pages",
       path: "content/pages/*/",
@@ -110,6 +111,55 @@ export default config({
             }
           ),
           false: fields.empty(),
+        }),
+      },
+    }),
+    sermons: collection({
+      label: "Sermons",
+      path: "content/sermons/*/",
+      slugField: "title",
+      columns: ["title", "date", "biblePassages"],
+      schema: {
+        date: fields.date({
+          label: "Sermon Date",
+          validation: { isRequired: true },
+        }),
+        audio: fields.text({
+          label: "Sermon Audio (Google Drive Link)",
+          description: "Paste the Google Drive share link for the audio file",
+        }),
+        title: fields.slug({ name: { label: "Sermon Title", validation: { isRequired: true } } }),
+        series: fields.text({
+          label: "Series",
+          description: "Sermon series name (e.g. Letters of Paul)",
+        }),
+        pastor: fields.text({
+          label: "Pastor / Preacher",
+        }),
+        duration: fields.text({
+          label: "Duration",
+          description: "Audio duration (e.g. 42:10)",
+        }),
+        excerpt: fields.text({
+          label: "Excerpt",
+          description: "Short description shown on sermon cards",
+          multiline: true,
+        }),
+        image: fields.image({
+          label: "Sermon Image",
+          directory: "public/images/sermons",
+          publicPath: "/images/sermons",
+        }),
+        content: fields.document({
+          label: "Sermon Description",
+          formatting: true,
+          links: true,
+        }),
+        biblePassages: fields.text({
+          label: "Bible Passages",
+        }),
+        youTubLink: fields.text({
+          label: "YouTube Link",
         }),
       },
     }),

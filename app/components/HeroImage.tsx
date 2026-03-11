@@ -3,6 +3,7 @@ import { useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import React from "react";
 import DonateButtonModal from "./DonateButtonModal";
+import path from "path";
 
 interface HeroImageProps {
   image: string;
@@ -42,6 +43,14 @@ const HeroImage = ({ image, children }: HeroImageProps) => {
               <hr className="w-25 mt-4 mb-5" />
             </div>
             Anglican Formularies
+          </div>
+        ) : null}
+        {pathname === "/sermons" ? (
+          <div>
+            <div className="d-flex justify-content-center w-100">
+              <hr className="w-25 mt-4 mb-5" />
+            </div>
+            Latest Sermon
           </div>
         ) : null}
       </div>
