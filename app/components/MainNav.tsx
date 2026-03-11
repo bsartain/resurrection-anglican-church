@@ -85,12 +85,8 @@ const MainNav = () => {
           <div className="drawer-brand">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/images/logo-black.png" alt="Resurrection Anglican Church" className="drawer-brand-logo" />
-            <hr className="drawer-brand-rule" />
-            <div className="drawer-brand-name">
-              Resurrection Anglican
-              <br />
-              Church
-            </div>
+            {/* <hr className="drawer-brand-rule" /> */}
+            <div className="drawer-brand-name">Resurrection Anglican Church</div>
           </div>
         </Offcanvas.Header>
 
