@@ -14,8 +14,8 @@ const menuItems = [
   { label: "Leadership", href: "/leadership" },
   { label: "Beliefs", href: "/catechism" },
   { label: "Resources", href: "/resources" },
-  { label: "Blog", href: "/blog" },
   { label: "Give", href: "/give" },
+  { label: "Blog", href: "/blog" },
   { label: "The Anglican Way", href: "/anglican" },
   { label: "What is the Gospel And How Is It For Me?", href: "/gospel" },
 ];
