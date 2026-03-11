@@ -15,7 +15,6 @@ function extractDriveId(url: string): string | null {
 export default async function SermonPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const sermon = await getSermon(slug);
-  console.log("🚀 ~ SermonPage ~ sermon:", sermon);
 
   if (!sermon) notFound();
 

@@ -21,8 +21,6 @@ export default async function Sermons() {
     return dateB - dateA;
   });
 
-  console.log("SORTED SERMONS: ", sorted);
-
   return (
     <div>
       <HeroImage image={sorted[0].entry.image ? sorted[0].entry.image : ""}>{sorted[0].entry.title}</HeroImage>
@@ -30,7 +28,6 @@ export default async function Sermons() {
       <RevealSection id="sermonListing" image="/images/pages/jesus-cross.jpg" opacity={0.04}>
         <div className="sermon-grid reveal pt-5 pb-5">
           {sorted.map(async (sermon) => {
-            console.log("IMAGE: ", sermon.entry);
             const driveId = sermon.entry.audio ? extractDriveId(sermon.entry.audio) : null;
             const thumbUrl = driveId ? `https://drive.google.com/thumbnail?id=${driveId}&sz=w600` : sermon.entry.image ?? null;
             return (

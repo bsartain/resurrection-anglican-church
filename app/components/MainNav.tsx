@@ -22,7 +22,6 @@ const menuItems = [
 
 const MainNav = () => {
   const [show, setShow] = useState(false);
-  console.log("🚀 ~ MainNav ~ show:", show);
   const [visible, setVisible] = useState(true);
   const lastScrollY = useRef(0);
   const pathname = usePathname();
@@ -84,9 +83,6 @@ const MainNav = () => {
       <Offcanvas show={show} onHide={() => setShow(false)} placement="end" className="drawer-container">
         <Offcanvas.Header closeButton>
           <div className="drawer-brand">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            {/* <img src="/images/logo-white.png" alt="Resurrection Anglican Church" className="drawer-brand-logo" /> */}
-            {/* <hr className="drawer-brand-rule" /> */}
             <div className="drawer-brand-name">
               Resurrection <br />
               Anglican Church
