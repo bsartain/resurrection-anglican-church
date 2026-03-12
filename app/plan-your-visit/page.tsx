@@ -61,6 +61,10 @@ export default function PlanYourVisit() {
             <h2>Find Us</h2>
             <hr />
             <div className="info-row">
+              <i className="bi bi-clock" />
+              <span>Sundays at 4:00 PM</span>
+            </div>
+            <div className="info-row">
               <i className="bi bi-geo-alt" />
               <span>
                 18225 Eden Terrace
@@ -71,10 +75,6 @@ export default function PlanYourVisit() {
             <div className="info-row">
               <i className="bi bi-telephone" />
               <a href="tel:+14236536920">(423) 653-6920</a>
-            </div>
-            <div className="info-row">
-              <i className="bi bi-clock" />
-              <span>Sundays at 4:00 PM</span>
             </div>
           </div>
         </div>
