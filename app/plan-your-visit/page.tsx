@@ -4,8 +4,11 @@ import VisitFAQ from "../components/VisitFAQ";
 import { Container } from "react-bootstrap";
 import { buildMetadata } from "../lib/buildMetadata";
 import PlanVisitContactForm from "../components/PlanVisitContactForm";
+import { getChurchInfoData } from "../api/keystatic/lib/keystatic";
+import { toTelLink } from "@/app/utils";
 
-export default function PlanYourVisit() {
+export default async function PlanYourVisit() {
+  const churchInfo = await getChurchInfoData();
   const bulletPoints: string[] = [
     "Meet you at the front door",
     "Introduce you to the team and some members",
@@ -62,34 +65,25 @@ export default function PlanYourVisit() {
             <hr />
             <div className="info-row">
               <i className="bi bi-clock" />
-              <span>Sundays at 4:00 PM</span>
+              <span>{churchInfo?.serviceTime}</span>
             </div>
             <div className="info-row">
               <i className="bi bi-geo-alt" />
-              <span>
-                18225 Eden Terrace
-                <br />
-                Rock Hill, SC 29730
-              </span>
+              <span>{churchInfo?.address}</span>
             </div>
             <div className="info-row">
               <i className="bi bi-telephone" />
-              <a href="tel:+14236536920">(423) 653-6920</a>
+              <a href={toTelLink(churchInfo?.phone)}>{churchInfo?.phone}</a>
             </div>
           </div>
         </div>
-        <div className="plan-your-visit__map">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6013.7614193179925!2d-81.00917801478182!3d34.957301285619565!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88568c74b4684edd%3A0xd0c91ab7c5b8691d!2sResurrection%20Anglican%20Church!5e0!3m2!1sen!2sus!4v1771712896530!5m2!1sen!2sus"
-            width="100%"
-            height="100%"
-            style={{ border: 0, display: "block", minHeight: "450px" }}
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            title="Resurrection Anglican Church location"
-          />
-        </div>
+
+        <div
+          className="plan-your-visit__map"
+          dangerouslySetInnerHTML={{
+            __html: churchInfo?.googleMapEmbed ?? "",
+          }}
+        />
       </div>
     </div>
   );

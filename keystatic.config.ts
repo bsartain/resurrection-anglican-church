@@ -422,5 +422,33 @@ export default config({
         }),
       },
     }),
+    churchInformation: singleton({
+      label:
+        "Church Information – Update the church’s address, service times, and other location details. Changes will be applied across the entire site.",
+      path: "content/church-information",
+      schema: {
+        serviceTime: fields.text({
+          label: "Church Service Time",
+        }),
+        address: fields.text({
+          label: "Church Address",
+        }),
+        childcareMessage: fields.text({
+          label: "Childcare Message",
+          multiline: true,
+        }),
+        phone: fields.text({
+          label: "Phone Number",
+        }),
+        googleMapEmbed: fields.text({
+          label: "Google Map Embed code",
+          multiline: true,
+        }),
+        planYourVisitLink: fields.text({
+          label: "Plan Your Vist Link",
+          description: "This is the href or link to the Plan Your Vist Page. If this link is available a button will appear",
+        }),
+      },
+    }),
   },
 });

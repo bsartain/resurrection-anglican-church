@@ -20,6 +20,10 @@ export async function getHomePageData() {
   return await reader.singletons.homePage.read();
 }
 
+export async function getChurchInfoData() {
+  return await reader.singletons.churchInformation.read();
+}
+
 export async function getPageData(slug: string) {
   return await reader.collections.pages.read(slug);
 }

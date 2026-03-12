@@ -1,37 +1,8 @@
-import { DocumentElement } from "@keystatic/core";
-import { getPageData } from "../api/keystatic/lib/keystatic";
-import { DocumentRenderer } from "@keystatic/core/renderer";
-
-type ContentItem = DocumentElement & {
-  title: string;
-  type: string;
-  href?: string;
-  children: {
-    text: string;
-    href?: string;
-    code?: string[];
-  }[];
-};
-
-interface Item {
-  title: string;
-  type?: string;
-}
+import { getChurchInfoData } from "../api/keystatic/lib/keystatic";
+import { toTelLink } from "@/app/utils";
 
 export default async function Footer() {
-  const pageData = await getPageData("contact");
-  const serviceInfo = await pageData?.subsections.find((item: Item) => item.title.toLowerCase().includes("service"));
-  const serviceContent = await serviceInfo?.content();
-  const address = await pageData?.subsections.find((item: Item) => item.title.toLowerCase().includes("address"));
-  const addressContent = await address?.content();
-  const childcare = await pageData?.subsections.find((item: Item) => item.title.toLowerCase().includes("childcare"));
-  const childcareContent = await childcare?.content();
-  const phone = await pageData?.subsections.find((item: Item) => item.title.toLowerCase().includes("phone"));
-  const phoneContent = (await phone?.content()) as ContentItem[];
-  const phoneLink = phoneContent?.flatMap((item) => item.children)?.find((child) => child.href)?.href;
-  const googleMap = await pageData?.subsections.find((item: Item) => item.title.toLowerCase().includes("google"));
-  const googleMapContent = (await googleMap?.content()) as ContentItem[];
-  const googleMapCode = googleMapContent?.find((item: Item) => item.type === "code")?.children[0].text;
+  const churchInfo = await getChurchInfoData();
 
   return (
     <footer className="footer">
@@ -39,26 +10,26 @@ export default async function Footer() {
         {/* Left Column */}
         <div className="footer-info">
           <div className="footer-gathering">
-            <span className="footer-label">{serviceInfo?.title}</span>
-            <span className="footer-time">{serviceContent && <DocumentRenderer document={serviceContent} />}</span>
+            <span className="footer-label">Service Time</span>
+            <span className="footer-time">{churchInfo?.serviceTime}</span>
           </div>
 
           <div className="footer-divider" />
 
           <div className="footer-info-block">
-            <span className="footer-label">{address?.title}</span>
-            {addressContent && <DocumentRenderer document={addressContent} />}
+            <span className="footer-label">Address</span>
+            {churchInfo?.address}
           </div>
 
           <div className="footer-info-block">
-            <span className="footer-label">{childcare?.title}</span>
-            {childcareContent && <DocumentRenderer document={childcareContent} />}
+            <span className="footer-label">Childcare</span>
+            {churchInfo?.childcareMessage}
           </div>
 
           <div className="footer-info-block">
-            <span className="footer-label">{phone?.title}</span>
+            <span className="footer-label">Phone</span>
             <div>
-              <a href={phoneLink}>{phoneContent && <DocumentRenderer document={phoneContent} />}</a>
+              <a href={churchInfo?.phone ? toTelLink(churchInfo?.phone) : churchInfo?.phone}>{churchInfo?.phone}</a>
             </div>
           </div>
         </div>
@@ -67,7 +38,7 @@ export default async function Footer() {
         <div className="footer-map">
           <div
             dangerouslySetInnerHTML={{
-              __html: googleMapCode ?? "",
+              __html: churchInfo?.googleMapEmbed ?? "",
             }}
           />
         </div>
