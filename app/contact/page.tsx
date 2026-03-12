@@ -1,23 +1,15 @@
 import HeroImage from "../components/HeroImage";
-import { getPageData } from "../api/keystatic/lib/keystatic";
-import { DocumentElement } from "@keystatic/core";
-import { DocumentRenderer } from "@keystatic/core/renderer";
+import { getPageData, getChurchInfoData } from "../api/keystatic/lib/keystatic";
 import { Container } from "react-bootstrap";
 import ContactForm from "../components/ContactForm";
 import RevealSection from "../components/RevealSection";
 import { buildMetadata } from "../lib/buildMetadata";
-import { PageModel, Content } from "../models/pageModel";
-import Link from "next/link";
-
-type GoogleMapItem = DocumentElement & {
-  type: string;
-  children: { text: string }[];
-};
+import { PageModel } from "../models/pageModel";
+import { toTelLink } from "../utils";
 
 export default async function Contact() {
   const pageData = (await getPageData("contact")) as PageModel | null;
-  const googleMapSubsection = pageData?.subsections.find((item: Content) => item.title?.includes("Google"));
-  const googleMapArray = await googleMapSubsection?.content();
+  const churchInfo = await getChurchInfoData();
 
   return (
     <div className="contact-container">
@@ -26,41 +18,41 @@ export default async function Contact() {
       <RevealSection id="contactInfo">
         <Container className="mt-5 mb-5 contact-component-container">
           <div className="contact-info">
-            {pageData?.subsections
-              ? pageData.subsections.map(async (item: Content, index: number) => {
-                  const content = await item.content();
-                  if (item.title && !item.title.includes("Google")) {
-                    return (
-                      <div key={index} className="contact-subsections">
-                        <h3>{item.title}</h3>
-                        <DocumentRenderer document={content} />
-                      </div>
-                    );
-                  }
-                })
-              : null}
-            <Link className="btn btn-lg btn-primary w-100" href="/plan-your-visit">
-              Plan Your Visit
-            </Link>
+            <div className="contact-subsections">
+              <h3>Service Times</h3>
+              <p>{churchInfo?.serviceTime}</p>
+            </div>
+            <div className="contact-subsections">
+              <h3>Address</h3>
+              <p>{churchInfo?.address}</p>
+            </div>
+            <div className="contact-subsections">
+              <h3>Childcare</h3>
+              <p>{churchInfo?.childcareMessage}</p>
+            </div>
+            <div className="contact-subsections">
+              <h3>Phone</h3>
+              <p>
+                <a style={{ color: "#c8c4bc", textDecoration: "none" }} href={churchInfo?.phone ? toTelLink(churchInfo?.phone) : churchInfo?.phone}>
+                  {churchInfo?.phone}
+                </a>
+              </p>
+            </div>
+            {churchInfo?.planYourVisitLink ? (
+              <a className="btn btn-lg btn-primary w-100" href={churchInfo.planYourVisitLink}>
+                Plan Your Visit
+              </a>
+            ) : null}
           </div>
           <ContactForm />
         </Container>
       </RevealSection>
 
-      {googleMapArray && googleMapArray.length > 0
-        ? (googleMapArray as GoogleMapItem[]).map((item: GoogleMapItem, index: number) => {
-            if (item.type === "code") {
-              return (
-                <div
-                  key={index}
-                  dangerouslySetInnerHTML={{
-                    __html: item.children[0].text,
-                  }}
-                />
-              );
-            }
-          })
-        : null}
+      <div
+        dangerouslySetInnerHTML={{
+          __html: churchInfo?.googleMapEmbed ?? "",
+        }}
+      />
     </div>
   );
 }
