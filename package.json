@@ -11,6 +11,7 @@
   "dependencies": {
     "@keystatic/core": "^0.5.48",
     "@keystatic/next": "^5.0.4",
+    "@vercel/analytics": "^2.0.1",
     "bootstrap": "^5.3.8",
     "bootstrap-icons": "^1.13.1",
     "keen-slider": "^6.8.6",

@@ -6,6 +6,7 @@ import ConditionalLayout from "@/app/components/ConditionalLayout";
 import RefTagger from "@/app/components/RefTagger";
 import Footer from "./components/Footer";
 import SpecialAnnouncements from "./components/SpecialAnnouncements";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
   title: "Resurrection Anglican Church | Rock Hill SC",
@@ -40,7 +41,10 @@ export default function RootLayout({
             width="0"
           />
         </noscript>
-        <ConditionalLayout footer={<Footer />}>{children}</ConditionalLayout>
+        <ConditionalLayout footer={<Footer />}>
+          {children}
+          <Analytics />
+        </ConditionalLayout>
         <RefTagger />
         <SpecialAnnouncements />
       </body>
