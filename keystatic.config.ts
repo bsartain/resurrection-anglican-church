@@ -442,6 +442,7 @@ export default config({
         }),
         googleMapEmbed: fields.text({
           label: "Google Map Embed code",
+          description: "In the code please change width='600' to width='100%'",
           multiline: true,
         }),
         planYourVisitLink: fields.text({
