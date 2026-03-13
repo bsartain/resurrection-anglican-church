@@ -976,6 +976,9 @@ h6 {
     }
     .holy-week-quote {
       margin: 100px;
+      @media only screen and (max-width: 768px) {
+        margin: 25px;
+      }
     }
   }
 
