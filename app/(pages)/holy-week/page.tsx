@@ -38,7 +38,8 @@ const services: HolyWeekService[] = [
     date: "April 3, 2026",
     time: "6:00 PM",
     name: "Good Friday",
-    description: "Solemn Liturgy of Good Friday with meditation on the Passion of Christ. Prayer vigil begins 8pm (ends 4/4pm).",
+    description:
+      "Solemn Liturgy of Good Friday with meditation on the Passion of Christ, Stations of the cross then prayer vigil begins 8pm (ends 4/4pm). Volunteers select time slots to pray.",
     icon: "/images/icons/icon-thorns.jpg",
   },
   {
