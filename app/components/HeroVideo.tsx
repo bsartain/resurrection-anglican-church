@@ -3,7 +3,7 @@ export default function HeroVideo() {
     <div className="hero-video-container">
       <div className="hero">
         <video autoPlay muted loop playsInline className="video">
-          <source src="/videos/pray.mp4" type="video/mp4" />
+          <source src="/videos/splash-video.mp4" type="video/mp4" />
         </video>
         <div className="overlay" />
         <div className="content">
