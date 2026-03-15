@@ -36,9 +36,9 @@ export default async function ChurchInformation() {
             </Link>
           ) : null}
         </div>
-        <div className="worship-right">
+        {/* <div className="worship-right">
           <div dangerouslySetInnerHTML={{ __html: churchInfo.googleMapEmbed }} />
-        </div>
+        </div> */}
       </div>
     </RevealSection>
   );
