@@ -1,10 +1,10 @@
-import HeroImage from "../components/HeroImage";
-import { getPageData } from "../api/keystatic/lib/keystatic";
+import HeroImage from "../../components/HeroImage";
+import { getPageData } from "../../api/keystatic/lib/keystatic";
 import { Container } from "react-bootstrap";
 import { DocumentRenderer } from "@keystatic/core/renderer";
-import RevealSection from "../components/RevealSection";
-import { buildMetadata } from "../lib/buildMetadata";
-import { PageModel, Content } from "../models/pageModel";
+import RevealSection from "../../components/RevealSection";
+import { buildMetadata } from "../../lib/buildMetadata";
+import { PageModel, Content } from "../../models/pageModel";
 import Link from "next/link";
 
 interface HolyWeekService {

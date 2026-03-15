@@ -1,7 +1,7 @@
-import HeroImage from "../components/HeroImage";
-import { getAllPosts, getAuthor } from "../api/keystatic/lib/keystatic";
-import RevealSection from "../components/RevealSection";
-import { buildMetadata } from "../lib/buildMetadata";
+import HeroImage from "../../components/HeroImage";
+import { getAllPosts, getAuthor } from "../../api/keystatic/lib/keystatic";
+import RevealSection from "../../components/RevealSection";
+import { buildMetadata } from "../../lib/buildMetadata";
 import Link from "next/link";
 import Image from "next/image";
 

@@ -1,11 +1,11 @@
-import HeroImage from "../components/HeroImage";
-import { getPageData, getChurchInfoData } from "../api/keystatic/lib/keystatic";
+import HeroImage from "../../components/HeroImage";
+import { getPageData, getChurchInfoData } from "../../api/keystatic/lib/keystatic";
 import { Container } from "react-bootstrap";
-import ContactForm from "../components/ContactForm";
-import RevealSection from "../components/RevealSection";
-import { buildMetadata } from "../lib/buildMetadata";
-import { PageModel } from "../models/pageModel";
-import { toTelLink } from "../utils";
+import ContactForm from "../../components/ContactForm";
+import RevealSection from "../../components/RevealSection";
+import { buildMetadata } from "../../lib/buildMetadata";
+import { PageModel } from "../../models/pageModel";
+import { toTelLink } from "../../utils";
 
 export default async function Contact() {
   const pageData = (await getPageData("contact")) as PageModel | null;

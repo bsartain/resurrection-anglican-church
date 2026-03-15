@@ -1,10 +1,10 @@
-import HeroImage from "../components/HeroImage";
-import RevealSection from "../components/RevealSection";
-import VisitFAQ from "../components/VisitFAQ";
+import HeroImage from "../../components/HeroImage";
+import RevealSection from "../../components/RevealSection";
+import VisitFAQ from "../../components/VisitFAQ";
 import { Container } from "react-bootstrap";
-import { buildMetadata } from "../lib/buildMetadata";
-import PlanVisitContactForm from "../components/PlanVisitContactForm";
-import { getChurchInfoData } from "../api/keystatic/lib/keystatic";
+import { buildMetadata } from "../../lib/buildMetadata";
+import PlanVisitContactForm from "../../components/PlanVisitContactForm";
+import { getChurchInfoData } from "../../api/keystatic/lib/keystatic";
 import { toTelLink } from "@/app/utils";
 
 export default async function PlanYourVisit() {

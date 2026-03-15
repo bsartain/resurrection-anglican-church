@@ -1,11 +1,11 @@
-import HeroImage from "../components/HeroImage";
-import RevealSection from "../components/RevealSection";
-import { getAllSermons } from "../api/keystatic/lib/keystatic";
-import { buildMetadata } from "../lib/buildMetadata";
+import HeroImage from "../../components/HeroImage";
+import RevealSection from "../../components/RevealSection";
+import { getAllSermons } from "../../api/keystatic/lib/keystatic";
+import { buildMetadata } from "../../lib/buildMetadata";
 import { DocumentRenderer } from "@keystatic/core/renderer";
 import Link from "next/link";
 import { Accordion } from "react-bootstrap";
-import SermonExcerpt from "../components/SermonExcerpt";
+import SermonExcerpt from "../../components/SermonExcerpt";
 
 function extractDriveId(url: string): string | null {
   const match = url.match(/\/d\/([a-zA-Z0-9_-]+)/);
