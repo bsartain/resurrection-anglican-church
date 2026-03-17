@@ -46,20 +46,33 @@ export default async function Footer() {
               <Link href="/contact">Service Times / Contact</Link>
             </li>
             <li>
-              <Link href="/Linkbout">About Us</Link>
-            </li>
-            <li>
               <Link href="/plan-your-visit">Plan Your Visit</Link>
             </li>
             <li>
               <Link href="/kids">Resurrection Kids</Link>
             </li>
             <li>
-              <Link href="/anglican">The Anglican Way</Link>
+              <Link href="/leadership">Leadership</Link>
+            </li>
+            <li>
+              <Link href="/catechism">Beliefs / Formation</Link>
+            </li>
+            <li>
+              <Link href="/resources">Resources</Link>
+            </li>
+            <li>
+              <Link href="/give">Give</Link>
             </li>
             <li>
               <Link href="/blog">Blog</Link>
             </li>
+            <li>
+              <Link href="/anglican">The Anglican Way</Link>
+            </li>
+            <li>
+              <Link href="/gospel">The Gospel</Link>
+            </li>
+
             <li className="mt-5">
               <div className="d-flex flex-column social-links">
                 <span className="footer-label mb-2">Social Links</span>
