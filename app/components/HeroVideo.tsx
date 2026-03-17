@@ -22,7 +22,7 @@ export default function HeroVideo() {
             <hr className="mt-3 mb-5" style={{ width: "50px" }} />
           </div>
           <Link href="/plan-your-visit" className="btn btn-lg btn-primary mt-2 rounded" style={{ background: "#ffffff", color: "#2b2b2b" }}>
-            Plan Your Visit
+            <span className="mt-1">Plan Your Visit</span>
           </Link>
         </div>
       </div>
