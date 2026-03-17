@@ -105,7 +105,7 @@ h6 {
   background: #ffffff !important;
   .logo {
     width: 100%;
-    max-width: 80px;
+    max-width: 40px;
     @media only screen and (max-width: 768px) {
       max-width: 65px;
     }
@@ -394,11 +394,37 @@ h6 {
 
 .footer-container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 3rem;
   max-width: 1200px;
   margin: 0 auto;
   padding: 4rem 2rem;
+  .footer-sitemap {
+    .social-links {
+      a {
+        .bi {
+          font-size: 20px;
+        }
+      }
+    }
+    ul {
+      padding-left: 0;
+      li {
+        list-style: none;
+        a {
+          text-transform: uppercase;
+          letter-spacing: 0.15em;
+          color: #c8c4bc;
+          font-family: Helvetica Neue, sans-serif;
+          font-size: 0.7rem;
+          text-decoration: none;
+        }
+        a:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
 }
 
 .footer-info {
