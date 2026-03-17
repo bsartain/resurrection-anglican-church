@@ -66,7 +66,7 @@ const MainNav = () => {
           <Navbar.Brand href="/">
             <div className="d-flex align-items-center gap-2">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/images/logo-old.png" alt="Resurrection Anglican Church" className="logo" />
+              <img src="/images/logo-black-white.png" alt="Resurrection Anglican Church" className="logo" />
               <div>
                 <h4 className="logo-title">Resurrection Anglican Church</h4>
               </div>
