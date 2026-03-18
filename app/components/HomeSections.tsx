@@ -66,7 +66,20 @@ export default function HomeSections({ section1, section2, section3, section4, s
           <Container>
             <h1 className="mb-3">{section1.title}</h1>
             <div className="mb-5">
-              <DocumentRenderer document={section1.content} />
+              <DocumentRenderer
+                document={section1.content}
+                renderers={{
+                  inline: {
+                    link: ({ href, children }) => {
+                      return (
+                        <a className="btn btn-primary-light btn-lg mb-5" href={href}>
+                          {children}
+                        </a>
+                      );
+                    },
+                  },
+                }}
+              />
             </div>
 
             <div className="service-info">

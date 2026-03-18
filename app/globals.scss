@@ -1891,3 +1891,92 @@ h6 {
     }
   }
 }
+
+// Anglican Start Page
+.anglican-start-container {
+  .as-attribution {
+    font-size: 0.9rem;
+    font-style: italic;
+    color: rgba(180, 150, 90, 0.65);
+    letter-spacing: 0.04em;
+    margin-bottom: 2.5rem;
+    text-align: center;
+
+    a {
+      color: rgba(180, 150, 90, 0.8);
+      text-decoration: underline;
+    }
+  }
+
+  .as-main-heading {
+    text-align: center;
+    margin-bottom: 3rem;
+
+    h1 {
+      font-family: $font-heading;
+      font-size: 3.5rem;
+      font-weight: 300;
+      font-style: italic;
+      color: #ece9e5;
+      margin-bottom: 1.5rem;
+
+      @media (max-width: 768px) {
+        font-size: 2.5rem;
+      }
+    }
+
+    hr {
+      border-color: rgba(180, 150, 90, 0.4);
+    }
+  }
+
+  .as-section-heading {
+    font-family: $font-heading;
+    font-size: 1.9rem;
+    font-weight: 400;
+    font-style: italic;
+    color: #ece9e5;
+    margin-top: 3.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(180, 150, 90, 0.2);
+  }
+
+  p {
+    font-size: 1.3rem;
+    line-height: 1.85;
+    color: #ccc9c1;
+  }
+
+  .as-closing-quote {
+    padding: 4rem 0 5rem;
+    text-align: center;
+  }
+
+  .as-quote {
+    border: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 600px;
+
+    p {
+      font-family: $font-heading;
+      font-size: 1.8rem;
+      font-style: italic;
+      font-weight: 300;
+      line-height: 1.6;
+      color: #ece9e5;
+      margin-bottom: 1rem;
+
+      @media (max-width: 768px) {
+        font-size: 1.4rem;
+      }
+    }
+
+    footer {
+      color: rgba(180, 150, 90, 0.7);
+      font-size: 0.95rem;
+      letter-spacing: 0.06em;
+    }
+  }
+}

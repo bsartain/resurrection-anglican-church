@@ -31,6 +31,6 @@ export async function generateMetadata() {
     title: pageData?.title,
     excerpt: pageData?.excerpt,
     image: pageData?.image,
-    path: "/gospel",
+    path: "/catechism",
   });
 }
