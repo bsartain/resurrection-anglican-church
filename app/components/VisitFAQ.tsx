@@ -4,8 +4,8 @@ import { Accordion } from "react-bootstrap";
 import faqData from "@/app/lib/visitFaq.json";
 
 export default function VisitFAQ() {
-  const firstFew = faqData.filter((item) => item.id < 5);
-  const lastFew = faqData.filter((item) => item.id > 4);
+  const firstFew = faqData.filter((item) => item.id < 6);
+  const lastFew = faqData.filter((item) => item.id > 5);
 
   const [activeLeft, setActiveLeft] = useState<string | null>(null);
   const [activeRight, setActiveRight] = useState<string | null>(null);
