@@ -1,10 +1,10 @@
 import Link from "next/link";
 import { getChurchInfoData } from "../api/keystatic/lib/keystatic";
 import { toTelLink } from "@/app/utils";
+import FooterNavLinks from "./FooterNavLinks";
 
 export default async function Footer() {
   const churchInfo = await getChurchInfoData();
-
   return (
     <footer className="footer">
       <div className="footer-container">
@@ -38,55 +38,7 @@ export default async function Footer() {
         {/* Footer Sitemap / Quick Links Section */}
         <div className="footer-sitemap">
           <span className="footer-label">QUICK LINKS</span>
-          <ul>
-            <li>
-              <Link href="/">Home</Link>
-            </li>
-            <li>
-              <Link href="/contact">Service Times / Contact</Link>
-            </li>
-            <li>
-              <Link href="/plan-your-visit">Plan Your Visit</Link>
-            </li>
-            <li>
-              <Link href="/kids">Resurrection Kids</Link>
-            </li>
-            <li>
-              <Link href="/leadership">Leadership</Link>
-            </li>
-            <li>
-              <Link href="/catechism">Beliefs / Formation</Link>
-            </li>
-            <li>
-              <Link href="/resources">Resources</Link>
-            </li>
-            <li>
-              <Link href="/give">Give</Link>
-            </li>
-            <li>
-              <Link href="/blog">Blog</Link>
-            </li>
-            <li>
-              <Link href="/anglican">The Anglican Way</Link>
-            </li>
-            <li>
-              <Link href="/gospel">The Gospel</Link>
-            </li>
-
-            <li className="mt-5">
-              <div className="d-flex flex-column social-links">
-                <span className="footer-label mb-2">Social Links</span>
-                <div className="d-flex">
-                  <Link href="https://www.facebook.com/resurrectionrockhill" target="_blank">
-                    <i className="bi bi-facebook me-2" />
-                  </Link>
-                  <Link href="https://www.instagram.com/resurrectionrockhill/" target="_blank">
-                    <i className="bi bi-instagram" />
-                  </Link>
-                </div>
-              </div>
-            </li>
-          </ul>
+          <FooterNavLinks />
         </div>
 
         {/* Right Column - Google Map */}

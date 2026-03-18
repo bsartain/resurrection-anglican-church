@@ -5,20 +5,8 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import ScrollToTopButton from "./ScrollToTopButton";
 import { usePathname } from "next/navigation";
-
-const menuItems = [
-  { label: "Home", href: "/" },
-  { label: "Service Times / Contact", href: "/contact" },
-  { label: "Plan Your Visit!", href: "/plan-your-visit" },
-  { label: "Children's Ministry", href: "/kids" },
-  { label: "Leadership", href: "/leadership" },
-  { label: "Beliefs", href: "/catechism" },
-  { label: "Resources", href: "/resources" },
-  { label: "Give", href: "/give" },
-  { label: "Blog", href: "/blog" },
-  { label: "The Anglican Way", href: "/anglican" },
-  { label: "What is the Gospel And How Is It For Me?", href: "/gospel" },
-];
+import menuItems from "@/app/lib/menuItems.json";
+import { trackEvent } from "../lib/gtm";
 
 const MainNav = () => {
   const [show, setShow] = useState(false);
@@ -97,7 +85,13 @@ const MainNav = () => {
               <Link
                 href={item.href}
                 className="drawer-nav-link"
-                onClick={() => setShow(false)}
+                onClick={() => {
+                  trackEvent("main_nav_button_click", {
+                    button_text: item.label,
+                    button_destination: item.href,
+                  });
+                  setShow(false);
+                }}
                 style={item.href === "/plan-your-visit" ? { background: "#a0856a", color: "#ffffff" } : {}}
               >
                 {item.label}
