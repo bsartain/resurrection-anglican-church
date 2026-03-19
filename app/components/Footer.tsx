@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { getChurchInfoData } from "../api/keystatic/lib/keystatic";
 import { toTelLink } from "@/app/utils";
 import FooterNavLinks from "./FooterNavLinks";
