@@ -33,14 +33,14 @@ const HeroImage = ({ image, children }: HeroImageProps) => {
       <div className="hero-image-text reveal">
         <span>Resurrection Anglican Church</span>
         <div className="d-flex justify-content-center w-100">
-          <hr className="w-25 mt-5 mb-1" />
+          <hr className="mt-5 mb-1" style={{ width: "50px" }} />
         </div>
         <h1>{children}</h1>
         {pathname === "/give" ? <DonateButtonModal donateButtonText="Donate" /> : null}
         {pathname === "/catechism" ? (
           <div>
             <div className="d-flex justify-content-center w-100">
-              <hr className="w-25 mt-4 mb-5" />
+              <hr className="mt-3 mb-5" style={{ width: "50px" }} />
             </div>
             Anglican Formularies
           </div>
@@ -48,7 +48,7 @@ const HeroImage = ({ image, children }: HeroImageProps) => {
         {pathname === "/sermons" ? (
           <div>
             <div className="d-flex justify-content-center w-100">
-              <hr className="w-25 mt-4 mb-5" />
+              <hr className="mt-3 mb-5" style={{ width: "50px" }} />
             </div>
             Latest Sermon
           </div>
