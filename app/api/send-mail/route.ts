@@ -9,7 +9,7 @@ export async function POST(request: Request) {
   try {
     await resend.emails.send({
       from: "no-reply@resurrectionrockhill.org",
-      to: ["btsartain@yahoo.com", "btsartain@gmail.com"],
+      to: ["btsartain@yahoo.com", "btsartain@gmail.com", "admin@resurrectionrockhill.org"],
       subject: `New Email From Resurrection Church Website Form: ${name}`,
       html: `<p><strong>Name:</strong> ${name}</p>
              <p><strong>Email:</strong> ${email}</p>
