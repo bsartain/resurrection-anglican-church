@@ -6,6 +6,7 @@ import RevealSection from "../../components/RevealSection";
 import { buildMetadata } from "../../lib/buildMetadata";
 import { PageModel, Content } from "../../models/pageModel";
 import Link from "next/link";
+import PlanVisitContactForm from "@/app/components/PlanVisitContactForm";
 
 interface HolyWeekService {
   day: string;
@@ -129,9 +130,11 @@ export default async function HolyWeek() {
               ))}
             </div>
             <div className="text-center mt-5">
-              <Link href="/plan-your-visit" className="btn btn-lg btn-primary">
+              <h2>Let us know you're coming!</h2>
+              <PlanVisitContactForm />
+              {/* <Link href="/plan-your-visit" className="btn btn-lg btn-primary" target="_blank">
                 Get Directions &amp; Plan Your Visit
-              </Link>
+              </Link> */}
             </div>
             {pageData?.subsections && pageData.subsections.length > 0
               ? pageData.subsections.map((item: Content, index: number) =>

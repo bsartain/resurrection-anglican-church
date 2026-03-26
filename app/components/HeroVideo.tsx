@@ -13,13 +13,13 @@ export default function HeroVideo() {
           <div className="d-flex justify-content-center w-100">
             <hr className="mt-5 mb-1" style={{ width: "50px" }} />
           </div>
-          <h1 className="hero-title reveal">Resurrection Anglican Church</h1>
+          <h1 className="hero-title reveal">Holy Week at Resurrection</h1>
           <div className="d-flex justify-content-center w-100">
             <hr className="mt-3 mb-5" style={{ width: "50px" }} />
           </div>
           <p className="reveal">Experience the Trinity, Embody Community, Engage the City</p>
-          <Link href="/plan-your-visit" className="btn btn-lg btn-primary mt-2 rounded reveal" style={{ background: "#ffffff", color: "#2b2b2b" }}>
-            <span className="mt-1">Plan Your Visit</span>
+          <Link href="/holy-week" className="btn btn-lg btn-primary mt-2 rounded reveal" style={{ background: "#ffffff", color: "#2b2b2b" }}>
+            <span className="mt-1">Plan Your Visit / Holy Week Schedule</span>
           </Link>
         </div>
       </div>
