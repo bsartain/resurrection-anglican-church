@@ -17,6 +17,7 @@ function PlanVisitContactForm() {
     phone: "",
     bringingKids: "",
     questions: "",
+    website: "", // Trap Field — must stay empty
   });
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -33,6 +34,7 @@ function PlanVisitContactForm() {
           phone: form.phone,
           bringingKids: form.bringingKids,
           questions: form.questions,
+          website: form.website,
         }),
       });
 
@@ -164,6 +166,19 @@ function PlanVisitContactForm() {
                 id="questions"
                 onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => setForm({ ...form, questions: e.target.value })}
                 value={form.questions}
+              />
+            </div>
+            {/* Trap field — hidden from real users, bots will fill it */}
+            <div style={{ position: "absolute", left: "-9999px", top: "-9999px" }} aria-hidden="true">
+              <label htmlFor="website">Website</label>
+              <input
+                type="text"
+                id="website"
+                name="website"
+                tabIndex={-1}
+                autoComplete="off"
+                value={form.website}
+                onChange={(e) => setForm({ ...form, website: e.target.value })}
               />
             </div>
             <button type="submit" className="btn btn-primary mt-3 rounded w-100 p-3 submit-btn">
