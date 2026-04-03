@@ -56,7 +56,7 @@ const services: HolyWeekService[] = [
     date: "April 5, 2026",
     time: "4:00 PM",
     name: "Easter Sunday",
-    description: "Festive Holy Eucharist celebrating the Resurrection of Jesus Christ. He is risen! Morning Egg hunt and Potluck.",
+    description: "Festive Holy Eucharist celebrating the Resurrection of Jesus Christ. He is risen! Egg hunt and Potluck after evening service.",
     icon: "/images/icons/icon-tomb.jpg",
   },
 ];
