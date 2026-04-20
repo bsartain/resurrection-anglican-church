@@ -196,3 +196,18 @@ multipleImages:
       subCaption: Thomas Cranmer
       category: anglican
       link: https://anglicancompass.com/the-thirty-nine-articles-of-religion/
+    - caption: 'David''s Crown: Sounding the Psalms'
+      subCaption: Malcolm Guite
+      category: book
+      link: >-
+        https://www.amazon.com/Davids-Crown-Malcolm-Guite/dp/1786223066/ref=sr_1_1
+    - image: /images/pages/resources/multipleImages/value/32/image.jpg
+      caption: 'Theo of Golden: A Novel'
+      subCaption: Allen Levi
+      category: book
+      link: https://www.amazon.com/Theo-of-Golden-A-Novel/dp/B0FTT8BQ7C/ref=sr_1_1
+    - caption: 'Silence: A Novel'
+      subCaption: Shusaku Endo
+      category: book
+      link: >-
+        https://www.amazon.com/Silence-Picador-Classics-Shusaku-Endo/dp/1250082242/ref=sr_1_1
