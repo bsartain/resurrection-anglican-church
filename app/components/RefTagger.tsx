@@ -33,7 +33,8 @@ export default function RefTagger() {
           var refTagger = {
             settings: {
               bibleVersion: "ESV",
-              openInNewWindow: true
+              openInNewWindow: true,
+              tooltipStyle: "dark",
             }
           };
           (function(d, t) {

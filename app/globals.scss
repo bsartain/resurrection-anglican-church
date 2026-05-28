@@ -1987,3 +1987,19 @@ h6 {
     }
   }
 }
+
+.rtTooltipBody {
+  font-size: 22px !important;
+  .resourcetext {
+    .ch-ref {
+      font-weight: 300 !important;
+      color: #d7d5d5 !important;
+      font-family: Newsreader, serif !important;
+    }
+  }
+}
+
+.rtTooltipHeader {
+  font-size: 18px !important;
+  font-weight: 400 !important;
+}
