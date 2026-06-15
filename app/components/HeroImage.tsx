@@ -8,9 +8,10 @@ import path from "path";
 interface HeroImageProps {
   image: string;
   children?: React.ReactNode;
+  author?: string;
 }
 
-const HeroImage = ({ image, children }: HeroImageProps) => {
+const HeroImage = ({ image, children, author }: HeroImageProps) => {
   const pathname = usePathname();
   const heroRef = useRef<HTMLDivElement>(null);
 
@@ -43,6 +44,14 @@ const HeroImage = ({ image, children }: HeroImageProps) => {
               <hr className="mt-3 mb-5" style={{ width: "50px" }} />
             </div>
             Anglican Formularies
+          </div>
+        ) : null}
+        {pathname.startsWith("/blog/") && author ? (
+          <div>
+            <div className="d-flex justify-content-center w-100">
+              <hr className="mt-3 mb-5" style={{ width: "50px" }} />
+            </div>
+            by {author}
           </div>
         ) : null}
         {pathname === "/sermons" ? (

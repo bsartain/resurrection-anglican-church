@@ -1,5 +1,5 @@
 import HeroImage from "@/app/components/HeroImage";
-import { getPost, getAllPosts } from "@/app/api/keystatic/lib/keystatic";
+import { getPost, getAllPosts, getAuthor } from "@/app/api/keystatic/lib/keystatic";
 import { DocumentRenderer } from "@keystatic/core/renderer";
 import { Container } from "react-bootstrap";
 import RevealSection from "@/app/components/RevealSection";
@@ -14,10 +14,11 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
   if (!post) notFound();
 
   const content = await post.content();
+  const author = post.author ? await getAuthor(post.author) : null;
 
   return (
     <div className="blog-post">
-      <HeroImage image={post.image ?? ""}>{post.title}</HeroImage>
+      <HeroImage image={post.image ?? ""} author={author?.name ?? undefined}>{post.title}</HeroImage>
 
       <RevealSection id="blogPostContent" image="/images/pages/jesus-cross.jpg" opacity={0.01}>
         <Container className="pt-5 pb-5 reveal">
@@ -35,7 +36,10 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
             </ol>
           </nav>
           {post.date && (
-            <p className="text-muted">{new Date(post.date).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}</p>
+            <>
+              <p className="text-muted">{new Date(post.date).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}</p>
+              {author ? <p className="text-muted">by {author.name}</p> : null}
+            </>
           )}
           <DocumentRenderer document={content ?? []} />
         </Container>
