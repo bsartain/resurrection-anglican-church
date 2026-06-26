@@ -42,7 +42,7 @@ export default async function LeadershipPage() {
     <div className="dark-container">
       <HeroImage image={pageData?.image ? pageData.image : ""}>{pageData?.title}</HeroImage>
 
-      <RevealSection id="leadershipSection" image="/images/pages/icon-resurrection.jpg" opacity={0.02}>
+      <RevealSection id="leadershipSection" image="/images/pages/icon-resurrection.jpg" opacity={0.01} className="dark-background-home-section">
         <Container className="pt-5 pb-5">
           {pageContent ? <DocumentRenderer document={pageContent} /> : null}
 

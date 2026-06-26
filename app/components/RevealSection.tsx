@@ -1,9 +1,7 @@
 "use client";
-import React from "react";
 import { useInView } from "react-intersection-observer";
 import { Container } from "react-bootstrap";
-
-// This component is a wrapper that supports the animation of the section on each page
+import { usePrimaryColor } from "@/app/context/PrimaryColorContext";
 
 export default function RevealSection({
   id,
@@ -19,8 +17,14 @@ export default function RevealSection({
   opacity?: number;
 }) {
   const { ref, inView } = useInView({ threshold: 0, triggerOnce: true });
+  const primaryColor = usePrimaryColor();
   return (
-    <section id={id} className={className} ref={ref} style={{ position: "relative" }}>
+    <section
+      id={id}
+      className={className}
+      ref={ref}
+      style={className?.includes("dark-background-home-section") ? { position: "relative", background: primaryColor } : { position: "relative" }}
+    >
       {/* Background with opacity */}
       <div
         style={

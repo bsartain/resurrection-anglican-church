@@ -20,7 +20,7 @@ export default async function Resources() {
       <HeroImage image={pageData?.image ? pageData.image : ""}>{pageData?.title}</HeroImage>
 
       <div className="pb-5">
-        <RevealSection id="resourceContent" image="/images/pages/jesus-cross.jpg" opacity={0.02}>
+        <RevealSection id="resourceContent" image="/images/pages/jesus-cross.jpg" opacity={0.01} className="dark-background-home-section">
           <Container className="pt-5 reveal text-center">
             <DocumentRenderer document={pageContent ?? []} />
             <div className="book-container">

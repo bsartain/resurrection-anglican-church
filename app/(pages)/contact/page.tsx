@@ -15,7 +15,7 @@ export default async function Contact() {
     <div className="contact-container">
       <HeroImage image={pageData?.image ? pageData.image : ""}>{pageData?.title}</HeroImage>
 
-      <RevealSection id="contactInfo">
+      <RevealSection id="contactInfo" className="dark-background-home-section" opacity={0.01} image="/images/pages/icon-resurrection.jpg">
         <Container className="mt-5 mb-5 contact-component-container">
           <div className="contact-info">
             <div className="contact-subsections">

@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./globals.scss";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import ConditionalLayout from "@/app/components/ConditionalLayout";
+import { PrimaryColorProvider } from "@/app/context/PrimaryColorContext";
 import RefTagger from "@/app/components/RefTagger";
 import Footer from "./components/Footer";
 import SpecialAnnouncements from "./components/SpecialAnnouncements";
@@ -41,10 +42,12 @@ export default function RootLayout({
             width="0"
           />
         </noscript>
-        <ConditionalLayout footer={<Footer />}>
-          {children}
-          <Analytics />
-        </ConditionalLayout>
+        <PrimaryColorProvider>
+          <ConditionalLayout footer={<Footer />}>
+            {children}
+            <Analytics />
+          </ConditionalLayout>
+        </PrimaryColorProvider>
         <RefTagger />
         <SpecialAnnouncements />
       </body>

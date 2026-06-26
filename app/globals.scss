@@ -828,9 +828,9 @@ h6 {
 
 .vestry {
   .card {
-    border: 1px solid #494743 !important;
     color: #d4d0c8;
-    background-color: #2b2b2b;
+    background-color: transparent;
+    border: 1px solid #b4b2af !important;
   }
 }
 
@@ -1421,7 +1421,7 @@ h6 {
       .form-floating {
         .form-control {
           background-color: #2b2b2b !important;
-          color: #c8c4bc !important;
+          color: #c8bcbc !important;
           border: 1px solid #4a4a4a !important;
           padding-top: 50px;
           padding-bottom: 25px;

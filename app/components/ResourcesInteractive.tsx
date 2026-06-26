@@ -14,7 +14,7 @@ export default function ResourcesInteractive({ anglicanTitles }: { anglicanTitle
 
   return (
     <>
-      <RevealSection id="resourceContentBooks" image="/images/pages/jesus-cross.jpg" opacity={0.02}>
+      <RevealSection id="resourceContentBooks" image="/images/pages/jesus-cross.jpg" opacity={0.01} className="dark-background-home-section">
         <h2 className="text-center">Anglican Spiritual Formation</h2>
         <Container className="mt-5 mb-5 reveal book-container">
           <BookCarousel bookTitles={anglicanTitles} onBookClick={handleBookClick} />

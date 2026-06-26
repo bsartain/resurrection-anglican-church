@@ -55,7 +55,7 @@ export default async function Anglican() {
       <HeroImage image={pageData?.image ? pageData.image : ""}>{pageData?.title}</HeroImage>
 
       <div>
-        <RevealSection id="anglicanContent" image="/images/pages/jesus-cross.jpg" opacity={0.01}>
+        <RevealSection id="anglicanContent" image="/images/pages/jesus-cross.jpg" opacity={0.01} className="dark-background-home-section">
           <Container className="mt-5 mb-5 reveal">
             <DocumentRenderer document={pageContent ?? []} />
           </Container>
