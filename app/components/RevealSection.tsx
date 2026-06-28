@@ -23,7 +23,11 @@ export default function RevealSection({
       id={id}
       className={className}
       ref={ref}
-      style={className?.includes("dark-background-home-section") ? { position: "relative", background: primaryColor } : { position: "relative" }}
+      style={
+        className?.includes("dark-background-home-section")
+          ? { position: "relative", background: primaryColor, color: primaryColor === "#f5f1e8" ? "#212529" : "#ffffff" }
+          : { position: "relative" }
+      }
     >
       {/* Background with opacity */}
       <div
