@@ -700,14 +700,14 @@ h6 {
 
 .decorative-quote {
   position: relative;
-  color: #ece9e5;
+  color: inherit;
   @media (max-width: 768px) {
     font-size: 40px;
   }
 
   &::before {
     content: "“";
-    color: #ece9e5;
+    color: inherit;
     font-size: 8rem;
     position: absolute;
     top: -1rem;
@@ -721,7 +721,7 @@ h6 {
 
   &::after {
     content: "”";
-    color: #ece9e5;
+    color: inherit;
     font-size: 8rem;
     position: absolute;
     bottom: -4rem;
@@ -828,7 +828,7 @@ h6 {
 
 .vestry {
   .card {
-    color: #d4d0c8;
+    color: inherit;
     background-color: transparent;
     border: 1px solid #b4b2af !important;
   }
@@ -1416,10 +1416,25 @@ h6 {
           font-weight: 400;
         }
         p {
-          color: #c8c4bc;
+          color: inherit;
           margin: 0;
           font-size: 1.2rem;
           line-height: 1.7;
+        }
+        .contact-phone {
+          color: inherit;
+          text-decoration: none;
+        }
+      }
+      .contact-plan-visit-button {
+        a {
+          width: 100% !important;
+          color: inherit;
+          text-decoration: none !important;
+          border: 1px solid;
+          padding: 10px;
+          border-radius: 5px;
+          background: transparent;
         }
       }
     }
@@ -1427,14 +1442,14 @@ h6 {
       font-family: Helvetica Neue, sans-serif !important;
       .form-floating {
         .form-control {
-          background-color: #2b2b2b !important;
-          color: #c8bcbc !important;
-          border: 1px solid #4a4a4a !important;
+          background-color: #ffffff !important;
+          color: #323232 !important;
+          border: 1px solid !important;
           padding-top: 50px;
           padding-bottom: 25px;
         }
         .form-control:focus ~ label {
-          color: #949089 !important;
+          color: #323232;
         }
         textarea.form-control {
           min-height: 200px;
@@ -1442,7 +1457,7 @@ h6 {
 
         label {
           font-size: 18px !important;
-          color: #c8c4bc;
+          color: #323232;
           margin-bottom: 15px;
         }
       }
@@ -1800,7 +1815,7 @@ h6 {
 
       label {
         font-size: 20px !important;
-        color: #c8c4bc;
+        color: inherit;
         margin-bottom: 15px;
       }
 
@@ -1835,7 +1850,7 @@ h6 {
 
       .small-text {
         font-size: 14px;
-        color: #c8c4bc !important;
+        color: inherit !important;
       }
 
       .submit-btn {

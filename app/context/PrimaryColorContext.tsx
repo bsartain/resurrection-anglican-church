@@ -12,7 +12,7 @@ const DEFAULT_COLOR = "#f5f1e8";
 
 const PrimaryColorContext = createContext<string>(DEFAULT_COLOR);
 
-export function PrimaryColorProvider({ children }: { children: React.ReactNode }) {
+export function PrimaryColorProvider({ children }: Readonly<{ children: React.ReactNode }>) {
   const [primaryColor, setPrimaryColor] = useState(DEFAULT_COLOR);
 
   useEffect(() => {
@@ -21,6 +21,7 @@ export function PrimaryColorProvider({ children }: { children: React.ReactNode }
     fetch(`https://api.dailyoffice2019.com/api/v1/office/midday_prayer/${date}`)
       .then((r) => r.json())
       .then((json) => {
+        console.log("API: ", json?.calendar_day);
         const color = json?.calendar_day?.primary_color;
         setPrimaryColor(COLOR_MAP[color] ?? DEFAULT_COLOR);
       })

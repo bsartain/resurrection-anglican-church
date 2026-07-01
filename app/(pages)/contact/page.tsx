@@ -33,15 +33,15 @@ export default async function Contact() {
             <div className="contact-subsections">
               <h3>Phone</h3>
               <p>
-                <a style={{ color: "#c8c4bc", textDecoration: "none" }} href={churchInfo?.phone ? toTelLink(churchInfo?.phone) : churchInfo?.phone}>
+                <a className="contact-phone" href={churchInfo?.phone ? toTelLink(churchInfo?.phone) : churchInfo?.phone}>
                   {churchInfo?.phone}
                 </a>
               </p>
             </div>
             {churchInfo?.planYourVisitLink ? (
-              <a className="btn btn-lg btn-primary w-100" href={churchInfo.planYourVisitLink}>
-                Plan Your Visit
-              </a>
+              <div className="contact-plan-visit-button">
+                <a href={churchInfo.planYourVisitLink}>Plan Your Visit</a>
+              </div>
             ) : null}
           </div>
           <ContactForm />

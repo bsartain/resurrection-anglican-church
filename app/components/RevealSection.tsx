@@ -9,15 +9,16 @@ export default function RevealSection({
   children,
   image,
   opacity,
-}: {
+}: Readonly<{
   id: string;
   className?: string;
   children: React.ReactNode;
   image?: string;
   opacity?: number;
-}) {
+}>) {
   const { ref, inView } = useInView({ threshold: 0, triggerOnce: true });
   const primaryColor = usePrimaryColor();
+  console.log("🚀 ~ RevealSection ~ primaryColor:", primaryColor);
   return (
     <section
       id={id}
