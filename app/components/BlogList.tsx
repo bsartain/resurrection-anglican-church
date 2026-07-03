@@ -7,7 +7,7 @@ import Image from "next/image";
 
 const POSTS_PER_PAGE = 6; // adjust as needed
 
-export default function BlogList({ posts }: { posts: any[] }) {
+export default function BlogList({ posts }: Readonly<{ posts: any[] }>) {
   const [currentPage, setCurrentPage] = useState(0);
 
   const pageCount = Math.ceil(posts.length / POSTS_PER_PAGE);
@@ -40,7 +40,10 @@ export default function BlogList({ posts }: { posts: any[] }) {
                 {post.author.avatar && (
                   <Image src={post.author.avatar} alt={String(post.author.name)} width={32} height={32} className="blog-card-avatar" />
                 )}
-                <span>By {String(post.author.name).toUpperCase()}</span>
+                <span className="flex-grow-1">By {String(post.author.name).toUpperCase()}</span>
+                <div>
+                  Category: <span className="text-uppercase">{post.entry.category ? post.entry.category : "Uncategorized"}</span>
+                </div>
               </div>
             )}
           </div>

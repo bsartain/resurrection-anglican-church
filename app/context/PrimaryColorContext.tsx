@@ -21,7 +21,6 @@ export function PrimaryColorProvider({ children }: Readonly<{ children: React.Re
     fetch(`https://api.dailyoffice2019.com/api/v1/office/midday_prayer/${date}`)
       .then((r) => r.json())
       .then((json) => {
-        console.log("API: ", json?.calendar_day);
         const color = json?.calendar_day?.primary_color;
         setPrimaryColor(COLOR_MAP[color] ?? DEFAULT_COLOR);
       })

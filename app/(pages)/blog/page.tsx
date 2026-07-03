@@ -2,8 +2,6 @@ import HeroImage from "../../components/HeroImage";
 import { getAllPosts, getAuthor } from "../../api/keystatic/lib/keystatic";
 import RevealSection from "../../components/RevealSection";
 import { buildMetadata } from "../../lib/buildMetadata";
-import Link from "next/link";
-import Image from "next/image";
 import BlogList from "@/app/components/BlogList";
 
 export default async function Blog() {
@@ -25,6 +23,7 @@ export default async function Blog() {
             image: post.entry.image,
             excerpt: post.entry.excerpt,
             date: post.entry.date,
+            category: post.entry.category,
           },
           author,
         };

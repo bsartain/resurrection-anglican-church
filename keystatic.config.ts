@@ -41,6 +41,7 @@ export default config({
         excerpt: fields.text({ label: "Excerpt" }),
         date: fields.date({ label: "Publish Date" }),
         content: fields.document({ label: "Content", formatting: true, links: true, images: true }),
+        category: fields.text({ label: "Category" }),
       },
     }),
 

@@ -18,7 +18,6 @@ export default function RevealSection({
 }>) {
   const { ref, inView } = useInView({ threshold: 0, triggerOnce: true });
   const primaryColor = usePrimaryColor();
-  console.log("🚀 ~ RevealSection ~ primaryColor:", primaryColor);
   return (
     <section
       id={id}
