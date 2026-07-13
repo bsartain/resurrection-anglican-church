@@ -35,6 +35,36 @@ export default async function Blog() {
       <HeroImage image="/images/icon-cieling.jpg">Blog</HeroImage>
 
       <RevealSection id="blogListing" image="/images/pages/jesus-cross.jpg" opacity={0.005}>
+        <div className="hosea-guide-card py-4 mb-4">
+          <div className="row align-items-center g-4">
+            <div className="col-md-3 col-sm-4">
+              <img
+                src="/images/pages/hosea-s-family-hosea-1-1-3-5/image.png"
+                alt="Hosea Liturgy Guide cover"
+                style={{ width: "100%", border: "1px solid rgba(0,0,0,0.12)", display: "block" }}
+              />
+            </div>
+            <div className="col-md-9 col-sm-8">
+              <p className="text-uppercase mb-1" style={{ fontSize: "0.75rem", letterSpacing: "0.12em", opacity: 0.55 }}>
+                Download
+              </p>
+              <h2 className="mb-1" style={{ fontSize: "1.75rem" }}>
+                Hosea Liturgy Guide
+              </h2>
+              <p className="fst-italic mb-3" style={{ fontSize: "1rem", opacity: 0.7 }}>
+                The Relentless Love of a Faithful God
+              </p>
+              <p className="mb-4" style={{ fontSize: "1rem" }}>
+                Follow along during our Hosea sermon series with liturgy, prayers, and scripture readings prepared for congregational worship.
+              </p>
+              <a href="/Hosea_Liturgy_Guide.pdf" download className="btn btn-primary-light btn-lg">
+                <i className="bi bi-download me-2"></i>Download PDF
+              </a>
+            </div>
+          </div>
+          <hr className="mt-5" style={{ opacity: 0.15 }} />
+        </div>
+
         <div className="blog-grid reveal pt-5 pb-5">
           <BlogList posts={postsWithAuthors} />
         </div>
