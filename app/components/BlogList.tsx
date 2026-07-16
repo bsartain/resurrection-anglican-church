@@ -14,6 +14,10 @@ export default function BlogList({ posts }: Readonly<{ posts: any[] }>) {
   const offset = currentPage * POSTS_PER_PAGE;
   const currentPosts = posts.slice(offset, offset + POSTS_PER_PAGE);
 
+  const todaysDate = new Date().toISOString().split("T")[0];
+
+  const currentFilteredPosts = currentPosts.filter((post) => post.entry.date <= todaysDate);
+
   const handlePageClick = (event: { selected: number }) => {
     setCurrentPage(event.selected);
 
@@ -22,7 +26,7 @@ export default function BlogList({ posts }: Readonly<{ posts: any[] }>) {
 
   return (
     <>
-      {currentPosts.map((post) => (
+      {currentFilteredPosts.map((post) => (
         <Link key={post.slug} href={`/blog/${post.slug}`} className="blog-card">
           <div className="blog-card-image" style={{ backgroundImage: `url(${post.entry.image ?? ""})` }}>
             <div className="entry-title">{post.entry.title}</div>
