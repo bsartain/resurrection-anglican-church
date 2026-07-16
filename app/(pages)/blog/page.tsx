@@ -65,9 +65,7 @@ export default async function Blog() {
           <hr className="mt-5" style={{ opacity: 0.15 }} />
         </div>
 
-        <div className="blog-grid reveal pt-5 pb-5">
-          <BlogList posts={postsWithAuthors} />
-        </div>
+        <BlogList posts={postsWithAuthors} />
       </RevealSection>
     </div>
   );
