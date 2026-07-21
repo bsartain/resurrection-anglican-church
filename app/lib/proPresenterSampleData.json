@@ -1,0 +1,40 @@
+{
+  "action": "presentationCurrent",
+  "presentationPath": "/Users/Church/Documents/ProPresenter/Libraries/Sunday Service/Liturgy - The Lord's Prayer.pro",
+  "presentation": {
+    "presentationsummary": "Liturgy - The Lord's Prayer",
+    "presentationHasTimeline": 0,
+    "presentationDestination": 0,
+    "presentationCurrentLocation": "/Users/Church/Documents/ProPresenter/Libraries/Sunday Service/Liturgy - The Lord's Prayer.pro",
+    "presentationSlideGroups": [
+      {
+        "groupsummary": "Main",
+        "groupColor": "0 0 0 0",
+        "groupSlides": [
+          {
+            "slideEnabled": true,
+            "slideNotes": "",
+            "slideAttachmentMask": 0,
+            "slideText": "Our Father, who art in heaven,\nhallowed be thy name.",
+            "slideImage": "",
+            "slideIndex": "0",
+            "slideTransitionType": -1,
+            "slideLabel": "Verse 1",
+            "slideColor": "0 0 0 0"
+          },
+          {
+            "slideEnabled": true,
+            "slideNotes": "",
+            "slideAttachmentMask": 0,
+            "slideText": "Thy kingdom come, thy will be done,\non earth as it is in heaven.",
+            "slideImage": "",
+            "slideIndex": "0",
+            "slideTransitionType": -1,
+            "slideLabel": "Verse 2",
+            "slideColor": "0 0 0 0"
+          }
+        ]
+      }
+    ]
+  }
+}
