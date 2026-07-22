@@ -6,6 +6,7 @@ const COLOR_MAP: Record<string, string> = {
   red: "#7d0b05",
   gold: "#806202",
   purple: "#391837",
+  white: "#806202",
 };
 
 const DEFAULT_COLOR = "#f5f1e8";
