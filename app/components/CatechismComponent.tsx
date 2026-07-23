@@ -24,6 +24,27 @@ type CatechismPart = {
   sections: CatechismSection[];
 };
 
+interface Article {
+  number: number;
+  title: string;
+  text: string;
+}
+
+interface Subsection {
+  label: string;
+  title: string;
+  articles: string;
+  items: Article[];
+}
+
+interface Part {
+  part: string;
+  title: string;
+  articles: string;
+  items?: Article[];
+  subsections?: Subsection[];
+}
+
 const slugify = (str: string) =>
   str
     .toLowerCase()
@@ -36,9 +57,16 @@ const CatechismComponent = ({ activeKey, onSelect }: { activeKey?: string; onSel
     onSelect?.(key);
   };
 
-  const tabProps = activeKey
-    ? { activeKey, onSelect: handleTabSelect }
-    : { defaultActiveKey: "catechism", onSelect: handleTabSelect };
+  const tabProps = activeKey ? { activeKey, onSelect: handleTabSelect } : { defaultActiveKey: "catechism", onSelect: handleTabSelect };
+
+  const renderArticle = (article: Article) => (
+    <div key={article.number} className="mt-5">
+      <h3>
+        {article.number}. {article.title}
+      </h3>
+      <p>{article.text}</p>
+    </div>
+  );
 
   return (
     <Tabs {...tabProps} id="uncontrolled-tab-example" className="mb-3 mt-5">
@@ -55,10 +83,7 @@ const CatechismComponent = ({ activeKey, onSelect }: { activeKey?: string; onSel
                 <ul className="list-group list-group-flush">
                   {part.sections.map((section: CatechismSection) => (
                     <li key={section.section} className="list-group-item">
-                      <a
-                        href={`#${slugify(section.section)}`}
-                        onClick={() => trackEvent("catechism_toc_click", { section: section.section })}
-                      >
+                      <a href={`#${slugify(section.section)}`} onClick={() => trackEvent("catechism_toc_click", { section: section.section })}>
                         {section.section}
                       </a>
                     </li>
@@ -140,13 +165,27 @@ const CatechismComponent = ({ activeKey, onSelect }: { activeKey?: string; onSel
         />
       </Tab>
       <Tab eventKey="thirtyNine" title="Thirty Nine Articles of Religion">
-        {thirtyNineArticles.articles.map((item: { number: string | number; title: string; text: string }, index: number) => {
+        {thirtyNineArticles.parts.map((part: Part, index: number) => {
           return (
             <div key={index} className="mt-5 mb-5">
-              <h3>
-                {item.number} {item.title}
-              </h3>
-              <p>{item.text}</p>
+              <h2 style={{ marginTop: "150px" }}>
+                Part {part.part}{" "}
+                <h3>
+                  {part.articles} {part.title}
+                </h3>
+                <hr className="thirty-nine-articles-divider" />
+              </h2>
+
+              {part.items?.map(renderArticle)}
+
+              {part.subsections?.map((subsection: Subsection, subIndex: number) => (
+                <div key={subIndex} className="mt-5">
+                  <h4>
+                    {subsection.label}. {subsection.title} ({subsection.articles})
+                  </h4>
+                  {subsection.items.map(renderArticle)}
+                </div>
+              ))}
             </div>
           );
         })}
