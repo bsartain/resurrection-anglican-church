@@ -9,7 +9,6 @@ export const dynamic = "force-dynamic";
 
 export default async function Liturgy() {
   const data = await getProPresenterData();
-  console.log("🚀 ~ Liturgy ~ data:", data);
   const presentation = data?.presentation;
   const slideGroups = presentation?.presentationSlideGroups ?? [];
 
