@@ -2029,6 +2029,61 @@ h6 {
 .liturgy-container {
   color: #d4d0c8;
   background-color: #2b2b2b;
+  .service-data-container {
+    h2 {
+      margin-top: 80;
+    }
+    .song {
+      margin-bottom: 10px;
+      p {
+        margin-bottom: 2rem;
+        font-weight: 100;
+      }
+      strong {
+        font-weight: 600;
+      }
+    }
+    .psalter-verses {
+      .first-half {
+        font-weight: 100;
+        margin: 0;
+      }
+      .first-half-tle {
+        font-weight: 600;
+        margin-bottom: 25px;
+      }
+      .second-half {
+        font-weight: 100;
+        margin: 0;
+      }
+      .second-half-tle {
+        font-weight: 600;
+        margin-bottom: 25px;
+      }
+    }
+    .item {
+      margin-top: 40px;
+      p {
+        margin-bottom: 0.3rem;
+        font-weight: 100;
+      }
+      strong {
+        font-weight: 600;
+      }
+      .esv {
+        p {
+          margin-bottom: 25px;
+        }
+        h2 {
+          font-size: 2.2rem;
+        }
+        .end-line-group {
+          display: block;
+          margin-bottom: 1rem;
+        }
+      }
+    }
+  }
 }
 
 .thirty-nine-articles-divider {
@@ -2045,4 +2100,9 @@ h6 {
   h2 {
     margin-top: 70px;
   }
+}
+
+.liturgy-line-break {
+  width: 100px;
+  margin-top: 80px;
 }
