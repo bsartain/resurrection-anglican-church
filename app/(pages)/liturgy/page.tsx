@@ -60,16 +60,17 @@ export default async function Liturgy() {
                     <div key={service.sequence} className="service-data-container">
                       <h2>{service.title}</h2>
                       {service.title === "Psalm Reading" ? (
-                        <h2 dangerouslySetInnerHTML={{ __html: service.html_details }} className="mt-4 mb-4" />
+                        <>
+                          <h3 dangerouslySetInnerHTML={{ __html: service.html_details }} className="mt-4 mb-4" />
+                          <hr className="mb-5 mt-5" style={{ width: "50px" }} />
+                        </>
                       ) : null}
                       {Array.isArray(service.resolvedHtml) && service.resolvedHtml.length > 0 ? (
                         service.resolvedHtml.map((verse: any) => {
                           return (
                             <div key={verse.number} className="psalter-verses">
-                              <div className="first-half">{verse.first_half}&#42;</div>
-                              <div className="first-half-tle">{verse.first_half_tle}</div>
-                              <div className="second-half">{verse.second_half}&#42;</div>
-                              <div className="second-half-tle">{verse.second_half_tle}</div>
+                              <div className="first-half mb-2">{verse.first_half}&#42;</div>
+                              <div className="second-half fw-bold mb-5 ms-3">{verse.second_half}</div>
                             </div>
                           );
                         })
