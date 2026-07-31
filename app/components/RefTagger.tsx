@@ -4,10 +4,16 @@ import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Script from "next/script";
 
+// Routes where Bible references should NOT be auto-linked by RefTagger.
+const DISABLED_PATHS = ["/liturgy"];
+
 export default function RefTagger() {
   const pathname = usePathname();
+  const isDisabled = DISABLED_PATHS.some((path) => pathname === path || pathname.startsWith(`${path}/`));
 
   useEffect(() => {
+    if (isDisabled) return;
+
     const tryTag = () => {
       const win = window as typeof window & { refTagger?: { tag: () => void } };
       if (win.refTagger?.tag) {
@@ -18,7 +24,10 @@ export default function RefTagger() {
     // Small delay to ensure DOM has updated after navigation
     const timeout = setTimeout(tryTag, 100);
     return () => clearTimeout(timeout);
-  }, [pathname]);
+  }, [pathname, isDisabled]);
+
+  // Don't inject/auto-tag on disabled routes (covers full page loads too).
+  if (isDisabled) return null;
 
   return (
     <Script

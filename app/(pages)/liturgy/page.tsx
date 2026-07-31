@@ -59,6 +59,9 @@ export default async function Liturgy() {
                   return (
                     <div key={service.sequence} className="service-data-container">
                       <h2>{service.title}</h2>
+                      {service.title === "Psalm Reading" ? (
+                        <h2 dangerouslySetInnerHTML={{ __html: service.html_details }} className="mt-4 mb-4" />
+                      ) : null}
                       {Array.isArray(service.resolvedHtml) && service.resolvedHtml.length > 0 ? (
                         service.resolvedHtml.map((verse: any) => {
                           return (

@@ -1,4 +1,6 @@
 import { ProPresenterData } from "../models/proPresenterModel";
+const appId = process.env.PCO_APP_ID;
+const secret = process.env.PCO_SECRET;
 
 export async function getProPresenterData(): Promise<ProPresenterData> {
   const url = "https://church-liturgy-default-rtdb.firebaseio.com/.json";
@@ -12,9 +14,6 @@ export async function getProPresenterData(): Promise<ProPresenterData> {
 }
 
 export async function getPlanningCenterServicesData(planId: string = "88692794") {
-  const appId = process.env.PCO_APP_ID;
-  const secret = process.env.PCO_SECRET;
-
   if (!appId || !secret) {
     throw new Error("Missing Planning Center credentials");
   }
@@ -37,14 +36,44 @@ export async function getPlanningCenterServicesData(planId: string = "88692794")
   // 2. Try each service type until we find the one that owns this plan
   for (const serviceTypeId of serviceTypeIds) {
     const items = await fetchPlanItems(serviceTypeId, planId, authHeader);
-
     // null means this service type doesn't own the plan (404) — keep looking.
     if (items === null) {
       continue;
     }
 
-    const attributes = items.map((item: any) => item.attributes);
-    return attributes.filter(
+    const attributes = items.map((item: any) => ({
+      ...item.attributes,
+      ...item.relationships,
+    }));
+
+    const enriched = await Promise.all(
+      attributes.map(async (item: any) => {
+        if (!item?.song?.data?.id) return item;
+
+        const songId = item.song.data.id;
+        const response = await fetch(`https://api.planningcenteronline.com/services/v2/songs/${songId}/arrangements`, {
+          headers: { Authorization: authHeader },
+          next: { revalidate: 60 },
+        });
+
+        if (!response.ok) {
+          console.error(`Failed to fetch arrangements for song ${songId}: ${response.status}`);
+          return item;
+        }
+
+        const arrangements = await response.json();
+        const arrangement = arrangements.data?.[0]?.attributes;
+        const lyrics = arrangement?.lyrics ?? "";
+        return {
+          ...item,
+          lyrics,
+          chordChart: arrangement?.chord_chart ?? "",
+          html_details: lyrics ? lyricsToHtml(lyrics) : item.html_details,
+        };
+      })
+    );
+
+    return enriched.filter(
       (item: any) =>
         item.title !== "SERVICE" && item.title !== "SHHHH_Slide" && item.title !== "PreService Slide" && item.title !== "Reading Response"
     );
@@ -122,6 +151,44 @@ export async function getEsvPassage(reference: any, apiKey: any) {
 
 function stripHtml(input: string): string {
   return input.replace(/<[^>]*>/g, "").trim();
+}
+
+function escapeHtml(input: string): string {
+  return input
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+}
+
+// Converts plain-text song lyrics (from a Planning Center arrangement) into HTML.
+// Blank lines separate stanzas; a stanza whose first line is a section label
+// (Verse, Chorus, Bridge, etc.) renders that label as a heading. Single line
+// breaks within a stanza become <br>.
+function lyricsToHtml(lyrics: string): string {
+  const sectionLabel = /^(verse|chorus|pre-?chorus|bridge|intro|outro|refrain|tag|interlude|ending|vamp|coda)\b.*$/i;
+
+  return lyrics
+    .replace(/\r\n/g, "\n")
+    .trim()
+    .split(/\n\s*\n/)
+    .map((stanza) => {
+      const lines = stanza.split("\n").map((line) => line.trim());
+      let heading = "";
+
+      if (lines.length && sectionLabel.test(lines[0])) {
+        heading = `<h4 class="lyrics-section">${escapeHtml(lines.shift() as string)}</h4>`;
+      }
+
+      const body = lines
+        .filter((line) => line.length > 0)
+        .map((line) => escapeHtml(line))
+        .join("<br />");
+
+      const paragraph = body ? `<p class="lyrics-stanza">${body}</p>` : "";
+      return heading + paragraph;
+    })
+    .filter(Boolean)
+    .join("\n");
 }
 
 export async function getPsalter(reference: string) {
