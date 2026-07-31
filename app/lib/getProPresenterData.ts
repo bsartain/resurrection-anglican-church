@@ -143,9 +143,11 @@ export async function getEsvPassage(reference: any, apiKey: any) {
 
   const data = await response.json();
 
+  // A reference can span multiple ranges (e.g. "Rom 8:26-34,38-39"), which the
+  // ESV API returns as one array element per range — join them all, not just the first.
   return {
     reference: data.canonical,
-    text: data.passages[0]?.trim() ?? "",
+    text: (data.passages ?? []).map((passage: string) => passage.trim()).join("\n") || "",
   };
 }
 
@@ -191,18 +193,78 @@ function lyricsToHtml(lyrics: string): string {
     .join("\n");
 }
 
-export async function getPsalter(reference: string) {
-  const cleanReference = stripHtml(reference);
-  const match = cleanReference.match(/^(.+?)\s+(\d+):(\d+)(?:-(\d+))?$/);
+interface PsalmRange {
+  chapter: number;
+  start?: number; // undefined → whole chapter
+  end?: number;
+}
 
-  if (!match) {
-    return undefined;
+// Parses one segment of a psalm reference. A segment either names its own
+// chapter ("Psalm 78:1-13", "Psalm 78") or, for a continuation segment, is a
+// bare verse range ("14-26") that carries the previous segment's chapter.
+// Surrounding noise (book name, stray "v") is ignored.
+function parsePsalmSegment(segment: string, currentChapter: number | undefined, isFirst: boolean): PsalmRange | null {
+  const colonIndex = segment.indexOf(":");
+
+  if (colonIndex !== -1) {
+    const chapterMatch = /(\d+)\s*$/.exec(segment.slice(0, colonIndex));
+    const verseMatch = /(\d+)(?:\s*-\s*(\d+))?/.exec(segment.slice(colonIndex + 1));
+    if (!chapterMatch || !verseMatch) {
+      return null;
+    }
+    const start = parseInt(verseMatch[1], 10);
+    return {
+      chapter: parseInt(chapterMatch[1], 10),
+      start,
+      end: verseMatch[2] ? parseInt(verseMatch[2], 10) : start,
+    };
   }
 
-  const [, , chapterStr, verseStartStr, verseEndStr] = match;
-  const chapter = parseInt(chapterStr, 10);
-  const verseStart = parseInt(verseStartStr, 10);
-  const verseEnd = verseEndStr ? parseInt(verseEndStr, 10) : verseStart;
+  const range = /(\d+)(?:\s*-\s*(\d+))?/.exec(segment);
+  if (!range) {
+    return null;
+  }
+
+  // First segment with no colon (e.g. "Psalm 78") → the whole chapter.
+  if (isFirst) {
+    return { chapter: parseInt(range[1], 10) };
+  }
+
+  // Continuation range (e.g. "; 14-26") keeps the current chapter.
+  if (currentChapter === undefined) {
+    return null;
+  }
+  const start = parseInt(range[1], 10);
+  return { chapter: currentChapter, start, end: range[2] ? parseInt(range[2], 10) : start };
+}
+
+export async function getPsalter(reference: string) {
+  const cleanReference = stripHtml(reference);
+
+  // Supports multiple ranges separated by ";" or ",":
+  //   "Psalm 23"              → whole psalm
+  //   "Psalm 23:1-6"          → single range
+  //   "Ps 78:1-13; 14-26"     → two ranges in the same psalm
+  //   "Ps 78:1-13; Ps 79:1-9" → ranges across psalms
+  const segments = cleanReference
+    .split(/[;,]/)
+    .map((segment) => segment.trim())
+    .filter(Boolean);
+
+  const ranges: PsalmRange[] = [];
+  let currentChapter: number | undefined;
+
+  segments.forEach((segment, index) => {
+    const parsed = parsePsalmSegment(segment, currentChapter, index === 0);
+    if (parsed) {
+      currentChapter = parsed.chapter;
+      ranges.push(parsed);
+    }
+  });
+
+  if (!ranges.length) {
+    return undefined;
+  }
 
   const response = await fetch("https://api.dailyoffice2019.com/api/v1/psalms");
 
@@ -212,13 +274,22 @@ export async function getPsalter(reference: string) {
 
   const data: any[] = await response.json();
 
-  const psalmChapter = data.find((item) => item.number === chapter);
+  const psalmData = ranges.flatMap((range) => {
+    const psalmChapter = data.find((item) => item.number === range.chapter);
+    if (!psalmChapter) {
+      return [];
+    }
+    // No verse range → the whole psalm.
+    if (range.start === undefined) {
+      return psalmChapter.verses;
+    }
+    const end = range.end ?? range.start;
+    return psalmChapter.verses.filter((verse: any) => verse.number >= range.start! && verse.number <= end);
+  });
 
-  if (!psalmChapter) {
+  if (!psalmData.length) {
     return undefined;
   }
-
-  const psalmData = psalmChapter.verses.filter((verse: any) => verse.number >= verseStart && verse.number <= verseEnd);
 
   return { psalmData };
 }
