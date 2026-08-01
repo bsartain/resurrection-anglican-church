@@ -50,7 +50,7 @@ export default async function Liturgy() {
 
   return (
     <div className="liturgy-container">
-      <HeroImage image="/images/home/section4/images/0.jpg">{"Liturgy"}</HeroImage>
+      <HeroImage image="/images/pages/jesus-resurrection.jpg">{"Liturgy"}</HeroImage>
       <div>
         <RevealSection id="liturgyContent" image="/images/pages/art.webp" opacity={0.04}>
           <Container className="pt-5 pb-5 reveal">
@@ -103,7 +103,7 @@ export async function generateMetadata() {
   return buildMetadata({
     title: "Liturgy",
     excerpt: "Follow along with the current Sunday service liturgy.",
-    image: "/images/pages/jesus-cross.jpg",
+    image: "/images/pages/jesus-resurrection.jpg",
     path: "/liturgy",
   });
 }
