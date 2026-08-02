@@ -28,7 +28,7 @@ function LiturgyBottomDrawer() {
       <Offcanvas show={show} onHide={handleClose} placement="bottom" className="liturgy-toc-offcanvas">
         <Offcanvas.Header closeButton>
           <Offcanvas.Title className="text-center w-100">
-            <h3>Table of Contents</h3>
+            {/* <h3>Table of Contents</h3> */}
             <p>Choose a section below to follow the service.</p>
           </Offcanvas.Title>
         </Offcanvas.Header>

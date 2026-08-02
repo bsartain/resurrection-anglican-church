@@ -2125,6 +2125,9 @@ h6 {
     background-color: #2b2b2b;
     border: 1px solid #454444;
     font-size: 32px;
+    @media (max-width: 768px) {
+      font-size: 20px !important;
+    }
   }
 }
 
@@ -2133,6 +2136,9 @@ h6 {
   color: #d4d0c8;
   height: 50vh !important;
   overflow-y: auto;
+  @media (max-width: 768px) {
+    height: 80vh !important;
+  }
 
   .offcanvas-header {
     border-bottom: 1px solid rgba(212, 208, 200, 0.15);
