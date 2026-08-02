@@ -23,13 +23,18 @@ function LiturgyBottomDrawer() {
   return (
     <div className="liturgy-bottom-drawer-container">
       <Button variant="primary" onClick={handleShow} className="me-2 toc-button">
+        <div>
+          <i className="bi bi-chevron-compact-up" />
+        </div>
         Liturgy Table Of Contents
       </Button>
       <Offcanvas show={show} onHide={handleClose} placement="bottom" className="liturgy-toc-offcanvas">
         <Offcanvas.Header closeButton>
           <Offcanvas.Title className="text-center w-100">
-            {/* <h3>Table of Contents</h3> */}
-            Choose a section below to follow the service.
+            Choose a section below to follow the service.{" "}
+            <div>
+              <i className="bi bi-chevron-compact-down" />
+            </div>
           </Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
