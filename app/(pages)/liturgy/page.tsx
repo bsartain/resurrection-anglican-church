@@ -12,7 +12,8 @@ export default async function Liturgy() {
   const serviceData = await getPlanningCenterServicesData();
 
   const renderBibleVerses = async (verseReference: any, readingType: string) => {
-    if (readingType === "Psalm Reading") {
+    console.log("HEADER: ", readingType);
+    if (readingType.toLowerCase().includes("psalm") || readingType.toLowerCase().includes("psalms")) {
       const psalterPassage = await getPsalter(verseReference);
       return psalterPassage?.psalmData;
     } else {
@@ -28,7 +29,10 @@ export default async function Liturgy() {
     serviceData.map(async (service: ServiceDataModel) => ({
       ...service,
       resolvedHtml:
-        service.title === "NT Reading" || service.title === "OT Reading" || service.title === "Psalm Reading"
+        service.title === "NT Reading" ||
+        service.title === "OT Reading" ||
+        service.title.toLowerCase().includes("psalm") ||
+        service.title.toLowerCase().includes("psalms")
           ? await renderBibleVerses(service.html_details, service.title)
           : service.html_details,
     }))
