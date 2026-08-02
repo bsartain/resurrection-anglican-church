@@ -29,7 +29,7 @@ function LiturgyBottomDrawer() {
         <Offcanvas.Header closeButton>
           <Offcanvas.Title className="text-center w-100">
             {/* <h3>Table of Contents</h3> */}
-            <p>Choose a section below to follow the service.</p>
+            Choose a section below to follow the service.
           </Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
