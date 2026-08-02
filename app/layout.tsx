@@ -40,6 +40,7 @@ export default function RootLayout({
             src="https://www.googletagmanager.com/ns.html?id=GTM-TQRZ5MR6"
             style={{ display: "none", visibility: "hidden" }}
             width="0"
+            title="Resurresction Anglican Church"
           />
         </noscript>
         <PrimaryColorProvider>

@@ -3,22 +3,8 @@ import HeroImage from "../../components/HeroImage";
 import RevealSection from "../../components/RevealSection";
 import { buildMetadata } from "../../lib/buildMetadata";
 import { getEsvPassage, getPlanningCenterServicesData, getPsalter } from "../../lib/getProPresenterData";
-
-interface ServiceDataModel {
-  created_at: string;
-  custom_arrangement_sequence?: any;
-  custom_arrangement_sequence_full?: any;
-  custom_arrangement_sequence_short?: any;
-  description?: any;
-  html_details?: any;
-  item_type: string;
-  key_name: string;
-  length: number;
-  sequence: number;
-  service_position: string;
-  title: string;
-  updated_at: string;
-}
+import LiturgyDrawerSync from "../../components/LiturgyDrawerSync";
+import type { ServiceDataModel } from "../../models/serviceModel";
 
 export const dynamic = "force-dynamic";
 
@@ -50,6 +36,7 @@ export default async function Liturgy() {
 
   return (
     <div className="liturgy-container">
+      <LiturgyDrawerSync data={resolvedServiceData} />
       <HeroImage image="/images/pages/jesus-resurrection.jpg">{"Liturgy"}</HeroImage>
       <div>
         <RevealSection id="liturgyContent" image="/images/pages/art.webp" opacity={0.04}>
@@ -57,7 +44,7 @@ export default async function Liturgy() {
             {resolvedServiceData.length > 0
               ? resolvedServiceData.map((service) => {
                   return (
-                    <div key={service.sequence} className="service-data-container">
+                    <div key={service.sequence} id={`liturgy-section-${service.sequence}`} className="service-data-container">
                       <h2>{service.title}</h2>
                       {service.title === "Psalm Reading" ? (
                         <>

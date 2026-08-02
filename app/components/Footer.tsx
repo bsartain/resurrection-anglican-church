@@ -1,6 +1,7 @@
 import { getChurchInfoData } from "../api/keystatic/lib/keystatic";
 import { toTelLink } from "@/app/utils";
 import FooterNavLinks from "./FooterNavLinks";
+import LiturgyBottomDrawer from "./LiturgyBottomDrawer";
 
 export default async function Footer() {
   const churchInfo = await getChurchInfoData();
@@ -53,6 +54,7 @@ export default async function Footer() {
       <div className="footer-bottom">
         <p>© {new Date().getFullYear()} Resurrection Anglican Church. All rights reserved.</p>
       </div>
+      <LiturgyBottomDrawer />
     </footer>
   );
 }

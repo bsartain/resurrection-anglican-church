@@ -2030,6 +2030,7 @@ h6 {
   color: #d4d0c8;
   background-color: #2b2b2b;
   .service-data-container {
+    scroll-margin-top: 90px;
     h2 {
       margin-top: 80;
     }
@@ -2108,4 +2109,70 @@ h6 {
 .liturgy-line-break {
   width: 100px;
   margin-top: 80px;
+}
+
+.liturgy-bottom-drawer-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+
+  .btn {
+    display: block;
+    width: 100%;
+    margin: 0 !important;
+    background-color: #2b2b2b;
+    border: 1px solid #454444;
+    font-size: 32px;
+  }
+}
+
+.liturgy-toc-offcanvas {
+  background-color: #2b2b2b !important;
+  color: #d4d0c8;
+  height: 50vh !important;
+  overflow-y: auto;
+
+  .offcanvas-header {
+    border-bottom: 1px solid rgba(212, 208, 200, 0.15);
+    .offcanvas-title {
+      color: #d4d0c8;
+    }
+    .btn-close {
+      filter: invert(1) grayscale(1) brightness(1.6);
+    }
+  }
+}
+
+.liturgy-toc {
+  list-style: none;
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 0;
+  text-align: left;
+
+  li {
+    border-bottom: 1px solid rgba(212, 208, 200, 0.12);
+  }
+
+  .liturgy-toc-link {
+    display: block;
+    width: 100%;
+    padding: 0.85rem 0;
+    background: none;
+    border: none;
+    color: #d4d0c8;
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+    transition: color 0.2s ease;
+
+    &:hover,
+    &:focus-visible {
+      color: #a0856a;
+      text-decoration: underline;
+    }
+  }
 }
