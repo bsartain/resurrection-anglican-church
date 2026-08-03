@@ -1,4 +1,18 @@
 // A single Planning Center service item (one row in the Sunday liturgy).
+interface Song {
+  links: Links;
+  data: Data;
+}
+
+interface Data {
+  type: string;
+  id: string;
+}
+
+interface Links {
+  related: string;
+}
+
 export interface ServiceDataModel {
   created_at: string;
   custom_arrangement_sequence?: any;
@@ -13,6 +27,7 @@ export interface ServiceDataModel {
   service_position: string;
   title: string;
   updated_at: string;
+  song: Song;
 }
 
 // A service item after async Bible/Psalter lookups have been resolved to

@@ -30,12 +30,14 @@ export default async function Liturgy() {
       resolvedHtml:
         service.title === "NT Reading" ||
         service.title === "OT Reading" ||
-        service.title.toLowerCase().includes("psalm") ||
-        service.title.toLowerCase().includes("psalms")
+        (service.title.toLowerCase().includes("psalm") && service?.song?.data?.type !== "Song") ||
+        (service.title.toLowerCase().includes("psalms") && service?.song?.data?.type !== "Song")
           ? await renderBibleVerses(service.html_details, service.title)
           : service.html_details,
     }))
   );
+
+  console.log("RESOLVED DATA: ", resolvedServiceData);
 
   function containsHtml(str: string | undefined | null): boolean {
     if (!str) return false;
