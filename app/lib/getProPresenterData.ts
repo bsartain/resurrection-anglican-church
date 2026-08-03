@@ -18,9 +18,23 @@ export async function getProPresenterData(): Promise<ProPresenterData> {
 }
 // planId: string = "88692794"
 export async function getPlanningCenterServicesData() {
+  if (!appId || !secret) {
+    throw new Error("Missing Planning Center credentials");
+  }
+
   const settings = await reader.singletons.planningCenterId.read();
   // This gets the ID that is relateed to Ordinary Time, Lent, Holy Week, etc.
   const planningCenterId = settings?.liturgyId;
+
+  // In a serverless deploy the Keystatic content files may not be traced into
+  // the function bundle, so this read can come back null even though it works
+  // locally. Surface that explicitly instead of fetching a `.../undefined/...` URL.
+  if (!planningCenterId) {
+    throw new Error(
+      "Could not resolve liturgyId from Keystatic (content/planning-center-id.yaml). " +
+        "The singleton read returned no value in this environment."
+    );
+  }
 
   const authHeader = "Basic " + Buffer.from(`${appId}:${secret}`).toString("base64");
 
@@ -32,15 +46,19 @@ export async function getPlanningCenterServicesData() {
     }
   );
 
+  if (!getNextSundayLiturgyId.ok) {
+    const body = await getNextSundayLiturgyId.text();
+    throw new Error(
+      `Planning Center plans lookup failed for service type ${planningCenterId}: ` +
+        `${getNextSundayLiturgyId.status} ${getNextSundayLiturgyId.statusText} — ${body}`
+    );
+  }
+
   const getNextSundayLiturgyIdJson = await getNextSundayLiturgyId.json();
   const planId = getNextSundayLiturgyIdJson?.data?.[0]?.id;
 
-  if (!appId || !secret) {
-    throw new Error("Missing Planning Center credentials");
-  }
-
   if (!planId) {
-    throw new Error("No upcoming plan found in Planning Center");
+    throw new Error(`No upcoming plan found in Planning Center for service type ${planningCenterId}`);
   }
 
   // 1. Get all service types
