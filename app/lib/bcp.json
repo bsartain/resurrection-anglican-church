@@ -104,7 +104,7 @@
       "matchTitles": ["Sursum Corda"],
       "category": "Communion",
       "rubric": null,
-      "html": "<div> <div class='row'> <div class='col-1 text-end'><em>Celebrant:</em></div> <div class='col-8 text-start'>The Lord be with you.</div> </div> <div class='row'> <div class='col-1 text-end'><em>People:</em></div> <div class='col-8 text-start'><strong>And with your spirit.</strong></div> </div> <div class='row'> <div class='col-1 text-end'><em>Celebrant:</em></div> <div class='col-8 text-start'>Lift up your hearts.</div> </div> <div class='row'> <div class='col-1 text-end'><em>People:</em></div> <div class='col-8 text-start'><strong>We lift them up to the Lord.</strong></div> </div> <div class='row'> <div class='col-1 text-end'><em>Celebrant:</em></div> <div class='col-8 text-start'>Let us give thanks to the Lord our God.</div> </div> <div class='row'> <div class='col-1 text-end'><em>People:</em></div> <div class='col-8 text-start'><strong>It is right to give him thanks and praise.</strong></div> </div> </div>"
+      "html": "<div><p>The Lord be with you.<br>&nbsp; &nbsp; &nbsp;<strong>And with your spirit.</strong><br>Lift up your hearts.<br>&nbsp; &nbsp; &nbsp;<strong>We lift them up to the Lord.</strong><br>Let us give thanks to the Lord our God.<br>&nbsp; &nbsp; &nbsp;<strong>It is right to give him thanks and praise.</strong></p></div>"
     },
     {
       "id": "sanctus-song",
@@ -144,7 +144,7 @@
       "matchTitles": ["The Fraction", "Fraction"],
       "category": "Communion",
       "rubric": null,
-      "html": "<div class='item'><div class='row'> <div class='col-1 text-end'><em>Celebrant:</em></div> <div class='col-8 text-start'>[Alleluia.] Christ our Passover is sacrificed for us.</div> </div> <div class='row'> <div class='col-1 text-end'><em>People:</em></div> <div class='col-8 text-start'><strong>Therefore let us keep the feast. [Alleluia.]</strong></div> </div></div>"
+      "html": "<div><p>[Alleluia, Alleluia] Christ our Passover is sacrificed for us.<br>&nbsp; &nbsp; &nbsp;<strong>Therefore let us keep the feast. [Alleluia,Alleluia]</strong></p></div>"
     },
     {
       "id": "prayer-of-humble-access",
