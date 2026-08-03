@@ -33,10 +33,14 @@ export async function getPlanningCenterServicesData() {
   );
 
   const getNextSundayLiturgyIdJson = await getNextSundayLiturgyId.json();
-  const planId = getNextSundayLiturgyIdJson?.data[0]?.id;
+  const planId = getNextSundayLiturgyIdJson?.data?.[0]?.id;
 
   if (!appId || !secret) {
     throw new Error("Missing Planning Center credentials");
+  }
+
+  if (!planId) {
+    throw new Error("No upcoming plan found in Planning Center");
   }
 
   // 1. Get all service types
@@ -50,7 +54,7 @@ export async function getPlanningCenterServicesData() {
   }
 
   const serviceTypesJson = await serviceTypesRes.json();
-  const serviceTypeIds: string[] = serviceTypesJson?.data.map((item: any) => item.id) ?? [];
+  const serviceTypeIds: string[] = serviceTypesJson?.data?.map((item: any) => item.id) ?? [];
 
   // 2. Try each service type until we find the one that owns this plan
   for (const serviceTypeId of serviceTypeIds) {
