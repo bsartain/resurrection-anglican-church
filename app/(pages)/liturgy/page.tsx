@@ -5,6 +5,7 @@ import { buildMetadata } from "../../lib/buildMetadata";
 import { getEsvPassage, getPlanningCenterServicesData, getPsalter } from "../../lib/getProPresenterData";
 import LiturgyDrawerSync from "../../components/LiturgyDrawerSync";
 import type { ServiceDataModel } from "../../models/serviceModel";
+import bcp from "@/app/lib/bcp.json";
 
 export const dynamic = "force-dynamic";
 
@@ -25,19 +26,37 @@ export default async function Liturgy() {
   // Resolve all async verse lookups up front so JSX renders plain strings
   // (a Promise dropped into dangerouslySetInnerHTML renders as "[object Promise]").
   const resolvedServiceData = await Promise.all(
-    serviceData.map(async (service: ServiceDataModel) => ({
-      ...service,
-      resolvedHtml:
-        service.title === "NT Reading" ||
-        service.title === "OT Reading" ||
-        (service.title.toLowerCase().includes("psalm") && service?.song?.data?.type !== "Song") ||
-        (service.title.toLowerCase().includes("psalms") && service?.song?.data?.type !== "Song")
-          ? await renderBibleVerses(service.html_details, service.title)
-          : service.html_details,
-    }))
+    serviceData.map(async (planningCenter: ServiceDataModel) => {
+      let resolvedHtml = planningCenter.html_details;
+
+      if (
+        planningCenter.title === "NT Reading" ||
+        planningCenter.title === "OT Reading" ||
+        (planningCenter.title.toLowerCase().includes("psalm") && planningCenter?.song?.data?.type !== "Song")
+      ) {
+        resolvedHtml = await renderBibleVerses(planningCenter.html_details, planningCenter.title);
+      } else if (planningCenter?.song?.data?.type !== "Song") {
+        if (!planningCenter?.html_details) {
+          const matchedBcpItem = bcp.items.find((bcp: any) => bcp.title.toLowerCase() === planningCenter.title.toLowerCase());
+          if (matchedBcpItem) {
+            resolvedHtml = matchedBcpItem.html;
+          }
+        }
+      }
+
+      return {
+        ...planningCenter,
+        resolvedHtml,
+      };
+    })
   );
 
   console.log("RESOLVED DATA: ", resolvedServiceData);
+
+  const filtered = resolvedServiceData.filter(
+    (item: any) => item.song?.data?.type !== "Song" && item.title !== "OT Reading" && item.title !== "NT Reading"
+  );
+  console.log("FILTERED: ", filtered);
 
   function containsHtml(str: string | undefined | null): boolean {
     if (!str) return false;

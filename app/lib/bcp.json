@@ -1,0 +1,198 @@
+{
+  "version": "1.0",
+  "source": "ACNA Book of Common Prayer 2019",
+  "items": [
+    {
+      "id": "collect-for-purity",
+      "title": "Collect for Purity",
+      "matchTitles": ["Collect for Purity", "The Collect for Purity"],
+      "category": "Opening",
+      "rubric": null,
+      "html": "<p><strong>Almighty God, to you all hearts are open, all desires known,</strong><br><strong>and from you no secrets are hid: Cleanse the thoughts of our</strong><br><strong>hearts by the inspiration of your Holy Spirit, that we may</strong><br><strong>perfectly love you, and worthily magnify your holy Name;</strong><br><strong>through Christ our Lord. </strong></p>\n<p><strong>Amen.</strong></p>"
+    },
+    {
+      "id": "opening-acclamation",
+      "title": "Opening Acclamation",
+      "matchTitles": ["Opening Acclamation"],
+      "category": "Opening",
+      "rubric": null,
+      "html": "<div><p><em>Celebrant</em>: Blessed be God: the Father, the Son, and the Holy Spirit.</p><p><em>People:</em> <strong>And blessed be his kingdom, now and for ever. </strong></p><p><strong>Amen.</strong></p></div>"
+    },
+    {
+      "id": "summary-of-the-law",
+      "title": "Summary of the Law",
+      "matchTitles": ["Summary of the Law"],
+      "category": "Opening",
+      "rubric": null,
+      "html": "<div><p>Hear what our Lord Jesus Christ says:<br>You shall love the Lord your God with all your heart and with<br>all your soul and with all your mind. This is the first and great<br>commandment. And the second is like it: You shall love your<br>neighbor as yourself. On these two commandments depend all<br>the Law and the Prophets. (Matthew 22:37-40)</p></div>"
+    },
+    {
+      "id": "the-kyrie",
+      "title": "The Kyrie",
+      "matchTitles": ["The Kyrie", "Kyrie", "Kyrie Eleison"],
+      "category": "Opening",
+      "rubric": null,
+      "html": "<div><p><em>Celebrant:</em> Lord, have mercy upon us.<br><em>People:</em><strong> Christ, have mercy upon us.</strong><br><em>Celebrant:</em> Lord, have mercy upon us.</p></div>"
+    },
+    {
+      "id": "collect-of-the-day",
+      "title": "Collect of the Day",
+      "matchTitles": ["Collect of the Day"],
+      "category": "Opening",
+      "rubric": null,
+      "html": ""
+    },
+    {
+      "id": "collect-for-children",
+      "title": "Collect for Children",
+      "matchTitles": ["Collect for Children"],
+      "category": "Opening",
+      "rubric": null,
+      "html": "<div><p><strong>Almighty God, heavenly Father, you have blessed us with the</strong><br><strong>joy and care of children: Give us calm strength and patient</strong><br><strong>wisdom so to train them, that they may love all that is true, and</strong><br><strong>pure, and lovely, and of good report, following the example of</strong><br><strong>their Savior Jesus Christ. </strong></p> <p><strong>Amen.</strong></p></div>"
+    },
+    {
+      "id": "nicene-creed",
+      "title": "Nicene Creed",
+      "matchTitles": ["Nicene Creed", "The Nicene Creed"],
+      "category": "Word",
+      "rubric": null,
+      "html": "<div><p><strong>We believe in one God,</strong><br><strong>&nbsp; &nbsp; &nbsp;the Father, the Almighty,</strong><br><strong>&nbsp; &nbsp; &nbsp;maker of heaven and earth,</strong><br><strong>&nbsp; &nbsp; &nbsp;of all that is, visible and invisible.</strong><br><strong>We believe in one Lord, Jesus Christ,</strong><br><strong>&nbsp; &nbsp; &nbsp;the only-begotten Son of God,</strong><br><strong>&nbsp; &nbsp; &nbsp;eternally begotten of the Father,</strong><br><strong>&nbsp; &nbsp; &nbsp;God from God, Light from Light,</strong><br><strong>&nbsp; &nbsp; &nbsp;true God from true God,</strong><br><strong>&nbsp; &nbsp; &nbsp;begotten, not made,</strong><br><strong>&nbsp; &nbsp; &nbsp;of one Being with the Father;</strong><br><strong>&nbsp; &nbsp; &nbsp;through him all things were made.</strong><br><strong>&nbsp; &nbsp; &nbsp;For us and for our salvation he came down from heaven,</strong><br><strong>&nbsp; &nbsp; &nbsp;was incarnate from the Holy Spirit and the Virgin Mary,</strong><br><strong>&nbsp; &nbsp; &nbsp;and was made man.</strong><br><strong>&nbsp; &nbsp; &nbsp;For our sake he was crucified under Pontius Pilate;</strong><br><strong>&nbsp; &nbsp; &nbsp;he suffered death and was buried.</strong><br><strong>&nbsp; &nbsp; &nbsp;On the third day he rose again in accordance with the Scriptures;</strong><br><strong>&nbsp; &nbsp; &nbsp;he ascended into heaven</strong><br><strong>&nbsp; &nbsp; &nbsp;and is seated at the right hand of the Father.</strong><br><strong>&nbsp; &nbsp; &nbsp;He will come again in glory to judge the living and the dead,</strong><br><strong>&nbsp; &nbsp; &nbsp;and his kingdom will have no end.</strong><br><strong>We believe in the Holy Spirit, the Lord, the giver of life,</strong><br><strong>&nbsp; &nbsp; &nbsp;who proceeds from the Father [and the Son],†</strong><br><strong>&nbsp; &nbsp; &nbsp;who with the Father and the Son is worshiped and glorified,</strong><br><strong>&nbsp; &nbsp; &nbsp;who has spoken through the prophets.</strong><br><strong>&nbsp; &nbsp; &nbsp;We believe in one holy catholic and apostolic Church.</strong><br><strong>&nbsp; &nbsp; &nbsp;We acknowledge one Baptism for the forgiveness of sins.</strong><br><strong>&nbsp; &nbsp; &nbsp;We look for the resurrection of the dead,</strong><br><strong>&nbsp; &nbsp; &nbsp;and the life of the world to come. Amen.</strong></p></div>"
+    },
+    {
+      "id": "prayers-of-the-people",
+      "title": "Prayers of the People",
+      "matchTitles": ["Prayers of the People"],
+      "category": "Word",
+      "rubric": null,
+      "html": "<div><p><em>Reader:</em> Lord, in your mercy:<br><em>People:</em> <strong>Hear our prayer.</strong></p> <p>Heavenly Father, grant these our prayers for the sake of Jesus<br>Christ, our only Mediator and Advocate, who lives and reigns<br>with you in the unity of the Holy Spirit, one God, now and for<br>ever.</p> <p><strong>Amen.</strong></p></div>"
+    },
+    {
+      "id": "confession",
+      "title": "Confession",
+      "matchTitles": ["Confession", "Confession of Sin"],
+      "category": "Confession",
+      "rubric": null,
+      "html": "<div><p><strong>Most merciful God,</strong><br><strong>&nbsp; &nbsp; &nbsp;we confess that we have sinned against you</strong><br><strong>&nbsp; &nbsp; &nbsp;in thought, word, and deed,</strong><br><strong>&nbsp; &nbsp; &nbsp;by what we have done, and by what we have left undone.</strong><br><strong>We have not loved you with our whole heart;</strong><br><strong>&nbsp; &nbsp; &nbsp; we have not loved our neighbors as ourselves.</strong><br><strong>We are truly sorry and we humbly repent.</strong><br><strong>For the sake of your Son Jesus Christ,</strong><br><strong>&nbsp; &nbsp; &nbsp;have mercy on us and forgive us;</strong><br><strong>&nbsp; &nbsp; &nbsp;that we may delight in your will, and walk in your ways,</strong><br><strong>&nbsp; &nbsp; &nbsp;to the glory of your Name. </strong></p> <p><strong>Amen.</strong></p> <p><strong>____</strong></p> <p><em>Celebrant:</em> Almighty God, our heavenly Father, who in his great mercy has<br>promised forgiveness of sins to all those who sincerely repent<br>and with true faith turn to him, have mercy upon you, pardon<br>and deliver you from all your sins, confirm and strengthen you<br>in all goodness, and bring you to everlasting life; through Jesus<br>Christ our Lord.</p> <p><strong>Amen.</strong></p></div>"
+    },
+    {
+      "id": "comfortable-words",
+      "title": "Comfortable Words",
+      "matchTitles": ["Comfortable Words", "The Comfortable Words"],
+      "category": "Confession",
+      "rubric": null,
+      "html": "<div><p><em>The Celebrant may then say one or more of the following sentences, first saying</em></p> <p>Hear the Word of God to all who truly turn to him.</p> <p><br>Come to me, all who labor and are heavy laden, and I will give you rest. - Matthew 11:28</p> <p><br>God so loved the world, that he gave his only-begotten Son, that whoever believes in him should not perish but have eternal life. - John 3:16<br><br>The saying is trustworthy and deserving of full acceptance, that Christ Jesus came into the world to save sinners. - 1 Timothy 1:15</p> <p>If anyone sins, we have an advocate with the Father, Jesus Christ the righteous. He is the propitiation for our sins, and not for ours only, but also for the sins of the whole world. - 1 John 2:1-2</p></div>"
+    },
+    {
+      "id": "peace",
+      "title": "Peace",
+      "matchTitles": ["Peace", "The Peace"],
+      "category": "Confession",
+      "rubric": null,
+      "html": "<div><p><em>Celebrant:</em> The Peace of the Lord be always with you.<br><em>People:</em> <strong>And with your spirit.</strong></p></div>"
+    },
+    {
+      "id": "offertory",
+      "title": "Offertory",
+      "matchTitles": ["Offertory", "Offertory Sentence"],
+      "category": "Offertory",
+      "rubric": null,
+      "html": ""
+    },
+    {
+      "id": "sursum-corda",
+      "title": "Sursum Corda",
+      "matchTitles": ["Sursum Corda"],
+      "category": "Communion",
+      "rubric": null,
+      "html": "<div> <div class='row'> <div class='col-1 text-end'><em>Celebrant:</em></div> <div class='col-8 text-start'>The Lord be with you.</div> </div> <div class='row'> <div class='col-1 text-end'><em>People:</em></div> <div class='col-8 text-start'><strong>And with your spirit.</strong></div> </div> <div class='row'> <div class='col-1 text-end'><em>Celebrant:</em></div> <div class='col-8 text-start'>Lift up your hearts.</div> </div> <div class='row'> <div class='col-1 text-end'><em>People:</em></div> <div class='col-8 text-start'><strong>We lift them up to the Lord.</strong></div> </div> <div class='row'> <div class='col-1 text-end'><em>Celebrant:</em></div> <div class='col-8 text-start'>Let us give thanks to the Lord our God.</div> </div> <div class='row'> <div class='col-1 text-end'><em>People:</em></div> <div class='col-8 text-start'><strong>It is right to give him thanks and praise.</strong></div> </div> </div>"
+    },
+    {
+      "id": "sanctus-song",
+      "title": "Sanctus Song",
+      "matchTitles": ["Sanctus Song", "Sanctus", "The Sanctus"],
+      "category": "Communion",
+      "rubric": null,
+      "html": "<div><p>Holy, holy, holy Lord, God of power and might</p> <p>Heaven and earth are full of your glory</p> <p>Hosanna in the highest<br>Hosanna in the highest<br>Hosanna in the highest</p> <p>Blessed is he who comes in the name of the Lord</p></div>"
+    },
+    {
+      "id": "consecration-response",
+      "title": "Consecration Response",
+      "matchTitles": ["Consecration Response"],
+      "category": "Communion",
+      "rubric": null,
+      "html": ""
+    },
+    {
+      "id": "prayer-of-consecration-ending",
+      "title": "Prayer of Consecration Ending",
+      "matchTitles": ["Prayer of Consecration Ending"],
+      "category": "Communion",
+      "rubric": null,
+      "html": ""
+    },
+    {
+      "id": "lords-prayer",
+      "title": "Lord's Prayer",
+      "matchTitles": ["Lord's Prayer", "The Lord's Prayer"],
+      "category": "Communion",
+      "rubric": null,
+      "html": "<div><p><strong>Our Father, who art in heaven,</strong><br><strong>&nbsp; &nbsp; &nbsp;hallowed be thy Name,</strong><br><strong>&nbsp; &nbsp; &nbsp;thy kingdom come,</strong><br><strong>&nbsp; &nbsp; &nbsp;thy will be done,</strong><br><strong>&nbsp; &nbsp; &nbsp;on earth as it is in heaven.</strong><br><strong>Give us this day our daily bread.</strong><br><strong>And forgive us our trespasses,</strong><br><strong>&nbsp; &nbsp; &nbsp;as we forgive those <br></strong><strong>&nbsp; &nbsp; &nbsp;who trespass against us.</strong><br><strong>And lead us not into temptation,</strong><br><strong>&nbsp; &nbsp; &nbsp;but deliver us from evil.</strong><br><strong>For thine is the kingdom, <br>&nbsp; &nbsp; &nbsp;and the power, and the glory,</strong><br><strong>&nbsp; &nbsp; &nbsp;for ever and ever.&nbsp;</strong><strong>Amen.</strong></p></div>"
+    },
+    {
+      "id": "the-fraction",
+      "title": "The Fraction",
+      "matchTitles": ["The Fraction", "Fraction"],
+      "category": "Communion",
+      "rubric": null,
+      "html": "<div class='item'><div class='row'> <div class='col-1 text-end'><em>Celebrant:</em></div> <div class='col-8 text-start'>[Alleluia.] Christ our Passover is sacrificed for us.</div> </div> <div class='row'> <div class='col-1 text-end'><em>People:</em></div> <div class='col-8 text-start'><strong>Therefore let us keep the feast. [Alleluia.]</strong></div> </div></div>"
+    },
+    {
+      "id": "prayer-of-humble-access",
+      "title": "Prayer of Humble Access",
+      "matchTitles": ["Prayer of Humble Access"],
+      "category": "Communion",
+      "rubric": null,
+      "html": "<div><p><strong>We do not presume to come to this your table, O merciful Lord,</strong><br><strong>&nbsp; &nbsp; &nbsp;trusting in our own righteousness,</strong><br><strong>&nbsp; &nbsp; &nbsp;but in your abundant and great mercies.</strong><br><strong>We are not worthy so much as to gather up</strong><br><strong>&nbsp; &nbsp; &nbsp;the crumbs under your table;</strong><br><strong>&nbsp; &nbsp; &nbsp;but you are the same Lord</strong><br><strong>&nbsp; &nbsp; &nbsp;whose character is always to have mercy.</strong><br><strong>Grant us, therefore, gracious Lord,</strong><br><strong>&nbsp; &nbsp; &nbsp;so to eat the flesh of your dear Son Jesus Christ,</strong><br><strong>&nbsp; &nbsp; &nbsp;and to drink his blood,</strong><br><strong>&nbsp; &nbsp; &nbsp;that our sinful bodies may be made clean by his body,</strong><br><strong>&nbsp; &nbsp; &nbsp;and our souls washed through his most precious blood,</strong><br><strong>&nbsp; &nbsp; &nbsp;and that we may evermore dwell in him, and he in us. Amen.</strong></p></div>"
+    },
+    {
+      "id": "the-agnus-dei",
+      "title": "The Agnus Dei",
+      "matchTitles": ["The Agnus Dei", "Agnus Dei"],
+      "category": "Communion",
+      "rubric": null,
+      "html": "<div><p>Lamb of God, you take away the sin of the world;<br>&nbsp; &nbsp; &nbsp;<strong>have mercy on us.</strong><br>Lamb of God, you take away the sin of the world;<br>&nbsp; &nbsp; &nbsp;<strong>have mercy on us.</strong><br>Lamb of God, you take away the sin of the world;<br>&nbsp; &nbsp; &nbsp;<strong>grant us your peace.</strong></p></div>"
+    },
+    {
+      "id": "post-communion-prayer",
+      "title": "Post Communion Prayer",
+      "matchTitles": ["Post Communion Prayer", "Post-Communion Prayer"],
+      "category": "Post-Communion",
+      "rubric": null,
+      "html": ""
+    },
+    {
+      "id": "kenyan-sending",
+      "title": "Kenyan Sending",
+      "matchTitles": ["Kenyan Sending"],
+      "category": "Post-Communion",
+      "rubric": null,
+      "html": "<div><p>All our problems,<br>&nbsp; &nbsp; &nbsp;<strong>we send to the cross of Christ!</strong></p> <p>All our difficulties,<br>&nbsp; &nbsp; &nbsp;<strong>we send to the cross of Christ!</strong></p> <p>All the devil's works,<br>&nbsp; &nbsp; &nbsp;<strong>we send to the cross of Christ!</strong></p> <p>All our hopes,<br>&nbsp; &nbsp; &nbsp;<strong>we set on the risen Christ!</strong></p></div>"
+    },
+    {
+      "id": "kenyan-blessing",
+      "title": "Kenyan Blessing",
+      "matchTitles": ["Kenyan Blessing"],
+      "category": "Post-Communion",
+      "rubric": null,
+      "html": ""
+    },
+    {
+      "id": "dismissal",
+      "title": "Dismissal",
+      "matchTitles": ["Dismissal", "The Dismissal"],
+      "category": "Post-Communion",
+      "rubric": null,
+      "html": "<div><p>[Alleluia, alleluia.] Let us go forth in the Name of Christ.<br><strong>Thanks be to God. [Alleluia, alleluia]</strong></p></div>"
+    }
+  ]
+}
