@@ -1,6 +1,10 @@
+import { createReader } from "@keystatic/core/reader";
+import keystaticConfig from "@/keystatic.config";
 import { ProPresenterData } from "../models/proPresenterModel";
+
 const appId = process.env.PCO_APP_ID;
 const secret = process.env.PCO_SECRET;
+const reader = createReader(process.cwd(), keystaticConfig);
 
 export async function getProPresenterData(): Promise<ProPresenterData> {
   const url = "https://church-liturgy-default-rtdb.firebaseio.com/.json";
@@ -12,13 +16,28 @@ export async function getProPresenterData(): Promise<ProPresenterData> {
 
   return res.json();
 }
+// planId: string = "88692794"
+export async function getPlanningCenterServicesData() {
+  const settings = await reader.singletons.planningCenterId.read();
+  // This gets the ID that is relateed to Ordinary Time, Lent, Holy Week, etc.
+  const planningCenterId = settings?.liturgyId;
 
-export async function getPlanningCenterServicesData(planId: string = "88692794") {
+  const authHeader = "Basic " + Buffer.from(`${appId}:${secret}`).toString("base64");
+
+  const getNextSundayLiturgyId = await fetch(
+    `https://api.planningcenteronline.com/services/v2/service_types/${planningCenterId}/plans?filter=future&per_page=1&include=items`,
+    {
+      headers: { Authorization: authHeader },
+      next: { revalidate: 60 },
+    }
+  );
+
+  const getNextSundayLiturgyIdJson = await getNextSundayLiturgyId.json();
+  const planId = getNextSundayLiturgyIdJson?.data[0]?.id;
+
   if (!appId || !secret) {
     throw new Error("Missing Planning Center credentials");
   }
-
-  const authHeader = "Basic " + Buffer.from(`${appId}:${secret}`).toString("base64");
 
   // 1. Get all service types
   const serviceTypesRes = await fetch("https://api.planningcenteronline.com/services/v2/service_types", {
@@ -152,14 +171,11 @@ export async function getEsvPassage(reference: any, apiKey: any) {
 }
 
 function stripHtml(input: string): string {
-  return input.replace(/<[^>]*>/g, "").trim();
+  return input?.replace(/<[^>]*>/g, "").trim();
 }
 
 function escapeHtml(input: string): string {
-  return input
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;");
+  return input.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }
 
 // Converts plain-text song lyrics (from a Planning Center arrangement) into HTML.
@@ -247,14 +263,14 @@ export async function getPsalter(reference: string) {
   //   "Ps 78:1-13; 14-26"     → two ranges in the same psalm
   //   "Ps 78:1-13; Ps 79:1-9" → ranges across psalms
   const segments = cleanReference
-    .split(/[;,]/)
-    .map((segment) => segment.trim())
-    .filter(Boolean);
+    ?.split(/[;,]/)
+    ?.map((segment) => segment.trim())
+    ?.filter(Boolean);
 
   const ranges: PsalmRange[] = [];
   let currentChapter: number | undefined;
 
-  segments.forEach((segment, index) => {
+  segments?.forEach((segment, index) => {
     const parsed = parsePsalmSegment(segment, currentChapter, index === 0);
     if (parsed) {
       currentChapter = parsed.chapter;

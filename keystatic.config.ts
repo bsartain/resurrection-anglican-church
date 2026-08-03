@@ -452,5 +452,16 @@ export default config({
         }),
       },
     }),
+    planningCenterId: singleton({
+      label: "Planning Center ID to retrieve Liturgy. ",
+      path: "content/planning-center-id",
+      schema: {
+        liturgyId: fields.text({
+          label: "Service Type ID",
+          description:
+            "Service type ID for say Lent, Ordinary Time, Holy Week, etc. can be retrieved here: https://api.planningcenteronline.com/services/v2/service_types",
+        }),
+      },
+    }),
   },
 });

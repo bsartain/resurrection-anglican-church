@@ -12,12 +12,11 @@ export default async function Liturgy() {
   const serviceData = await getPlanningCenterServicesData();
 
   const renderBibleVerses = async (verseReference: any, readingType: string) => {
-    console.log("HEADER: ", readingType);
     if (readingType.toLowerCase().includes("psalm") || readingType.toLowerCase().includes("psalms")) {
       const psalterPassage = await getPsalter(verseReference);
       return psalterPassage?.psalmData;
     } else {
-      const verseText = verseReference.replace(/<[^>]*>/g, "");
+      const verseText = verseReference?.replace(/<[^>]*>/g, "");
       const verse = await getEsvPassage(verseText, process.env.ESV_API_KEY);
       return verse.text;
     }
@@ -37,6 +36,11 @@ export default async function Liturgy() {
           : service.html_details,
     }))
   );
+
+  function containsHtml(str: string | undefined | null): boolean {
+    if (!str) return false;
+    return /<[a-z][\s\S]*>/i.test(str);
+  }
 
   return (
     <div className="liturgy-container">
@@ -67,7 +71,10 @@ export default async function Liturgy() {
                         })
                       ) : (
                         <div>
-                          <div dangerouslySetInnerHTML={{ __html: service.resolvedHtml }} className={`${service.item_type}`} />
+                          {containsHtml(service?.resolvedHtml) ? (
+                            <div dangerouslySetInnerHTML={{ __html: service?.resolvedHtml }} className={`${service?.item_type}`} />
+                          ) : null}
+
                           {service.title === "OT Reading" || service.title === "NT Reading" ? (
                             <div>
                               <div>The Word of the Lord</div>
