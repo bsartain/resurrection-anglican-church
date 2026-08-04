@@ -51,6 +51,7 @@ function LiturgyBottomDrawer() {
   // to whatever opened the drawer as part of hiding it, which would otherwise
   // undo the focus move onto the section heading and leave AT users behind.
   const pendingJump = useRef<string | null>(null);
+  const pendingPrint = useRef(false);
 
   const handleJump = useCallback(
     (slug: string) => {
@@ -60,10 +61,27 @@ function LiturgyBottomDrawer() {
     [handleClose]
   );
 
+  // Printing goes through the page's own @media print rules rather than cloning the
+  // liturgy into an offscreen iframe, so the printed sheet inherits the real DOM and
+  // every print rule already written for it. Deferred like a jump, because Bootstrap
+  // locks body scrolling while the drawer is open and that skews pagination.
+  const handlePrint = useCallback(() => {
+    pendingPrint.current = true;
+    handleClose();
+  }, [handleClose]);
+
   const handleExited = useCallback(() => {
     const slug = pendingJump.current;
     pendingJump.current = null;
-    if (slug) requestAnimationFrame(() => jumpToSection(slug, { updateHash: true }));
+    if (slug) {
+      requestAnimationFrame(() => jumpToSection(slug, { updateHash: true }));
+      return;
+    }
+
+    if (pendingPrint.current) {
+      pendingPrint.current = false;
+      requestAnimationFrame(() => window.print());
+    }
   }, []);
 
   const step = useCallback(
@@ -106,13 +124,7 @@ function LiturgyBottomDrawer() {
       </div>
 
       <div className="liturgy-toolbar">
-        <button
-          type="button"
-          className="liturgy-toolbar-btn"
-          onClick={() => step(-1)}
-          disabled={activeIndex <= 0}
-          aria-label="Previous section"
-        >
+        <button type="button" className="liturgy-toolbar-btn" onClick={() => step(-1)} disabled={activeIndex <= 0} aria-label="Previous section">
           <i className="bi bi-chevron-left" aria-hidden="true" />
           <span>Prev</span>
         </button>
@@ -140,31 +152,46 @@ function LiturgyBottomDrawer() {
         </button>
       </div>
 
-      <Offcanvas show={show} onHide={handleClose} onEntered={handleEntered} onExited={handleExited} placement="bottom" className="liturgy-toc-offcanvas" id={TOC_ID}>
+      <Offcanvas
+        show={show}
+        onHide={handleClose}
+        onEntered={handleEntered}
+        onExited={handleExited}
+        placement="bottom"
+        className="liturgy-toc-offcanvas"
+        id={TOC_ID}
+      >
         <Offcanvas.Header closeButton>
           <div className="liturgy-toc-header">
             <Offcanvas.Title as="div">Choose a section below to follow the service.</Offcanvas.Title>
-            <fieldset className="liturgy-text-size">
-              <legend className="visually-hidden">Text size</legend>
-              <button
-                type="button"
-                className="liturgy-text-size-btn"
-                onClick={() => setScaleIndex((index) => Math.max(index - 1, 0))}
-                disabled={scaleIndex === 0}
-                aria-label="Decrease text size"
-              >
-                A<span aria-hidden="true">&minus;</span>
+            <div className="liturgy-toc-tools">
+              <fieldset className="liturgy-text-size">
+                <legend className="visually-hidden">Text size</legend>
+                <button
+                  type="button"
+                  className="liturgy-text-size-btn"
+                  onClick={() => setScaleIndex((index) => Math.max(index - 1, 0))}
+                  disabled={scaleIndex === 0}
+                  aria-label="Decrease text size"
+                >
+                  A<span aria-hidden="true">&minus;</span>
+                </button>
+                <button
+                  type="button"
+                  className="liturgy-text-size-btn"
+                  onClick={() => setScaleIndex((index) => Math.min(index + 1, FONT_SCALES.length - 1))}
+                  disabled={scaleIndex === FONT_SCALES.length - 1}
+                  aria-label="Increase text size"
+                >
+                  A<span aria-hidden="true">+</span>
+                </button>
+              </fieldset>
+              {/* Outside the text-size fieldset: inside it, screen readers announce this
+                  as one of the sizing controls. */}
+              <button type="button" className="liturgy-print-btn" onClick={handlePrint} aria-label="Print the order of service">
+                <i className="bi bi-printer" aria-hidden="true" />
               </button>
-              <button
-                type="button"
-                className="liturgy-text-size-btn"
-                onClick={() => setScaleIndex((index) => Math.min(index + 1, FONT_SCALES.length - 1))}
-                disabled={scaleIndex === FONT_SCALES.length - 1}
-                aria-label="Increase text size"
-              >
-                A<span aria-hidden="true">+</span>
-              </button>
-            </fieldset>
+            </div>
           </div>
         </Offcanvas.Header>
         <Offcanvas.Body>

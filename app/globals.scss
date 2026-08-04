@@ -2373,10 +2373,24 @@ $liturgy-rule: rgba(212, 208, 200, 0.15);
 
   .liturgy-toc-header {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    gap: 1rem;
+    gap: 0.75rem 1rem;
     width: 100%;
+
+    .offcanvas-title {
+      flex: 1 1 11rem;
+    }
+  }
+
+  // Text size and print sit together as "reader tools". They wrap to their own
+  // line before the title gets squeezed.
+  .liturgy-toc-tools {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    gap: 0.35rem;
   }
 
   // Fixed at 1rem so the controls don't grow along with what they're adjusting.
@@ -2391,6 +2405,12 @@ $liturgy-rule: rgba(212, 208, 200, 0.15);
     font-size: 1rem;
   }
 
+  .liturgy-print-btn {
+    margin-left: 0.4rem;
+    font-size: 1.05rem;
+  }
+
+  .liturgy-print-btn,
   .liturgy-text-size-btn {
     min-width: 2.6rem;
     padding: 0.35rem 0.5rem;

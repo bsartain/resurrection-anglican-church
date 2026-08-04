@@ -182,8 +182,7 @@ const setGospelVerses = async (content: string | undefined | null) => {
             </div>`;
 };
 
-const isScriptureReading = (title: string) =>
-  title === "NT Reading" || title === "OT Reading" || title.toLowerCase().includes("psalm");
+const isScriptureReading = (title: string) => title === "NT Reading" || title === "OT Reading" || title.toLowerCase().includes("psalm");
 
 // Planning Center formats `dates` for humans already ("August 9, 2026"), so prefer
 // it and only fall back to formatting the raw sort date ourselves.
@@ -347,7 +346,6 @@ export default async function Liturgy() {
           </Container>
         </div>
       ) : null}
-
       <div>
         <RevealSection id="liturgyContent" image="/images/pages/art.webp" opacity={0.04}>
           <Container className="pt-5 pb-5">
@@ -373,8 +371,8 @@ export default async function Liturgy() {
               <div className="liturgy-empty-state">
                 <h2>This Sunday&rsquo;s liturgy isn&rsquo;t posted yet.</h2>
                 <p>
-                  The order of service is published before each Sunday. Please check back, or join us in person &mdash; you&rsquo;ll find a
-                  printed copy waiting for you.
+                  The order of service is published before each Sunday. Please check back, or join us in person &mdash; you&rsquo;ll find a printed
+                  copy waiting for you.
                 </p>
               </div>
             )}
