@@ -51,6 +51,14 @@
       "html": "<div><p><strong>Almighty God, heavenly Father, you have blessed us with the</strong><br><strong>joy and care of children: Give us calm strength and patient</strong><br><strong>wisdom so to train them, that they may love all that is true, and</strong><br><strong>pure, and lovely, and of good report, following the example of</strong><br><strong>their Savior Jesus Christ. </strong></p> <p><strong>Amen.</strong></p></div>"
     },
     {
+      "id": "gospel",
+      "title": "Gospel",
+      "matchTitles": ["Gospel, Gospel Reading"],
+      "category": "Opening",
+      "rubric": null,
+      "html": "<div><p><em>Celebrant:</em>&nbsp;The Holy Gospel of our Lord Jesus Christ according to Matthew.<br><br><em>People:</em>&nbsp;<strong>Glory to you, Lord Christ.</strong></p> <p><br><em>Today's reading:&nbsp;Matt 14:22-33</em></p> <p><br><em>Celebrant:</em>&nbsp;The Gospel of the Lord.<br><em>People:</em> <strong>Praise to you, Lord Christ.</strong></p></div>"
+    },
+    {
       "id": "nicene-creed",
       "title": "Nicene Creed",
       "matchTitles": ["Nicene Creed", "The Nicene Creed"],
