@@ -1,6 +1,7 @@
 import { createReader } from "@keystatic/core/reader";
 import keystaticConfig from "@/keystatic.config";
 import { ProPresenterData } from "../models/proPresenterModel";
+import type { ServiceDataModel } from "../models/serviceModel";
 
 const appId = process.env.PCO_APP_ID;
 const secret = process.env.PCO_SECRET;
@@ -16,8 +17,24 @@ export async function getProPresenterData(): Promise<ProPresenterData> {
 
   return res.json();
 }
+// Identifying details for the plan being displayed, so the page can tell the
+// congregation which service they're looking at. All of this comes back on the
+// plans lookup we already make to resolve the plan id — no extra request.
+export interface LiturgyPlanSummary {
+  id: string;
+  dates: string | null;
+  title: string | null;
+  seriesTitle: string | null;
+  sortDate: string | null;
+}
+
+export interface LiturgyServiceData {
+  items: ServiceDataModel[];
+  plan: LiturgyPlanSummary | null;
+}
+
 // planId: string = "88692794"
-export async function getPlanningCenterServicesData() {
+export async function getPlanningCenterServicesData(): Promise<LiturgyServiceData> {
   if (!appId || !secret) {
     throw new Error("Missing Planning Center credentials");
   }
@@ -55,11 +72,23 @@ export async function getPlanningCenterServicesData() {
   }
 
   const getNextSundayLiturgyIdJson = await getNextSundayLiturgyId.json();
-  const planId = getNextSundayLiturgyIdJson?.data?.[0]?.id;
+  const nextPlan = getNextSundayLiturgyIdJson?.data?.[0];
+  const planId = nextPlan?.id;
 
+  // Having no future plan is a normal state, not a failure — there are stretches
+  // between plans being published. Return empty so the page can say so plainly
+  // instead of throwing into the error boundary.
   if (!planId) {
-    throw new Error(`No upcoming plan found in Planning Center for service type ${planningCenterId}`);
+    return { items: [], plan: null };
   }
+
+  const plan: LiturgyPlanSummary = {
+    id: planId,
+    dates: nextPlan?.attributes?.dates ?? null,
+    title: nextPlan?.attributes?.title ?? null,
+    seriesTitle: nextPlan?.attributes?.series_title ?? null,
+    sortDate: nextPlan?.attributes?.sort_date ?? null,
+  };
 
   // 1. Get all service types
   const serviceTypesRes = await fetch("https://api.planningcenteronline.com/services/v2/service_types", {
@@ -114,10 +143,13 @@ export async function getPlanningCenterServicesData() {
       })
     );
 
-    return enriched.filter(
-      (item: any) =>
-        item.title !== "SERVICE" && item.title !== "SHHHH_Slide" && item.title !== "PreService Slide" && item.title !== "Reading Response"
-    );
+    return {
+      plan,
+      items: enriched.filter(
+        (item: any) =>
+          item.title !== "SERVICE" && item.title !== "SHHHH_Slide" && item.title !== "PreService Slide" && item.title !== "Reading Response"
+      ),
+    };
   }
 
   throw new Error(`Plan ${planId} not found under any service type`);

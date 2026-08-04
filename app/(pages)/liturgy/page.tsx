@@ -3,8 +3,12 @@ import HeroImage from "../../components/HeroImage";
 import RevealSection from "../../components/RevealSection";
 import { buildMetadata } from "../../lib/buildMetadata";
 import { getEsvPassage, getPlanningCenterServicesData, getPsalter } from "../../lib/getProPresenterData";
-import LiturgyDrawerSync from "../../components/LiturgyDrawerSync";
-import type { ServiceDataModel } from "../../models/serviceModel";
+import type { LiturgyPlanSummary } from "../../lib/getProPresenterData";
+import LiturgyReader from "../../components/LiturgyReader";
+import { SECTION_ATTRIBUTE, HEADING_ATTRIBUTE } from "../../lib/liturgyScroll";
+import { buildSectionLabel, markUpSpeakerLabels, slugifyTitle } from "../../lib/liturgyMarkup";
+import type { LiturgySection } from "../../lib/liturgyMarkup";
+import type { ResolvedServiceDataModel, ServiceDataModel } from "../../models/serviceModel";
 import bcp from "@/app/lib/bcp.json";
 
 export const dynamic = "force-dynamic";
@@ -163,19 +167,96 @@ const setGospelVerses = async (content: string | undefined | null) => {
 
   return `<div>
               <p>
-                <em>Celebrant:</em>&nbsp;The Holy Gospel of our Lord Jesus Christ according to ${bookName}.<br><br>
+                <em>Celebrant:</em>&nbsp;The Holy Gospel of our Lord Jesus Christ according to ${bookName}.
+              </p>
+              <p>
                 <em>People:</em>&nbsp;<strong>Glory to you, Lord Christ.</strong>
               </p>
               ${formattedVerses.text}
-              <p><br>
-                <em>Celebrant:</em>&nbsp;The Gospel of the Lord.<br>
-                <em>People:</em> <strong>Praise to you, Lord Christ.</strong>
+              <p>
+                <em>Celebrant:</em>&nbsp;The Gospel of the Lord.
+              </p>
+              <p>
+                <em>People:</em>&nbsp;<strong>Praise to you, Lord Christ.</strong>
               </p>
             </div>`;
 };
 
+const isScriptureReading = (title: string) =>
+  title === "NT Reading" || title === "OT Reading" || title.toLowerCase().includes("psalm");
+
+// Planning Center formats `dates` for humans already ("August 9, 2026"), so prefer
+// it and only fall back to formatting the raw sort date ourselves.
+const formatServiceDate = (plan: LiturgyPlanSummary) => {
+  if (plan.dates) return plan.dates;
+  if (!plan.sortDate) return null;
+
+  const parsed = new Date(plan.sortDate);
+  if (Number.isNaN(parsed.getTime())) return null;
+
+  return parsed.toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric" });
+};
+
+function containsHtml(str: string | undefined | null): boolean {
+  if (!str) return false;
+  return /<[a-z][\s\S]*>/i.test(str);
+}
+
+// One service item's content. Three mutually exclusive shapes: a failed lookup,
+// Psalter verses (an array), or HTML/plain text.
+function SectionBody({ service }: Readonly<{ service: ResolvedServiceDataModel }>) {
+  if (service.readingUnavailable) {
+    return (
+      <p className="liturgy-reading-unavailable">
+        This reading couldn&rsquo;t be loaded right now. Please follow along in your Bible
+        {service.referenceText ? <> &mdash; {service.referenceText}</> : null}.
+      </p>
+    );
+  }
+
+  if (Array.isArray(service.resolvedHtml) && service.resolvedHtml.length > 0) {
+    return service.resolvedHtml.map((verse: any) => (
+      <div key={verse.number} className="psalter-verses">
+        <div className="first-half mb-2">{verse.first_half}&#42;</div>
+        <div className="second-half fw-bold mb-5 ms-3">{verse.second_half}</div>
+      </div>
+    ));
+  }
+
+  // Songs keep their own typography — the speaker/response treatment is for
+  // spoken liturgy, and lyrics have no Celebrant or People to distinguish.
+  const bodyClass = service?.item_type === "song" ? "song" : `liturgy-body ${service?.item_type}`;
+
+  return (
+    <div>
+      {containsHtml(service?.resolvedHtml) ? (
+        <div dangerouslySetInnerHTML={{ __html: service?.resolvedHtml }} className={bodyClass} />
+      ) : (
+        <div className={bodyClass}>{service?.resolvedHtml}</div>
+      )}
+
+      {service.title === "OT Reading" || service.title === "NT Reading" ? (
+        <div className="liturgy-body">
+          <p>
+            <span className="liturgy-speaker" data-role="reader">
+              Reader
+            </span>
+            The Word of the Lord.
+          </p>
+          <p>
+            <span className="liturgy-speaker" data-role="people">
+              People
+            </span>
+            <strong>Thanks be to God.</strong>
+          </p>
+        </div>
+      ) : null}
+    </div>
+  );
+}
+
 export default async function Liturgy() {
-  const serviceData = await getPlanningCenterServicesData();
+  const { items, plan } = await getPlanningCenterServicesData();
 
   const renderBibleVerses = async (verseReference: any, readingType: string) => {
     if (readingType.toLowerCase().includes("psalm") || readingType.toLowerCase().includes("psalms")) {
@@ -188,91 +269,115 @@ export default async function Liturgy() {
     }
   };
 
+  // Repeated titles ("Hymn", "Song") need an ordinal in the table of contents,
+  // or the list reads as several identical entries.
+  const titleTotals = new Map<string, number>();
+  items.forEach((item: ServiceDataModel) => titleTotals.set(item.title, (titleTotals.get(item.title) ?? 0) + 1));
+
+  const usedSlugs = new Set<string>();
+  const titleSeen = new Map<string, number>();
+
   // Resolve all async verse lookups up front so JSX renders plain strings
   // (a Promise dropped into dangerouslySetInnerHTML renders as "[object Promise]").
-  const resolvedServiceData = await Promise.all(
-    serviceData.map(async (planningCenter: ServiceDataModel) => {
-      let resolvedHtml = planningCenter.html_details;
+  const resolvedServiceData: ResolvedServiceDataModel[] = await Promise.all(
+    items.map(async (planningCenter: ServiceDataModel) => {
+      const occurrence = (titleSeen.get(planningCenter.title) ?? 0) + 1;
+      titleSeen.set(planningCenter.title, occurrence);
 
-      if (
-        planningCenter.title === "NT Reading" ||
-        planningCenter.title === "OT Reading" ||
-        (planningCenter.title.toLowerCase().includes("psalm") && planningCenter?.song?.data?.type !== "Song")
-      ) {
-        resolvedHtml = await renderBibleVerses(planningCenter.html_details, planningCenter.title);
-      } else if (planningCenter.title.toLowerCase() === "gospel") {
-        resolvedHtml = await setGospelVerses(planningCenter.html_details);
-      } else if (planningCenter?.song?.data?.type !== "Song") {
-        if (!planningCenter?.html_details) {
-          const matchedBcpItem = bcp.items.find((bcp: any) => bcp.title.toLowerCase() === planningCenter.title.toLowerCase());
-          if (matchedBcpItem) {
-            resolvedHtml = matchedBcpItem.html;
+      const identity = {
+        slug: slugifyTitle(planningCenter.title, usedSlugs),
+        label: buildSectionLabel(planningCenter.title, occurrence, titleTotals.get(planningCenter.title) ?? 1),
+      };
+
+      let resolvedHtml = planningCenter.html_details;
+      let readingUnavailable = false;
+
+      // One bad reference used to take down the whole page: getEsvPassage throws on
+      // any non-OK response, and this runs during the service it's meant to support.
+      // Isolate each lookup so the rest of the liturgy still renders.
+      try {
+        if (isScriptureReading(planningCenter.title) && planningCenter?.song?.data?.type !== "Song") {
+          const verses = await renderBibleVerses(planningCenter.html_details, planningCenter.title);
+          if (verses === undefined || verses === null || (Array.isArray(verses) && verses.length === 0)) {
+            readingUnavailable = true;
+          } else {
+            resolvedHtml = verses;
           }
+        } else if (planningCenter.title.toLowerCase() === "gospel") {
+          resolvedHtml = markUpSpeakerLabels(await setGospelVerses(planningCenter.html_details));
+        } else if (planningCenter?.song?.data?.type !== "Song") {
+          if (!planningCenter?.html_details) {
+            const matchedBcpItem = bcp.items.find((bcp: any) => bcp.title.toLowerCase() === planningCenter.title.toLowerCase());
+            if (matchedBcpItem) {
+              resolvedHtml = matchedBcpItem.html;
+            }
+          }
+          resolvedHtml = markUpSpeakerLabels(resolvedHtml);
         }
+      } catch (error) {
+        console.error(`Liturgy: failed to resolve "${planningCenter.title}"`, error);
+        readingUnavailable = true;
       }
 
       return {
         ...planningCenter,
+        ...identity,
         resolvedHtml,
+        readingUnavailable,
+        referenceText: readingUnavailable ? planningCenter.html_details?.replace(/<[^>]*>/g, "").trim() : undefined,
       };
     })
   );
 
-  function containsHtml(str: string | undefined | null): boolean {
-    if (!str) return false;
-    return /<[a-z][\s\S]*>/i.test(str);
-  }
+  const sections: LiturgySection[] = resolvedServiceData.map(({ slug, title, label }) => ({ slug, title, label }));
+  const serviceDate = plan ? formatServiceDate(plan) : null;
+  const serviceSeason = plan?.seriesTitle || plan?.title || null;
 
   return (
     <div className="liturgy-container">
-      <LiturgyDrawerSync data={resolvedServiceData} />
+      <LiturgyReader sections={sections} planId={plan?.id ?? null} />
       <HeroImage image="/images/pages/jesus-resurrection.jpg">{"Liturgy"}</HeroImage>
+
+      {serviceSeason || serviceDate ? (
+        <div className="liturgy-service-header">
+          <Container>
+            {serviceSeason ? <span className="liturgy-service-season">{serviceSeason}</span> : null}
+            {serviceSeason && serviceDate ? <span className="liturgy-service-separator">&middot;</span> : null}
+            {serviceDate ? <span className="liturgy-service-date">{serviceDate}</span> : null}
+          </Container>
+        </div>
+      ) : null}
+
       <div>
         <RevealSection id="liturgyContent" image="/images/pages/art.webp" opacity={0.04}>
-          <Container className="pt-5 pb-5 reveal">
-            {resolvedServiceData.length > 0
-              ? resolvedServiceData.map((service) => {
-                  return (
-                    <div key={service.sequence} id={`liturgy-section-${service.sequence}`} className="service-data-container">
-                      <h2>{service.title}</h2>
-                      {service.title === "Psalm Reading" ? (
-                        <>
-                          <h3 dangerouslySetInnerHTML={{ __html: service.html_details }} className="mt-4 mb-4" />
-                          <hr className="mb-5 mt-5" style={{ width: "50px" }} />
-                        </>
-                      ) : null}
-                      {Array.isArray(service.resolvedHtml) && service.resolvedHtml.length > 0 ? (
-                        service.resolvedHtml.map((verse: any) => {
-                          return (
-                            <div key={verse.number} className="psalter-verses">
-                              <div className="first-half mb-2">{verse.first_half}&#42;</div>
-                              <div className="second-half fw-bold mb-5 ms-3">{verse.second_half}</div>
-                            </div>
-                          );
-                        })
-                      ) : (
-                        <div>
-                          {containsHtml(service?.resolvedHtml) ? (
-                            <div dangerouslySetInnerHTML={{ __html: service?.resolvedHtml }} className={`${service?.item_type}`} />
-                          ) : (
-                            <div className={`${service?.item_type}`}>{service?.resolvedHtml}</div>
-                          )}
-
-                          {service.title === "OT Reading" || service.title === "NT Reading" ? (
-                            <div>
-                              <div>The Word of the Lord</div>
-                              <div>
-                                <strong>Thanks be to God.</strong>
-                              </div>
-                            </div>
-                          ) : null}
-                        </div>
-                      )}
-                      <hr className="liturgy-line-break" />
-                    </div>
-                  );
-                })
-              : null}
+          <Container className="pt-5 pb-5">
+            {resolvedServiceData.length > 0 ? (
+              resolvedServiceData.map((service) => {
+                return (
+                  <div key={service.sequence} id={service.slug} {...{ [SECTION_ATTRIBUTE]: "" }} className="service-data-container">
+                    <h2 tabIndex={-1} {...{ [HEADING_ATTRIBUTE]: "" }}>
+                      {service.title}
+                    </h2>
+                    {service.title === "Psalm Reading" ? (
+                      <>
+                        <div className="psalm-reference mt-4 mb-4" dangerouslySetInnerHTML={{ __html: service.html_details }} />
+                        <hr className="mb-5 mt-5" style={{ width: "50px" }} />
+                      </>
+                    ) : null}
+                    <SectionBody service={service} />
+                    <hr className="liturgy-line-break" />
+                  </div>
+                );
+              })
+            ) : (
+              <div className="liturgy-empty-state">
+                <h2>This Sunday&rsquo;s liturgy isn&rsquo;t posted yet.</h2>
+                <p>
+                  The order of service is published before each Sunday. Please check back, or join us in person &mdash; you&rsquo;ll find a
+                  printed copy waiting for you.
+                </p>
+              </div>
+            )}
           </Container>
         </RevealSection>
       </div>

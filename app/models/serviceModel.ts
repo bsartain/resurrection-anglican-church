@@ -35,4 +35,14 @@ export interface ServiceDataModel {
 // Psalter, an array of verse objects.
 export interface ResolvedServiceDataModel extends ServiceDataModel {
   resolvedHtml: any;
+  // Stable, shareable DOM id (e.g. "confession") used for deep links and for
+  // the reader's active-section tracking.
+  slug: string;
+  // Table-of-contents label; disambiguated by ordinal when a plan repeats a title.
+  label: string;
+  // Set when a scripture lookup failed, so one bad reference degrades to a note
+  // instead of taking down the whole service.
+  readingUnavailable?: boolean;
+  // Plain-text reference to fall back on when the lookup failed.
+  referenceText?: string;
 }
