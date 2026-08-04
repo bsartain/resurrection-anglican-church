@@ -32,7 +32,7 @@ function LiturgyBottomDrawer() {
         <Offcanvas.Header closeButton>
           <Offcanvas.Title className="text-center w-100">
             Choose a section below to follow the service.{" "}
-            <div>
+            <div onClick={() => handleClose()}>
               <i className="bi bi-chevron-compact-down" />
             </div>
           </Offcanvas.Title>
