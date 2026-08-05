@@ -9,7 +9,7 @@ const TOC_ID = "liturgyTableOfContents";
 
 // Reading sizes, not a continuous zoom — three taps covers everyone from
 // "I have my glasses" to "I do not". Index 1 is the unscaled default.
-const FONT_SCALES = [0.9, 1, 1.15, 1.3];
+const FONT_SCALES = [0.9, 1, 1.15, 1.3, 1.6];
 const DEFAULT_SCALE_INDEX = 1;
 const FONT_SCALE_STORAGE_KEY = "liturgy:fontScale";
 
