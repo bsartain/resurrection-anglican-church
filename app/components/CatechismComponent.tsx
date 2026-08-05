@@ -1,8 +1,10 @@
 "use client";
+import { useEffect, useMemo, useState } from "react";
 import catechismData from "@/app/lib/catechism.json";
 import thirtyNineArticles from "@/app/lib/thityNineArticles.json";
 import { Tabs, Tab } from "react-bootstrap";
 import { trackEvent } from "@/app/lib/gtm";
+import Accordion from "react-bootstrap/Accordion";
 
 type CatechismQuestion = {
   number: number;
@@ -52,6 +54,27 @@ const slugify = (str: string) =>
     .replace(/(^-|-$)/g, "");
 
 const CatechismComponent = ({ activeKey, onSelect }: { activeKey?: string; onSelect?: (k: string | null) => void } = {}) => {
+  const [activeSection, setActiveSection] = useState("");
+
+  const sectionIds = useMemo(() => (catechismData.parts as CatechismPart[]).flatMap((part) => part.sections.map((section) => slugify(section.section))), []);
+
+  // Highlight the section currently in view in the sidebar table of contents.
+  useEffect(() => {
+    const headings = sectionIds.map((id) => document.getElementById(id)).filter((el): el is HTMLElement => el !== null);
+    if (!headings.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries.filter((entry) => entry.isIntersecting).sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+        if (visible.length) setActiveSection(visible[0].target.id);
+      },
+      { rootMargin: "-120px 0px -65% 0px" }
+    );
+
+    headings.forEach((heading) => observer.observe(heading));
+    return () => observer.disconnect();
+  }, [sectionIds]);
+
   const handleTabSelect = (key: string | null) => {
     if (key) trackEvent("catechism_tab_click", { tab: key });
     onSelect?.(key);
@@ -60,135 +83,153 @@ const CatechismComponent = ({ activeKey, onSelect }: { activeKey?: string; onSel
   const tabProps = activeKey ? { activeKey, onSelect: handleTabSelect } : { defaultActiveKey: "catechism", onSelect: handleTabSelect };
 
   const renderArticle = (article: Article) => (
-    <div key={article.number} className="mt-5">
-      <h3>
-        {article.number}. {article.title}
+    <article key={article.number} className="article-card">
+      <h3 className="article-card__title">
+        <span className="article-card__number">{article.number}</span>
+        <span>{article.title}</span>
       </h3>
-      <p>{article.text}</p>
-    </div>
+      <p className="article-card__text">{article.text}</p>
+    </article>
   );
 
   return (
-    <Tabs {...tabProps} id="uncontrolled-tab-example" className="mb-3 mt-5">
-      <Tab eventKey="catechism" title=" To Be A Christian - Anglican Catechism">
+    <Tabs {...tabProps} id="uncontrolled-tab-example" className="formularies-tabs mb-3 mt-5">
+      <Tab eventKey="catechism" title="To Be A Christian - Anglican Catechism">
         <div className="catechism-container">
-          <nav className="catechism-toc">
-            <div className="header">
-              <h1>Contents</h1>
-              <hr />
-            </div>
-            {catechismData.parts.map((part: CatechismPart) => (
-              <div key={part.part} className="table-of-contents">
-                <h3 className="mt-5">{part.title}</h3>
-                <ul className="list-group list-group-flush">
-                  {part.sections.map((section: CatechismSection) => (
-                    <li key={section.section} className="list-group-item">
-                      <a href={`#${slugify(section.section)}`} onClick={() => trackEvent("catechism_toc_click", { section: section.section })}>
-                        {section.section}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </nav>
-
-          {catechismData.parts.map((part: CatechismPart, index: number) => {
-            return (
-              <div key={index} id={`part-${part.part}`}>
-                <div className="header">
-                  <h1>{part.title}</h1>
-                  <hr />
-                </div>
-                {part.sections.map((section: CatechismSection, index: number) => {
-                  return (
-                    <div key={index}>
-                      <h2 id={slugify(section.section)} className="section-header">
-                        {section.section}
-                      </h2>
-                      <div className="d-flex justify-content-center">
-                        <hr className="section-header-divider" />
-                      </div>
-                      {section.questions
-                        ? section.questions.map((item: CatechismQuestion, index: number) => {
-                            return (
-                              <div
-                                key={index}
-                                className="sub-section-qa"
-                                onMouseEnter={() =>
-                                  trackEvent("catechism_question_hover", {
-                                    question_number: item.number,
-                                    question: item.question,
-                                  })
-                                }
+          <div className="catechism-layout">
+            <div className="catechism-layout__aside">
+              <nav className="catechism-toc" aria-label="Catechism contents">
+                <p className="catechism-toc__title">Contents</p>
+                <div className="catechism-toc__scroll">
+                  {(catechismData.parts as CatechismPart[]).map((part) => (
+                    <div key={part.part} className="catechism-toc__group">
+                      <p className="catechism-toc__part">
+                        Part {part.part} &middot; {part.title}
+                      </p>
+                      <ul className="catechism-toc__list">
+                        {part.sections.map((section) => {
+                          const id = slugify(section.section);
+                          return (
+                            <li key={section.section}>
+                              <a
+                                href={`#${id}`}
+                                className={`catechism-toc__link${activeSection === id ? " is-active" : ""}`}
+                                onClick={() => trackEvent("catechism_toc_click", { section: section.section })}
                               >
-                                <h3>
-                                  <span className="catechism-number">{item.number}.</span>
-                                  <span>{item.question}</span>
-                                </h3>
-                                <div>
+                                {section.section}
+                              </a>
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              </nav>
+            </div>
+
+            <div className="catechism-layout__main">
+              {(catechismData.parts as CatechismPart[]).map((part) => (
+                <section key={part.part} id={`part-${part.part}`} className="catechism-part">
+                  <header className="catechism-part__header">
+                    <p className="catechism-part__eyebrow">Part {part.part}</p>
+                    <h2 className="catechism-part__title">{part.title}</h2>
+                    <span className="catechism-ornament" aria-hidden="true" />
+                  </header>
+
+                  {part.sections.map((section) => (
+                    <div key={section.section} className="catechism-section">
+                      <h3 id={slugify(section.section)} className="catechism-section__title">
+                        {section.section}
+                      </h3>
+
+                      {section.questions?.length ? (
+                        <Accordion className="catechism-accordion" alwaysOpen>
+                          {section.questions.map((item) => (
+                            <Accordion.Item
+                              key={item.number}
+                              eventKey={`${slugify(section.section)}-${item.number}`}
+                              onMouseEnter={() =>
+                                trackEvent("catechism_question_hover", {
+                                  question_number: item.number,
+                                  question: item.question,
+                                })
+                              }
+                            >
+                              <Accordion.Header>
+                                <span className="catechism-number">{item.number}</span>
+                                <span className="catechism-question">{item.question}</span>
+                              </Accordion.Header>
+                              <Accordion.Body>
+                                <div className="catechism-answer">
                                   {item.answer.split("\n").map((line, i) => (
-                                    <p key={i} className="mb-1">
-                                      {line}
-                                    </p>
+                                    <p key={i}>{line}</p>
                                   ))}
                                 </div>
 
-                                <div className="mt-4">{item.scriptures.join(", ")}</div>
-                                {item?.articlesText ? (
-                                  <div className="mt-3">
-                                    <strong>Articles of Religion {item?.articlesNumber}:&nbsp;</strong>
+                                {item.scriptures.length ? (
+                                  <p className="catechism-scriptures">
+                                    <span className="catechism-scriptures__label">Scripture</span>
+                                    {item.scriptures.join(" · ")}
+                                  </p>
+                                ) : null}
+
+                                {item.articlesText ? (
+                                  <div className="catechism-articles">
+                                    <p className="catechism-articles__label">Articles of Religion {item.articlesNumber}</p>
                                     {item.articlesText.split("\n").map((line, i) => (
-                                      <p key={i} className="mb-1">
+                                      <p key={i} className="mb-0">
                                         {line}
                                       </p>
                                     ))}
                                   </div>
                                 ) : null}
-                              </div>
-                            );
-                          })
-                        : null}
+                              </Accordion.Body>
+                            </Accordion.Item>
+                          ))}
+                        </Accordion>
+                      ) : null}
                     </div>
-                  );
-                })}
-              </div>
-            );
-          })}
+                  ))}
+                </section>
+              ))}
+            </div>
+          </div>
         </div>
       </Tab>
       <Tab eventKey="bcp" title="Book of Common Prayer">
-        <iframe
-          src="https://docs.google.com/viewer?url=https://bcp2019.anglicanchurch.net/wp-content/uploads/2019/08/BCP2019.pdf&embedded=true#page=3"
-          style={{ width: "100%", height: "85vh", border: "none" }}
-          title="Book of Common Prayer 2019"
-        />
+        <div className="bcp-viewer">
+          <iframe
+            src="https://docs.google.com/viewer?url=https://bcp2019.anglicanchurch.net/wp-content/uploads/2019/08/BCP2019.pdf&embedded=true#page=3"
+            title="Book of Common Prayer 2019"
+          />
+        </div>
       </Tab>
       <Tab eventKey="thirtyNine" title="Thirty Nine Articles of Religion">
-        {thirtyNineArticles.parts.map((part: Part, index: number) => {
-          return (
-            <div key={index} className="mt-5 mb-5">
-              <h2 style={{ marginTop: "150px" }}>
-                Part {part.part}{" "}
-                <h3>
-                  {part.articles} {part.title}
-                </h3>
-                <hr className="thirty-nine-articles-divider" />
-              </h2>
+        <div className="thirty-nine-container">
+          {(thirtyNineArticles.parts as Part[]).map((part) => (
+            <section key={part.part} className="articles-part">
+              <header className="articles-part__header">
+                <p className="articles-part__eyebrow">Part {part.part}</p>
+                <h2 className="articles-part__title">{part.title}</h2>
+                <p className="articles-part__range">Articles {part.articles}</p>
+                <span className="catechism-ornament" aria-hidden="true" />
+              </header>
 
               {part.items?.map(renderArticle)}
 
-              {part.subsections?.map((subsection: Subsection, subIndex: number) => (
-                <div key={subIndex} className="mt-5">
-                  <h4>
-                    {subsection.label}. {subsection.title} ({subsection.articles})
-                  </h4>
+              {part.subsections?.map((subsection) => (
+                <div key={subsection.label} className="articles-subsection">
+                  <h3 className="articles-subsection__title">
+                    {subsection.label}. {subsection.title}
+                    <span className="articles-subsection__range">Articles {subsection.articles}</span>
+                  </h3>
                   {subsection.items.map(renderArticle)}
                 </div>
               ))}
-            </div>
-          );
-        })}
+            </section>
+          ))}
+        </div>
       </Tab>
     </Tabs>
   );

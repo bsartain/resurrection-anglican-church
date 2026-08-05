@@ -1570,61 +1570,510 @@ h6 {
   }
 }
 
+/* ==========================================================================
+   Formularies: Catechism / BCP / Thirty-Nine Articles
+   ========================================================================== */
+
+$cat-ink: #2b2b2b;
+$cat-ink-muted: #5f5a53;
+$cat-accent: #a0856a;
+$cat-gold: $gold;
+$cat-rule: #e3ddd1;
+$cat-parchment: #fbf9f4;
+$cat-parchment-deep: #f5f1e8;
+
+/* --- Shared ornament (rule with a centered lozenge) --- */
+/* Cormorant Garamond defaults to old-style figures, which read as subscripts
+   in labels and numbers — force lining figures wherever digits are meaningful. */
+%cat-lining-figures {
+  font-variant-numeric: lining-nums tabular-nums;
+  font-feature-settings: "lnum" 1, "tnum" 1;
+}
+
+.catechism-ornament {
+  display: block;
+  position: relative;
+  width: 130px;
+  height: 1px;
+  margin: 1.75rem auto 0;
+  background: $cat-rule;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 7px;
+    height: 7px;
+    background: $cat-accent;
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+}
+
+/* --- Tab bar --- */
+.formularies-tabs.nav-tabs {
+  border-bottom: 1px solid $cat-rule;
+  gap: 0.25rem;
+
+  .nav-item .nav-link {
+    position: relative;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    font-family: $font-heading;
+    font-size: 1.15rem !important;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: $cat-ink-muted !important;
+    padding: 0.85rem 0.5rem !important;
+    transition: color 0.2s ease;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0.5rem;
+      right: 0.5rem;
+      bottom: -1px;
+      height: 2px;
+      background: $cat-accent;
+      transform: scaleX(0);
+      transition: transform 0.25s ease;
+    }
+
+    &:hover {
+      color: $cat-ink !important;
+    }
+
+    &.active {
+      color: $cat-gold !important;
+
+      &::after {
+        transform: scaleX(1);
+      }
+    }
+  }
+}
+
+/* --- Catechism: two-column layout --- */
 .catechism-container {
-  .catechism-toc {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    .table-of-contents {
-      width: 100%;
-      max-width: 400px;
+  .catechism-layout {
+    display: grid;
+    grid-template-columns: 270px minmax(0, 1fr);
+    gap: 3.5rem;
+    align-items: start;
+
+    @media (max-width: 991px) {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 2rem;
     }
-  }
-  .header {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    flex-direction: column;
-    h1 {
-      margin-top: 150px;
-      text-align: center;
-    }
-    hr {
-      border-bottom: 1px solid #cccccc;
-      margin: 50px;
-      width: 100px;
-    }
-  }
-  .section-header {
-    font-size: 44px;
-    margin-top: 150px;
-    text-align: center;
-  }
-  .section-header-divider {
-    border-bottom: 1px solid #cccccc;
-    margin: 50px;
-    width: 100px;
   }
 
-  .sub-section-container {
-    margin: 50px 0;
-    .sub-section-header {
-      font-size: 32px;
+  .catechism-layout__aside {
+    position: sticky;
+    top: 100px;
+
+    @media (max-width: 991px) {
+      position: static;
     }
   }
-  .sub-section-qa {
-    margin: 100px 25px;
-    @media (max-width: 768px) {
-      margin: 90px 20px;
+
+  /* --- Table of contents --- */
+  .catechism-toc {
+    padding: 1.5rem 1.25rem;
+    background: $cat-parchment;
+    border: 1px solid $cat-rule;
+
+    &__title {
+      margin: 0 0 1rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid $cat-rule;
+      font-family: $font-heading;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: $cat-gold;
     }
-    h3 {
-      font-size: 34px;
+
+    &__scroll {
+      max-height: calc(100vh - 220px);
+      overflow-y: auto;
+      scrollbar-width: thin;
+
+      @media (max-width: 991px) {
+        max-height: 260px;
+      }
     }
+
+    &__group + &__group {
+      margin-top: 1.5rem;
+    }
+
+    &__part {
+      @extend %cat-lining-figures;
+      margin: 0 0 0.5rem;
+      font-family: $font-heading;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: $cat-ink-muted;
+    }
+
+    &__list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      border-left: 1px solid $cat-rule;
+    }
+
+    &__link {
+      display: block;
+      padding: 0.4rem 0 0.4rem 0.85rem;
+      margin-left: -1px;
+      border-left: 2px solid transparent;
+      font-size: 0.95rem;
+      line-height: 1.35;
+      color: $cat-ink-muted;
+      text-decoration: none;
+      transition: color 0.2s ease, border-color 0.2s ease;
+
+      &:hover {
+        color: $cat-accent;
+        border-left-color: $cat-rule;
+      }
+
+      &.is-active {
+        color: $cat-gold;
+        font-weight: 600;
+        border-left-color: $cat-gold;
+      }
+    }
+  }
+
+  /* --- Part heading --- */
+  .catechism-part {
+    scroll-margin-top: 100px;
+
+    + .catechism-part {
+      margin-top: 6rem;
+    }
+  }
+
+  .catechism-part__header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .catechism-part__eyebrow {
+    @extend %cat-lining-figures;
+    margin: 0 0 0.5rem;
+    font-family: $font-heading;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: $cat-accent;
+  }
+
+  .catechism-part__title {
+    margin: 0;
+    font-size: clamp(2.1rem, 4vw, 3rem);
+    font-weight: 500;
+    line-height: 1.15;
+    color: $cat-ink;
+  }
+
+  /* --- Section heading --- */
+  .catechism-section {
+    margin-top: 3.5rem;
+  }
+
+  .catechism-section__title {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 0 0 1.5rem;
+    scroll-margin-top: 100px;
+    font-size: clamp(1.4rem, 2.4vw, 1.8rem);
+    font-weight: 600;
+    color: $cat-ink;
+
+    &::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: $cat-rule;
+    }
+  }
+
+  /* --- Q&A accordion --- */
+  .catechism-accordion {
+    --bs-accordion-border-color: #{$cat-rule};
+    --bs-accordion-btn-focus-box-shadow: none;
+    --bs-accordion-active-bg: #{$cat-parchment-deep};
+    --bs-accordion-active-color: #{$cat-ink};
+
+    .accordion-item {
+      background: transparent;
+      border: 0;
+      border-bottom: 1px solid $cat-rule;
+      border-radius: 0;
+
+      &:first-of-type {
+        border-top: 1px solid $cat-rule;
+      }
+    }
+
+    .accordion-button {
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+      padding: 1.1rem 0.75rem;
+      background: transparent;
+      box-shadow: none;
+      font-family: $font-heading;
+      font-size: 1.35rem;
+      font-weight: 500;
+      line-height: 1.35;
+      color: $cat-ink;
+      transition: background-color 0.2s ease, color 0.2s ease;
+
+      &:hover {
+        background: rgba(160, 133, 106, 0.07);
+      }
+
+      &:not(.collapsed) {
+        background: $cat-parchment-deep;
+        color: $cat-gold;
+        font-weight: 600;
+      }
+
+      /* Replace Bootstrap's SVG chevron with a drawn one */
+      &::after {
+        flex: 0 0 auto;
+        width: 9px;
+        height: 9px;
+        margin-top: 0.35rem;
+        background-image: none;
+        border-right: 1.5px solid $cat-accent;
+        border-bottom: 1.5px solid $cat-accent;
+        transform: rotate(45deg);
+        transition: transform 0.25s ease;
+      }
+
+      &:not(.collapsed)::after {
+        transform: rotate(-135deg);
+        margin-top: 0.7rem;
+      }
+
+      @media (max-width: 575px) {
+        gap: 0.65rem;
+        padding: 1rem 0.5rem;
+        font-size: 1.2rem;
+      }
+    }
+
     .catechism-number {
-      margin-right: 40px;
-      @media (max-width: 768px) {
-        margin-right: 20px;
+      @extend %cat-lining-figures;
+      flex: 0 0 auto;
+      min-width: 2.75rem;
+      font-family: $font-body;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: $cat-accent;
+
+      @media (max-width: 575px) {
+        min-width: 1.85rem;
+      }
+    }
+
+    .catechism-question {
+      flex: 1 1 auto;
+    }
+
+    .accordion-body {
+      padding: 0.5rem 0.75rem 2rem calc(0.75rem + 3.75rem);
+      font-size: 1.15rem;
+      line-height: 1.7;
+      color: $cat-ink;
+
+      @media (max-width: 575px) {
+        padding-left: 0.75rem;
+      }
+    }
+  }
+
+  .catechism-answer p {
+    margin-bottom: 0.75rem;
+
+    &:last-child {
+      margin-bottom: 0;
+      margin-top: 25px;
+    }
+  }
+
+  .catechism-scriptures {
+    margin: 1.25rem 0 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: $cat-ink-muted;
+
+    &__label {
+      display: block;
+      margin-bottom: 0.25rem;
+      font-family: $font-heading;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: $cat-gold;
+    }
+  }
+
+  .catechism-articles {
+    @extend %cat-lining-figures;
+    margin-top: 1.5rem;
+    padding: 1rem 1.25rem;
+    background: $cat-parchment;
+    border-left: 3px solid $cat-accent;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-style: italic;
+    color: $cat-ink-muted;
+
+    &__label {
+      margin: 0 0 0.4rem;
+      font-family: $font-heading;
+      font-size: 0.75rem;
+      font-weight: 700;
+      font-style: normal;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: $cat-gold;
+    }
+  }
+}
+
+/* --- Book of Common Prayer viewer --- */
+.bcp-viewer {
+  margin-top: 1.5rem;
+  border: 1px solid $cat-rule;
+  background: $cat-parchment;
+
+  iframe {
+    display: block;
+    width: 100%;
+    height: 85vh;
+    border: none;
+  }
+}
+
+/* --- Thirty-Nine Articles --- */
+.thirty-nine-container {
+  .articles-part {
+    + .articles-part {
+      margin-top: 6rem;
+    }
+  }
+
+  .articles-part__header {
+    text-align: center;
+    margin: 3.5rem 0 3rem;
+  }
+
+  .articles-part__eyebrow {
+    @extend %cat-lining-figures;
+    margin: 0 0 0.5rem;
+    font-family: $font-heading;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: $cat-accent;
+  }
+
+  .articles-part__title {
+    margin: 0;
+    font-size: clamp(2.1rem, 4vw, 3rem);
+    font-weight: 500;
+    line-height: 1.15;
+    color: $cat-ink;
+  }
+
+  .articles-part__range {
+    @extend %cat-lining-figures;
+    margin: 0.5rem 0 0;
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: $cat-ink-muted;
+  }
+
+  .articles-subsection {
+    margin-top: 3.5rem;
+  }
+
+  .articles-subsection__title {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin: 0 0 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid $cat-rule;
+    font-size: clamp(1.4rem, 2.4vw, 1.8rem);
+    font-weight: 600;
+    color: $cat-ink;
+
+    .articles-subsection__range {
+      @extend %cat-lining-figures;
+      font-family: $font-body;
+      font-size: 0.8rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: $cat-ink-muted;
+    }
+  }
+
+  .article-card {
+    padding: 1.5rem 0;
+
+    + .article-card {
+      border-top: 1px solid $cat-rule;
+    }
+
+    &__title {
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+      margin: 0 0 0.85rem;
+      font-size: 1.5rem;
+      font-weight: 600;
+      line-height: 1.3;
+      color: $cat-ink;
+    }
+
+    &__number {
+      @extend %cat-lining-figures;
+      flex: 0 0 auto;
+      min-width: 2.25rem;
+      font-family: $font-body;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: $cat-accent;
+    }
+
+    &__text {
+      margin: 0 0 0 3.25rem;
+      font-size: 1.15rem;
+      line-height: 1.75;
+      color: $cat-ink;
+
+      @media (max-width: 575px) {
+        margin-left: 0;
       }
     }
   }
@@ -2251,10 +2700,6 @@ $liturgy-rule: rgba(212, 208, 200, 0.15);
   .liturgy-error-link {
     color: $liturgy-accent;
   }
-}
-
-.thirty-nine-articles-divider {
-  margin: 50px 0;
 }
 
 #blogPostContent {
