@@ -1681,8 +1681,6 @@ $cat-parchment-deep: #f5f1e8;
   /* --- Table of contents --- */
   .catechism-toc {
     padding: 1.5rem 1.25rem;
-    background: $cat-parchment;
-    border: 1px solid $cat-rule;
 
     &__title {
       margin: 0 0 1rem;
@@ -1702,7 +1700,7 @@ $cat-parchment-deep: #f5f1e8;
       scrollbar-width: thin;
 
       @media (max-width: 991px) {
-        max-height: 260px;
+        max-height: 100%;
       }
     }
 
@@ -1799,13 +1797,6 @@ $cat-parchment-deep: #f5f1e8;
     font-size: clamp(1.4rem, 2.4vw, 1.8rem);
     font-weight: 600;
     color: $cat-ink;
-
-    &::after {
-      content: "";
-      flex: 1;
-      height: 1px;
-      background: $cat-rule;
-    }
   }
 
   /* --- Q&A accordion --- */
@@ -1818,7 +1809,6 @@ $cat-parchment-deep: #f5f1e8;
     .accordion-item {
       background: transparent;
       border: 0;
-      border-bottom: 1px solid $cat-rule;
       border-radius: 0;
 
       &:first-of-type {
