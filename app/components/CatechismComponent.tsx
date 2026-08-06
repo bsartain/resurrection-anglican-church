@@ -53,10 +53,38 @@ const slugify = (str: string) =>
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/(^-|-$)/g, "");
 
+const escapeRegExp = (str: string) => str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+
 const CatechismComponent = ({ activeKey, onSelect }: { activeKey?: string; onSelect?: (k: string | null) => void } = {}) => {
   const [activeSection, setActiveSection] = useState("");
+  const [value, setValue] = useState("");
 
-  const sectionIds = useMemo(() => (catechismData.parts as CatechismPart[]).flatMap((part) => part.sections.map((section) => slugify(section.section))), []);
+  // Filter the catechism while preserving the part -> section -> question shape,
+  // dropping any section or part left with no matching questions.
+  const parts = useMemo(() => {
+    const allParts = catechismData.parts as CatechismPart[];
+    const term = value.trim();
+    if (!term) return allParts;
+
+    const regex = new RegExp(escapeRegExp(term), "i");
+
+    return allParts
+      .map((part) => ({
+        ...part,
+        sections: part.sections
+          .map((section) => ({
+            ...section,
+            questions: section.questions?.filter((q) => regex.test(q.question) || regex.test(q.answer)),
+          }))
+          .filter((section) => section.questions?.length),
+      }))
+      .filter((part) => part.sections.length);
+  }, [value]);
+
+  const sectionIds = useMemo(
+    () => (catechismData.parts as CatechismPart[]).flatMap((part) => part.sections.map((section) => slugify(section.section))),
+    []
+  );
 
   // Highlight the section currently in view in the sidebar table of contents.
   useEffect(() => {
@@ -98,10 +126,14 @@ const CatechismComponent = ({ activeKey, onSelect }: { activeKey?: string; onSel
         <div className="catechism-container">
           <div className="catechism-layout">
             <div className="catechism-layout__aside">
+              <div className="form-floating mb-3">
+                <input type="text" className="form-control" id="floatingInput" value={value} onChange={(e) => setValue(e.target.value)} />
+                <label htmlFor="floatingInput">Search</label>
+              </div>
               <nav className="catechism-toc" aria-label="Catechism contents">
                 <p className="catechism-toc__title">Contents</p>
                 <div className="catechism-toc__scroll">
-                  {(catechismData.parts as CatechismPart[]).map((part) => (
+                  {parts.map((part) => (
                     <div key={part.part} className="catechism-toc__group">
                       <p className="catechism-toc__part">
                         Part {part.part} &middot; {part.title}
@@ -129,7 +161,9 @@ const CatechismComponent = ({ activeKey, onSelect }: { activeKey?: string; onSel
             </div>
 
             <div className="catechism-layout__main">
-              {(catechismData.parts as CatechismPart[]).map((part) => (
+              {!parts.length ? <p className="catechism-empty">No questions match &ldquo;{value.trim()}&rdquo;.</p> : null}
+
+              {parts.map((part) => (
                 <section key={part.part} id={`part-${part.part}`} className="catechism-part">
                   <header className="catechism-part__header">
                     <p className="catechism-part__eyebrow">Part {part.part}</p>
