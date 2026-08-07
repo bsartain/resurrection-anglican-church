@@ -3,6 +3,7 @@ import { getHomePageData } from "./api/keystatic/lib/keystatic";
 import HomeSections from "./components/HomeSections";
 import { DocumentElement } from "@keystatic/core";
 import { buildMetadata } from "./lib/buildMetadata";
+import StickyVisitCTA from "./components/StickyVisitCTA";
 
 export interface HomePageData {
   section1: Section1;
@@ -106,6 +107,8 @@ export default async function Home() {
           content: await section7.description(),
         }}
       />
+      {/* Keeps the page's primary action within reach on a very long scroll. */}
+      <StickyVisitCTA />
     </div>
   );
 }

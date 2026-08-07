@@ -37,8 +37,8 @@ a:hover {
 }
 
 .btn-primary-light {
-  color: $current-liturgical-season !important;
-  border: 1px solid $current-liturgical-season !important;
+  color: #ffffff !important;
+  border: 1px solid #ffffff !important;
   background: transparent !important;
   border-radius: 0 !important;
 }
@@ -3009,4 +3009,728 @@ $liturgy-rule: rgba(212, 208, 200, 0.15);
 
 .woc {
   color: #d85858;
+}
+
+// ─────────────────────────────────────────────────────────────
+// Home page interactivity
+//
+// Several of these components live inside `.dark-background-home-section`,
+// whose background is the *live* liturgical colour and whose text flips
+// between white and near-black depending on how dark that colour is. Nothing
+// in here may hardcode a foreground colour — everything derives from
+// `currentColor` so it stays legible in both cases.
+// ─────────────────────────────────────────────────────────────
+
+$panel-tint: color-mix(in srgb, currentColor 7%, transparent);
+$panel-edge: color-mix(in srgb, currentColor 22%, transparent);
+$panel-edge-soft: color-mix(in srgb, currentColor 14%, transparent);
+
+// ── Next service countdown ──
+.next-service {
+  margin-bottom: 2rem;
+  min-height: 6.5rem; // Reserved before the clock mounts, so nothing jumps.
+
+  .next-service-eyebrow {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    opacity: 0.6;
+    margin-bottom: 0.35rem;
+  }
+
+  .next-service-headline {
+    font-family: $font-heading;
+    font-size: 1.45rem;
+    margin-bottom: 0.9rem;
+  }
+
+  .next-service-relative {
+    font-style: italic;
+    opacity: 0.85;
+  }
+
+  .next-service-clock {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .next-service-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 3.75rem;
+    padding: 0.5rem 0.35rem;
+    border: 1px solid $panel-edge;
+    background: $panel-tint;
+  }
+
+  .next-service-value {
+    font-family: $font-heading;
+    font-size: 1.7rem;
+    line-height: 1;
+    // Tabular figures stop the whole row shifting as the seconds tick.
+    font-variant-numeric: tabular-nums;
+  }
+
+  .next-service-label {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    opacity: 0.6;
+    margin-top: 0.3rem;
+  }
+
+  &.next-service--live {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 1rem 1.25rem;
+    border: 1px solid $panel-edge;
+    background: $panel-tint;
+
+    .next-service-headline {
+      margin-bottom: 0;
+    }
+  }
+
+  .next-service-pulse {
+    flex: 0 0 auto;
+    width: 0.7rem;
+    height: 0.7rem;
+    border-radius: 50%;
+    background: currentColor;
+    animation: nextServicePulse 2s ease-in-out infinite;
+  }
+}
+
+@keyframes nextServicePulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.35;
+    transform: scale(0.75);
+  }
+}
+
+// ── Get Directions ──
+.worship-directions-button,
+.get-directions-button {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 0;
+}
+
+.worship-directions-button {
+  margin-top: 0.35rem;
+  padding: 0.45rem 1.1rem;
+  font-size: 1rem;
+  color: currentColor;
+  border: 1px solid $panel-edge;
+  background: $panel-tint;
+  transition: background 0.2s ease, border-color 0.2s ease;
+
+  &:hover,
+  &:focus-visible {
+    color: currentColor;
+    background: color-mix(in srgb, currentColor 16%, transparent);
+    border-color: color-mix(in srgb, currentColor 45%, transparent);
+  }
+}
+
+.worship-map {
+  height: 100%;
+
+  iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 350px;
+    border: 0;
+  }
+}
+
+// ── "First time here?" accordion ──
+.first-time-faq {
+  margin-top: 3.5rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid $panel-edge-soft;
+
+  .first-time-faq-eyebrow {
+    font-family: $font-heading;
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+  }
+
+  // Bootstrap's accordion paints its own light surface; hand it the section's
+  // colours instead so it works on top of any liturgical background.
+  .accordion {
+    --bs-accordion-bg: transparent;
+    --bs-accordion-color: currentColor;
+    --bs-accordion-btn-color: currentColor;
+    --bs-accordion-btn-bg: transparent;
+    --bs-accordion-active-bg: transparent;
+    --bs-accordion-active-color: currentColor;
+    --bs-accordion-border-color: #{$panel-edge-soft};
+    --bs-accordion-btn-focus-box-shadow: none;
+    --bs-accordion-body-padding-x: 0;
+  }
+
+  .accordion-item {
+    border: none;
+    border-bottom: 1px solid $panel-edge-soft;
+  }
+
+  .accordion-button {
+    padding-left: 0;
+    padding-right: 0;
+    font-family: $font-heading;
+    font-size: 1.35rem;
+    box-shadow: none;
+
+    // The chevron is replaced by the +/- icon the catechism FAQ already uses.
+    &::after {
+      display: none;
+    }
+
+    i {
+      transition: transform 0.3s ease;
+      opacity: 0.7;
+    }
+
+    &:not(.collapsed) i {
+      transform: rotate(180deg);
+    }
+  }
+
+  .accordion-body {
+    padding-bottom: 1.4rem;
+    font-size: 1.05rem;
+    opacity: 0.9;
+  }
+
+  .first-time-faq-more {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 1.5rem;
+    color: currentColor;
+    text-decoration: underline;
+    text-underline-offset: 0.3em;
+    opacity: 0.85;
+
+    &:hover {
+      color: currentColor;
+      opacity: 1;
+    }
+  }
+}
+
+// ── Daily Office card ──
+.daily-office-block {
+  margin-top: 4rem;
+
+  h3 {
+    font-family: $font-heading;
+  }
+}
+
+// Sits in a light section, so this one can use the fixed accent colour.
+.daily-office-card {
+  margin-bottom: 3rem;
+  padding: 1.75rem;
+  border: 1px solid rgba(128, 98, 2, 0.28);
+  background: rgba(255, 255, 255, 0.55);
+
+  .daily-office-eyebrow {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: $current-liturgical-season;
+    margin-bottom: 0.3rem;
+  }
+
+  .daily-office-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid rgba(128, 98, 2, 0.2);
+  }
+
+  .daily-office-date {
+    font-family: $font-heading;
+    font-size: 1.65rem;
+    margin-bottom: 0;
+  }
+
+  .daily-office-season {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+    font-size: 0.85rem;
+    opacity: 0.75;
+    flex: 0 1 auto;
+
+    @media (max-width: 576px) {
+      align-items: flex-start;
+      text-align: left;
+    }
+  }
+
+  .daily-office-feast {
+    font-style: italic;
+    color: $current-liturgical-season;
+    opacity: 1;
+  }
+
+  .daily-office-tabs {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .daily-office-tab {
+    padding: 0.4rem 1rem;
+    font-size: 0.95rem;
+    color: inherit;
+    background: transparent;
+    border: 1px solid rgba(128, 98, 2, 0.3);
+    transition: background 0.2s ease, color 0.2s ease;
+
+    &.is-active {
+      color: #ffffff;
+      background: $current-liturgical-season;
+      border-color: $current-liturgical-season;
+    }
+  }
+
+  .daily-office-readings {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 1.5rem;
+
+    li {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.5rem;
+      padding: 0.55rem 0;
+      border-bottom: 1px dotted rgba(128, 98, 2, 0.25);
+    }
+  }
+
+  .daily-office-reading-name {
+    font-style: italic;
+    opacity: 0.75;
+  }
+
+  .daily-office-reading-citation {
+    font-weight: 600;
+  }
+
+  .daily-office-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.25rem;
+  }
+
+  .daily-office-link {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.95rem;
+  }
+
+  // Full psalms and lessons run long; keep the card from swallowing the page.
+  .daily-office-text {
+    max-height: 60vh;
+    overflow-y: auto;
+    margin-top: 1.5rem;
+    padding: 1.25rem 1.25rem 0;
+    border-top: 1px solid rgba(128, 98, 2, 0.2);
+    background: rgba(255, 255, 255, 0.5);
+
+    h3,
+    h4 {
+      font-family: $font-heading;
+    }
+
+    .daily-office-passage {
+      margin-bottom: 2rem;
+    }
+
+    .daily-office-passage h4 {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.75rem;
+      font-size: 1.15rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid rgba(128, 98, 2, 0.2);
+    }
+
+    .daily-office-passage-citation {
+      font-family: $font-body;
+      font-size: 0.85rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      opacity: 0.65;
+    }
+
+    // Markup shipped by dailyoffice2019.com.
+    .hanging-indent {
+      padding-left: 1.5rem;
+      text-indent: -1.5rem;
+      margin-bottom: 0.15rem;
+    }
+
+    .indent {
+      padding-left: 1.5rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .versenum {
+      color: $current-liturgical-season;
+      font-weight: 600;
+      margin-right: 0.3rem;
+    }
+
+    .asterisk {
+      color: $current-liturgical-season;
+    }
+
+    .passage-heading {
+      font-size: 1.05rem;
+      font-style: italic;
+      opacity: 0.8;
+    }
+  }
+
+  .daily-office-loading-text {
+    font-style: italic;
+    opacity: 0.7;
+  }
+
+  &.daily-office-card--loading {
+    min-height: 12rem;
+  }
+}
+
+.daily-office-skeleton {
+  height: 1.15rem;
+  margin-bottom: 0.9rem;
+  background: linear-gradient(90deg, rgba(128, 98, 2, 0.09), rgba(128, 98, 2, 0.2), rgba(128, 98, 2, 0.09));
+  background-size: 200% 100%;
+  animation: dailyOfficeShimmer 1.4s ease-in-out infinite;
+
+  &.daily-office-skeleton--sm {
+    width: 45%;
+  }
+}
+
+@keyframes dailyOfficeShimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+// ── "What happens when we gather" stepper ──
+.gathering-stepper {
+  margin-top: 4rem;
+
+  .gathering-stepper-rail {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.25rem;
+    margin-bottom: 2.5rem;
+
+    @media (max-width: 991px) {
+      // The rail becomes a scrolling strip rather than crushing six steps
+      // into a phone's width.
+      overflow-x: auto;
+      padding-bottom: 0.75rem;
+      scroll-snap-type: x proximity;
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+
+  .gathering-step {
+    position: relative;
+    flex: 1 1 0;
+    min-width: 6.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0 0.35rem;
+    color: currentColor;
+    background: transparent;
+    border: none;
+    scroll-snap-align: center;
+    opacity: 0.55;
+    transition: opacity 0.25s ease;
+
+    // The connecting line between markers. Drawn from each step to the next,
+    // so the last one has none.
+    &:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      top: 1.35rem;
+      left: calc(50% + 1.6rem);
+      width: calc(100% - 3.2rem);
+      height: 1px;
+      background: $panel-edge;
+    }
+
+    &.is-passed,
+    &.is-active {
+      opacity: 1;
+    }
+
+    &:hover {
+      opacity: 0.85;
+    }
+
+    &:focus-visible {
+      outline: 2px solid currentColor;
+      outline-offset: 4px;
+    }
+  }
+
+  .gathering-step-marker {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.7rem;
+    height: 2.7rem;
+    border-radius: 50%;
+    border: 1px solid $panel-edge;
+    background: $panel-tint;
+    transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+
+    .bi {
+      font-size: 1.15rem;
+    }
+  }
+
+  .gathering-step.is-active .gathering-step-marker {
+    background: color-mix(in srgb, currentColor 22%, transparent);
+    border-color: currentColor;
+    transform: scale(1.12);
+  }
+
+  .gathering-step-title {
+    font-family: $font-heading;
+    font-size: 0.95rem;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  .gathering-stepper-panel {
+    padding: 1.75rem;
+    border: 1px solid $panel-edge-soft;
+    background: $panel-tint;
+
+    h3 {
+      font-family: $font-heading;
+      margin-bottom: 0.35rem;
+    }
+  }
+
+  .gathering-step-count {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    opacity: 0.6;
+    margin-bottom: 0.5rem;
+  }
+
+  .gathering-step-summary {
+    font-style: italic;
+    opacity: 0.8;
+    margin-bottom: 1rem;
+  }
+
+  .gathering-step-detail {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+
+  .gathering-stepper-nav {
+    display: flex;
+    gap: 0.75rem;
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+    }
+  }
+}
+
+// ── Testimonials ──
+.testimonial-slider-container {
+  .testimonial-slide {
+    display: flex;
+    flex-direction: column;
+    padding: 1.75rem;
+    margin: 0;
+    border: 1px solid $panel-edge-soft;
+    background: $panel-tint;
+  }
+
+  .testimonial-quote-mark {
+    font-size: 2rem;
+    line-height: 1;
+    opacity: 0.4;
+    margin-bottom: 0.5rem;
+  }
+
+  .testimonial-body {
+    flex: 1;
+    margin-bottom: 1.25rem;
+    font-size: 1.05rem;
+    line-height: 1.75;
+  }
+
+  .testimonial-name {
+    font-family: $font-heading;
+    font-size: 1.15rem;
+    letter-spacing: 0.04em;
+  }
+
+  .navigation-buttons {
+    gap: 1.25rem;
+  }
+
+  .testimonial-nav-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.25rem 0.5rem;
+    color: currentColor;
+    background: transparent;
+    border: none;
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+
+    &:hover,
+    &:focus-visible {
+      opacity: 1;
+    }
+  }
+
+  .testimonial-dots {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .testimonial-dot {
+    width: 0.55rem;
+    height: 0.55rem;
+    padding: 0;
+    border-radius: 50%;
+    border: 1px solid currentColor;
+    background: transparent;
+    opacity: 0.45;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+
+    &.is-active {
+      background: currentColor;
+      opacity: 1;
+      transform: scale(1.25);
+    }
+  }
+}
+
+// ── Sticky CTA + reading progress ──
+.reading-progress {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3px;
+  z-index: 1020;
+  background: rgba(0, 0, 0, 0.08);
+  pointer-events: none;
+
+  .reading-progress-bar {
+    height: 100%;
+    // Scaling a full-width bar keeps the whole thing on the compositor —
+    // animating `width` would relayout on every scroll frame.
+    transform-origin: left center;
+    background: $current-liturgical-season;
+    will-change: transform;
+  }
+}
+
+.sticky-visit-cta {
+  position: fixed;
+  left: 1.5rem;
+  bottom: 1.5rem;
+  z-index: 1020;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.7rem 1.4rem;
+  color: #ffffff;
+  background: $current-liturgical-season;
+  border: 1px solid $current-liturgical-season;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: translateY(1rem);
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease, background 0.2s ease;
+
+  &.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  &:hover,
+  &:focus-visible {
+    color: $current-liturgical-season;
+    background: #ffffff;
+  }
+
+  @media (max-width: 576px) {
+    left: 1rem;
+    bottom: 1rem;
+    padding: 0.6rem 1.1rem;
+    font-size: 0.95rem;
+  }
+}
+
+// ── Motion preferences ──
+// The section reveal travels 300px; for anyone who has asked the OS to reduce
+// motion that is exactly the kind of movement to drop. Content still appears —
+// only the travel and the looping animations go away.
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .next-service-pulse,
+  .daily-office-skeleton {
+    animation: none !important;
+  }
+
+  .sticky-visit-cta,
+  .gathering-step,
+  .gathering-step-marker,
+  .testimonial-dot {
+    transition: none !important;
+  }
 }

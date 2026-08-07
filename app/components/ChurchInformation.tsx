@@ -1,6 +1,9 @@
 import RevealSection from "./RevealSection";
 import Link from "next/link";
 import { getChurchInfoData } from "../api/keystatic/lib/keystatic";
+import NextServiceCountdown from "./NextServiceCountdown";
+import GetDirectionsButton from "./GetDirectionsButton";
+import FirstTimeFAQ from "./FirstTimeFAQ";
 
 export default async function ChurchInformation() {
   const churchInfo = await getChurchInfoData();
@@ -14,6 +17,9 @@ export default async function ChurchInformation() {
       <div className="worship-two-col">
         <div className="worship-left">
           <h2 className="mb-4">Come Worship With Us</h2>
+
+          {/* <NextServiceCountdown serviceTime={churchInfo.serviceTime} /> */}
+
           <div className="worship-service-block">
             <p className="worship-label">Service Times</p>
             <p className="worship-time">{churchInfo.serviceTime}</p>
@@ -21,6 +27,7 @@ export default async function ChurchInformation() {
           <div className="worship-service-block">
             <p className="worship-label">Address</p>
             <p className="worship-time">{churchInfo.address}</p>
+            <GetDirectionsButton address={churchInfo.address} className="btn worship-directions-button" />
           </div>
           <div className="worship-childcare-block">
             <p className="worship-label">Children&apos;s Ministry</p>
@@ -36,10 +43,17 @@ export default async function ChurchInformation() {
             </Link>
           ) : null}
         </div>
-        {/* <div className="worship-right">
-          <div dangerouslySetInnerHTML={{ __html: churchInfo.googleMapEmbed }} />
-        </div> */}
+
+        {churchInfo.googleMapEmbed ? (
+          <div className="worship-right">
+            <div className="worship-map" dangerouslySetInnerHTML={{ __html: churchInfo.googleMapEmbed }} />
+          </div>
+        ) : null}
       </div>
+
+      {/* Answers the questions that otherwise send a first-time visitor off to
+          another page — or off the site entirely. */}
+      <FirstTimeFAQ />
     </RevealSection>
   );
 }

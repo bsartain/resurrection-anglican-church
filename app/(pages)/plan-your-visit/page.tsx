@@ -6,6 +6,7 @@ import { buildMetadata } from "../../lib/buildMetadata";
 import PlanVisitContactForm from "../../components/PlanVisitContactForm";
 import { getChurchInfoData } from "../../api/keystatic/lib/keystatic";
 import { toTelLink } from "@/app/utils";
+import GetDirectionsButton from "../../components/GetDirectionsButton";
 
 export default async function PlanYourVisit() {
   const churchInfo = await getChurchInfoData();
@@ -75,6 +76,7 @@ export default async function PlanYourVisit() {
               <i className="bi bi-telephone" />
               <a href={toTelLink(churchInfo?.phone)}>{churchInfo?.phone}</a>
             </div>
+            <GetDirectionsButton address={churchInfo?.address} className="btn btn-primary-light mt-4" />
           </div>
         </div>
 
