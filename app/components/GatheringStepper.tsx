@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 // The shape of an Anglican Sunday, in the order it happens. Kept in the
 // component rather than the CMS because the order is the liturgy itself — it
@@ -53,6 +53,29 @@ const STEPS = [
 export default function GatheringStepper() {
   const [activeIndex, setActiveIndex] = useState(0);
   const stepRefs = useRef<Array<HTMLButtonElement | null>>([]);
+  const railRef = useRef<HTMLDivElement | null>(null);
+
+  // On a phone the rail only shows three steps at a time, so advancing with
+  // the Previous/Next buttons would otherwise move the panel while the icons
+  // sat still off-screen. Bring the active step along with it.
+  useEffect(() => {
+    const rail = railRef.current;
+    const step = stepRefs.current[activeIndex];
+    if (!rail || !step) return;
+
+    // Nothing to do on desktop, where all six fit.
+    const maxScroll = rail.scrollWidth - rail.clientWidth;
+    if (maxScroll <= 0) return;
+
+    // Centred by hand rather than with scrollIntoView, which would also scroll
+    // the page vertically and yank the panel out from under the reader.
+    const centred = step.offsetLeft - (rail.clientWidth - step.offsetWidth) / 2;
+
+    rail.scrollTo({
+      left: Math.max(0, Math.min(centred, maxScroll)),
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
+    });
+  }, [activeIndex]);
 
   // Arrow keys move through the liturgy the way it moves — the tablist pattern,
   // so the whole rail is a single tab stop.
@@ -79,7 +102,7 @@ export default function GatheringStepper() {
 
   return (
     <div className="gathering-stepper">
-      <div className="gathering-stepper-rail" role="tablist" aria-label="What happens when we gather, step by step">
+      <div className="gathering-stepper-rail" ref={railRef} role="tablist" aria-label="What happens when we gather, step by step">
         {STEPS.map((step, index) => (
           <button
             key={step.title}
@@ -147,13 +170,13 @@ export default function GatheringStepper() {
         <div className="gathering-stepper-nav">
           <button
             type="button"
-            className="btn btn-primary-light"
+            className="btn gathering-nav-button"
             onClick={() => setActiveIndex((current) => (current - 1 + STEPS.length) % STEPS.length)}
           >
             <i className="bi bi-chevron-left me-2" aria-hidden="true" />
             Previous
           </button>
-          <button type="button" className="btn btn-primary-light" onClick={() => setActiveIndex((current) => (current + 1) % STEPS.length)}>
+          <button type="button" className="btn gathering-nav-button" onClick={() => setActiveIndex((current) => (current + 1) % STEPS.length)}>
             Next
             <i className="bi bi-chevron-right ms-2" aria-hidden="true" />
           </button>

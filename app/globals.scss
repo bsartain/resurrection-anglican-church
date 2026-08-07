@@ -37,8 +37,8 @@ a:hover {
 }
 
 .btn-primary-light {
-  color: #ffffff !important;
-  border: 1px solid #ffffff !important;
+  color: $current-liturgical-season !important;
+  border: 1px solid $current-liturgical-season !important;
   background: transparent !important;
   border-radius: 0 !important;
 }
@@ -3452,14 +3452,37 @@ $panel-edge-soft: color-mix(in srgb, currentColor 14%, transparent);
     align-items: flex-start;
     gap: 0.25rem;
     margin-bottom: 2.5rem;
+    // Steps measure their scroll position against the rail, so the rail has to
+    // be their offsetParent.
+    position: relative;
+    // `overflow-x: auto` forces the vertical axis to clip too, which would
+    // shave the top off the active marker (it scales past its box) and eat the
+    // focus ring. This is the breathing room that keeps both intact.
+    padding: 0.5rem 0 0.75rem;
 
     @media (max-width: 991px) {
       // The rail becomes a scrolling strip rather than crushing six steps
       // into a phone's width.
       overflow-x: auto;
-      padding-bottom: 0.75rem;
       scroll-snap-type: x proximity;
       -webkit-overflow-scrolling: touch;
+
+      // A hairline track: enough to show the strip scrolls, quiet enough not
+      // to read as a divider under the icons.
+      scrollbar-width: thin;
+      scrollbar-color: color-mix(in srgb, currentColor 30%, transparent) transparent;
+
+      &::-webkit-scrollbar {
+        height: 3px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: transparent;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: color-mix(in srgb, currentColor 30%, transparent);
+      }
     }
   }
 
@@ -3520,6 +3543,14 @@ $panel-edge-soft: color-mix(in srgb, currentColor 14%, transparent);
     .bi {
       font-size: 1.15rem;
     }
+
+    // Keeps a custom SVG icon inside the circle at the same optical size as
+    // the icon-font glyphs, whatever viewBox it was drawn at.
+    svg {
+      width: 1.5rem;
+      height: 1.5rem;
+      max-width: 1.5rem;
+    }
   }
 
   .gathering-step.is-active .gathering-step-marker {
@@ -3569,10 +3600,27 @@ $panel-edge-soft: color-mix(in srgb, currentColor 14%, transparent);
   .gathering-stepper-nav {
     display: flex;
     gap: 0.75rem;
+  }
 
-    .btn {
-      display: inline-flex;
-      align-items: center;
+  // The shared `.btn-primary-light` paints gold text, which all but disappears
+  // against the deeper liturgical backgrounds this panel sits on. These derive
+  // from the section's own foreground instead, so they stay legible whatever
+  // colour the season brings.
+  .gathering-nav-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1.25rem;
+    border-radius: 0;
+    color: currentColor;
+    background: color-mix(in srgb, currentColor 10%, transparent);
+    border: 1px solid color-mix(in srgb, currentColor 45%, transparent);
+    transition: background 0.2s ease, border-color 0.2s ease;
+
+    &:hover,
+    &:focus-visible {
+      color: currentColor;
+      background: color-mix(in srgb, currentColor 20%, transparent);
+      border-color: currentColor;
     }
   }
 }
@@ -3730,6 +3778,7 @@ $panel-edge-soft: color-mix(in srgb, currentColor 14%, transparent);
   .sticky-visit-cta,
   .gathering-step,
   .gathering-step-marker,
+  .gathering-nav-button,
   .testimonial-dot {
     transition: none !important;
   }
