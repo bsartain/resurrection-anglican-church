@@ -11,7 +11,7 @@ const STEPS = [
     icon: "bi-bell",
     summary: "Acclamation & Collect for Purity",
     detail:
-      "We begin by naming why we are here. The celebrant greets us, and together we pray that God would cleanse our hearts before we do anything else. Nothing is asked of you yet — you can simply listen.",
+      "We begin by naming why we are here. The celebrant greets us, and together we pray that God would cleanse our hearts before we do anything else.",
   },
   {
     title: "The Word",
@@ -32,7 +32,7 @@ const STEPS = [
     icon: "bi-people",
     summary: "We greet one another",
     detail:
-      'Having been forgiven, we turn to each other. "The peace of the Lord be always with you." This is a handshake, a hug, or a nod — however you\'re comfortable. It is the warmest two minutes of the service.',
+      'Having been forgiven, we turn to each other. "The peace of the Lord be always with you." This is a handshake, a hug, or a nod — however you\'re comfortable.',
   },
   {
     title: "Holy Communion",
@@ -46,7 +46,7 @@ const STEPS = [
     icon: "bi-door-open",
     summary: "We are sent out",
     detail:
-      'We are blessed and sent: "Go in peace to love and serve the Lord." Formed by Word and Sacrament, we go back into Rock Hill as God\'s people — and then we linger over coffee, because nobody is in a hurry.',
+      'We are blessed and sent: "Go in peace to love and serve the Lord." Formed by Word and Sacrament, we go back into Rock Hill as God\'s people.',
   },
 ] as const;
 
