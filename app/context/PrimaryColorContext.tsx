@@ -28,7 +28,9 @@ export function PrimaryColorProvider({ children }: Readonly<{ children: React.Re
       .catch(() => {});
   }, []);
 
-  return <PrimaryColorContext.Provider value={primaryColor}>{children}</PrimaryColorContext.Provider>;
+  return (
+    <PrimaryColorContext.Provider value={primaryColor}>{children}</PrimaryColorContext.Provider>
+  );
 }
 
 export function usePrimaryColor() {

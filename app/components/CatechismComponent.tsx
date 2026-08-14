@@ -178,7 +178,11 @@ const CatechismComponent = ({ activeKey, onSelect }: { activeKey?: string; onSel
                       </h3>
 
                       {section.questions?.length ? (
-                        <Accordion className="catechism-accordion" alwaysOpen>
+                        <Accordion
+                          className="catechism-accordion"
+                          alwaysOpen
+                          defaultActiveKey={section.questions.map((item) => `${slugify(section.section)}-${item.number}`)}
+                        >
                           {section.questions.map((item) => (
                             <Accordion.Item
                               key={item.number}

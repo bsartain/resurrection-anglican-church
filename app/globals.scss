@@ -3783,3 +3783,21 @@ $panel-edge-soft: color-mix(in srgb, currentColor 14%, transparent);
     transition: none !important;
   }
 }
+
+.full-screen-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999999;
+  background: rgb(255, 255, 255, 0.7);
+  display: flex;
+  justify-content: center;
+  .spinner-grow {
+    margin-top: 25%;
+    --bs-spinner-width: 3rem;
+    --bs-spinner-height: 3rem;
+    --bs-spinner-border-width: 0.1em;
+    @media (max-width: 576px) {
+      margin-top: 100%;
+    }
+  }
+}
