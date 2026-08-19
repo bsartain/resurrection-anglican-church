@@ -258,7 +258,7 @@ export default async function Liturgy() {
   const { items, plan } = await getPlanningCenterServicesData();
 
   const renderBibleVerses = async (verseReference: any, readingType: string) => {
-    if (readingType.toLowerCase().includes("psalm") || readingType.toLowerCase().includes("psalms")) {
+    if (readingType.toLowerCase().includes("psal")) {
       const psalterPassage = await getPsalter(verseReference);
       return psalterPassage?.psalmData;
     } else {
@@ -356,7 +356,7 @@ export default async function Liturgy() {
                     <h2 tabIndex={-1} {...{ [HEADING_ATTRIBUTE]: "" }}>
                       {service.title}
                     </h2>
-                    {service.title === "Psalm Reading" ? (
+                    {service.title.toLocaleLowerCase().includes("psal") ? (
                       <>
                         <div className="psalm-reference mt-4 mb-4" dangerouslySetInnerHTML={{ __html: service.html_details }} />
                         <hr className="mb-5 mt-5" style={{ width: "50px" }} />
