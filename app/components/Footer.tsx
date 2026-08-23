@@ -52,6 +52,7 @@ export default async function Footer() {
       </div>
 
       <div className="footer-bottom">
+        <p>22dQYy</p>
         <p>© {new Date().getFullYear()} Resurrection Anglican Church. All rights reserved.</p>
       </div>
       <LiturgyBottomDrawer />
