@@ -1,2 +1,6 @@
-announcement: Easter Potluck Rescheduled
-showAnnouncement: false
+announcement: Got Questions About Life, Faith & God?
+image: /images/specialAnnouncement/image.png
+linkLabel: Register
+linkUrl: >-
+  https://docs.google.com/forms/d/1sGKCwNz4NIy0q74lJMFCFNn5qO_NKcjNOdJTYHiLl9c/edit?usp=drive_web&ouid=109626801628933930065
+showAnnouncement: true

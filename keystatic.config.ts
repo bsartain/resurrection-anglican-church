@@ -415,7 +415,15 @@ export default config({
         image: fields.image({
           label: "Image",
           directory: "public/images/specialAnnouncement",
-          publicPath: "/images/home",
+          publicPath: "/images/specialAnnouncement",
+        }),
+        linkLabel: fields.text({
+          label: "Button Label",
+          description: "Optional. Text for the button, e.g. “Register for Alpha”. Defaults to “Learn more”.",
+        }),
+        linkUrl: fields.url({
+          label: "Button Link",
+          description: "Optional. Where the button goes. Leave blank to hide the button.",
         }),
         showAnnouncement: fields.checkbox({
           label: "Show Announcement",

@@ -3,10 +3,21 @@ import SpecialAnnouncementModal from "./SpecialAnnouncementModal";
 
 const SpecialAnnouncement = async () => {
   const specialAnnouncement = await getSpecialAnnoucements();
-  const announcement = specialAnnouncement?.announcement;
-  const content = await specialAnnouncement?.content();
-  const showAnnouncement = specialAnnouncement?.showAnnouncement;
-  return <SpecialAnnouncementModal announcement={announcement} content={content} showAnnouncement={showAnnouncement} />;
+
+  if (!specialAnnouncement?.showAnnouncement) return null;
+
+  const content = await specialAnnouncement.content();
+
+  return (
+    <SpecialAnnouncementModal
+      announcement={specialAnnouncement.announcement}
+      content={content}
+      image={specialAnnouncement.image}
+      linkLabel={specialAnnouncement.linkLabel}
+      linkUrl={specialAnnouncement.linkUrl}
+      showAnnouncement={specialAnnouncement.showAnnouncement}
+    />
+  );
 };
 
 export default SpecialAnnouncement;

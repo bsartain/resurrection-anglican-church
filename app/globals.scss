@@ -1552,20 +1552,251 @@ h6 {
   }
 }
 
+/* ==========================================================================
+   Special Announcement modal
+   ========================================================================== */
+
+$announcement-ink: #2b2b2b;
+$announcement-paper: #f5f1e8;
+$announcement-text: #ded8ce;
+$announcement-accent: #c9a97a;
+
 .special-announcement-container {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif !important;
+  .modal-dialog {
+    max-width: 900px;
+  }
+
   .modal-content {
-    border-radius: 20px;
-    .modal-body {
-      border-radius: 20px;
-      background-color: #2b2b2b;
-      color: #cecbc8;
-      .bi-x-circle {
-        cursor: pointer;
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: $announcement-ink;
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.45);
+  }
+
+  .modal-body {
+    position: relative;
+    padding: 0;
+    background-color: $announcement-ink;
+    color: $announcement-text;
+  }
+
+  /* --- Close --- */
+  .announcement-close {
+    position: absolute;
+    top: 0.9rem;
+    right: 0.9rem;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    padding: 0;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 50%;
+    background: rgba(43, 43, 43, 0.75);
+    color: #ffffff;
+    font-size: 0.95rem;
+    line-height: 1;
+    backdrop-filter: blur(2px);
+    transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+
+    &:hover,
+    &:focus-visible {
+      background: $announcement-accent;
+      border-color: $announcement-accent;
+      color: $announcement-ink;
+      transform: rotate(90deg);
+    }
+
+    &:focus-visible {
+      outline: 2px solid #ffffff;
+      outline-offset: 2px;
+    }
+  }
+
+  /* --- Layout: poster beside the copy, stacked on small screens --- */
+  .announcement-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+    align-items: center;
+  }
+
+  /* The poster is matted rather than cropped — announcements often carry small
+     print and QR codes that object-fit: cover would cut off. The mat hugs the
+     artwork so a landscape poster doesn't leave a tall empty panel beside it. */
+  .announcement-media {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem;
+    margin: 2rem 0 2rem 2rem;
+    background: $announcement-paper;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: 60vh;
+      object-fit: contain;
+    }
+  }
+
+  .announcement-body {
+    padding: 3rem 2.5rem;
+
+    &.announcement-body--full {
+      text-align: center;
+      padding: 3.25rem 3rem;
+
+      .announcement-rule {
+        margin-left: auto;
+        margin-right: auto;
       }
-      .bi-info-circle-fill {
-        font-size: 70px;
+
+      .announcement-actions {
+        justify-content: center;
       }
+    }
+  }
+
+  /* --- Typography --- */
+  .announcement-eyebrow {
+    margin: 0 0 0.6rem;
+    font-family: "Cinzel", serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: $announcement-accent;
+  }
+
+  .announcement-title {
+    margin: 0;
+    font-family: $font-heading;
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    font-weight: 600;
+    line-height: 1.15;
+    color: #ffffff;
+  }
+
+  .announcement-rule {
+    display: block;
+    width: 64px;
+    height: 2px;
+    margin: 1.25rem 0 1.5rem;
+    background: $announcement-accent;
+  }
+
+  .announcement-content {
+    font-family: $font-body;
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: $announcement-text;
+
+    p {
+      margin-bottom: 1rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    em {
+      font-style: italic;
+    }
+
+    a {
+      color: $announcement-accent;
+      text-decoration: underline;
+    }
+  }
+
+  /* --- Actions --- */
+  .announcement-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 2rem;
+  }
+
+  .announcement-cta,
+  .announcement-dismiss {
+    padding: 0.7rem 1.6rem;
+    border-radius: 0;
+    font-family: "Cinzel", serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+
+    &:focus-visible {
+      outline: 2px solid $announcement-accent;
+      outline-offset: 3px;
+    }
+  }
+
+  .announcement-cta {
+    border: 1px solid $announcement-accent;
+    background: $announcement-accent;
+    color: $announcement-ink;
+
+    &:hover {
+      background: transparent;
+      color: $announcement-accent;
+      text-decoration: none;
+    }
+  }
+
+  .announcement-dismiss {
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: transparent;
+    color: $announcement-text;
+
+    &:hover {
+      border-color: #ffffff;
+      color: #ffffff;
+    }
+  }
+
+  @media (max-width: 767.98px) {
+    .announcement-grid {
+      grid-template-columns: 1fr;
+    }
+
+    /* Extra top margin keeps the poster clear of the close button, which sits
+       over the artwork once the columns stack. */
+    .announcement-media {
+      padding: 0.5rem;
+      margin: 3.5rem 1.25rem 0;
+
+      img {
+        max-height: 38vh;
+      }
+    }
+
+    .announcement-body,
+    .announcement-body.announcement-body--full {
+      padding: 1.75rem 1.5rem 2rem;
+    }
+
+    .announcement-actions {
+      margin-top: 1.5rem;
+
+      .announcement-cta,
+      .announcement-dismiss {
+        flex: 1 1 100%;
+        text-align: center;
+      }
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .announcement-close:hover,
+    .announcement-close:focus-visible {
+      transform: none;
     }
   }
 }
