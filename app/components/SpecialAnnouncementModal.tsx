@@ -1,5 +1,6 @@
 "use client";
 import { useCallback, useSyncExternalStore } from "react";
+import { usePathname } from "next/navigation";
 import Image from "next/image";
 import { Modal } from "react-bootstrap";
 import { DocumentRenderer } from "@keystatic/core/renderer";
@@ -58,6 +59,10 @@ const SpecialAnnouncementModal = ({
   // re-opens the modal for someone who dismissed the previous one this session.
   const seenKey = `announcementSeen:${announcement ?? ""}`;
 
+  // The modal renders from the root layout, which the Keystatic admin also
+  // uses — without this it covers the CMS every time an editor opens it.
+  const pathname = usePathname();
+
   const seen = useSyncExternalStore(
     subscribe,
     useCallback(() => isDismissed(seenKey), [seenKey]),
@@ -68,7 +73,7 @@ const SpecialAnnouncementModal = ({
 
   const handleClose = () => dismiss(seenKey);
 
-  if (!showAnnouncement || !announcement) return null;
+  if (!showAnnouncement || !announcement || pathname?.startsWith("/keystatic")) return null;
 
   return (
     <Modal

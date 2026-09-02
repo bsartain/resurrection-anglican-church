@@ -6,7 +6,17 @@ const SpecialAnnouncement = async () => {
 
   if (!specialAnnouncement?.showAnnouncement) return null;
 
-  const content = await specialAnnouncement.content();
+  // This component renders from the root layout, so a document Keystatic can't
+  // parse (a loose markdown list is the usual culprit) would otherwise throw on
+  // every page of the site. Drop the announcement instead of taking down the
+  // site with it.
+  let content;
+  try {
+    content = await specialAnnouncement.content();
+  } catch (error) {
+    console.error("Could not parse the special announcement content:", error);
+    return null;
+  }
 
   return (
     <SpecialAnnouncementModal
