@@ -182,6 +182,53 @@ const setGospelVerses = async (content: string | undefined | null) => {
             </div>`;
 };
 
+// Planning Center's sort_date is an ISO timestamp for the *service*, which is the
+// day whose collect we want — not whenever the page happens to be viewed. Slice the
+// calendar day off the raw string rather than via Date, so no UTC conversion can
+// roll Sunday back to Saturday for viewers west of Greenwich.
+const toCalendarDate = (sortDate: string | null | undefined) => sortDate?.split("T")[0] || new Date().toLocaleDateString("en-CA");
+
+// Only the fields this page reads — the calendar payload carries a good deal more.
+interface DailyOfficeCommemoration {
+  collect?: string | null;
+  rank?: { precedence?: number } | null;
+}
+
+/**
+ * The collect appointed for a given day, as HTML, or null if it can't be fetched.
+ *
+ * Note the path: the Daily Office API serves its web app (HTML, with a 200) for
+ * paths it doesn't recognize, so a wrong path sails past `response.ok` and only
+ * blows up at `.json()`. Guard on the content type rather than trusting the status.
+ */
+async function getCollectOfTheDay(serviceDate: string): Promise<string | null> {
+  const url = `https://api.dailyoffice2019.com/api/v1/calendar/${serviceDate}`;
+
+  try {
+    const response = await fetch(url, { next: { revalidate: 3600 } });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    if (!response.headers.get("content-type")?.includes("application/json")) {
+      throw new Error(`Expected JSON, got "${response.headers.get("content-type")}" — check the API path.`);
+    }
+
+    const data: { commemorations?: DailyOfficeCommemoration[] } = await response.json();
+
+    // Commemorations carry a rank precedence (1 = principal feast, 2 = Sunday,
+    // higher = lesser days). The lowest-ranked one holding a collect is the proper
+    // collect, so Christmas Day wins over the Sunday it may fall on.
+    const commemorations = [...(data?.commemorations ?? [])].sort((a, b) => (a?.rank?.precedence ?? 99) - (b?.rank?.precedence ?? 99));
+
+    return commemorations.find((commemoration) => commemoration?.collect)?.collect ?? null;
+  } catch (error) {
+    console.error(`Failed to fetch the collect for ${serviceDate}:`, error);
+    return null;
+  }
+}
+
 const isScriptureReading = (title: string) => title === "NT Reading" || title === "OT Reading" || title.toLowerCase().includes("psalm");
 
 // Planning Center formats `dates` for humans already ("August 9, 2026"), so prefer
@@ -302,6 +349,11 @@ export default async function Liturgy() {
           } else {
             resolvedHtml = verses;
           }
+        } else if (planningCenter.title.toLowerCase() === "collect of the day") {
+          // Only overwrite on success: if the API is down, whatever Planning Center
+          // holds for this item still renders, which beats an empty collect.
+          const collect = await getCollectOfTheDay(toCalendarDate(plan?.sortDate));
+          resolvedHtml = markUpSpeakerLabels(collect ?? resolvedHtml);
         } else if (planningCenter.title.toLowerCase() === "gospel") {
           resolvedHtml = markUpSpeakerLabels(await setGospelVerses(planningCenter.html_details));
         } else if (planningCenter?.song?.data?.type !== "Song") {
