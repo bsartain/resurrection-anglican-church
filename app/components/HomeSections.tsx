@@ -7,8 +7,6 @@ import TestimonialCarousel from "./TestimonialCarousel";
 import { DocumentElement } from "@keystatic/core";
 import RevealSection from "./RevealSection";
 import ChurchInformation from "./ChurchInformation";
-import DailyOfficeCard from "./DailyOfficeCard";
-import GatheringStepper from "./GatheringStepper";
 
 // ────────────────────────────────────────────────
 // Types (only defined once)
@@ -150,17 +148,6 @@ export default function HomeSections({ section1, section2, section3, section4, s
               ></div>
             </div>
           </div>
-
-          {/* Today's actual lessons, pulled live, rather than a link off the site.
-              Sits outside .story-container so it gets the full column width. */}
-          <div className="daily-office-block">
-            <h3 className="mb-3">Daily Bible Readings</h3>
-            <p className="mb-4">
-              <em>The Daily Office</em>, our Anglican plan for daily Bible reading, has been around for centuries, and is a spiritual practice to help
-              us center each day in the presence of God as we read the Bible.
-            </p>
-            <DailyOfficeCard />
-          </div>
         </Container>
       </RevealSection>
 
@@ -190,10 +177,6 @@ export default function HomeSections({ section1, section2, section3, section4, s
               <DocumentRenderer document={section4.content} />
             </div>
           </div>
-
-          {/* Walks a newcomer through the liturgy in the order it happens,
-              instead of leaving the rhythm buried in a paragraph. */}
-          <GatheringStepper />
         </Container>
       </RevealSection>
 

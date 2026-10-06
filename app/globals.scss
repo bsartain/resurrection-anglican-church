@@ -3863,8 +3863,6 @@ $panel-edge-soft: color-mix(in srgb, currentColor 14%, transparent);
     flex-direction: column;
     padding: 1.75rem;
     margin: 0;
-    border: 1px solid $panel-edge-soft;
-    background: $panel-tint;
   }
 
   .testimonial-quote-mark {
@@ -3877,7 +3875,7 @@ $panel-edge-soft: color-mix(in srgb, currentColor 14%, transparent);
   .testimonial-body {
     flex: 1;
     margin-bottom: 1.25rem;
-    font-size: 1.05rem;
+    font-size: 1.4rem;
     line-height: 1.75;
   }
 
@@ -3885,6 +3883,7 @@ $panel-edge-soft: color-mix(in srgb, currentColor 14%, transparent);
     font-family: $font-heading;
     font-size: 1.15rem;
     letter-spacing: 0.04em;
+    align-self: flex-end;
   }
 
   .navigation-buttons {
