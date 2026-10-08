@@ -24,7 +24,7 @@ const vestryMembers = [
   { name: "Nick Wimmer", role: "Treasurer" },
   { name: "Clinton Dix" },
   { name: "Lisa Massotti" },
-  { name: "Cynthia Weston" },
+  { name: "Scott Miller" },
 ];
 
 export default async function LeadershipPage() {
