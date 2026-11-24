@@ -41,7 +41,16 @@ export default config({
         author: fields.relationship({ label: "Author", collection: "authors" }),
         excerpt: fields.text({ label: "Excerpt" }),
         date: fields.date({ label: "Publish Date" }),
-        content: fields.document({ label: "Content", formatting: true, links: true, images: true, componentBlocks }),
+        content: fields.document({
+          label: "Content",
+          formatting: true,
+          links: true,
+          images: {
+            directory: "public/images/posts",
+            publicPath: "/images/posts/",
+          },
+          componentBlocks,
+        }),
         category: fields.text({ label: "Category" }),
       },
     }),

@@ -7,6 +7,12 @@ import { buildMetadata } from "@/app/lib/buildMetadata";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 
+function HtmlEmbed({ html }: { html: string }) {
+  return <div className="html-embed" dangerouslySetInnerHTML={{ __html: html }} />;
+}
+
+const componentBlockRenderers = { htmlEmbed: HtmlEmbed };
+
 export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const post = await getPost(slug);
@@ -41,12 +47,12 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
               {author ? <p className="text-muted">by {author.name}</p> : null}
             </>
           )}
-          <DocumentRenderer
-            document={content ?? []}
-            componentBlocks={{
-              htmlEmbed: (props) => <div className="html-embed" dangerouslySetInnerHTML={{ __html: props.html }} />,
-            }}
-          />
+          <div className="blog-post-body">
+            <DocumentRenderer
+              document={content ?? []}
+              componentBlocks={componentBlockRenderers}
+            />
+          </div>
         </Container>
       </RevealSection>
     </div>
