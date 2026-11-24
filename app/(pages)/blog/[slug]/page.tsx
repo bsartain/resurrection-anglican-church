@@ -41,7 +41,12 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
               {author ? <p className="text-muted">by {author.name}</p> : null}
             </>
           )}
-          <DocumentRenderer document={content ?? []} />
+          <DocumentRenderer
+            document={content ?? []}
+            componentBlocks={{
+              htmlEmbed: (props) => <div className="html-embed" dangerouslySetInnerHTML={{ __html: props.html }} />,
+            }}
+          />
         </Container>
       </RevealSection>
     </div>

@@ -1149,6 +1149,16 @@ h6 {
     margin-top: 80px;
   }
 
+  .html-embed {
+    margin: 2rem 0;
+
+    iframe {
+      display: block;
+      max-width: 100%;
+      border: 0;
+    }
+  }
+
   .blog-breadcrumb {
     margin-bottom: 1.5rem;
 

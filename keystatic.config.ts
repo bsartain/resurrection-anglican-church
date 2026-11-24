@@ -1,4 +1,5 @@
 import { config, collection, fields, singleton } from "@keystatic/core";
+import { componentBlocks } from "./app/keystatic/componentBlocks";
 
 export default config({
   storage:
@@ -40,7 +41,7 @@ export default config({
         author: fields.relationship({ label: "Author", collection: "authors" }),
         excerpt: fields.text({ label: "Excerpt" }),
         date: fields.date({ label: "Publish Date" }),
-        content: fields.document({ label: "Content", formatting: true, links: true, images: true }),
+        content: fields.document({ label: "Content", formatting: true, links: true, images: true, componentBlocks }),
         category: fields.text({ label: "Category" }),
       },
     }),
